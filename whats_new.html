@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>4. Whats new in Casbah &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
+
+    <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
+    <meta name="robots" content="index" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    
+    
+    <link rel="stylesheet" href="_static/mongodb-docs.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.7.0-RC0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+      <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation" href="index.html" />
+<link rel="next" title="5. Upgrade" href="upgrade.html" />
+<link rel="prev" title="3. Changelog" href="changelog.html" />
+<!-- Put the following javascript before the closing </head> tag. -->
+<script>
+  (function() {
+    var cx = '017213726194841070573:WMX6838984';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+  </head>
+  <body>
+<div id="top-right">
+        <div class="user-right">
+                <ul id="header-menu-bar" class="ajs-menu-bar">
+                <li class="normal"><a target="_blank" href="http://groups.google.com/group/mongodb-user">Forums</a></li>
+                <li class="normal"><a target="_blank" href="http://blog.mongodb.org/">Blog</a></li>
+                <li class="normal"><a href="http://www.mongodb.org/downloads">Download</a></li>
+                <li class="normal"><a href="http://docs.mongodb.org/ecosystem/drivers/">Drivers</a></li>
+                <li class="normal"><a href="http://www.10gen.com/events">Events</a></li>
+                <li class="normal last"><a class="last" href="http://docs.mongodb.org/manual/meta/translation">Translations</a></li>
+                </ul>
+        </div>
+</div>
+<div id="header-db" class="spread">
+        <div class="split">
+                <div id="logo">
+                        <div><a href="index.html"><img class="logo" src="http://media.mongodb.org/logo-mongodb.png" alt="MongoDB Logo"/></a></div>
+                </div>
+        </div>
+
+<div class="search-db"><gcse:searchbox></gcse:searchbox></div>
+<div id="etp">
+<ul>
+<li><a href="https://github.com/mongodb/casbah/blob/master/src/sphinx/whats_new.rst" target="_blank" title="Edit whats_new.rst on github">Edit this Page</a></li>
+<li><a href="http://github.com/mongodb/casbah" target="_blank" title="Fork the documentation on GitHub and contribute.">GitHub</a></li>
+<li><a href="https://jira.mongodb.org/secure/CreateIssueDetails!init.jspa?pid=10380&issuetype=4&priority=4&summary=Comment+on%3a+%22whats_new%2Etxt%22" target="_blank" title="Report a problem with whats_new.txt on Jira">Report a problem</a></li>
+</ul>
+</div>
+</div>  
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div id="cse-results"><gcse:searchresults></gcse:searchresults></div>
+            
+  <div class="section" id="whats-new-in-casbah">
+<h1>4. Whats new in Casbah<a class="headerlink" href="#whats-new-in-casbah" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="casbah-2-7-and-mongo-db-2-6-features">
+<h2>4.1. Casbah 2.7 and Mongo DB 2.6 Features<a class="headerlink" href="#casbah-2-7-and-mongo-db-2-6-features" title="Permalink to this headline">¶</a></h2>
+<p>MongoDB 2.6 introduces some new powerful features that are reflected in the 2.7.0 driver release. These include:</p>
+<ul class="simple">
+<li>Aggregation cursors</li>
+<li>Per query timeouts <strong>maxTimeMS</strong></li>
+<li>Ordered and Unordered bulk operations</li>
+<li>A parallelCollectionScan command for fast reading of an entire collection</li>
+<li>Integrated text search in the query language</li>
+</ul>
+<p>Moreover the driver includes a whole slew of minor and major bug fixes and features. Some of the more noteworthy
+changes include.</p>
+<ul class="simple">
+<li>Added extra type checking so that <tt class="docutils literal"><span class="pre">MongoDBObject.getAs[Type](&quot;key&quot;)</span></tt> better protects against invalid type casting
+so there are fewer scenarios where it will an invalid <tt class="docutils literal"><span class="pre">Some(value)</span></tt>.</li>
+<li>Extended helpers for <tt class="docutils literal"><span class="pre">MongoDBObject.as[Type](&quot;Keys&quot;*)</span></tt> and <tt class="docutils literal"><span class="pre">MongoDBObject.getAs[Type](&quot;keys&quot;</span> <span class="pre">_*)</span></tt> for easier fetching
+of nested MongoDBObjects.</li>
+<li>Fixed issue with OpLog matching - thanks to Brendan W. McAdams for the pull request.</li>
+<li>Register the core Serialization helpers only once - thanks to Tuomas Huhtanen for the pull request.</li>
+<li>Updated nscala-time to 0.6.0 and specs</li>
+</ul>
+<p>Please see the <a class="reference internal" href="changelog.html"><em>full changelog</em></a> and <a class="reference internal" href="upgrade.html"><em>upgrade documentation</em></a>.</p>
+<p>Let&#8217;s look at the main things in 2.6 features one by one.</p>
+</div>
+<div class="section" id="aggregation-cursors">
+<h2>4.2. Aggregation cursors<a class="headerlink" href="#aggregation-cursors" title="Permalink to this headline">¶</a></h2>
+<p>MongoDB 2.6 adds the ability to return a cursor from the aggregation framework.
+To do that simply use <tt class="docutils literal"><span class="pre">AggregationOptions</span></tt> with the aggregation command:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;aggregate&quot;</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">aggregationOptions</span> <span class="k">=</span> <span class="nc">AggregationOptions</span><span class="o">(</span><span class="nc">AggregationOptions</span><span class="o">.</span><span class="nc">CURSOR</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">aggregate</span><span class="o">(</span>
+  <span class="nc">List</span><span class="o">(</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$project&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;author&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;tags&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$unwind&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$group&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">,</span>
+                    <span class="s">&quot;authors&quot;</span> <span class="o">-&gt;</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$addToSet&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$author&quot;</span><span class="o">)</span>
+      <span class="o">)</span>
+    <span class="o">)</span>
+  <span class="o">),</span>
+  <span class="n">aggregationOptions</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+<p>Then the you can iterate the results of the aggregation as a normal cursor:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">for</span> <span class="o">(</span><span class="n">result</span> <span class="k">&lt;-</span> <span class="n">results</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>To learn more about aggregation see the <a class="reference external" href="http://docs.mongodb.org/manual/tutorial/aggregation-examples/">aggregation tutorial</a> and the
+<a class="reference external" href="http://docs.mongodb.org/manual/reference/aggregation/">aggregation reference</a>
+documentation.</p>
+</div>
+<div class="section" id="maxtime">
+<h2>4.3. maxTime<a class="headerlink" href="#maxtime" title="Permalink to this headline">¶</a></h2>
+<p>One feature that has requested often is the ability to timeout individual queries. In MongoDB 2.6 it&#8217;s finally arrived
+and is known as <a class="reference external" href="http://docs.mongodb.org/master/reference/method/cursor.maxTimeMS/">maxTimeMS</a>. In Casbah support for
+<tt class="docutils literal"><span class="pre">maxTimeMS</span></tt> is via an argument or via the query api but is called <tt class="docutils literal"><span class="pre">maxTime</span></tt> and takes a
+<a class="reference external" href="http://www.scala-lang.org/api/2.10.3/#scala.concurrent.duration.Duration">Duration</a></p>
+<p>Let&#8217;s take a look at a simple usage of the property with a query:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;maxTime&quot;</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">oneSecond</span> <span class="k">=</span> <span class="nc">Duration</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="nc">SECONDS</span><span class="o">)</span>
+
+<span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="o">().</span><span class="n">maxTime</span><span class="o">(</span><span class="n">oneSecond</span><span class="o">)</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">count</span><span class="o">(</span><span class="n">maxTime</span> <span class="k">=</span> <span class="n">oneSecond</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>In the examples above the <strong>maxTimeMS</strong> is set to one second and the query will be aborted after the full second is up.</p>
+</div>
+<div class="section" id="ordered-unordered-bulk-operations">
+<h2>4.4. Ordered/Unordered bulk operations<a class="headerlink" href="#ordered-unordered-bulk-operations" title="Permalink to this headline">¶</a></h2>
+<p>Under the covers MongoDB is moving away from the combination of a write operation + get last error (GLE) and towards a
+write commands api. These new commands allow for the execution of bulk insert/update/remove operations. The bulk api&#8217;s
+are abstractions on top of this that server to make it easy to build bulk operations. Bulk operations come in two main
+flavors.</p>
+<ol class="arabic simple">
+<li>Ordered bulk operations. These operations execute all the operation in order and error out on the first write error.</li>
+<li>Unordered bulk operations. These operations execute all the operations in parallel and aggregates up all the errors.
+Unordered bulk operations do not guarantee order of execution.</li>
+</ol>
+<p>Let&#8217;s look at two simple examples using ordered and unordered operations:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;bulkOperation&quot;</span><span class="o">)</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">drop</span><span class="o">()</span>
+
+<span class="c1">// Ordered bulk operation</span>
+<span class="k">val</span> <span class="n">builder</span> <span class="k">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">initializeOrderedBulkOperation</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">))</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">))</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">insert</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">))</span>
+
+<span class="n">builder</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)).</span><span class="n">updateOne</span><span class="o">(</span><span class="nc">$set</span><span class="o">(</span><span class="s">&quot;x&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">))</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">)).</span><span class="n">removeOne</span><span class="o">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">)).</span><span class="n">replaceOne</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="o">,</span> <span class="s">&quot;x&quot;</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">))</span>
+
+<span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">execute</span><span class="o">()</span>
+
+<span class="c1">// Unordered bulk operation - no guarantee of order of operation</span>
+<span class="k">val</span> <span class="n">builder</span> <span class="k">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">initializeUnOrderedBulkOperation</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)).</span><span class="n">removeOne</span><span class="o">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">)).</span><span class="n">removeOne</span><span class="o">()</span>
+
+<span class="k">val</span> <span class="n">result2</span> <span class="k">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">execute</span><span class="o">()</span>
+</pre></div>
+</div>
+<p>For older servers than 2.6 the API will down convert the operations. However it&#8217;s not possible to down convert 100% so
+there might be slight edge cases where it cannot correctly report the right numbers.</p>
+</div>
+<div class="section" id="parallelscan">
+<h2>4.5. parallelScan<a class="headerlink" href="#parallelscan" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>parallelCollectionScan</strong> command is a special command targeted at reading out an entire collection using
+multiple cursors.  Casbah adds support by adding the <tt class="docutils literal"><span class="pre">MongoCollection.parallelScan(options)</span></tt> method:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;parallelScan&quot;</span><span class="o">)</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">drop</span><span class="o">()</span>
+
+<span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="k">&lt;-</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">1000</span><span class="o">)</span> <span class="n">collection</span> <span class="o">+=</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">cursors</span> <span class="k">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">parallelScan</span><span class="o">(</span><span class="nc">ParallelScanOptions</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">200</span><span class="o">))</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="n">cursor</span> <span class="k">&lt;-</span> <span class="n">cursors</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">hasNext</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">next</span><span class="o">())</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This optimizes the IO throughput from a collection.</p>
+</div>
+<div class="section" id="integrated-text-search-in-the-query-language">
+<h2>4.6. Integrated text search in the query language<a class="headerlink" href="#integrated-text-search-in-the-query-language" title="Permalink to this headline">¶</a></h2>
+<p>Text indexes are now integrated into the main query language and enabled by default:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;textSearch&quot;</span><span class="o">)</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">drop</span><span class="o">()</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">ensureIndex</span><span class="o">(</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;content&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;text&quot;</span><span class="o">)</span> <span class="o">)</span>
+
+<span class="n">collection</span> <span class="o">+=</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">0</span><span class="o">,</span> <span class="s">&quot;content&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;textual content&quot;</span><span class="o">)</span>
+<span class="n">collection</span> <span class="o">+=</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;content&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;additional content&quot;</span><span class="o">)</span>
+<span class="n">collection</span> <span class="o">+=</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="s">&quot;content&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;irrelevant content&quot;</span><span class="o">)</span>
+
+<span class="c1">// Find using the text index</span>
+<span class="k">val</span> <span class="n">result1</span> <span class="k">=</span>  <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">$text</span><span class="o">(</span><span class="s">&quot;textual content -irrelevant&quot;</span><span class="o">)).</span><span class="n">count</span>
+
+<span class="c1">// Find using the $language operator</span>
+<span class="k">val</span> <span class="n">result2</span> <span class="k">=</span>  <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="o">(</span><span class="nc">$text</span><span class="o">(</span><span class="s">&quot;textual content -irrelevant&quot;</span><span class="o">)</span> <span class="nc">$language</span> <span class="s">&quot;english&quot;</span><span class="o">).</span><span class="n">count</span>
+
+<span class="c1">// Sort by score</span>
+<span class="k">val</span> <span class="n">result3</span> <span class="k">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">findOne</span><span class="o">(</span><span class="nc">$text</span><span class="o">(</span><span class="s">&quot;textual content -irrelevant&quot;</span><span class="o">),</span> <span class="s">&quot;score&quot;</span> <span class="nc">$meta</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+<div id="btnv">
+<ul id="btnvl">
+<li id="btnvpr"><a href="changelog.html" title="Previous Section: 3. Changelog">&lt; &nbsp; 3. Changelog</a></li>
+<li id="btnvnx"><a href="upgrade.html" title="Next Section: 5. Upgrade">5. Upgrade &nbsp;&gt;</a></li>
+</ul>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><h3><a href="index.html">Casbah, Scala Driver</a>
+
+<small><a href="genindex.html">(Index)</a></small>
+
+</h3>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">1. Tutorial: Using Casbah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide/index.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">3. Changelog</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. Whats new in Casbah</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">5. Upgrade</a></li>
+</ul>
+<h3 style="padding-bottom: 1em;"><a href="http://mongodb.github.io/casbah/api/#com.mongodb.casbah.package">API Documentation</a></h3>
+
+<h3>Formats</h3>
+<ul class="this-page-menu">
+<li><a href="http://mongodb.github.io/casbah/CasbahDocumentation.epub">ePub</a></li>
+<li><a href="http://mongodb.github.io/casbah/CasbahDocumentation.pdf">PDF</a></li>
+</ul>
+<h3 style="padding-bottom: 1em;"><a href="http://www.mongodb.org/about/">MongoDB.org</a></h3>
+<h3 style="padding-bottom: 1em;"><a href="http://docs.mongodb.org/manual/">MongoDB Manual</a></h3>
+<h3 style="padding-bottom: 1em;"><a href="http://docs.mongodb.org/ecosystem/">MongoDB Ecosystem</a></h3>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    <p>
+       &copy; <a href="">Copyright</a> 2010 MongoDB, Inc. 
+       MongoDB&reg;, Mongo&reg;, and the leaf logo are registered trademarks of 10gen, Inc.
+    </p>
+  </div><script type="text/javascript">
+var _gaq = _gaq || [];
+var pluginUrl = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.') + 'google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+_gaq.push(['_setAccount', 'UA-7301842-13']);
+_gaq.push(['_setDomainName', 'docs.mongodb.org']);
+_gaq.push(['_trackPageview']);
+(function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>try { mktoMunchkin("017-HGS-593"); } catch(e) {}</script><script type="text/javascript">
+jQuery.ajax({
+    url: "https://jira.mongodb.org/s/en_US-bxctp1/782/6/1.2.4/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?collectorId=298ba4e7",
+    type: "get",
+    cache: true,
+    dataType: "script"
+});
+window.ATL_JQ_PAGE_PROPS =  {
+"triggerFunction": function(showCollectorDialog) {
+jQuery("#jirafeedback").click(function(e) {e.preventDefault();showCollectorDialog();});
+jQuery("#jirafooter").click(function(e) {e.preventDefault();showCollectorDialog();});
+}};
+</script>
+</body>
+</html>

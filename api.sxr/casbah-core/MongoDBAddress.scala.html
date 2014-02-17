@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>MongoDBAddress.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/**
+ * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ * Copyright (c) 2009, 2010 Novus Partners, Inc. &lt;http://novus.com&gt;
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * For questions and comments about this product, please see the project page at:
+ *
+ * http://github.com/mongodb/casbah
+ *
+ */</span>
+
+<span class="keyword">package</span> com.mongodb.casbah
+
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
+
+<span class="comment">/**
+ *
+ * @since   1.0.1
+ */</span>
+<span class="keyword">object</span> <a title="object com.mongodb.casbah.MongoDBAddress" id="10850">MongoDBAddress</a> <span title="ScalaObject" class="delimiter">{</span>
+
+  <span class="comment">/**
+   * Connects to a given database using the host/port info from an existing
+   * DBAddress instance.
+   *
+   * @param  other  DBAddress the existing DBAddress
+   * @param  dbName String the database to which to connect
+   * @return com.mongodb.DBAddress
+   * @throws UnknownHostException if cannot connect to the host
+   */</span>
+  <span class="keyword">def</span> <a title="(other: com.mongodb.casbah.Imports.DBAddress, dbName: String)com.mongodb.casbah.Imports.DBAddress" id="30749">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBAddress" id="41531">other</a>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span>, <a title="String" id="41532">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span> = <span title="(x$1: com.mongodb.DBAddress, x$2: java.lang.String)com.mongodb.DBAddress" class="keyword">new</span> <a href="Implicits.scala.html#23705" title="com.mongodb.DBAddress">DBAddress</a><span class="delimiter">(</span><a href="#41531" title="com.mongodb.casbah.Imports.DBAddress">other</a>, <a href="#41532" title="String">dbName</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * Creates a new DBAddress... acceptable formats:
+   *
+   * &lt;pre&gt;
+   * name (&quot;myDB&quot;)
+   * &lt;host&gt;/name (&quot;127.0.0.1/myDB&quot;)
+   * &lt;host&gt;:&lt;port&gt;/name (&quot;127.0.0.1:8080/myDB&quot;)
+   * &lt;/pre&gt;
+   *
+   * @param  urlFormat String
+   * @return com.mongodb.DBAddress
+   *
+   * @throws UnknownHostException if cannot connect to the host
+   *
+   */</span>
+  <span class="keyword">def</span> <a title="(urlFormat: String)com.mongodb.casbah.Imports.DBAddress" id="30750">apply</a><span class="delimiter">(</span><a title="String" id="41602">urlFormat</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span> = <span title="com.mongodb.DBAddress" class="keyword">new</span> <a href="Implicits.scala.html#23705" title="com.mongodb.DBAddress">DBAddress</a><span class="delimiter">(</span><a href="#41602" title="String">urlFormat</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * Connects to a database with a given name at a given host.
+   *
+   * @param  host   String
+   * @param  dbName String
+   * @return com.mongodb.DBAddress
+   * @throws UnknownHostException if cannot connect to the host
+   */</span>
+  <span class="keyword">def</span> <a title="(host: String, dbName: String)com.mongodb.casbah.Imports.DBAddress" id="30751">apply</a><span class="delimiter">(</span><a title="String" id="41606">host</a>: <span title="String">String</span>, <a title="String" id="41607">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span> = <span title="(x$1: java.lang.String, x$2: java.lang.String)com.mongodb.DBAddress" class="keyword">new</span> <a href="Implicits.scala.html#23705" title="com.mongodb.DBAddress">DBAddress</a><span class="delimiter">(</span><a href="#41606" title="String">host</a>, <a href="#41607" title="String">dbName</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * Connects to a database with a given host, port &amp;amp; name at a given host.
+   *
+   * @param  host   String
+   * @param  port   Int
+   * @param  dbName String
+   * @return com.mongodb.DBAddress
+   * @throws UnknownHostException if cannot connect to the host
+   */</span>
+  <span class="keyword">def</span> <a title="(host: String, port: Int, dbName: String)com.mongodb.casbah.Imports.DBAddress" id="30752">apply</a><span class="delimiter">(</span><a title="String" id="41613">host</a>: <span title="String">String</span>, <a title="Int" id="41614">port</a>: <span title="Int">Int</span>, <a title="String" id="41615">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span> =
+    <span title="(x$1: java.lang.String, x$2: Int, x$3: java.lang.String)com.mongodb.DBAddress" class="keyword">new</span> <a href="Implicits.scala.html#23705" title="com.mongodb.DBAddress">DBAddress</a><span class="delimiter">(</span><a href="#41613" title="String">host</a>, <a href="#41614" title="Int">port</a>, <a href="#41615" title="String">dbName</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * Connects to a database with a given InetAddress, port &amp;amp; name at a given host.
+   *
+   * @param  addr   java.net.InetAddress
+   * @param  port   Int
+   * @param  dbName String
+   * @return com.mongodb.DBAddress
+   * @throws UnknownHostException if cannot connect to the host
+   * @see java.net.InetAddress
+   */</span>
+  <span class="keyword">def</span> <a title="(addr: java.net.InetAddress, port: Int, dbName: String)com.mongodb.casbah.Imports.DBAddress" id="30753">apply</a><span class="delimiter">(</span><a title="java.net.InetAddress" id="41621">addr</a>: java.net.<span title="java.net.InetAddress">InetAddress</span>, <a title="Int" id="41622">port</a>: <span title="Int">Int</span>, <a title="String" id="41623">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.DBAddress">DBAddress</span> =
+    <span title="(x$1: java.net.InetAddress, x$2: Int, x$3: java.lang.String)com.mongodb.DBAddress" class="keyword">new</span> <a href="Implicits.scala.html#23705" title="com.mongodb.DBAddress">DBAddress</a><span class="delimiter">(</span><a href="#41621" title="java.net.InetAddress">addr</a>, <a href="#41622" title="Int">port</a>, <a href="#41623" title="String">dbName</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+
+        </pre>
+    </body>
+</html>

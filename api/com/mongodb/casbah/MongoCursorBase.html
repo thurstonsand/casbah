@@ -32,7 +32,7 @@
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Scala wrapper for Mongo DBCursors,
 including ones which return custom DBObject subclasses.</p><p>This is a rewrite of the Casbah 1.0 approach which was rather
 naive and unnecessarily complex.... formerly was MongoCursorWrapper
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/MongoCursor.scala.html">MongoCursor.scala</a></dd><dt>Version</dt><dd><p>2.0, 12/23/10</p></dd><dt>Since</dt><dd><p>2.0
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/MongoCursor.scala.html">MongoCursor.scala</a></dd><dt>Version</dt><dd><p>2.0, 12/23/10</p></dd><dt>Since</dt><dd><p>2.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.commons.Logging" class="extype" href="commons/Logging.html">Logging</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -341,7 +341,7 @@ which, if True, sets snapshot mode on the query.</p><p>This is the same as calli
       </h4>
       <p class="shortcomment cmt">&quot;Special&quot; Operators for cursors</p><div class="fullcomment"><div class="comment cmt"><p>&quot;Special&quot; Operators for cursors</p><p>adds a special operator like $maxScan or $returnKey</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the same DBCursor, useful for chaining operations
 </p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-Specialoperators
-</p></span></dd></dl></div>
+     { @inheritDoc}</p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -413,14 +413,14 @@ was an array.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The new cursor
 </p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#count" data-isabs="false">
-      <a id="count:Int"></a>
+      <a id="count():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">count</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="name">count</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">count</p><div class="fullcomment"><div class="comment cmt"><p>count</p><p>The DBCursor's count of elements in the query, passed through
@@ -430,7 +430,7 @@ be careful about using that.</p><p><b>NOTE:</b> count() ignores any skip/limit s
 it is the count of the ENTIRE query results.
 If you want to get a count post-skip/limit
 you must use size()
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()<p>
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p>size()
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#cursorId" data-isabs="false">
@@ -485,7 +485,14 @@ you must use size()
       <p class="shortcomment cmt">explain</p><div class="fullcomment"><div class="comment cmt"><p>explain</p><p>Returns an object containing basic information about the execution
 of the query that created this cursor.
 This creates an instance of CursorExplanation which is a custom
-dbObject with the key/value pairs:</p><ul><li>cursor = Cursor Type</li><li>nscanned = Number of items examined by Mongo for this query</li><li>nscannedObjects = Number of objects examined by Mongo</li><li>n = the number of records which Mongo returned</li><li>millis = how long it took Mongo to execute the query</li><li>nYields = number of times this query yielded the read lock to let writes in</li><li>indexBounds = the index boundaries used.</li></ul><p>CursorExplanation provides utility methods to access these fields.
+dbObject with the key/value pairs:
+- cursor = Cursor Type
+- nscanned = Number of items examined by Mongo for this query
+- nscannedObjects = Number of objects examined by Mongo
+- n = the number of records which Mongo returned
+- millis = how long it took Mongo to execute the query
+- nYields = number of times this query yielded the read lock to let writes in
+- indexBounds = the index boundaries used.</p><p>CursorExplanation provides utility methods to access these fields.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>an instance of CursorExplanation
 </p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://dochub.mongodb.org/core/explain</p></span></dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
@@ -590,7 +597,7 @@ to improve performance.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">keysWanted</span><span class="result">: <span name="com.mongodb.DBObject" class="extype">DBObject</span></span>
+        <span class="name">keysWanted</span><span class="result">: DBObject</span>
       </span>
       </h4>
       
@@ -764,7 +771,7 @@ TODO - Create Scala version of Bytes.QUERYOPTION_*
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">query</span><span class="result">: <span name="com.mongodb.DBObject" class="extype">DBObject</span></span>
+        <span class="name">query</span><span class="result">: DBObject</span>
       </span>
       </h4>
       
@@ -790,7 +797,7 @@ TODO - Create Scala version of Bytes.QUERYOPTION_*
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sizes</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="java.lang.Integer" class="extype">Integer</span>]</span>
+        <span class="name">sizes</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[Integer]</span>
       </span>
       </h4>
       
@@ -927,10 +934,11 @@ it may or may not be returned, even with snapshot mode).</p><p><b>NOTE:</b> Shor
         <span class="name deprecated" title="Deprecated: (Since version 2.3.0) Replaced with ReadPreference.SECONDARY">slaveOk</span><span class="params">()</span><span class="result">: <span name="com.mongodb.DBCursor" class="extype">DBCursor</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">slaveOk</p><div class="fullcomment"><div class="comment cmt"><p>slaveOk</p><p>Makes this query OK to run on a non-master node.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">slaveOk</p><div class="fullcomment"><div class="comment cmt"><p>slaveOk</p><p>Makes this query OK to run on a non-master node.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with ReadPreference.SECONDARY</p></dd></dl></div>
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with <code>ReadPreference.SECONDARY</code></p></dd></dl></div>
     </li></ol>
             </div>
         </div>

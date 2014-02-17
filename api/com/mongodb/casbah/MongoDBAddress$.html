@@ -29,7 +29,7 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/MongoConnection.scala.html">MongoConnection.scala</a></dd><dt>Since</dt><dd><p>1.0.1
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/MongoDBAddress.scala.html">MongoDBAddress.scala</a></dd><dt>Since</dt><dd><p>1.0.1
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -132,11 +132,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="addr">addr: <span name="java.net.InetAddress" class="extype">InetAddress</span></span>, <span name="port">port: <span name="scala.Int" class="extype">Int</span></span>, <span name="dbName">dbName: String</span>)</span><span class="result">: <span name="com.mongodb.DBAddress" class="extype">DBAddress</span></span>
+        <span class="name">apply</span><span class="params">(<span name="addr">addr: <span name="java.net.InetAddress" class="extype">InetAddress</span></span>, <span name="port">port: <span name="scala.Int" class="extype">Int</span></span>, <span name="dbName">dbName: String</span>)</span><span class="result">: DBAddress</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a database with a given InetAddress, port &amp; name at a given host.</&amp;</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a database with a given InetAddress, port &amp; name at a given host.
-</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>java.net.InetAddress</p></dd><dt class="param">port</dt><dd class="cmt"><p>Int</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">java.net.UnknownHostException</span></dd><dt>See also</dt><dd><span class="cmt"><p>java.net.InetAddress
+</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>java.net.InetAddress</p></dd><dt class="param">port</dt><dd class="cmt"><p>Int</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnknownHostException<p>if cannot connect to the host</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>java.net.InetAddress
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDBAddress#apply" data-isabs="false">
       <a id="apply(String,Int,String):DBAddress"></a>
@@ -146,11 +146,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="host">host: String</span>, <span name="port">port: <span name="scala.Int" class="extype">Int</span></span>, <span name="dbName">dbName: String</span>)</span><span class="result">: <span name="com.mongodb.DBAddress" class="extype">DBAddress</span></span>
+        <span class="name">apply</span><span class="params">(<span name="host">host: String</span>, <span name="port">port: <span name="scala.Int" class="extype">Int</span></span>, <span name="dbName">dbName: String</span>)</span><span class="result">: DBAddress</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a database with a given host, port &amp; name at a given host.</&amp;</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a database with a given host, port &amp; name at a given host.
-</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>String</p></dd><dt class="param">port</dt><dd class="cmt"><p>Int</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">java.net.UnknownHostException<p>
+</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>String</p></dd><dt class="param">port</dt><dd class="cmt"><p>Int</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnknownHostException<p>if cannot connect to the host
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDBAddress#apply" data-isabs="false">
       <a id="apply(String,String):DBAddress"></a>
@@ -160,11 +160,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="host">host: String</span>, <span name="dbName">dbName: String</span>)</span><span class="result">: <span name="com.mongodb.DBAddress" class="extype">DBAddress</span></span>
+        <span class="name">apply</span><span class="params">(<span name="host">host: String</span>, <span name="dbName">dbName: String</span>)</span><span class="result">: DBAddress</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a database with a given name at a given host.</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a database with a given name at a given host.
-</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>String</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">java.net.UnknownHostException<p>
+</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>String</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnknownHostException<p>if cannot connect to the host
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDBAddress#apply" data-isabs="false">
       <a id="apply(String):DBAddress"></a>
@@ -174,16 +174,16 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="urlFormat">urlFormat: String</span>)</span><span class="result">: <span name="com.mongodb.DBAddress" class="extype">DBAddress</span></span>
+        <span class="name">apply</span><span class="params">(<span name="urlFormat">urlFormat: String</span>)</span><span class="result">: DBAddress</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Creates a new DBAddress.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new DBAddress... acceptable formats:</p><p><pre>
-  name ("myDB")
-  <host>/name ("127.0.0.1/myDB")
-  <host>:<port>/name ("127.0.0.1:8080/myDB")
+name ("myDB")
+<host>/name ("127.0.0.1/myDB")
+<host>:<port>/name ("127.0.0.1:8080/myDB")
 </pre>
 </p></div><dl class="paramcmts block"><dt class="param">urlFormat</dt><dd class="cmt"><p>String</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress
-</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">java.net.UnknownHostException<p></p></span></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnknownHostException<p>if cannot connect to the host</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDBAddress#apply" data-isabs="false">
       <a id="apply(DBAddress,String):DBAddress"></a>
       <h4 class="signature">
@@ -192,13 +192,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="other">other: DBAddress</span>, <span name="dbName">dbName: String</span>)</span><span class="result">: <span name="com.mongodb.DBAddress" class="extype">DBAddress</span></span>
+        <span class="name">apply</span><span class="params">(<span name="other">other: DBAddress</span>, <span name="dbName">dbName: String</span>)</span><span class="result">: DBAddress</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a given database using the host/port info from an existing
 DBAddress instance.</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a given database using the host/port info from an existing
 DBAddress instance.
-</p></div><dl class="paramcmts block"><dt class="param">other</dt><dd class="cmt"><p>DBAddress the existing DBAddress</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String the database to which to connect</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">java.net.UnknownHostException<p>
+</p></div><dl class="paramcmts block"><dt class="param">other</dt><dd class="cmt"><p>DBAddress the existing DBAddress</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>String the database to which to connect</p></dd><dt>returns</dt><dd class="cmt"><p>com.mongodb.DBAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnknownHostException<p>if cannot connect to the host
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>

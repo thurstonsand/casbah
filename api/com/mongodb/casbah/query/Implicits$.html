@@ -29,7 +29,7 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-query/src/main/scala/Implicits.scala.html">Implicits.scala</a></dd></dl><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-query/Implicits.scala.html">Implicits.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.commons.Implicits" class="extype" href="../commons/Implicits.html">Implicits</a>, <a name="com.mongodb.casbah.query.Implicits" class="extype" href="Implicits.html">Implicits</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -71,6 +71,18 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.commons.Implicits" class="extype" href="../commons/Implicits.html">Implicits</a></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.commons.Implicits.MapWithAsDBObject" data-isabs="false">
+      <a id="MapWithAsDBObject:MapWithAsDBObject"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="../commons/Implicits$MapWithAsDBObject.html"><span class="name">MapWithAsDBObject</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
 
@@ -253,14 +265,14 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.commons.Implicits" class="extype" href="../commons/Implicits.html">Implicits</a></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.commons.Implicits#mapAsDBObject" data-isabs="false">
-      <a id="mapAsDBObject(Map[String, Any]):AnyRef { def asDBObject: com.mongodb.DBObject }"></a>
+      <a id="mapAsDBObject(Map[String, Any]):MapWithAsDBObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mapAsDBObject</span><span class="params">(<span name="map">map: <span name="scala.collection.Map" class="extype">Map</span>[String, <span name="scala.Any" class="extype">Any</span>]</span>)</span><span class="result">: AnyRef { def asDBObject: com.mongodb.DBObject }</span>
+        <span class="name">mapAsDBObject</span><span class="params">(<span name="map">map: <span name="scala.collection.Map" class="extype">Map</span>[String, <span name="scala.Any" class="extype">Any</span>]</span>)</span><span class="result">: <a name="com.mongodb.casbah.commons.Implicits.MapWithAsDBObject" class="extype" href="../commons/Implicits$MapWithAsDBObject.html">MapWithAsDBObject</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Implicit extension methods for Scala <code>Map[String, Any]</code>
@@ -288,7 +300,8 @@ The NestedQuery implicits allows you to call chained operators on the return val
 base String method method.  Chained operators will place the subsequent operators within the same DBObject,
 e.g. <code>"fooDate" $lte yesterday $gte tomorrow</code> maps to a Mongo query of:
 <code>{"fooDate": {"$lte": <yesterday>, "$gte": <tomorrow>}}</code>
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Tuple2[String, DBObject] A tuple containing the field name and the mapped operator value, suitable for instantiating a Map
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Tuple2[String, DBObject] A tuple containing the field name and the mapped operator value, suitable for
+        instantiating a Map
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.query.Implicits" class="extype" href="Implicits.html">Implicits</a></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.query.Implicits#mongoQueryStatements" data-isabs="false">
       <a id="mongoQueryStatements(String):FluidQueryOperators"></a>

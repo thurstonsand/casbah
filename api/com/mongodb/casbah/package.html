@@ -48,15 +48,27 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.AggregationOutput" data-isabs="false">
+              <ol><li visbl="pub" name="com.mongodb.casbah.AggregationCursor" data-isabs="false">
+      <a id="AggregationCursor:AggregationCursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AggregationCursor.html"><span class="name">AggregationCursor</span></a><span class="params">(<span name="underlying">underlying: Cursor</span>)</span><span class="result"> extends Iterator[DBObject] with Product with Serializable</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A wrapper for the new com.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.AggregationOutput" data-isabs="false">
       <a id="AggregationOutput:AggregationOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="AggregationOutput.html"><span class="name">AggregationOutput</span></a><span class="result"> extends AnyRef</span>
+        <a href="AggregationOutput.html"><span class="name">AggregationOutput</span></a><span class="params">(<span name="underlying">underlying: AggregationOutput</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
       <p class="comment cmt">Wrapper object for AggregationOutput
@@ -70,6 +82,30 @@
       </span>
       <span class="symbol">
         <a href="BaseImports.html"><span class="name">BaseImports</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="com.mongodb.casbah.BulkWriteOperation" data-isabs="false">
+      <a id="BulkWriteOperation:BulkWriteOperation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BulkWriteOperation.html"><span class="name">BulkWriteOperation</span></a><span class="params">(<span name="underlying">underlying: BulkWriteOperation</span>)</span><span class="result"> extends Product with Serializable</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A builder for a bulk write operation.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.BulkWriteResult" data-isabs="false">
+      <a id="BulkWriteResult:BulkWriteResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BulkWriteResult.html"><span class="name">BulkWriteResult</span></a><span class="params">(<span name="underlying">underlying: BulkWriteResult</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
       
@@ -161,18 +197,6 @@ This is the version of MongoCollectionBase you should expect to use in most case
       <p class="comment cmt">Scala wrapper for Mongo DBCollections,
 including ones which return custom DBObject subclasses
 via setObjectClass and the like.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
-      <a id="MongoConnection:MongoConnection"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="MongoConnection.html"><span class="name">MongoConnection</span></a><span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Wrapper class for the Mongo Connection object.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursor" data-isabs="false">
       <a id="MongoCursor:MongoCursor"></a>
       <h4 class="signature">
@@ -259,6 +283,18 @@ including ones which return custom DBObject subclasses.</p>
       </span>
       </h4>
       <p class="comment cmt">Create a new MongoURI with a URI String e.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.ParallelScanOptions" data-isabs="false">
+      <a id="ParallelScanOptions:ParallelScanOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParallelScanOptions.html"><span class="name">ParallelScanOptions</span></a><span class="params">(<span name="numCursors">numCursors: Int</span>, <span name="batchSize">batchSize: Int</span>, <span name="readPreference">readPreference: Option[ReadPreference]</span>)</span><span class="result"> extends Product with Serializable</span>
+      </span>
+      </h4>
+      <p class="comment cmt">The options to use for a parallel collection scan.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.TypeImports" data-isabs="true">
       <a id="TypeImports:TypeImports"></a>
       <h4 class="signature">
@@ -271,6 +307,18 @@ including ones which return custom DBObject subclasses.</p>
       </span>
       </h4>
       
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
+      <a id="MongoConnection:MongoConnection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoConnection.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper class for the Mongo Connection object.</p>
     </li></ol>
             </div>
 
@@ -278,7 +326,20 @@ including ones which return custom DBObject subclasses.</p>
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.BaseImports" data-isabs="false">
+              <ol><li visbl="pub" name="com.mongodb.casbah.AggregationOptions" data-isabs="false">
+      <a id="AggregationOptions:AggregationOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AggregationOptions$.html"><span class="name">AggregationOptions</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper object for <code>com.mongodb.AggregationOptions</code>
+</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.BaseImports" data-isabs="false">
       <a id="BaseImports:BaseImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -365,18 +426,6 @@ Java driver gives.</p>
       </h4>
       <p class="comment cmt">Helper object for some static methods
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
-      <a id="MongoConnection:MongoConnection"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="MongoConnection$.html"><span class="name">MongoConnection</span></a><span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Wrapper object for Mongo Connections, providing the static methods the Java driver gives.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCredential" data-isabs="false">
       <a id="MongoCredential:MongoCredential"></a>
       <h4 class="signature">
@@ -426,31 +475,18 @@ Java driver gives.</p>
       </span>
       </h4>
       <p class="comment cmt"></p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoOptions" data-isabs="false">
-      <a id="MongoOptions:MongoOptions"></a>
+    </li><li visbl="pub" name="com.mongodb.casbah.ParallelScanOptions" data-isabs="false">
+      <a id="ParallelScanOptions:ParallelScanOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoOptions$.html"><span class="name">MongoOptions</span></a><span class="result"> extends AnyRef</span>
+        <a href="ParallelScanOptions$.html"><span class="name">ParallelScanOptions</span></a><span class="result"> extends Serializable</span>
       </span>
       </h4>
-      <p class="comment cmt">Helper class for creating MongoOptions instances
-</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoURI" data-isabs="false">
-      <a id="MongoURI:MongoURI"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="MongoURI$.html"><span class="name">MongoURI</span></a><span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt"></p>
+      <p class="comment cmt">The options to use for a parallel collection scan.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.ReadPreference" data-isabs="false">
       <a id="ReadPreference:ReadPreference"></a>
       <h4 class="signature">
@@ -552,7 +588,47 @@ Java driver gives.</p>
     </li></ol>
             </div>
 
-        
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
+      <a id="MongoConnection:MongoConnection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoConnection$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Wrapper object for Mongo Connections, providing the static methods the Java driver gives.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoOptions" data-isabs="false">
+      <a id="MongoOptions:MongoOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoOptions$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientOptions">MongoOptions</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper class for creating MongoOptions instances
+</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoURI" data-isabs="false">
+      <a id="MongoURI:MongoURI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoURI$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientURI">MongoURI</span></a><span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

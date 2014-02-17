@@ -56,7 +56,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDeleteOperation.html"><span class="name">MongoDeleteOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Long</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoDeleteOperation.html"><span class="name">MongoDeleteOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
       </span>
       </h4>
       
@@ -68,7 +68,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoInsertOperation.html"><span class="name">MongoInsertOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Long</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoInsertOperation.html"><span class="name">MongoInsertOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
       </span>
       </h4>
       
@@ -83,7 +83,7 @@
         <a href="MongoOpLog.html"><span class="name">MongoOpLog</span></a><span class="result"> extends Iterator[MongoOpLogEntry] with Logging</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">For a more detailed understanding of how the MongoDB Oplog works, see Kristina Chodorow's blogpost:</p>
     </li><li visbl="pub" name="com.mongodb.casbah.util.MongoOpLogEntry" data-isabs="true">
       <a id="MongoOpLogEntry:MongoOpLogEntry"></a>
       <h4 class="signature">
@@ -116,7 +116,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoUpdateOperation.html"><span class="name">MongoUpdateOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Long</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>, <span name="documentID">documentID: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoUpdateOperation.html"><span class="name">MongoUpdateOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>, <span name="documentID">documentID: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
       </span>
       </h4>
       

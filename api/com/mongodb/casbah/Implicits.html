@@ -37,7 +37,7 @@ Scala types.</p><p>Additionally, Collection and Cursors can be called with <code
 implicit or explicitly passed <code>Manifest</code> object is used to determine type) to return
 a Type optimized version of themselves.  The type must be a subclass of DBObject, and it is up to YOU the
 programmer to determine that your underlying collection can be deserialized to objects of type A.</p><p>Type oriented Collections and Cursors will ALWAYS try to deserialize DBObjects to their type where appropriate
-(exceptions are things like group and mapReduce which return non-standard data and will be DBObjects)</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/Implicits.scala.html">Implicits.scala</a></dd></dl><div class="toggleContainer block">
+(exceptions are things like group and mapReduce which return non-standard data and will be DBObjects)</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/Implicits.scala.html">Implicits.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -248,6 +248,20 @@ programmer to determine that your underlying collection can be deserialized to o
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.Implicits#mongoAggregationCursorAsScala" data-isabs="false">
+      <a id="mongoAggregationCursorAsScala(Cursor):AnyRef { def asScala: com.mongodb.casbah.AggregationCursor }"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mongoAggregationCursorAsScala</span><span class="params">(<span name="cursor">cursor: <span name="com.mongodb.Cursor" class="extype">Cursor</span></span>)</span><span class="result">: AnyRef { def asScala: com.mongodb.casbah.AggregationCursor }</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Implicit extension methods for Mongo's Aggregation MongoCursor object.</p><div class="fullcomment"><div class="comment cmt"><p>Implicit extension methods for Mongo's Aggregation MongoCursor object.
+Capable of returning a Scala optimized wrapper object.</p></div><dl class="paramcmts block"><dt class="param">cursor</dt><dd class="cmt"><p>A <code>AggregationCursor</code> object to wrap
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.Implicits#mongoCollAsScala" data-isabs="false">
       <a id="mongoCollAsScala(DBCollection):AnyRef { ... /* 2 definitions in type refinement */ }"></a>
       <h4 class="signature">

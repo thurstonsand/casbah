@@ -65,13 +65,13 @@
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceCommand.html"><span class="name">MapReduceCommand</span></a><span class="result"> extends AnyRef</span>
+        <a href="MapReduceCommand.html"><span class="name">MapReduceCommand</span></a><span class="params">(<span name="input">input: String</span>, <span name="map">map: JSFunction</span>, <span name="reduce">reduce: JSFunction</span>, <span name="output">output: MapReduceOutputTarget</span>, <span name="query">query: Option[DBObject]</span>, <span name="sort">sort: Option[DBObject]</span>, <span name="limit">limit: Option[Int]</span>, <span name="finalizeFunction">finalizeFunction: Option[JSFunction]</span>, <span name="jsScope">jsScope: Option[DBObject]</span>, <span name="verbose">verbose: Boolean</span>, <span name="maxTime">maxTime: Option[Duration]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      <p class="comment cmt">Wrapper class for invoking MongoDB mapReduces.</p>
+      <p class="comment cmt">Case class for invoking MongoDB mapReduces.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceError" data-isabs="false">
       <a id="MapReduceError:MapReduceError"></a>
       <h4 class="signature">
@@ -175,19 +175,7 @@
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceCommand" data-isabs="false">
-      <a id="MapReduceCommand:MapReduceCommand"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="MapReduceCommand$.html"><span class="name">MapReduceCommand</span></a><span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Wrapper Object to provide apply methods for the MapReduceCommand class.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceInlineOutput" data-isabs="false">
+              <ol><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceInlineOutput" data-isabs="false">
       <a id="MapReduceInlineOutput:MapReduceInlineOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">

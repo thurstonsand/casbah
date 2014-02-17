@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.query.dsl.regexOp</title>
+          <title>com.mongodb.casbah.query.dsl.RegexOp</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../../../../lib/template.css" />
@@ -16,7 +16,7 @@
       <div id="definition">
         <img src="../../../../../lib/trait_big.png" />
         <p id="owner"><a name="com" class="extype" href="../../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../../package.html">casbah</a>.<a name="com.mongodb.casbah.query" class="extype" href="../package.html">query</a>.<a name="com.mongodb.casbah.query.dsl" class="extype" href="package.html">dsl</a></p>
-        <h1>regexOp</h1>
+        <h1>RegexOp</h1>
       </div>
 
       <h4 class="signature" id="signature">
@@ -25,15 +25,18 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">regexOp</span><span class="result"> extends <a name="com.mongodb.casbah.query.dsl.QueryOperator" class="extype" href="QueryOperator.html">QueryOperator</a></span>
+        <span class="name">RegexOp</span><span class="result"> extends <a name="com.mongodb.casbah.query.dsl.QueryOperator" class="extype" href="QueryOperator.html">QueryOperator</a></span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>$regex operator to query by type.</p><p>Takes a string for use in the $regex query</p><p>&quot;foo&quot; $regex &quot;^bar$&quot;
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-query/src/main/scala/CoreOperators.scala.html">CoreOperators.scala</a></dd><dt>Since</dt><dd><p>2.6.2</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%7B%7B%24type%7D%7D
+      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>$regex operator to query by type.</p><p>Takes a string for use in the $regex query</p><p><code>"foo" $regex "^bar$"</code>
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-query/CoreOperators.scala.html">CoreOperators.scala</a></dd><dt>Since</dt><dd><p>2.6.2</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%7B%7B%24type%7D%7D
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.query.dsl.QueryOperator" class="extype" href="QueryOperator.html">QueryOperator</a>, <a name="com.mongodb.casbah.query.ChainedOperator" class="extype" href="../ChainedOperator.html">ChainedOperator</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a name="com.mongodb.casbah.query.dsl.FluidQueryOperators" class="extype" href="FluidQueryOperators.html">FluidQueryOperators</a>, <a name="com.mongodb.casbah.query.dsl.ValueTestFluidQueryOperators" class="extype" href="ValueTestFluidQueryOperators.html">ValueTestFluidQueryOperators</a></div>
         </div></div>
     
 
@@ -47,7 +50,7 @@
               <span class="filtertype">Inherited</span>
               <ol><li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="com.mongodb.casbah.query.dsl.regexOp" class="in"><span>regexOp</span></li><li name="com.mongodb.casbah.query.dsl.QueryOperator" class="in"><span>QueryOperator</span></li><li name="com.mongodb.casbah.query.ChainedOperator" class="in"><span>ChainedOperator</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+              <ol id="linearization"><li name="com.mongodb.casbah.query.dsl.RegexOp" class="in"><span>RegexOp</span></li><li name="com.mongodb.casbah.query.dsl.QueryOperator" class="in"><span>QueryOperator</span></li><li name="com.mongodb.casbah.query.ChainedOperator" class="in"><span>ChainedOperator</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
             </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -116,7 +119,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.regexOp#$regex" data-isabs="false">
+    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.RegexOp#$regex" data-isabs="false">
       <a id="$regex(String):DBObject with QueryExpressionObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">

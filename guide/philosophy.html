@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>2.1. Philosophy &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation</title>
+    <title>2.1. Philosophy &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.6.5',
+        VERSION:     '2.7.0-RC0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation" href="../index.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation" href="../index.html" />
 <link rel="up" title="2. User Guide" href="index.html" />
 <link rel="next" title="2.2. Installation" href="installation.html" />
 <link rel="prev" title="2. User Guide" href="index.html" />
@@ -77,13 +77,13 @@
             
   <div class="section" id="philosophy">
 <h1>2.1. Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h1>
-<p>Casbah's approach is intended to add fluid, Scala-friendly syntax on top of
+<p>Casbah&#8217;s approach is intended to add fluid, Scala-friendly syntax on top of
 MongoDB and handle conversions of common types.</p>
 <p>If you try to save a Scala List or Seq to MongoDB, we <a class="reference internal" href="serialisation.html"><em>automatically convert it</em></a> to a type the Java driver can serialise.  If you read a
 Java type,  we convert it to a comparable Scala type before it hits your code.</p>
 <p>All of this is intended to let you focus on writing the best possible Scala
 code using Scala idioms.  A great deal of effort is put into providing you the
-functional and implicit conversion tools you've come to expect from Scala, with
+functional and implicit conversion tools you&#8217;ve come to expect from Scala, with
 the power and flexibility of MongoDB.</p>
 <p>Casbah provides improved interfaces to <a class="reference internal" href="gridfs.html"><em>GridFS</em></a>, Map/Reduce and
 the core Mongo APIs.  It also provides a <a class="reference internal" href="querying.html"><em>fluid query syntax</em></a>
@@ -113,6 +113,25 @@ the <a class="reference internal" href="gridfs.html"><em>GridFS Section</em></a>
 
 </h3>
 
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">1. Tutorial: Using Casbah</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.1. Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_alt.html">2.3. Alternative installation methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">2.4. Casbah Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">2.5. Connecting to MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="querying.html">2.6. Querying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_dsl.html">2.7. Query DSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregation.html">2.8. Aggregation Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gridfs.html">2.9. GridFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialisation.html">2.10. Serialisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">3. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">4. Whats new in Casbah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade.html">5. Upgrade</a></li>
+</ul>
 <h3 style="padding-bottom: 1em;"><a href="http://mongodb.github.io/casbah/api/#com.mongodb.casbah.package">API Documentation</a></h3>
 
 <h3>Formats</h3>

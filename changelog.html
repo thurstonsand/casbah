@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>3. Changelog &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation</title>
+    <title>3. Changelog &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2.6.5',
+        VERSION:     '2.7.0-RC0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation" href="index.html" />
-<link rel="next" title="4. Upgrade" href="upgrade.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation" href="index.html" />
+<link rel="next" title="4. Whats new in Casbah" href="whats_new.html" />
 <link rel="prev" title="2.10. Serialisation" href="guide/serialisation.html" />
 <!-- Put the following javascript before the closing </head> tag. -->
 <script>
@@ -76,27 +76,52 @@
             
   <div class="section" id="changelog">
 <h1>3. Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="changes-in-version-2-7-0">
+<h2>3.1. Changes in Version 2.7.0<a class="headerlink" href="#changes-in-version-2-7-0" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added Collection helper method to support the parallelCollectionScan command (SCALA-139)</li>
+<li>Fixed getAs[Type](&#8220;key&#8221;) to stop invalid casts to Some(value) (SCALA-136)</li>
+<li>Support vargs for getAs[Type](&#8220;keys&#8221;) (SCALA-134)</li>
+<li>Support vargs for as[Type](&#8220;Keys&#8221;) (SCALA-134) (pr/#61)</li>
+<li>Fixed issue with OpLog matching (pr/#63)</li>
+<li>Register the core Serialization helpers only once (SCALA-129)</li>
+<li>Removed scala 2.9.1 and 2.9.2 support, casbah utilises
+<cite>scala.concurrent.duration</cite> which was added in scala 2.9.3</li>
+<li>Updated nscala-time to 0.6.0 and specs</li>
+<li>Added support for Server automatically abort queries/commands after
+user-specified time limit (SCALA-118)</li>
+<li>Added support for Aggregation returning a cursor <cite>AggregationCursor</cite> (SCALA-117)</li>
+<li>Added support for <cite>allowDiskUsage: true</cite> to the top-level of an aggregate
+command with the AggregationOptions helper</li>
+<li>Added support <cite>$out</cite> aggregation pipeline operator (SCALA-130)</li>
+<li>Casbah WriteConcern&#8217;s <cite>valueOf</cite> now returns an Option (SCALA-127)</li>
+<li>Support the use of a different SPN for Kerberos Authentication (SCALA-103)</li>
+<li>Support SASL PLAIN authentication (SCALA-101)</li>
+<li>Support MONGODB-X509 authentication (SCALA-112)</li>
+<li>Updated Mongo Java Driver to 2.12</li>
+</ul>
+</div>
 <div class="section" id="changes-in-version-2-6-5">
-<h2>3.1. Changes in Version 2.6.5<a class="headerlink" href="#changes-in-version-2-6-5" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. Changes in Version 2.6.5<a class="headerlink" href="#changes-in-version-2-6-5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Updated Mongo Java Driver to 2.11.4</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-6-4">
-<h2>3.2. Changes in Version 2.6.4<a class="headerlink" href="#changes-in-version-2-6-4" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. Changes in Version 2.6.4<a class="headerlink" href="#changes-in-version-2-6-4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Updated Scala 2.10 series to 2.10.3</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-6-3">
-<h2>3.3. Changes in Version 2.6.3<a class="headerlink" href="#changes-in-version-2-6-3" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. Changes in Version 2.6.3<a class="headerlink" href="#changes-in-version-2-6-3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed JodaGridFS when registered helpers are on (SCALA-113)</li>
 <li>Updated Mongo Java Driver to 2.11.3</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-6-2">
-<h2>3.4. Changes in Version 2.6.2<a class="headerlink" href="#changes-in-version-2-6-2" title="Permalink to this headline">¶</a></h2>
+<h2>3.5. Changes in Version 2.6.2<a class="headerlink" href="#changes-in-version-2-6-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed MongoClientURI Implicit</li>
 <li>Added support for Joda-Time LocalDate serialisation (SCALA-111, #59)</li>
@@ -108,7 +133,7 @@
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-6-1">
-<h2>3.5. Changes in Version 2.6.1<a class="headerlink" href="#changes-in-version-2-6-1" title="Permalink to this headline">¶</a></h2>
+<h2>3.6. Changes in Version 2.6.1<a class="headerlink" href="#changes-in-version-2-6-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed $pushAll and $pullAll casting of iterables (SCALA-54)</li>
 <li>Fixed MongoCollection string representation (SCALA-96)</li>
@@ -118,14 +143,14 @@
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-6-0">
-<h2>3.6. Changes in Version 2.6.0<a class="headerlink" href="#changes-in-version-2-6-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.7. Changes in Version 2.6.0<a class="headerlink" href="#changes-in-version-2-6-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added suport for GSSAPI SASL mechanism and MongoDB Challenge Response protocol</li>
 <li>Updated support for latest Java driver 2.11.1</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-5-1">
-<h2>3.7. Changes in Version 2.5.1<a class="headerlink" href="#changes-in-version-2-5-1" title="Permalink to this headline">¶</a></h2>
+<h2>3.8. Changes in Version 2.5.1<a class="headerlink" href="#changes-in-version-2-5-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added 2.10.1 support</li>
 <li>Removed reference to scala-tools (SCALA-78)</li>
@@ -137,7 +162,7 @@
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-5-0">
-<h2>3.8. Changes in Version 2.5.0<a class="headerlink" href="#changes-in-version-2-5-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.9. Changes in Version 2.5.0<a class="headerlink" href="#changes-in-version-2-5-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added support for Scala 2.10.0</li>
 <li>Dropped support for Scala 2.9.0</li>
@@ -155,14 +180,14 @@
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-4-1">
-<h2>3.9. Changes in Version 2.4.1<a class="headerlink" href="#changes-in-version-2-4-1" title="Permalink to this headline">¶</a></h2>
+<h2>3.10. Changes in Version 2.4.1<a class="headerlink" href="#changes-in-version-2-4-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed QueryDSL imports for &quot;default&quot; (com.mongodb.casbah.Imports)
+<li>Fixed QueryDSL imports for &#8220;default&#8221; (com.mongodb.casbah.Imports)
 import so that bareword ops like $set and $inc are available.</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-4-0">
-<h2>3.10. Changes in Version 2.4.0<a class="headerlink" href="#changes-in-version-2-4-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.11. Changes in Version 2.4.0<a class="headerlink" href="#changes-in-version-2-4-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Hide BasicDBList; now, getAs and As and related will always return a
 MongoDBList which is a Seq[_]. Enjoy!</li>
@@ -173,9 +198,9 @@ APIs</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-3-0">
-<h2>3.11. Changes in Version 2.3.0<a class="headerlink" href="#changes-in-version-2-3-0" title="Permalink to this headline">¶</a></h2>
-<p>BT/Maven Package change. Casbah is now available in: &quot;org.mongodb&quot; %%
-&quot;casbah&quot; % &quot;2.3.0&quot;</p>
+<h2>3.12. Changes in Version 2.3.0<a class="headerlink" href="#changes-in-version-2-3-0" title="Permalink to this headline">¶</a></h2>
+<p>BT/Maven Package change. Casbah is now available in: &#8220;org.mongodb&#8221; %%
+&#8220;casbah&#8221; % &#8220;2.3.0&#8221;</p>
 <ul class="simple">
 <li>Update mongo-java-driver to 2.8.0 release</li>
 <li>Updated to Mongo Java Driver 2.8.0-RC1</li>
@@ -208,7 +233,7 @@ _id of the created file as Option[AnyRef]</li>
 <li>Backports to casbah-core from 3.0<ul>
 <li>SCALA-70: Removed type alias to com.mongodb.WriteConcern and made
 method args for it explicit, as it was causing a fun post-compile
-(aka &quot;library compiles, user code doesn’t&quot;) implosion.</li>
+(aka &#8220;library compiles, user code doesn’t&#8221;) implosion.</li>
 <li>added socketKeepAlive option</li>
 <li>Fixes SCALA-45: Allow filename and contentType to be nullable</li>
 <li>Retrieving filename or contentType on a GridFS File now returns
@@ -232,7 +257,7 @@ values; should only accept KV Tuple Pairs or DBObjects returned
 from Core Operators<ul>
 <li>Complete test suites for $and and $nor although they need to be
 updated to more appropriate contextual examples rather than
-just &quot;compiles properly&quot;</li>
+just &#8220;compiles properly&#8221;</li>
 <li>New code logic, fixed $or, $and and $nor for proper nested list
 operations</li>
 <li>New :: list cons operator on MongoDBObject to create
@@ -259,7 +284,7 @@ DBObject, from factory, builder and put methods.</li>
 objects</li>
 <li>As part of above, you should get seq-like objects back from
 MongoDBList builders &amp; factories instead of the previous
-BasicDBList; this is part of attempting to &quot;Hide&quot; DBList and let
+BasicDBList; this is part of attempting to &#8220;Hide&#8221; DBList and let
 people work with List/Seq</li>
 <li>SCALA-69: Immediately upon saving any None’s will be converted to
 null inside the DBObject for proper fetching later.</li>
@@ -275,7 +300,7 @@ casting ( as, getAs, getAsOrElse ) are not Nothing</li>
 </ul>
 </li>
 <li>Backport Test Helpers<ul>
-<li>New MongoDB &quot;smart&quot; test helpers for Specs2 and ScalaTest (Thanks
+<li>New MongoDB &#8220;smart&#8221; test helpers for Specs2 and ScalaTest (Thanks
 Bill Venners for the latter)</li>
 </ul>
 </li>
@@ -283,7 +308,7 @@ Bill Venners for the latter)</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-1-5-0">
-<h2>3.12. Changes in Version 2.1.5.0<a class="headerlink" href="#changes-in-version-2-1-5-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.13. Changes in Version 2.1.5.0<a class="headerlink" href="#changes-in-version-2-1-5-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added support for Scala 2.9.0-1 … As this is a critical fix release
 against 2.9.0.final, 2.9.0.final is not supported. (Note that SBT,
@@ -293,7 +318,7 @@ supports Scala 2.8.0; all future releases will require Scala 2.8.1+
 (See <a class="reference external" href="http://groups.google.com/group/mongodb-casbah-users/browse_thread/thread/faea8dbd5f90aa25">2.8.0 EOL Announcement</a>)</li>
 <li>[2.9.0 only] Adjusted dynamic settings to build against 2.9.0-1 and
 Casbah 2.1.5.0</li>
-<li>[2.9.0 only] Prototype &quot;Dynamic&quot; module (You must enable Scala’s
+<li>[2.9.0 only] Prototype &#8220;Dynamic&#8221; module (You must enable Scala’s
 support for Dynamic)</li>
 <li>[2.9.0 only] I seem to have missed project files for SBT and
 casbah-dynamic</li>
@@ -303,19 +328,19 @@ solidly on 2.9.0-1</li>
 specs1. These are fixed for the upcoming 2.2. release on specs2; they
 are test bugs rather than Casbah bugs.</li>
 <li>RegEx <cite>not was just flat out wrong - was producing
-{&quot;foo&quot;: {&quot;foo&quot;: /&lt;regex&gt;/}} instead of {&quot;foo&quot;: {&quot;</cite>not&quot;:{//}}</li>
+{&#8220;foo&#8221;: {&#8220;foo&#8221;: /&lt;regex&gt;/}} instead of {&#8220;foo&#8221;: {&#8220;</cite>not&#8221;:{//}}</li>
 <li>Added a getAsOrElse method</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-1-0">
-<h2>3.13. Changes in Version 2.1.0<a class="headerlink" href="#changes-in-version-2-1-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.14. Changes in Version 2.1.0<a class="headerlink" href="#changes-in-version-2-1-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>SCALA-22 Added a dropTarget boolean option to rename collection,
 which specifies behavior if named target collection already exists,
 proxies JAVA-238</li>
 <li>Removed resetIndexCache, which has also been removed from the Java
 Driver</li>
-<li>SCALA-21 Added &quot;set metadata&quot; method to match Java Driver (See
+<li>SCALA-21 Added &#8220;set metadata&#8221; method to match Java Driver (See
 Java-261)</li>
 <li>SCALA-20 Updated to Java Driver 2.5<ul>
 <li>See Release Notes:
@@ -360,14 +385,14 @@ MapReduce logic</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-0-2">
-<h2>3.14. Changes in Version 2.0.2<a class="headerlink" href="#changes-in-version-2-0-2" title="Permalink to this headline">¶</a></h2>
+<h2>3.15. Changes in Version 2.0.2<a class="headerlink" href="#changes-in-version-2-0-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed the MongoDBOBject ‘as’ operator to return the proper type,
 instead of Any. (philwills)</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-2-0-1">
-<h2>3.15. Changes in Version 2.0.1<a class="headerlink" href="#changes-in-version-2-0-1" title="Permalink to this headline">¶</a></h2>
+<h2>3.16. Changes in Version 2.0.1<a class="headerlink" href="#changes-in-version-2-0-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>SCALA-16: Added a few additional validation tests against getAs and
 as on MongoDBObject</li>
@@ -376,7 +401,7 @@ test passes</li>
 </ul>
 </div>
 <div class="section" id="version-2-0-2011-01-03">
-<h2>3.16. Version 2.0 / 2011-01-03<a class="headerlink" href="#version-2-0-2011-01-03" title="Permalink to this headline">¶</a></h2>
+<h2>3.17. Version 2.0 / 2011-01-03<a class="headerlink" href="#version-2-0-2011-01-03" title="Permalink to this headline">¶</a></h2>
 <p>Notable Changes since Casbah 1.0.8.1:</p>
 <ul class="simple">
 <li>Ownership Change: Casbah is now an officially supported MongoDB
@@ -447,7 +472,7 @@ DBCursor</li>
 Collection</li>
 </ul>
 </li>
-<li>Added &quot;safely&quot; resource loaning methods on Collection &amp; DB<ul>
+<li>Added &#8220;safely&#8221; resource loaning methods on Collection &amp; DB<ul>
 <li>Given an operation, uses write concern / durability on a single
 connection and throws an exception if anything goes wrong.</li>
 </ul>
@@ -465,7 +490,7 @@ MongoDBObjectBuilder$anon1 which was FUBAR</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-1-0-7-4">
-<h2>3.17. Changes in Version 1.0.7.4<a class="headerlink" href="#changes-in-version-1-0-7-4" title="Permalink to this headline">¶</a></h2>
+<h2>3.18. Changes in Version 1.0.7.4<a class="headerlink" href="#changes-in-version-1-0-7-4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed some issues w/ GridFS libraries attempting to call toMap in
 iteration, which isn’t implemented on the Java side; added custom
@@ -478,7 +503,7 @@ AnyRef for good Scala coding practices [BWM]</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-1-0-7">
-<h2>3.18. Changes in Version 1.0.7<a class="headerlink" href="#changes-in-version-1-0-7" title="Permalink to this headline">¶</a></h2>
+<h2>3.19. Changes in Version 1.0.7<a class="headerlink" href="#changes-in-version-1-0-7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Updated reference to Configgy to have a Scala version attached; this
 was causing issues on some mixed-version users’ systems.</li>
@@ -489,16 +514,16 @@ were just plain a bad idea.</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-1-0-5">
-<h2>3.19. Changes in Version 1.0.5<a class="headerlink" href="#changes-in-version-1-0-5" title="Permalink to this headline">¶</a></h2>
+<h2>3.20. Changes in Version 1.0.5<a class="headerlink" href="#changes-in-version-1-0-5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Due to oddities and ambiguities, stripped the type parameter apply[A]
 method from MongoDBObject. If you want a cast return, please use
 MongoDBObject.getAs[A]. This should minimize odd runtime failures.</li>
 <li>Added toplevel detection in MongoDBObject’s +=/put methods to try and
 convert a MongoDBObject value to DBObject for you.</li>
-<li>Added &quot;Product&quot; arguments to $pushAll - this means you can pass a
+<li>Added &#8220;Product&#8221; arguments to $pushAll - this means you can pass a
 Tuple-style list, where previously it required an Iterable ( $pushAll
-(&quot;foo&quot; -&gt; (5, 10, 23, &quot;spam&quot;, eggs&quot;) should now work).</li>
+(&#8220;foo&#8221; -&gt; (5, 10, 23, &#8220;spam&#8221;, eggs&#8221;) should now work).</li>
 <li>Updated to scalaj-collection 1.0 release, built against 2.8.0 final</li>
 <li>Added a new ScalaJ-Collection based Deserializer and Serializer
 layer. All base types supported by ScalaJ collection now use asJava /
@@ -515,7 +540,7 @@ linked from Github page.</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-1-0-2">
-<h2>3.20. Changes in Version 1.0.2<a class="headerlink" href="#changes-in-version-1-0-2" title="Permalink to this headline">¶</a></h2>
+<h2>3.21. Changes in Version 1.0.2<a class="headerlink" href="#changes-in-version-1-0-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Changed $in, $notin, $all to always generate an array in Any* mode</li>
 <li>Added default type alias import for com.mongodb.DBRef &amp; Casbah’s
@@ -523,7 +548,7 @@ MongoDB class</li>
 </ul>
 </div>
 <div class="section" id="changes-in-version-1-0-1">
-<h2>3.21. Changes in Version 1.0.1<a class="headerlink" href="#changes-in-version-1-0-1" title="Permalink to this headline">¶</a></h2>
+<h2>3.22. Changes in Version 1.0.1<a class="headerlink" href="#changes-in-version-1-0-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Updated externals to link against 2.8.0 final - 1.0 release had some
 RC/Beta built externals. (scalaj-collection is still linked against
@@ -536,7 +561,7 @@ objects - please report any odd behavior this causes.</li>
 </ul>
 </div>
 <div class="section" id="version-1-0">
-<h2>3.22. Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this headline">¶</a></h2>
+<h2>3.23. Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>GridFS enhanced via Loan Pattern</li>
 <li>Full support for MongoDB Query operators via fluid syntax (now with
@@ -552,7 +577,7 @@ Builder pattern, +=, etc.</li>
 <div id="btnv">
 <ul id="btnvl">
 <li id="btnvpr"><a href="guide/serialisation.html" title="Previous Section: 2.10. Serialisation">&lt; &nbsp; 2.10. Serialisation</a></li>
-<li id="btnvnx"><a href="upgrade.html" title="Next Section: 4. Upgrade">4. Upgrade &nbsp;&gt;</a></li>
+<li id="btnvnx"><a href="whats_new.html" title="Next Section: 4. Whats new in Casbah">4. Whats new in Casbah &nbsp;&gt;</a></li>
 </ul>
 </div>
 </div>
@@ -565,6 +590,15 @@ Builder pattern, +=, etc.</li>
 
 </h3>
 
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">1. Tutorial: Using Casbah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide/index.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. Changelog</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">4. Whats new in Casbah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">5. Upgrade</a></li>
+</ul>
 <h3 style="padding-bottom: 1em;"><a href="http://mongodb.github.io/casbah/api/#com.mongodb.casbah.package">API Documentation</a></h3>
 
 <h3>Formats</h3>

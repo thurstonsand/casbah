@@ -188,7 +188,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="FluidQueryBarewordOps.html"><span class="name">FluidQueryBarewordOps</span></a><span class="result"> extends SetOp with SetOnInsertOp with UnsetOp with IncOp with OrOp with AndOp with RenameOp with ArrayOps with NorOp with BitOp with WhereOp</span>
+        <a href="FluidQueryBarewordOps.html"><span class="name">FluidQueryBarewordOps</span></a><span class="result"> extends SetOp with SetOnInsertOp with UnsetOp with IncOp with OrOp with AndOp with RenameOp with ArrayOps with NorOp with BitOp with WhereOp with SearchOp</span>
       </span>
       </h4>
       <p class="comment cmt">Aggregation object for Bareword Operators.</p>
@@ -200,7 +200,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="FluidQueryOperators.html"><span class="name">FluidQueryOperators</span></a><span class="result"> extends EqualsOp with NotEqualsOp with LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with InOp with NotInOp with ModuloOp with SizeOp with ExistsOp with AllOp with NotOp with SliceOp with TypeOp with ElemMatchOp with GeospatialOps</span>
+        <a href="FluidQueryOperators.html"><span class="name">FluidQueryOperators</span></a><span class="result"> extends EqualsOp with NotEqualsOp with LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with InOp with NotInOp with ModuloOp with SizeOp with ExistsOp with AllOp with NotOp with SliceOp with TypeOp with RegexOp with ElemMatchOp with GeospatialOps with MetaProjectionOp</span>
       </span>
       </h4>
       <p class="comment cmt">Mixed trait which provides all possible
@@ -350,6 +350,18 @@ operators.</p>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $lt (Less Than) method on appropriate callers.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.MetaProjectionOp" data-isabs="true">
+      <a id="MetaProjectionOp:MetaProjectionOp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MetaProjectionOp.html"><span class="name">MetaProjectionOp</span></a><span class="result"> extends QueryOperator</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Trait providing a projection / sort helper for use with text search</p>
     </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ModuloOp" data-isabs="true">
       <a id="ModuloOp:ModuloOp"></a>
       <h4 class="signature">
@@ -520,6 +532,18 @@ operators.</p>
       <p class="comment cmt">Base trait for QueryOperators, children
 are required to define a value for field, which is a String
 and refers to the left-hand of the Query (e.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.RegexOp" data-isabs="true">
+      <a id="RegexOp:RegexOp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RegexOp.html"><span class="name">RegexOp</span></a><span class="result"> extends QueryOperator</span>
+      </span>
+      </h4>
+      <p class="comment cmt">$regex operator to query by type.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.RenameOp" data-isabs="true">
       <a id="RenameOp:RenameOp"></a>
       <h4 class="signature">
@@ -532,6 +556,18 @@ and refers to the left-hand of the Query (e.</p>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $rename (Rename field) as a bareword operator</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SearchOp" data-isabs="true">
+      <a id="SearchOp:SearchOp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SearchOp.html"><span class="name">SearchOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Trait to provide the $text search method on appropriate callers</p>
     </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SetOnInsertOp" data-isabs="true">
       <a id="SetOnInsertOp:SetOnInsertOp"></a>
       <h4 class="signature">
@@ -613,7 +649,7 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ValueTestFluidQueryOperators.html"><span class="name">ValueTestFluidQueryOperators</span></a><span class="result"> extends LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with ModuloOp with SizeOp with AllOp with NotEqualsOp with TypeOp</span>
+        <a href="ValueTestFluidQueryOperators.html"><span class="name">ValueTestFluidQueryOperators</span></a><span class="result"> extends LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with ModuloOp with SizeOp with AllOp with NotEqualsOp with TypeOp with RegexOp</span>
       </span>
       </h4>
       
@@ -629,18 +665,6 @@ bareword operator.</p>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $where (Where) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.regexOp" data-isabs="true">
-      <a id="regexOp:regexOp"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="regexOp.html"><span class="name">regexOp</span></a><span class="result"> extends QueryOperator</span>
-      </span>
-      </h4>
-      <p class="comment cmt">$regex operator to query by type.</p>
     </li></ol>
             </div>
 

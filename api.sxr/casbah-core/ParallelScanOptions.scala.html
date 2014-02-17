@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>ParallelScanOptions.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/**
+ * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * For questions and comments about this product, please see the project page at:
+ *
+ * http://github.com/mongodb/casbah
+ *
+ */</span>
+
+<span class="keyword">package</span> com.mongodb.casbah
+
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
+
+<span class="comment">/**
+ * The options to use for a parallel collection scan.
+ *
+ * @since 2.7
+ * @see com.mongodb.ParallelScanOptions
+ */</span>
+<span class="keyword">object</span> <a title="object com.mongodb.casbah.ParallelScanOptions" id="42124">ParallelScanOptions</a> <span title="ScalaObject" class="delimiter">{</span>
+
+  <span class="comment">/**
+   * Helper to build the parallel scan options.
+   *
+   * @param numCursors The number of cursors to return, must be greater than 0
+   * @param batchSize The cursor batch size, must be greater than 0
+   * @param readPreference A read preference.
+   */</span>
+  <span class="keyword">def</span> <a title="(numCursors: Int, batchSize: Int, readPreference: com.mongodb.casbah.Imports.ReadPreference)Unit" id="30773">apply</a><span class="delimiter">(</span><a title="Int" id="42074">numCursors</a>: <span title="Int">Int</span>, <a title="Int" id="42075">batchSize</a>: <span title="Int">Int</span>, <a title="com.mongodb.casbah.Imports.ReadPreference" id="42076">readPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span> <span class="delimiter">{</span>
+    <a href="#42170" title="(numCursors: Int, batchSize: Int, readPreference: Option[com.mongodb.casbah.Imports.ReadPreference])com.mongodb.casbah.ParallelScanOptions">ParallelScanOptions</a><span title="Unit" class="delimiter">(</span><a href="#42074" title="Int">numCursors</a>, <a href="#42075" title="Int">batchSize</a>, <span title="(x: com.mongodb.casbah.Imports.ReadPreference)Some[com.mongodb.casbah.Imports.ReadPreference]">Some</span><span class="delimiter">(</span><a href="#42076" title="com.mongodb.casbah.Imports.ReadPreference">readPreference</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="delimiter">}</span>
+<span class="delimiter">}</span>
+
+<span class="comment">/**
+ * The options to use for a parallel collection scan.
+ *
+ * @param numCursors The number of cursors to return, must be greater than 0
+ * @param batchSize The cursor batch size, must be greater than 0
+ * @param readPreference The optional read preference.
+ * @since 2.7
+ * @see com.monogdb.ParallelScanOptions
+ */</span>
+case <span class="keyword">class</span> <a title="(x$0: com.mongodb.casbah.ParallelScanOptions)Option[(Int, Int, Option[com.mongodb.casbah.Imports.ReadPreference])]" id="42170">ParallelScanOptions</a><a href="#42170" title="ScalaObject" class="delimiter">(</a><a title="Int" id="42133">numCursors</a>: <span title="Int">Int</span>, <a title="Int" id="42134">batchSize</a>: <span title="Int">Int</span>, <a title="=&gt; Option[com.mongodb.casbah.Imports.ReadPreference]" id="42135">readPreference</a>: <span title="Option[com.mongodb.casbah.Imports.ReadPreference]">Option</span><span class="delimiter">[</span>ReadPreference<span class="delimiter">]</span> = <span title="object None">None</span><span class="delimiter">)</span>
+
+        </pre>
+    </body>
+</html>

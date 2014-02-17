@@ -30,7 +30,7 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Wrapper for the Mongo <code>DB</code> object providing scala-friendly functionality.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/MongoDB.scala.html">MongoDB.scala</a></dd><dt>Since</dt><dd><p>1.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>com.mongodb.DB
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/MongoDB.scala.html">MongoDB.scala</a></dd><dt>Since</dt><dd><p>1.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>com.mongodb.DB
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -163,7 +163,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addUser</span><span class="params">(<span name="username">username: String</span>, <span name="passwd">passwd: String</span>)</span><span class="result">: <span name="com.mongodb.WriteResult" class="extype">WriteResult</span></span>
+        <span class="name">addUser</span><span class="params">(<span name="username">username: String</span>, <span name="passwd">passwd: String</span>)</span><span class="result">: WriteResult</span>
       </span>
       </h4>
       
@@ -198,21 +198,6 @@ instead of getCollection
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#authenticate" data-isabs="false">
-      <a id="authenticate(String,String):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">authenticate</span><span class="params">(<span name="username">username: String</span>, <span name="passwd">passwd: String</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt"> Authenticates connection/db with given name and password
-</p><div class="fullcomment"><div class="comment cmt"><p> Authenticates connection/db with given name and password
-</p></div><dl class="paramcmts block"><dt class="param">username</dt><dd class="cmt"><p>name of user for this database</p></dd><dt class="param">passwd</dt><dd class="cmt"><p>password of user for this database</p></dd><dt>returns</dt><dd class="cmt"><p>true if authenticated, false otherwise
-</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#checkedWrite" data-isabs="false">
       <a id="checkedWrite((MongoDB) ⇒ WriteResult):Unit"></a>
       <h4 class="signature">
@@ -254,18 +239,31 @@ instead of getCollection
       <p class="shortcomment cmt">Checks to see if a collection by name %lt;name&gt; exists.</&gt;</p><div class="fullcomment"><div class="comment cmt"><p>Checks to see if a collection by name %lt;name&gt; exists.</p></div><dl class="paramcmts block"><dt class="param">collectionName</dt><dd class="cmt"><p>The collection to test for existence</p></dd><dt>returns</dt><dd class="cmt"><p>false if no collection by that name exists, true if a match to an existing collection was found
 </p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#collectionNames" data-isabs="false">
-      <a id="collectionNames:Set[String]"></a>
+      <a id="collectionNames():Set[String]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">collectionNames</span><span class="result">: <span name="scala.collection.mutable.Set" class="extype">Set</span>[<span name="java.lang.String" class="extype">String</span>]</span>
+        <span class="name">collectionNames</span><span class="params">()</span><span class="result">: <span name="scala.collection.mutable.Set" class="extype">Set</span>[String]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a set of the names of collections in this database.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a set of the names of collections in this database.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the names of collections in this database
 </p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#command" data-isabs="false">
+      <a id="command(DBObject,Int,ReadPreference):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">command</span><span class="params">(<span name="cmd">cmd: DBObject</span>, <span name="options">options: <span name="scala.Int" class="extype">Int</span></span>, <span name="pref">pref: ReadPreference</span>)</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Execute a database command directly.</p><div class="fullcomment"><div class="comment cmt"><p>Execute a database command directly.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of the command from the database
+</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands">List of Commands</a></p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#command" data-isabs="false">
       <a id="command(DBObject,Int):CommandResult"></a>
       <h4 class="signature">
@@ -348,7 +346,7 @@ Possible options:
         <span class="name">dropDatabase</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"> Drops this database.</p><div class="fullcomment"><div class="comment cmt"><p> Drops this database.  Removes all data on disk.  Use with caution.
+      <p class="shortcomment cmt">Drops this database.</p><div class="fullcomment"><div class="comment cmt"><p>Drops this database.  Removes all data on disk.  Use with caution.
 </p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
@@ -412,7 +410,7 @@ Possible options:
         <span class="name">forceError</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"> For testing purposes only - this method forces an error to help test error handling
+      <p class="shortcomment cmt">For testing purposes only - this method forces an error to help test error handling
 </p>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
@@ -461,7 +459,7 @@ If the collection does not exist, a new collection is created.</p></div><dl clas
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getCollectionNames</span><span class="params">()</span><span class="result">: <span name="scala.collection.mutable.Set" class="extype">Set</span>[<span name="java.lang.String" class="extype">String</span>]</span>
+        <span class="name">getCollectionNames</span><span class="params">()</span><span class="result">: <span name="scala.collection.mutable.Set" class="extype">Set</span>[String]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a set of the names of collections in this database.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a set of the names of collections in this database.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the names of collections in this database
@@ -501,34 +499,34 @@ If the collection does not exist, a new collection is created.</p></div><dl clas
         <span class="name">getLastError</span><span class="params">()</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"> Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p> Gets the the error (if there is one) from the previous operation.  The result of
- this command will look like</p><p><pre>
+      <p class="shortcomment cmt">Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the the error (if there is one) from the previous operation.  The result of
+this command will look like</p><p><pre>
 { "err" :  errorMessage  , "ok" : 1.0 }
 </pre></p><p>The value for errorMessage will be null if no error occurred, or a description otherwise.</p><p>Care must be taken to ensure that calls to getLastError go to the same connection as that
 of the previous operation. See com.mongodb.Mongo.requestStart for more information.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information
 </p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#getName" data-isabs="false">
-      <a id="getName():String"></a>
+      <a id="getName:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getName</span><span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">getName</span><span class="result">: String</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#getOptions" data-isabs="false">
-      <a id="getOptions():Int"></a>
+      <a id="getOptions:Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getOptions</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="name">getOptions</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Manipulate Network Options
@@ -543,12 +541,12 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getReadPreference</span><span class="result">: <span name="com.mongodb.ReadPreference" class="extype">ReadPreference</span></span>
+        <span class="name">getReadPreference</span><span class="result">: ReadPreference</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Gets the read preference for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the read preference for this database. Will be used as default for
 reads from any collection in this database. See the
-documentation for <code> ReadPreference</code> for more information.
+documentation for com.mongodb.ReadPreference for more information.
 </p></div></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#getSisterDB" data-isabs="false">
       <a id="getSisterDB(String):MongoDB"></a>
@@ -582,15 +580,15 @@ documentation for <code> ReadPreference</code> for more information.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getWriteConcern</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+        <span class="name">getWriteConcern</span><span class="result">: WriteConcern</span>
       </span>
       </h4>
       <p class="shortcomment cmt">get the write concern for this database,
 which is used for writes to any collection in this database.</p><div class="fullcomment"><div class="comment cmt"><p>get the write concern for this database,
 which is used for writes to any collection in this database.
-See the documentation for <code> WriteConcern</code> for more info.
-</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
-</p></span>, <span class="cmt"><p>WriteConcern</p></span></dd></dl></div>
+See the documentation for com.mongodb.WriteConcern for more info.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>WriteConcern
+</p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -603,21 +601,6 @@ See the documentation for <code> WriteConcern</code> for more info.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#isAuthenticated" data-isabs="false">
-      <a id="isAuthenticated:Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isAuthenticated</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns true if this DB is authenticated
-</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if this DB is authenticated
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if authenticated, false otherwise
-</p></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -681,7 +664,7 @@ See the documentation for <code> WriteConcern</code> for more info.
 Additionally, it returns ZERO information about the actual results of the mapreduce,
 just a cursor to the result collection.
 This is less than ideal.  So I've wrapped it in something more useful.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>MapReduceResult a wrapped result object.  This contains the returns success, counts etc, but implements iterator and can be iterated directly
+</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>An instance of MapReduceCommand representing the required MapReduce</p></dd><dt>returns</dt><dd class="cmt"><p>MapReduceResult a wrapped result object.  This contains the returns success, counts etc, but implements iterator and can be iterated directly
 </p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#name" data-isabs="false">
       <a id="name:String"></a>
@@ -691,7 +674,7 @@ This is less than ideal.  So I've wrapped it in something more useful.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">name</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">name</span><span class="result">: String</span>
       </span>
       </h4>
       
@@ -746,21 +729,6 @@ This is less than ideal.  So I've wrapped it in something more useful.
 </p><div class="fullcomment"><div class="comment cmt"><p>Manipulate Network Options
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>com.mognodb.Bytes
 </p></span>, <span class="cmt"><p>com.mongodb.Mongo</p></span></dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#readOnly_=" data-isabs="false">
-      <a id="readOnly_=(Boolean):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name" title="gt4s: readOnly_$eq">readOnly_=</span><span class="params">(<span name="b">b: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Makes this database read-only
-</p><div class="fullcomment"><div class="comment cmt"><p>Makes this database read-only
-</p></div><dl class="paramcmts block"><dt class="param">b</dt><dd class="cmt"><p>if the database should be read-only
-</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#readPreference" data-isabs="false">
       <a id="readPreference:ReadPreference"></a>
       <h4 class="signature">
@@ -769,12 +737,12 @@ This is less than ideal.  So I've wrapped it in something more useful.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">readPreference</span><span class="result">: <span name="com.mongodb.ReadPreference" class="extype">ReadPreference</span></span>
+        <span class="name">readPreference</span><span class="result">: ReadPreference</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Gets the read preference for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the read preference for this database. Will be used as default for
 reads from any collection in this database. See the
-documentation for <code> ReadPreference</code> for more information.
+documentation for com.mongodb.ReadPreference for more information.
 </p></div></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#readPreference_=" data-isabs="false">
       <a id="readPreference_=(ReadPreference):Unit"></a>
@@ -802,8 +770,8 @@ documentation for <code> ReadPreference</code> for more information.
       <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
 If  you run multiple ops you'll only get the final
 error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+return type of any mongo write operation like insert/save/upd§ate/remove
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#request" data-isabs="false">
       <a id="request(Int,Int,Boolean)((MongoDB) ⇒ WriteResult):Unit"></a>
@@ -820,7 +788,7 @@ return type of any mongo write operation like insert/save/update/remove
 If  you run multiple ops you'll only get the final
 error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
 return type of any mongo write operation like insert/save/update/remove
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#request" data-isabs="false">
       <a id="request((MongoDB) ⇒ WriteResult):Unit"></a>
@@ -838,7 +806,7 @@ If  you run multiple ops you'll only get the final
 error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
 return type of any mongo write operation like insert/save/update/remove</p><p>If you have set a connection or DB level WriteConcern,
 it will be inherited.
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#requestDone" data-isabs="false">
       <a id="requestDone():Unit"></a>
@@ -891,21 +859,6 @@ it will be inherited.
 </p><div class="fullcomment"><div class="comment cmt"><p>Manipulate Network Options
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>com.mongodb.Bytes
 </p></span>, <span class="cmt"><p>com.mongodb.Mongo</p></span></dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#setReadOnly" data-isabs="false">
-      <a id="setReadOnly(Boolean):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">setReadOnly</span><span class="params">(<span name="b">b: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Makes this database read-only
-</p><div class="fullcomment"><div class="comment cmt"><p>Makes this database read-only
-</p></div><dl class="paramcmts block"><dt class="param">b</dt><dd class="cmt"><p>if the database should be read-only
-</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#setReadPreference" data-isabs="false">
       <a id="setReadPreference(ReadPreference):Unit"></a>
       <h4 class="signature">
@@ -919,8 +872,9 @@ it will be inherited.
       </h4>
       <p class="shortcomment cmt">Sets the read preference for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the read preference for this database. Will be used as default for
 reads from any collection in this database. See the
-documentation for <code> ReadPreference</code> for more information.
-</p></div></div>
+documentation for com.mongodb.ReadPreference for more information.
+</p></div><dl class="paramcmts block"><dt class="param">pref</dt><dd class="cmt"><p>Read Preference to use
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#setWriteConcern" data-isabs="false">
       <a id="setWriteConcern(WriteConcern):Unit"></a>
       <h4 class="signature">
@@ -934,18 +888,18 @@ documentation for <code> ReadPreference</code> for more information.
       </h4>
       <p class="shortcomment cmt">Set the write concern for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Set the write concern for this database.
 Will be used for writes to any collection in this database.
-See the documentation for <code> WriteConcern</code> for more info.
+See the documentation for com.mongodb.WriteConcern for more info.
 </p></div><dl class="paramcmts block"><dt class="param">concern</dt><dd class="cmt"><p>(WriteConcern) The write concern to use</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
 </p></span>, <span class="cmt"><p>WriteConcern</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#stats" data-isabs="false">
-      <a id="stats:CommandResult"></a>
+      <a id="stats():CommandResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stats</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
+        <span class="name">stats</span><span class="params">()</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
       </span>
       </h4>
       
@@ -969,7 +923,7 @@ See the documentation for <code> WriteConcern</code> for more info.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: String</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoDB" class="extype" href="">MongoDB</a> → AnyRef → Any</dd></dl></div>
@@ -1038,13 +992,13 @@ See the documentation for <code> WriteConcern</code> for more info.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">writeConcern</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+        <span class="name">writeConcern</span><span class="result">: WriteConcern</span>
       </span>
       </h4>
       <p class="shortcomment cmt">get the write concern for this database,
 which is used for writes to any collection in this database.</p><div class="fullcomment"><div class="comment cmt"><p>get the write concern for this database,
 which is used for writes to any collection in this database.
-See the documentation for <code> WriteConcern</code> for more info.
+See the documentation for com.mongodb.WriteConcern for more info.
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
 </p></span>, <span class="cmt"><p>WriteConcern</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#writeConcern_=" data-isabs="false">
@@ -1060,7 +1014,7 @@ See the documentation for <code> WriteConcern</code> for more info.
       </h4>
       <p class="shortcomment cmt">Set the write concern for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Set the write concern for this database.
 Will be used for writes to any collection in this database.
-See the documentation for <code> WriteConcern</code> for more info.
+See the documentation for com.mongodb.WriteConcern for more info.
 </p></div><dl class="paramcmts block"><dt class="param">concern</dt><dd class="cmt"><p>(WriteConcern) The write concern to use</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
 </p></span>, <span class="cmt"><p>WriteConcern</p></span></dd></dl></div>
     </li></ol>
@@ -1068,7 +1022,25 @@ See the documentation for <code> WriteConcern</code> for more info.
 
         <div class="values members" id="values">
               <h3>Deprecated Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.MongoDB#getPreviousError" data-isabs="false">
+              <ol><li visbl="pub" name="com.mongodb.casbah.MongoDB#authenticate" data-isabs="false">
+      <a id="authenticate(String,String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient to create a client, which will authenticate all connections to server.">authenticate</span><span class="params">(<span name="username">username: String</span>, <span name="passwd">passwd: String</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Authenticates connection/db with given name and password
+</p><div class="fullcomment"><div class="comment cmt"><p>Authenticates connection/db with given name and password
+</p></div><dl class="paramcmts block"><dt class="param">username</dt><dd class="cmt"><p>name of user for this database</p></dd><dt class="param">passwd</dt><dd class="cmt"><p>password of user for this database</p></dd><dt>returns</dt><dd class="cmt"><p>true if authenticated, false otherwise
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Please use MongoClient to create a client, which will authenticate all connections to server.</p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#getPreviousError" data-isabs="false">
       <a id="getPreviousError():CommandResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1076,16 +1048,55 @@ See the documentation for <code> WriteConcern</code> for more info.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: The getPreviousError() and resetError() commands are deprecated and may be removed in future versions of MongoDB">getPreviousError</span><span class="params">()</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) may be removed in future versions of MongoDB">getPreviousError</span><span class="params">()</span><span class="result">: <span name="com.mongodb.CommandResult" class="extype">CommandResult</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"> Returns the last error that occurred since start of database or a call to <code>resetError()</code></p><div class="fullcomment"><div class="comment cmt"><p> Returns the last error that occurred since start of database or a call to <code>resetError()</code></p><p> The return object will look like</p><p><pre>
+      <p class="shortcomment cmt">Returns the last error that occurred since start of database or a call to <code>resetError()</code></p><div class="fullcomment"><div class="comment cmt"><p>Returns the last error that occurred since start of database or a call to <code>resetError()</code></p><p>The return object will look like</p><p><pre>
 { err : errorMessage, nPrev : countOpsBack, ok : 1 }
 </pre></p><p>The value for errormMessage will be null of no error has ocurred, or the message.  The value of
 countOpsBack will be the number of operations since the error occurred.</p><p>Care must be taken to ensure that calls to getPreviousError go to the same connection as that
 of the previous operation. See com.mongodb.Mongo.requestStart for more information.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information
-</p></dd></dl><dl class="attributes block"> <dt>Deprecated</dt><dd class="cmt"><p>The getPreviousError() and resetError() commands are deprecated and may be removed in future versions of MongoDB</p></dd></dl></div>
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> may be removed in future versions of MongoDB</p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#isAuthenticated" data-isabs="false">
+      <a id="isAuthenticated:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) Use MongoClient to create an authenticated connection.">isAuthenticated</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns true if this DB is authenticated
+</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if this DB is authenticated
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if authenticated, false otherwise
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Use MongoClient to create an authenticated connection.</p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#readOnly_=" data-isabs="false">
+      <a id="readOnly_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="gt4s: readOnly_$eq. Deprecated: (Since version 2.7) Avoid making database read-only via this method. Use a read-only user with MongoClient instead.">readOnly_=</span><span class="params">(<span name="b">b: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Makes this database read-only
+</p><div class="fullcomment"><div class="comment cmt"><p>Makes this database read-only
+</p></div><dl class="paramcmts block"><dt class="param">b</dt><dd class="cmt"><p>if the database should be read-only
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Avoid making database read-only via this method. Use a read-only user with MongoClient instead.</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#resetError" data-isabs="false">
       <a id="resetError():Unit"></a>
       <h4 class="signature">
@@ -1094,14 +1105,33 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: The getPreviousError() and resetError() commands are deprecated and may be removed in future versions of MongoDB
-">resetError</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) may be removed in future versions of MongoDB">resetError</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"> Resets the error memory for this database.</p><div class="fullcomment"><div class="comment cmt"><p> Resets the error memory for this database.  Used to clear all errors such that getPreviousError()
- will return no error.
-</p></div><dl class="attributes block"> <dt>Deprecated</dt><dd class="cmt"><p>The getPreviousError() and resetError() commands are deprecated and may be removed in future versions of MongoDB
-</p></dd></dl></div>
+      <p class="shortcomment cmt">Resets the error memory for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Resets the error memory for this database.  Used to clear all errors such that getPreviousError()
+will return no error.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> may be removed in future versions of MongoDB</p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#setReadOnly" data-isabs="false">
+      <a id="setReadOnly(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) Avoid making database read-only via this method. Use a read-only user with MongoClient instead.">setReadOnly</span><span class="params">(<span name="b">b: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Makes this database read-only
+</p><div class="fullcomment"><div class="comment cmt"><p>Makes this database read-only
+</p></div><dl class="paramcmts block"><dt class="param">b</dt><dd class="cmt"><p>if the database should be read-only
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Avoid making database read-only via this method. Use a read-only user with MongoClient instead.</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoDB#slaveOk" data-isabs="false">
       <a id="slaveOk():Unit"></a>
       <h4 class="signature">
@@ -1110,13 +1140,14 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 2.3.0) Replaced with ReadPreference.SECONDARY">slaveOk</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.3.0) Replaced with ReadPreference.SECONDARY.">slaveOk</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Sets queries to be OK to run on slave nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Sets queries to be OK to run on slave nodes.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Sets queries to be OK to run on slave nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Sets queries to be OK to run on slave nodes.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with ReadPreference.SECONDARY</p></dd></dl></div>
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with ReadPreference.SECONDARY.</p></dd></dl></div>
     </li></ol>
             </div>
         </div>

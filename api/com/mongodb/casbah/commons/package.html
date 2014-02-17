@@ -116,7 +116,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBList.html"><span class="name">MongoDBList</span></a><span class="result"> extends Seq[Any]</span>
+        <a href="MongoDBList.html"><span class="name">MongoDBList</span></a><span class="result"> extends Seq[Any] with Castable</span>
       </span>
       </h4>
       
@@ -140,10 +140,10 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBObject.html"><span class="name">MongoDBObject</span></a><span class="result"> extends Map[String, AnyRef] with MapLike[String, AnyRef, MongoDBObject] with Logging</span>
+        <a href="MongoDBObject.html"><span class="name">MongoDBObject</span></a><span class="result"> extends Map[String, AnyRef] with MapLike[String, AnyRef, MongoDBObject] with Logging with Castable</span>
       </span>
       </h4>
-      <p class="comment cmt"> MapLike scala interface for Mongo DBObjects - proxies an existing DBObject.</p>
+      <p class="comment cmt">MapLike scala interface for Mongo DBObjects - proxies an existing DBObject.</p>
     </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBObjectBuilder" data-isabs="false">
       <a id="MongoDBObjectBuilder:MongoDBObjectBuilder"></a>
       <h4 class="signature">
@@ -209,6 +209,18 @@
       </span>
       <span class="symbol">
         <a href="BaseImports$.html"><span class="name">BaseImports</span></a><span class="result"> extends BaseImports</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="com.mongodb.casbah.commons.EnsureConversionHelpersRegistration" data-isabs="false">
+      <a id="EnsureConversionHelpersRegistration:EnsureConversionHelpersRegistration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EnsureConversionHelpersRegistration$.html"><span class="name">EnsureConversionHelpersRegistration</span></a><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       

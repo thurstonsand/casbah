@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>2.8. Aggregation Framework &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation</title>
+    <title>2.8. Aggregation Framework &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.6.5',
+        VERSION:     '2.7.0-RC0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.6.5 documentation" href="../index.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation" href="../index.html" />
 <link rel="up" title="2. User Guide" href="index.html" />
 <link rel="next" title="2.9. GridFS" href="gridfs.html" />
 <link rel="prev" title="2.7. Query DSL" href="query_dsl.html" />
@@ -84,9 +84,9 @@ aggregated values without having to use <a class="reference external" href="http
 map-reduce is powerful, it is often more difficult than
 necessary for many simple aggregation tasks, such as totaling or
 averaging field values.</p>
-<p>If you're familiar with SQL, the aggregation framework
+<p>If you&#8217;re familiar with SQL, the aggregation framework
 provides similar functionality to <tt class="docutils literal"><span class="pre">GROUP</span> <span class="pre">BY</span></tt> and related SQL
-operators as well as simple forms of &quot;self joins.&quot; Additionally, the
+operators as well as simple forms of &#8220;self joins.&#8221; Additionally, the
 aggregation framework provides projection capabilities to reshape the
 returned data. Using the projections in the aggregation framework, you
 can add computed fields, create new virtual sub-objects, and extract
@@ -98,8 +98,7 @@ sub-fields into the top-level of results.</p>
 which transforms these objects as they pass through. For those familiar with
 UNIX-like shells (e.g. bash,) the concept is analogous to the pipe (i.e. |)
 used to string text filters together:</p>
-<div class="highlight-bash"><div class="highlight"><pre>db.people.aggregate<span class="o">(</span> &lt;pipeline&gt; <span class="o">)</span>
-db.people.aggregate<span class="o">(</span> <span class="o">[</span>&lt;pipeline&gt;<span class="o">]</span> <span class="o">)</span>
+<div class="highlight-bash"><div class="highlight"><pre>db.people.aggregate<span class="o">(</span> <span class="o">[</span>&lt;pipeline&gt;<span class="o">]</span> <span class="o">)</span>
 db.runCommand<span class="o">(</span> <span class="o">{</span> aggregate: <span class="s2">&quot;people&quot;</span>, pipeline: <span class="o">[</span>&lt;pipeline&gt;<span class="o">]</span> <span class="o">}</span> <span class="o">)</span>
 </pre></div>
 </div>
@@ -140,23 +139,54 @@ framework by issuing the following command:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)</span>
 <span class="k">val</span> <span class="n">coll</span> <span class="k">=</span> <span class="n">db</span><span class="o">(</span><span class="s">&quot;aggregate&quot;</span><span class="o">)</span>
 
-<span class="n">coll</span><span class="o">.</span><span class="n">aggregate</span><span class="o">(</span>
-  <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$project&quot;</span> <span class="o">-&gt;</span>
-    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;author&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;tags&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
-  <span class="o">),</span>
-  <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$unwind&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">),</span>
-  <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$group&quot;</span> <span class="o">-&gt;</span>
-    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">,</span>
-                  <span class="s">&quot;authors&quot;</span> <span class="o">-&gt;</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$addToSet&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$author&quot;</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">coll</span><span class="o">.</span><span class="n">aggregate</span><span class="o">(</span>
+  <span class="nc">List</span><span class="o">(</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$project&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;author&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;tags&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$unwind&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$group&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">,</span>
+                    <span class="s">&quot;authors&quot;</span> <span class="o">-&gt;</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$addToSet&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$author&quot;</span><span class="o">)</span>
+      <span class="o">)</span>
     <span class="o">)</span>
   <span class="o">)</span>
 <span class="o">);</span>
 </pre></div>
 </div>
-<p>The results of the aggregation themselves can be accessed in via <tt class="docutils literal"><span class="pre">results</span></tt>.</p>
+<p>The results of the aggregation themselves can be accessed via <tt class="docutils literal"><span class="pre">results</span></tt>.</p>
+<div class="section" id="aggregation-cursor-interface-new-in-casbah-2-7">
+<h3>2.8.3.1. Aggregation Cursor Interface - new in casbah 2.7<a class="headerlink" href="#aggregation-cursor-interface-new-in-casbah-2-7" title="Permalink to this headline">¶</a></h3>
+<p>MongoDB 2.6 adds the ability to return a cursor from the aggregation framework.
+To do that simply use <cite>AggregationOptions</cite> with the aggregation command:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">db</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">coll</span> <span class="k">=</span> <span class="n">db</span><span class="o">(</span><span class="s">&quot;aggregate&quot;</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="n">aggregationOptions</span> <span class="k">=</span> <span class="nc">AggregationOptions</span><span class="o">(</span><span class="nc">AggregationOptions</span><span class="o">.</span><span class="nc">CURSOR</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">coll</span><span class="o">.</span><span class="n">aggregate</span><span class="o">(</span>
+  <span class="nc">List</span><span class="o">(</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$project&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;author&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">,</span> <span class="s">&quot;tags&quot;</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$unwind&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">),</span>
+    <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$group&quot;</span> <span class="o">-&gt;</span>
+      <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;_id&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$tags&quot;</span><span class="o">,</span>
+                    <span class="s">&quot;authors&quot;</span> <span class="o">-&gt;</span> <span class="nc">MongoDBObject</span><span class="o">(</span><span class="s">&quot;$addToSet&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;$author&quot;</span><span class="o">)</span>
+      <span class="o">)</span>
+    <span class="o">)</span>
+  <span class="o">),</span>
+  <span class="n">aggregationOptions</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+<p>Then the you can iterate the results of the aggregation as a normal cursor:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">for</span> <span class="o">(</span><span class="n">result</span> <span class="k">&lt;-</span> <span class="n">results</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+</pre></div>
+</div>
 <p>To learn more about aggregation see the <a class="reference external" href="http://docs.mongodb.org/manual/tutorial/aggregation-examples/">aggregation tutorial</a> and the
 <a class="reference external" href="http://docs.mongodb.org/manual/reference/aggregation/">aggregation reference</a>
 documentation.</p>
+</div>
 </div>
 </div>
 
@@ -178,6 +208,27 @@ documentation.</p>
 
 </h3>
 
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">1. Tutorial: Using Casbah</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">2.1. Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_alt.html">2.3. Alternative installation methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">2.4. Casbah Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">2.5. Connecting to MongoDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="querying.html">2.6. Querying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_dsl.html">2.7. Query DSL</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.8. Aggregation Framework</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gridfs.html">2.9. GridFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialisation.html">2.10. Serialisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">3. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">4. Whats new in Casbah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade.html">5. Upgrade</a></li>
+</ul>
 <h3 style="padding-bottom: 1em;"><a href="http://mongodb.github.io/casbah/api/#com.mongodb.casbah.package">API Documentation</a></h3>
 
 <h3>Formats</h3>

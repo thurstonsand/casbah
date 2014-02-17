@@ -30,7 +30,7 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>$type operator to query by type.</p><p>Can type a BSON.&lt;enum value&gt; or a Context Bounded check.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-query/src/main/scala/CoreOperators.scala.html">CoreOperators.scala</a></dd><dt>Since</dt><dd><p>2.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%7B%7B%24type%7D%7D
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-query/CoreOperators.scala.html">CoreOperators.scala</a></dd><dt>Since</dt><dd><p>2.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%7B%7B%24type%7D%7D
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.query.dsl.QueryOperator" class="extype" href="QueryOperator.html">QueryOperator</a>, <a name="com.mongodb.casbah.query.ChainedOperator" class="extype" href="../ChainedOperator.html">ChainedOperator</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -131,7 +131,7 @@
       </span>
       </h4>
       <p class="shortcomment cmt">Matches types based on a Context Bound.</p><div class="fullcomment"><div class="comment cmt"><p>Matches types based on a Context Bound.
-Requires anchoring to prevent compiler confusion:</p><p>   &quot;foo&quot;.$type[Double]</p></div></div>
+Requires anchoring to prevent compiler confusion:</p><p>&quot;foo&quot;.$type[Double]</p></div></div>
     </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.TypeOp#$type" data-isabs="false">
       <a id="$type(Byte):DBObject with QueryExpressionObject"></a>
       <h4 class="signature">
@@ -145,7 +145,6 @@ Requires anchoring to prevent compiler confusion:</p><p>   &quot;foo&quot;.$type
       </h4>
       <p class="shortcomment cmt">For those who want to pass the static byte from org.</p><div class="fullcomment"><div class="comment cmt"><p>For those who want to pass the static byte from org.bson.BSON explicitly
 (or with the simple BSON spec indicator)
-TODO: Test for a valid byte, right now we accept anything you say.
 </p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#==" data-isabs="false">
       <a id="==(AnyRef):Boolean"></a>

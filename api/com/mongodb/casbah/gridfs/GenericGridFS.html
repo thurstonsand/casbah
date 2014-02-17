@@ -29,7 +29,7 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-gridfs/src/main/scala/GenericGridFS.scala.html">GenericGridFS.scala</a></dd></dl><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-gridfs/GenericGridFS.scala.html">GenericGridFS.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.commons.Logging" class="extype" href="../commons/Logging.html">Logging</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div><div class="toggleContainer block">
@@ -176,7 +176,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bucketName</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">bucketName</span><span class="result">: String</span>
       </span>
       </h4>
       
@@ -203,7 +203,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">db</span><span class="result">: <a name="com.mongodb.casbah.MongoDB" class="extype" href="../MongoDB.html">MongoDB</a></span>
+        <span class="name">db</span><span class="result">: MongoDB</span>
       </span>
       </h4>
       
@@ -239,7 +239,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">files</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoCursor" class="extype" href="../MongoCursor.html">MongoCursor</a></span>
+        <span class="name">files</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: MongoCursor</span>
       </span>
       </h4>
       
@@ -251,7 +251,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">files</span><span class="result">: <a name="com.mongodb.casbah.MongoCursor" class="extype" href="../MongoCursor.html">MongoCursor</a></span>
+        <span class="name">files</span><span class="result">: MongoCursor</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a cursor for this filestore
@@ -296,7 +296,7 @@ of all of the files...
         <span class="name">find</span><span class="params">(<span name="filename">filename: String</span>)</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="com.mongodb.gridfs.GridFSDBFile" class="extype">GridFSDBFile</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Find by query - returns a list</p>
+      <p class="shortcomment cmt">Find by query</p>
     </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#find" data-isabs="false">
       <a id="find(ObjectId):GridFSDBFile"></a>
       <h4 class="signature">
@@ -320,7 +320,7 @@ of all of the files...
         <span class="name">find</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="com.mongodb.gridfs.GridFSDBFile" class="extype">GridFSDBFile</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Find by query - returns a list</p>
+      <p class="shortcomment cmt">Find by query</p>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">

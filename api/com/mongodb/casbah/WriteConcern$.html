@@ -30,7 +30,7 @@
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Helper class for creating WriteConcern instances
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/WriteConcern.scala.html">WriteConcern.scala</a></dd><dt>Since</dt><dd><p>2.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>com.mongodb.WriteConcern
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/WriteConcern.scala.html">WriteConcern.scala</a></dd><dt>Since</dt><dd><p>2.0</p></dd><dt>See also</dt><dd><span class="cmt"><p>JWriteConcern
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -125,6 +125,33 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#Acknowledged" data-isabs="false">
+      <a id="Acknowledged:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Acknowledged</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Write operations that use this write concern will wait for acknowledgement from the primary server before returning.</p><div class="fullcomment"><div class="comment cmt"><p>Write operations that use this write concern will wait for acknowledgement from the primary server before returning.
+Exceptions are raised for network issues, and server errors.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#ErrorsIgnored" data-isabs="false">
+      <a id="ErrorsIgnored:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ErrorsIgnored</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">No exceptions are raised, even for network issues.</p><div class="fullcomment"><div class="comment cmt"><p>No exceptions are raised, even for network issues.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#FsyncSafe" data-isabs="false">
       <a id="FsyncSafe:WriteConcern"></a>
       <h4 class="signature">
@@ -139,6 +166,21 @@
       <p class="shortcomment cmt">Exceptions are raised for network issues and server errors;
 Write operations wait for the server to flush data to disk
 </p>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#Fsynced" data-isabs="false">
+      <a id="Fsynced:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Fsynced</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Exceptions are raised for network issues, and server errors; the write operation waits for the server to flush
+the data to disk.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions are raised for network issues, and server errors; the write operation waits for the server to flush
+the data to disk.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#JournalSafe" data-isabs="false">
       <a id="JournalSafe:WriteConcern"></a>
       <h4 class="signature">
@@ -153,6 +195,21 @@ Write operations wait for the server to flush data to disk
       <p class="shortcomment cmt">Exceptions are raised for network issues, and server errors;
 the write operation waits for the server to group commit to the journal file on disk
 </p>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#Journaled" data-isabs="false">
+      <a id="Journaled:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Journaled</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Exceptions are raised for network issues, and server errors; the write operation waits for the server to
+group commit to the journal file on disk.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions are raised for network issues, and server errors; the write operation waits for the server to
+group commit to the journal file on disk.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#Majority" data-isabs="false">
       <a id="Majority:WriteConcern"></a>
       <h4 class="signature">
@@ -192,6 +249,19 @@ waits on a majority of servers for the write operation
       </span>
       </h4>
       <p class="shortcomment cmt">Exceptions are raised for network issues but not server errors.</p>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#ReplicaAcknowledged" data-isabs="false">
+      <a id="ReplicaAcknowledged:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ReplicaAcknowledged</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Exceptions are raised for network issues, and server errors; waits for at least 2 servers for the write operation.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions are raised for network issues, and server errors; waits for at least 2 servers for the write operation.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#ReplicasSafe" data-isabs="false">
       <a id="ReplicasSafe:WriteConcern"></a>
       <h4 class="signature">
@@ -219,6 +289,20 @@ waits for at least 2 servers for the write operation.</p>
       <p class="shortcomment cmt">Exceptions are raised for network issues and server errors;
 waits on a server for the write operation
 </p>
+    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#Unacknowledged" data-isabs="false">
+      <a id="Unacknowledged:WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Unacknowledged</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Write operations that use this write concern will return as soon as the message is written to the socket.</p><div class="fullcomment"><div class="comment cmt"><p>Write operations that use this write concern will return as soon as the message is written to the socket.
+Exceptions are raised for network issues, but not server errors.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#apply" data-isabs="false">
       <a id="apply(Int,Int,Boolean,Boolean,Boolean):WriteConcern"></a>
       <h4 class="signature">
@@ -230,7 +314,8 @@ waits on a server for the write operation
         <span class="name">apply</span><span class="params">(<span name="w">w: <span name="scala.Int" class="extype">Int</span></span>, <span name="wTimeout">wTimeout: <span name="scala.Int" class="extype">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w represents # of servers:</p><ul><li><code> w=-1</code> None, no checking is done</li><li><code> w=0</code> None, network socket errors raised</li><li><code> w=1</code> Checks server for errors as well as network socket errors raised</li><li><code> w&gt;1</code> Checks servers (w) for errors as well as network socket errors raised</li></ul></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior. Defaults to <code> 0</code></p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk. Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit</p></dd></dl></div>
+      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w represents # of servers:</p><ul><li><code>w=-1</code> None, no checking is done</li><li><code>w=0</code> None, network socket errors raised</li><li><code>w=1</code> Checks server for errors as well as network socket errors raised</li><li><code>w>1</code> Checks servers (w) for errors as well as network socket errors raised</li></ul></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior. Defaults to <code>0</code></p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk. Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway
+</p></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -394,14 +479,14 @@ waits on a server for the write operation
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern#valueOf" data-isabs="false">
-      <a id="valueOf(String):WriteConcern"></a>
+      <a id="valueOf(String):Option[WriteConcern]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">valueOf</span><span class="params">(<span name="name">name: String</span>)</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
+        <span class="name">valueOf</span><span class="params">(<span name="name">name: String</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Get the WriteConcern constants by name: NONE, NORMAL, SAFE, MAJORITY, FSYNC_SAFE,
@@ -464,7 +549,8 @@ JOURNAL_SAFE, REPLICAS_SAFE. (matching is done case insensitively)</p><p>NOTE: T
         <span class="name">withRule</span><span class="params">(<span name="w">w: String</span>, <span name="wTimeout">wTimeout: <span name="scala.Int" class="extype">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span name="scala.Boolean" class="extype">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span name="com.mongodb.WriteConcern" class="extype">WriteConcern</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w is a String representing a valid getLastErrorMode rule (or &quot;majority&quot;)</p></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the getLastErrorMode to apply to the write</p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk. Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit</p></dd></dl></div>
+      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w is a String representing a valid getLastErrorMode rule (or &quot;majority&quot;)</p></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the getLastErrorMode to apply to the write</p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk. Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway
+</p></dd></dl></div>
     </li></ol>
             </div>
 

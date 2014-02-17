@@ -25,12 +25,16 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">MongoConnection</span><span class="result"> extends AnyRef</span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Wrapper object for Mongo Connections, providing the static methods the Java driver gives.
-Apply methods are called as MongoConnection(&lt;params&gt;)</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/MongoConnection.scala.html">MongoConnection.scala</a></dd></dl><div class="toggleContainer block">
+Apply methods are called as MongoConnection(&lt;params&gt;)
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Please use MongoClient</p></dd><dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/MongoConnection.scala.html">MongoConnection.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -137,8 +141,8 @@ Apply methods are called as MongoConnection(&lt;params&gt;)</p></div><dl class="
       </h4>
       <p class="shortcomment cmt">Connects to a (single) mongodb node
 </p><div class="fullcomment"><div class="comment cmt"><p>Connects to a (single) mongodb node
-</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>(String)  server to connect to</p></dd><dt class="param">port</dt><dd class="cmt"><p>(Int) the port on which the database is running</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
-</p></span><span class="cmt">UnknownHostException</span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>(String)  server to connect to</p></dd><dt class="param">port</dt><dd class="cmt"><p>(Int) the port on which the database is running</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error
+</p></span><span class="cmt">UnknownHostException<p>if cannot connect to the host</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(String):MongoConnection"></a>
       <h4 class="signature">
@@ -152,8 +156,8 @@ Apply methods are called as MongoConnection(&lt;params&gt;)</p></div><dl class="
       </h4>
       <p class="shortcomment cmt">Connects to a (single) mongodb node (default port)
 </p><div class="fullcomment"><div class="comment cmt"><p>Connects to a (single) mongodb node (default port)
-</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>(String)  server to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
-</p></span><span class="cmt">UnknownHostException</span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">host</dt><dd class="cmt"><p>(String)  server to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error
+</p></span><span class="cmt">UnknownHostException<p>if cannot connect to the host</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(ServerAddress,ServerAddress,MongoOptions):MongoConnection"></a>
       <h4 class="signature">
@@ -162,13 +166,13 @@ Apply methods are called as MongoConnection(&lt;params&gt;)</p></div><dl class="
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="left">left: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>, <span name="right">right: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>, <span name="options">options: <span name="com.mongodb.MongoOptions" class="extype">MongoOptions</span></span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="left">left: ServerAddress</span>, <span name="right">right: ServerAddress</span>, <span name="options">options: <span name="com.mongodb.MongoOptions" class="extype">MongoOptions</span></span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Creates a Mongo connection in paired mode.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a Mongo connection in paired mode.
 This will also work for a replica set and will find
 all the members (the master will be used by default)
-</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>(ServerAddress) the left side of the pair</p></dd><dt class="param">right</dt><dd class="cmt"><p>(ServerAddress) The right side of the pair</p></dd><dt class="param">options</dt><dd class="cmt"><p>(MongoOptions) the MongoDB Options for the connection</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoOptions
+</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>(ServerAddress) the left side of the pair</p></dd><dt class="param">right</dt><dd class="cmt"><p>(ServerAddress) The right side of the pair</p></dd><dt class="param">options</dt><dd class="cmt"><p>(MongoOptions) the MongoDB Options for the connection</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoOptions
 </p></span>, <span class="cmt"><p>MongoDBAddress</p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(ServerAddress,ServerAddress):MongoConnection"></a>
@@ -178,13 +182,13 @@ all the members (the master will be used by default)
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="left">left: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>, <span name="right">right: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="left">left: ServerAddress</span>, <span name="right">right: ServerAddress</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Creates a Mongo connection in paired mode.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a Mongo connection in paired mode.
 This will also work for a replica set and will find
 all the members (the master will be used by default)
-</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>(ServerAddress) the left side of the pair</p></dd><dt class="param">right</dt><dd class="cmt"><p>(ServerAddress) The right side of the pair</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
+</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>(ServerAddress) the left side of the pair</p></dd><dt class="param">right</dt><dd class="cmt"><p>(ServerAddress) The right side of the pair</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
 </p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(ServerAddress,MongoOptions):MongoConnection"></a>
@@ -194,11 +198,11 @@ all the members (the master will be used by default)
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="addr">addr: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>, <span name="options">options: MongoOptions</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="addr">addr: ServerAddress</span>, <span name="options">options: MongoOptions</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a (single) mongodb node.</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a (single) mongodb node.
-</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>(ServerAddress) the DatabaseAddress</p></dd><dt class="param">options</dt><dd class="cmt"><p>(MongoOptions) DB Options</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoOptions
+</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>(ServerAddress) the DatabaseAddress</p></dd><dt class="param">options</dt><dd class="cmt"><p>(MongoOptions) DB Options</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoOptions
 </p></span>, <span class="cmt"><p>MongoDBAddress</p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(ServerAddress):MongoConnection"></a>
@@ -208,11 +212,11 @@ all the members (the master will be used by default)
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="addr">addr: <span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span></span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="addr">addr: ServerAddress</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Connects to a (single) mongodb node.</p><div class="fullcomment"><div class="comment cmt"><p>Connects to a (single) mongodb node.
-</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>(ServerAddress) the DatabaseAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
+</p></div><dl class="paramcmts block"><dt class="param">addr</dt><dd class="cmt"><p>(ServerAddress) the DatabaseAddress</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
 </p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(MongoURI):MongoConnection"></a>
@@ -251,7 +255,7 @@ all the members (the master will be used by default)
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="replicaSetSeeds">replicaSetSeeds: List[<span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span>]</span>, <span name="options">options: MongoOptions</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="replicaSetSeeds">replicaSetSeeds: List[ServerAddress]</span>, <span name="options">options: MongoOptions</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Replica Set connection
@@ -262,7 +266,7 @@ Takes a MongoOptions object
 This works for a replica set or pair,
 and finds all the members (the master is used by default)
 Takes a MongoOptions object
-</p></div><dl class="paramcmts block"><dt class="param">replicaSetSeeds</dt><dd class="cmt"><p>(List[ServerAddress]) The servers to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
+</p></div><dl class="paramcmts block"><dt class="param">replicaSetSeeds</dt><dd class="cmt"><p>(List[ServerAddress]) The servers to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
 </p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply(List[ServerAddress]):MongoConnection"></a>
@@ -272,7 +276,7 @@ Takes a MongoOptions object
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="replicaSetSeeds">replicaSetSeeds: List[<span name="com.mongodb.ServerAddress" class="extype">ServerAddress</span>]</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
+        <span class="name">apply</span><span class="params">(<span name="replicaSetSeeds">replicaSetSeeds: List[ServerAddress]</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoConnection" class="extype" href="MongoConnection.html">MongoConnection</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Replica Set connection
@@ -281,7 +285,7 @@ and finds all the members (the master is used by default)
 </p><div class="fullcomment"><div class="comment cmt"><p>Replica Set connection
 This works for a replica set or pair,
 and finds all the members (the master is used by default)
-</p></div><dl class="paramcmts block"><dt class="param">replicaSetSeeds</dt><dd class="cmt"><p>(List[ServerAddress]) The servers to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
+</p></div><dl class="paramcmts block"><dt class="param">replicaSetSeeds</dt><dd class="cmt"><p>(List[ServerAddress]) The servers to connect to</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>MongoDBAddress
 </p></span>, <span class="cmt"><p>ServerAddress</p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#apply" data-isabs="false">
       <a id="apply():MongoConnection"></a>
@@ -296,8 +300,8 @@ and finds all the members (the master is used by default)
       </h4>
       <p class="shortcomment cmt">Default connection method - connects to default host &amp; port
 </&amp;</p><div class="fullcomment"><div class="comment cmt"><p>Default connection method - connects to default host &amp; port
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
-</p></span><span class="cmt">UnknownHostException</span></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>on error
+</p></span><span class="cmt">UnknownHostException<p>if cannot connect to the host</p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -325,18 +329,6 @@ and finds all the members (the master is used by default)
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection#connect" data-isabs="false">
-      <a id="connect(DBAddress):MongoDB"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">connect</span><span class="params">(<span name="addr">addr: DBAddress</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoDB" class="extype" href="MongoDB.html">MongoDB</a></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -520,7 +512,25 @@ and finds all the members (the master is used by default)
     </li></ol>
             </div>
 
-        
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="com.mongodb.casbah.MongoConnection#connect" data-isabs="false">
+      <a id="connect(DBAddress):MongoDB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient.getDB(String) instead.">connect</span><span class="params">(<span name="addr">addr: DBAddress</span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoDB" class="extype" href="MongoDB.html">MongoDB</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Please use MongoClient.getDB(String) instead.</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

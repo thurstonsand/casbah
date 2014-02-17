@@ -31,7 +31,7 @@
       
       <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Concrete cursor implementation expecting standard DBObject operation
 This is the version of MongoCursorBase you should expect to use in most cases.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://{{WEBSITE_ROOT}}api.sxr//casbah-core/src/main/scala/MongoCursor.scala.html">MongoCursor.scala</a></dd><dt>Version</dt><dd><p>2.0, 12/23/10</p></dd><dt>Since</dt><dd><p>1.0
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-core/MongoCursor.scala.html">MongoCursor.scala</a></dd><dt>Version</dt><dd><p>2.0, 12/23/10</p></dd><dt>Since</dt><dd><p>1.0
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.collection.Iterator" class="extype">Iterator</span>[DBObject], <span name="scala.collection.TraversableOnce" class="extype">TraversableOnce</span>[DBObject], <span name="scala.collection.GenTraversableOnce" class="extype">GenTraversableOnce</span>[DBObject], <a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a>, <a name="com.mongodb.casbah.commons.Logging" class="extype" href="commons/Logging.html">Logging</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
@@ -71,7 +71,7 @@ This is the version of MongoCursorBase you should expect to use in most cases.
         <span class="name">MongoCursor</span><span class="params">(<span name="underlying">underlying: <span name="com.mongodb.DBCursor" class="extype">DBCursor</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">underlying</dt><dd class="cmt"><p>(com.mongodb.DBCursor)</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -385,7 +385,7 @@ Java cursor.  Good with cursor calls that return a new cursor.
       </h4>
       <p class="shortcomment cmt">&quot;Special&quot; Operators for cursors</p><div class="fullcomment"><div class="comment cmt"><p>&quot;Special&quot; Operators for cursors</p><p>adds a special operator like $maxScan or $returnKey</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the same DBCursor, useful for chaining operations
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-Specialoperators
-</p></span></dd></dl></div>
+     { @inheritDoc}</p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.collection.TraversableOnce#addString" data-isabs="false">
       <a id="addString(StringBuilder):StringBuilder"></a>
       <h4 class="signature">
@@ -616,14 +616,14 @@ was an array.
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableOnce → GenTraversableOnce</dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#count" data-isabs="false">
-      <a id="count:Int"></a>
+      <a id="count():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">count</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="name">count</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">count</p><div class="fullcomment"><div class="comment cmt"><p>count</p><p>The DBCursor's count of elements in the query, passed through
@@ -633,7 +633,7 @@ be careful about using that.</p><p><b>NOTE:</b> count() ignores any skip/limit s
 it is the count of the ENTIRE query results.
 If you want to get a count post-skip/limit
 you must use size()
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()<p>
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p>size()
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#cursorId" data-isabs="false">
@@ -736,7 +736,14 @@ you must use size()
       <p class="shortcomment cmt">explain</p><div class="fullcomment"><div class="comment cmt"><p>explain</p><p>Returns an object containing basic information about the execution
 of the query that created this cursor.
 This creates an instance of CursorExplanation which is a custom
-dbObject with the key/value pairs:</p><ul><li>cursor = Cursor Type</li><li>nscanned = Number of items examined by Mongo for this query</li><li>nscannedObjects = Number of objects examined by Mongo</li><li>n = the number of records which Mongo returned</li><li>millis = how long it took Mongo to execute the query</li><li>nYields = number of times this query yielded the read lock to let writes in</li><li>indexBounds = the index boundaries used.</li></ul><p>CursorExplanation provides utility methods to access these fields.
+dbObject with the key/value pairs:
+- cursor = Cursor Type
+- nscanned = Number of items examined by Mongo for this query
+- nscannedObjects = Number of objects examined by Mongo
+- n = the number of records which Mongo returned
+- millis = how long it took Mongo to execute the query
+- nYields = number of times this query yielded the read lock to let writes in
+- indexBounds = the index boundaries used.</p><p>CursorExplanation provides utility methods to access these fields.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>an instance of CursorExplanation
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>See also</dt><dd><span class="cmt"><p>http://dochub.mongodb.org/core/explain</p></span></dd></dl></div>
     </li><li visbl="pub" name="scala.collection.Iterator#filter" data-isabs="false">
@@ -1021,7 +1028,7 @@ to improve performance.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">keysWanted</span><span class="result">: <span name="com.mongodb.DBObject" class="extype">DBObject</span></span>
+        <span class="name">keysWanted</span><span class="result">: DBObject</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
@@ -1102,6 +1109,22 @@ It will only return what can fit into a <em>single 4MB response</em>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableOnce → GenTraversableOnce</dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoCursor#maxTime" data-isabs="false">
+      <a id="maxTime(Duration):MongoCursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maxTime</span><span class="params">(<span name="maxTime">maxTime: <span name="scala.concurrent.duration.Duration" class="extype">Duration</span></span>)</span><span class="result">: <a name="com.mongodb.casbah.MongoCursor" class="extype" href="">MongoCursor</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Set the maximum execution time for operations on this cursor.</p><div class="fullcomment"><div class="comment cmt"><p>Set the maximum execution time for operations on this cursor.
+</p></div><dl class="paramcmts block"><dt class="param">maxTime</dt><dd class="cmt"><p>the maximum time that the server will allow the query to run, before killing the operation. A non-zero value
+                requires a server version &gt;= 2.6</p></dd><dt>returns</dt><dd class="cmt"><p>the new cursor
+</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="scala.collection.TraversableOnce#min" data-isabs="false">
       <a id="min[B&gt;:DBObject](Ordering[B]):DBObject"></a>
       <h4 class="signature">
@@ -1250,6 +1273,20 @@ It will only return what can fit into a <em>single 4MB response</em>
 as tracked by the java driver.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The number of objects seen
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
+    </li><li visbl="pub" name="com.mongodb.casbah.MongoCursor#one" data-isabs="false">
+      <a id="one():DBObject"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">one</span><span class="params">()</span><span class="result">: DBObject</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the first matching document
+</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
+</p></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#option" data-isabs="false">
       <a id="option:Int"></a>
       <h4 class="signature">
@@ -1363,7 +1400,7 @@ TODO - Create Scala version of Bytes.QUERYOPTION_*
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">query</span><span class="result">: <span name="com.mongodb.DBObject" class="extype">DBObject</span></span>
+        <span class="name">query</span><span class="result">: DBObject</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
@@ -1530,7 +1567,7 @@ from the Java object.</p><p><b>NOTE:</b> size() takes into account any skip/limi
 it is the size of just the window.
 If you want to get a count of the entire query ignoring skip/limit
 you must use count()
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query after skip/limit</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursor" class="extype" href="">MongoCursor</a> → TraversableOnce → GenTraversableOnce</dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query after skip/limit</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursor" class="extype" href="">MongoCursor</a> → TraversableOnce → GenTraversableOnce</dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if errors
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p>count()
 </p></span></dd></dl></div>
     </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase#sizes" data-isabs="false">
@@ -1541,7 +1578,7 @@ you must use count()
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sizes</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="java.lang.Integer" class="extype">Integer</span>]</span>
+        <span class="name">sizes</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[Integer]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
@@ -1832,7 +1869,7 @@ it may or may not be returned, even with snapshot mode).</p><p><b>NOTE:</b> Shor
         <span class="name">underlying</span><span class="result">: <span name="com.mongodb.DBCursor" class="extype">DBCursor</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursor" class="extype" href="">MongoCursor</a> → <a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
+      <p class="shortcomment cmt">(com.</p><div class="fullcomment"><div class="comment cmt"><p>(com.mongodb.DBCursor)</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursor" class="extype" href="">MongoCursor</a> → <a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
@@ -2032,10 +2069,11 @@ it may or may not be returned, even with snapshot mode).</p><p><b>NOTE:</b> Shor
         <span class="name deprecated" title="Deprecated: (Since version 2.3.0) Replaced with ReadPreference.SECONDARY">slaveOk</span><span class="params">()</span><span class="result">: <span name="com.mongodb.DBCursor" class="extype">DBCursor</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">slaveOk</p><div class="fullcomment"><div class="comment cmt"><p>slaveOk</p><p>Makes this query OK to run on a non-master node.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">slaveOk</p><div class="fullcomment"><div class="comment cmt"><p>slaveOk</p><p>Makes this query OK to run on a non-master node.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.MongoCursorBase" class="extype" href="MongoCursorBase.html">MongoCursorBase</a></dd><dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with ReadPreference.SECONDARY</p></dd></dl></div>
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with <code>ReadPreference.SECONDARY</code></p></dd></dl></div>
     </li></ol>
             </div>
         </div>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>Castable.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/**
+ * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * For questions and comments about this product, please see the project page at:
+ *
+ * http://github.com/mongodb/casbah
+ *
+ */</span>
+<span class="keyword">package</span> com.mongodb.casbah
+<span class="keyword">package</span> commons
+
+<span class="keyword">import</span> scala.collection.<span title="object scala.collection.JavaConverters">JavaConverters</span>._
+<span class="keyword">import</span> scala.collection.immutable.<span class="delimiter">{</span>List, Map<span class="delimiter">}</span>
+
+<span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>BasicDBList, BasicDBObject<span class="delimiter">}</span>
+
+
+<span class="comment">/**
+ * Package private Castable trait - a helper that provides a typesafe castToOption method
+ */</span>
+<span class="keyword">private</span><span class="delimiter">[</span>commons<span class="delimiter">]</span> <span class="keyword">trait</span> <a title="trait Castable extends java.lang.Object with ScalaObject" id="10706">Castable</a> <span title="ScalaObject" class="delimiter">{</span>
+
+  <span class="comment">// scalastyle:off cyclomatic.complexity</span>
+  <span class="comment">/**
+   * A utility method that allows you to cast a value to an Option[A]
+   *
+   * Some(value.asInstanceOf[T]) would only cause a runtime ClassCastException when calling get
+   *
+   * This utility ensures that the types match correctly (even boxed scala types eg Int) so we can
+   * check against the type and return Some(value) if the types match.
+   *
+   * @param value the value to type check against
+   * @tparam A the type to cast to check against
+   * @return Option[A] - Some(value) if the type of instances match else None
+   */</span>
+  <span class="keyword">def</span> <a title="[A](value: Any)(implicit evidence$1: Manifest[A])Option[A]" id="11975">castToOption</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="11963">A</a>: Manifest<span class="delimiter">]</span><span class="delimiter">(</span><a title="Any" id="11974">value</a>: <span title="Any">Any</span><span class="delimiter">)</span>: <span title="Option[A]">Option</span><span class="delimiter">[</span>A<span class="delimiter">]</span> = <span class="delimiter">{</span>
+    <span class="keyword">val</span> <a title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]" id="12224">erasure</a> = <span title="[T](implicit m: Manifest[T])Manifest[T]">manifest</span><a href="#11975" title="(implicit m: Manifest[A])Manifest[A]" class="delimiter">[</a><a href="#11963" title="A">A</a><span class="delimiter">]</span> <span title="java.lang.Class[_1]" class="keyword">match</span> <span class="delimiter">{</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Byte](classOf[java.lang.Byte])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Byte]">Byte</span> =&gt; classOf<span title="java.lang.Class[java.lang.Byte](classOf[java.lang.Byte])" class="delimiter">[</span>java.lang.Byte<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Short](classOf[java.lang.Short])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Short]">Short</span> =&gt; classOf<span title="java.lang.Class[java.lang.Short](classOf[java.lang.Short])" class="delimiter">[</span>java.lang.Short<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Character](classOf[java.lang.Character])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Char]">Char</span> =&gt; classOf<span title="java.lang.Class[java.lang.Character](classOf[java.lang.Character])" class="delimiter">[</span>java.lang.Character<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Long](classOf[java.lang.Long])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Long]">Long</span> =&gt; classOf<span title="java.lang.Class[java.lang.Long](classOf[java.lang.Long])" class="delimiter">[</span>java.lang.Long<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Float](classOf[java.lang.Float])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Float]">Float</span> =&gt; classOf<span title="java.lang.Class[java.lang.Float](classOf[java.lang.Float])" class="delimiter">[</span>java.lang.Float<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Double](classOf[java.lang.Double])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Double]">Double</span> =&gt; classOf<span title="java.lang.Class[java.lang.Double](classOf[java.lang.Double])" class="delimiter">[</span>java.lang.Double<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Boolean](classOf[java.lang.Boolean])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Boolean]">Boolean</span> =&gt; classOf<span title="java.lang.Class[java.lang.Boolean](classOf[java.lang.Boolean])" class="delimiter">[</span>java.lang.Boolean<span class="delimiter">]</span>
+      <span class="keyword">case</span> <span title="java.lang.Class[java.lang.Integer](classOf[java.lang.Integer])">Manifest</span>.<span title="=&gt; scala.reflect.AnyValManifest[Int]">Int</span> =&gt; classOf<span title="java.lang.Class[java.lang.Integer](classOf[java.lang.Integer])" class="delimiter">[</span>java.lang.Integer<span class="delimiter">]</span>
+      <span class="keyword">case</span> <a title="java.lang.Class[_$1]" id="19852">m</a> =&gt; <a href="#19852" title="Manifest[A]">m</a>.<span title="=&gt; java.lang.Class[_]">erasure</span>
+    <span class="delimiter">}</span>
+    <a href="#11974" title="Any">value</a> <span title="Option[A]" class="keyword">match</span> <span class="delimiter">{</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="19915">simpleValue</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a>.<span title="(x$1: Any)Boolean">isInstance</span><span class="delimiter">(</span><a href="#19915" title="Any">simpleValue</a><span class="delimiter">)</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="19957">basicDBListToList</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[List[_]](classOf[scala.collection.immutable.List])" class="delimiter">[</span>List<span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span> <span title="(x: Boolean)Boolean">&amp;</span> <a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; Boolean">isInstanceOf</span><span title="Boolean" class="delimiter">[</span><span title="com.mongodb.BasicDBList">BasicDBList</span><span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><span title="com.mongodb.casbah.commons.MongoDBList" class="keyword">new</span> <a href="MongoDBList.scala.html#10751" title="com.mongodb.casbah.commons.MongoDBList">MongoDBList</a><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="com.mongodb.BasicDBList" class="delimiter">[</span><span title="com.mongodb.BasicDBList">BasicDBList</span><span class="delimiter">]</span><span class="delimiter">)</span>.<span title="=&gt; List[Any]">toList</span>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="22337">mongoDBListToList</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[List[_]](classOf[scala.collection.immutable.List])" class="delimiter">[</span>List<span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span> <span title="(x: Boolean)Boolean">&amp;</span> <a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; Boolean">isInstanceOf</span><span title="Boolean" class="delimiter">[</span><a href="MongoDBList.scala.html#10751" title="com.mongodb.casbah.commons.MongoDBList">MongoDBList</a><span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="com.mongodb.casbah.commons.MongoDBList" class="delimiter">[</span><a href="MongoDBList.scala.html#10751" title="com.mongodb.casbah.commons.MongoDBList">MongoDBList</a><span class="delimiter">]</span>.<span title="=&gt; List[Any]">toList</span>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="22350">listToBasicDBList</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[com.mongodb.BasicDBList](classOf[com.mongodb.BasicDBList])" class="delimiter">[</span>BasicDBList<span class="delimiter">]</span> <span title="(x: Boolean)Boolean">&amp;</span> <a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; Boolean">isInstanceOf</span><span title="Boolean" class="delimiter">[</span><span title="List[_]">List</span><span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><a href="MongoDBList.scala.html#22295" title="(elems: _$4*)com.mongodb.casbah.commons.MongoDBList">MongoDBList</a><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="List[_$4]" class="delimiter">[</span><span title="List[_]">List</span><span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span>: _*<span class="delimiter">)</span>.<a href="MongoDBList.scala.html#22168" title="=&gt; com.mongodb.casbah.commons.Imports.BasicDBList">underlying</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="22373">listToMongoDBList</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[com.mongodb.casbah.commons.MongoDBList](classOf[com.mongodb.casbah.commons.MongoDBList])" class="delimiter">[</span>MongoDBList<span class="delimiter">]</span> <span title="(x: Boolean)Boolean">&amp;</span> <a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; Boolean">isInstanceOf</span><span title="Boolean" class="delimiter">[</span><span title="List[_]">List</span><span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><a href="MongoDBList.scala.html#22295" title="(elems: _$6*)com.mongodb.casbah.commons.MongoDBList">MongoDBList</a><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="List[_$6]" class="delimiter">[</span><span title="List[_]">List</span><span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">]</span>: _*<span class="delimiter">)</span>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="22393">dbObjectToMongoDBObject</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[com.mongodb.casbah.commons.MongoDBObject](classOf[com.mongodb.casbah.commons.MongoDBObject])" class="delimiter">[</span>MongoDBObject<span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><span title="com.mongodb.casbah.commons.MongoDBObject" class="keyword">new</span> <a href="MongoDBObject.scala.html#10766" title="com.mongodb.casbah.commons.MongoDBObject">MongoDBObject</a><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="com.mongodb.BasicDBObject" class="delimiter">[</span><span title="com.mongodb.BasicDBObject">BasicDBObject</span><span class="delimiter">]</span><span class="delimiter">)</span>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Some[A]" id="24129">dbObjectToMap</a> <span class="keyword">if</span> <a href="#12224" title="java.lang.Class[_ &gt;: java.lang.Byte with java.lang.Short with java.lang.Character with java.lang.Long with java.lang.Float with java.lang.Double with java.lang.Boolean with java.lang.Integer with _$1]">erasure</a> <span title="(x$1: AnyRef)Boolean">==</span> classOf<span title="java.lang.Class[scala.collection.immutable.Map[String,Any]](classOf[scala.collection.immutable.Map])" class="delimiter">[</span>Map<span class="delimiter">[</span>String, Any<span class="delimiter">]</span><span class="delimiter">]</span> =&gt;
+        <span title="(x: A)Some[A]">Some</span><span class="delimiter">(</span><a href="#11974" title="Any">value</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="com.mongodb.BasicDBObject" class="delimiter">[</span><span title="com.mongodb.BasicDBObject">BasicDBObject</span><span class="delimiter">]</span>.<span title="(m: java.util.Map[?0,?1])collection.JavaConverters.AsScala[scala.collection.mutable.Map[?0,?1]]">toMap</span>.<span title="=&gt; scala.collection.mutable.Map[?0,?1]">asScala</span>.<span title="(implicit ev: &lt;:&lt;[(?0, ?1),(?0, ?1)])scala.collection.immutable.Map[?0,?1]">toMap</span>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="A" class="delimiter">[</span><a href="#11963" title="A">A</a><span class="delimiter">]</span><span class="delimiter">)</span>
+      <span class="keyword">case</span> <span title="None.type">_</span> =&gt; <span title="object None">None</span>
+    <span class="delimiter">}</span>
+  <span class="delimiter">}</span>
+<span class="delimiter">}</span>
+
+        </pre>
+    </body>
+</html>

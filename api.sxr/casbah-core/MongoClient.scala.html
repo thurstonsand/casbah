@@ -17,7 +17,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
@@ -27,17 +27,18 @@
  *
  * For questions and comments about this product, please see the project page at:
  *
- *     http://github.com/mongodb/casbah
+ * http://github.com/mongodb/casbah
  *
  */</span>
 
 <span class="keyword">package</span> com.mongodb.casbah
 
-<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10237" title="object com.mongodb.casbah.Imports">Imports</a>._
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
 
 <span class="keyword">import</span> scala.collection.<span title="object scala.collection.JavaConverters">JavaConverters</span>._
 
-<span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span> MongoClient =&gt; JavaMongoClient <span class="delimiter">}</span>
+<span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>MongoClient =&gt; JavaMongoClient<span class="delimiter">}</span>
+<span class="keyword">import</span> scala.collection.mutable
 
 <span class="comment">/**
  * Wrapper object for MongoClient connections, providing the static methods the
@@ -45,82 +46,82 @@
  *
  * @since 2.5
  */</span>
-<span class="keyword">object</span> <a title="object com.mongodb.casbah.MongoClient" id="10252">MongoClient</a> <span title="ScalaObject" class="delimiter">{</span>
+<span class="keyword">object</span> <a title="object com.mongodb.casbah.MongoClient" id="10760">MongoClient</a> <span title="ScalaObject" class="delimiter">{</span>
 
   <span class="comment">/**
    * Default connection method - connects to default host &amp;amp; port
    *
-   * @throws UnknownHostException
-   * @throws MongoException
+   * @throws UnknownHostException if host cannot be contacted
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="()com.mongodb.casbah.MongoClient" id="28943">apply</a><span class="delimiter">(</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="()com.mongodb.casbah.MongoClient" id="30721">apply</a><span class="delimiter">(</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connects to a (single) mongodb node (default port)
    *
    * @param  host (String)  server to connect to
-   * @throws UnknownHostException
-   * @throws MongoException
+   * @throws UnknownHostException if host cannot be contacted
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="(host: String)com.mongodb.casbah.MongoClient" id="28944">apply</a><span class="delimiter">(</span><a title="String" id="29881">host</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29881" title="String">host</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(host: String)com.mongodb.casbah.MongoClient" id="30722">apply</a><span class="delimiter">(</span><a title="String" id="31517">host</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31517" title="String">host</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Creates a Mongo instance based on a (single) mongodb node (default port).
    *
    * @param host server to connect to in format host[:port]
    * @param options default query options
-   * @throws UnknownHostException
-   * @throws MongoException
+   * @throws UnknownHostException if host cannot be contacted
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="(host: String, options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="28945">apply</a><span class="delimiter">(</span><a title="String" id="29888">host</a>: <span title="String">String</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="29889">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String, x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29888" title="String">host</a>, <a href="#29889" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(host: String, options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="30723">apply</a><span class="delimiter">(</span><a title="String" id="31523">host</a>: <span title="String">String</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="31524">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String, x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31523" title="String">host</a>, <a href="#31524" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connects to a (single) mongodb node
    *
    * @param  host (String)  server to connect to
    * @param  port (Int) the port on which the database is running
-   * @throws UnknownHostException
-   * @throws MongoException
+   * @throws UnknownHostException if host cannot be contacted
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="(host: String, port: Int)com.mongodb.casbah.MongoClient" id="28946">apply</a><span class="delimiter">(</span><a title="String" id="29896">host</a>: <span title="String">String</span>, <a title="Int" id="29897">port</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String, x$2: Int)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29896" title="String">host</a>, <a href="#29897" title="Int">port</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(host: String, port: Int)com.mongodb.casbah.MongoClient" id="30724">apply</a><span class="delimiter">(</span><a title="String" id="31530">host</a>: <span title="String">String</span>, <a title="Int" id="31531">port</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.lang.String, x$2: Int)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31530" title="String">host</a>, <a href="#31531" title="Int">port</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connects to a (single) mongodb node.
    *
    * @param  addr (ServerAddress) the DatabaseAddress
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    */</span>
-  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress)com.mongodb.casbah.MongoClient" id="28947">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="29904">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29904" title="com.mongodb.casbah.Imports.ServerAddress">addr</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress)com.mongodb.casbah.MongoClient" id="30725">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="31537">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31537" title="com.mongodb.casbah.Imports.ServerAddress">addr</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connects to a (single) mongodb node.
    *
    * @param  addr (ServerAddress) the DatabaseAddress
    * @param  options (MongoClientOptions) DB Options
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see MongoClientOptions
    */</span>
-  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="28948">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="29911">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="29912">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29911" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#29912" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="30726">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="31543">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="31544">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31543" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#31544" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
 
   <span class="comment">/**
    * Creates a Mongo instance based on a (single) mongodb node and a list of credentials
    *
    * @param addr (ServerAddress) the DatabaseAddress
-   * @param credentials (List[MongoCredential]) used to authenticate all connections
-   * @throws MongoException
+   * @param credentialsList (List[MongoCredential]) used to authenticate all connections
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see credentialsList
    * @since 2.6
    */</span>
-   <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, credentialsList: List[com.mongodb.casbah.Imports.MongoCredential])com.mongodb.casbah.MongoClient" id="28949">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="29919">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="29920">credentialsList</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: java.util.List[com.mongodb.MongoCredential])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#29919" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#29920" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentialsList</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, credentialsList: List[com.mongodb.casbah.Imports.MongoCredential])com.mongodb.casbah.MongoClient" id="30727">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="31550">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="31551">credentialsList</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: java.util.List[com.mongodb.MongoCredential])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#31550" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#31551" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentialsList</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Creates a Mongo instance based on a (single) mongo node using a given ServerAddress and options.
@@ -128,15 +129,15 @@
    * @param addr (ServerAddress) the DatabaseAddress
    * @param credentials (List[MongoCredential]) used to authenticate all connections
    * @param options (MongoClientOptions) DB Options
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see MongoClientOptions
    * @see CredentialsList
    * @since 2.6
    */</span>
-  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, credentials: List[com.mongodb.casbah.Imports.MongoCredential], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="28950">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="30467">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="30468">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="30469">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: java.util.List[com.mongodb.MongoCredential], x$3: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30467" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#30468" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span>, <a href="#30469" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(addr: com.mongodb.casbah.Imports.ServerAddress, credentials: List[com.mongodb.casbah.Imports.MongoCredential], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="30728">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ServerAddress" id="32101">addr</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="32102">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="32103">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.ServerAddress, x$2: java.util.List[com.mongodb.MongoCredential], x$3: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32101" title="com.mongodb.casbah.Imports.ServerAddress">addr</a>, <a href="#32102" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span>, <a href="#32103" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Replica Set connection
@@ -144,12 +145,12 @@
    * and finds all the members (the master is used by default)
    *
    * @param replicaSetSeeds (List[ServerAddress]) The servers to connect to
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    */</span>
-  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress])com.mongodb.casbah.MongoClient" id="28951">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="30524">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30524" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress])com.mongodb.casbah.MongoClient" id="30729">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="32157">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32157" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Replica Set connection
@@ -159,13 +160,13 @@
    *
    * @param replicaSetSeeds (List[ServerAddress]) The servers to connect to
    * @param options (MongoClientOptions) DB Options
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see MongoClientOptions
    */</span>
-  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="28952">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="30574">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="30575">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30574" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#30575" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="30730">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="32206">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="32207">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32206" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#32207" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Replica Set connection
@@ -175,14 +176,14 @@
    *
    * @param replicaSetSeeds (List[ServerAddress]) The servers to connect to
    * @param credentials (List[MongoCredential]) used to authenticate all connections
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see CredentialsList
    * @since 2.6
    */</span>
-  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], credentials: List[com.mongodb.casbah.Imports.MongoCredential])com.mongodb.casbah.MongoClient" id="28953">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="30614">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="30615">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: java.util.List[com.mongodb.MongoCredential])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30614" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#30615" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], credentials: List[com.mongodb.casbah.Imports.MongoCredential])com.mongodb.casbah.MongoClient" id="30731">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="32245">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="32246">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: java.util.List[com.mongodb.MongoCredential])com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32245" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#32246" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Replica Set connection
@@ -193,29 +194,29 @@
    * @param replicaSetSeeds (List[ServerAddress]) The servers to connect to
    * @param credentials (List[MongoCredential]) used to authenticate all connections
    * @param options (MongoClientOptions) DB Options
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    * @see ServerAddress
    * @see MongoDBAddress
    * @see MongoClientOptions
    * @see CredentialsList
    * @since 2.6
    */</span>
-  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], credentials: List[com.mongodb.casbah.Imports.MongoCredential], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="28954">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="30686">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="30687">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="30688">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span> =
-    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: java.util.List[com.mongodb.MongoCredential], x$3: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30686" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#30687" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span>, <a href="#30688" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(replicaSetSeeds: List[com.mongodb.casbah.Imports.ServerAddress], credentials: List[com.mongodb.casbah.Imports.MongoCredential], options: com.mongodb.casbah.Imports.MongoClientOptions)com.mongodb.casbah.MongoClient" id="30732">apply</a><span class="delimiter">(</span><a title="List[com.mongodb.casbah.Imports.ServerAddress]" id="32316">replicaSetSeeds</a>: <span title="List[com.mongodb.casbah.Imports.ServerAddress]">List</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span>, <a title="List[com.mongodb.casbah.Imports.MongoCredential]" id="32317">credentials</a>: <span title="List[com.mongodb.casbah.Imports.MongoCredential]">List</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span>, <a title="com.mongodb.casbah.Imports.MongoClientOptions" id="32318">options</a>: <span title="com.mongodb.casbah.Imports.MongoClientOptions">MongoClientOptions</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> =
+    <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: java.util.List[com.mongodb.ServerAddress], x$2: java.util.List[com.mongodb.MongoCredential], x$3: com.mongodb.MongoClientOptions)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32316" title="(b: Seq[com.mongodb.casbah.Imports.ServerAddress])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.ServerAddress]]">replicaSetSeeds</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.ServerAddress]">asJava</span>, <a href="#32317" title="(b: Seq[com.mongodb.casbah.Imports.MongoCredential])collection.JavaConverters.AsJava[java.util.List[com.mongodb.casbah.Imports.MongoCredential]]">credentials</a>.<span title="=&gt; java.util.List[com.mongodb.casbah.Imports.MongoCredential]">asJava</span>, <a href="#32318" title="com.mongodb.casbah.Imports.MongoClientOptions">options</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connect via a MongoClientURI
    *
    * @param  uri (MongoClientURI)
    */</span>
-  <span class="keyword">def</span> <a title="(uri: com.mongodb.casbah.MongoClientURI)com.mongodb.casbah.MongoClient" id="28955">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoClientURI" id="30759">uri</a>: <a href="MongoClientURI.scala.html#10271" title="com.mongodb.casbah.MongoClientURI">MongoClientURI</a><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.MongoClientURI)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30759" title="com.mongodb.casbah.MongoClientURI">uri</a>.<a href="MongoClientURI.scala.html#30767" title="=&gt; com.mongodb.MongoClientURI">underlying</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(uri: com.mongodb.casbah.MongoClientURI)com.mongodb.casbah.MongoClient" id="30733">apply</a><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoClientURI" id="32388">uri</a>: <a href="MongoClientURI.scala.html#10778" title="com.mongodb.casbah.MongoClientURI">MongoClientURI</a><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.MongoClientURI)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32388" title="com.mongodb.casbah.MongoClientURI">uri</a>.<a href="MongoClientURI.scala.html#32391" title="=&gt; com.mongodb.MongoClientURI">underlying</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Connect via a com.mongodb.MongoClientURI
    *
    * @param  uri (com.mongodb.MongoClientURI)
    */</span>
-  <span class="keyword">def</span> <a title="(uri: com.mongodb.MongoClientURI)com.mongodb.casbah.MongoClient" id="28956">apply</a><span class="delimiter">(</span><a title="com.mongodb.MongoClientURI" id="30778">uri</a>: com.mongodb.<span title="com.mongodb.MongoClientURI">MongoClientURI</span><span class="delimiter">)</span> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10254" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.MongoClientURI)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#30778" title="com.mongodb.MongoClientURI">uri</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(uri: com.mongodb.MongoClientURI)com.mongodb.casbah.MongoClient" id="30734">apply</a><span class="delimiter">(</span><a title="com.mongodb.MongoClientURI" id="32406">uri</a>: com.mongodb.<span title="com.mongodb.MongoClientURI">MongoClientURI</span><span class="delimiter">)</span>: <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a> = <span title="com.mongodb.casbah.MongoClient" class="keyword">new</span> <a href="#10762" title="com.mongodb.casbah.MongoClient">MongoClient</a><span class="delimiter">(</span><span title="(x$1: com.mongodb.MongoClientURI)com.mongodb.MongoClient" class="keyword">new</span> <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">(</span><a href="#32406" title="com.mongodb.MongoClientURI">uri</a><span class="delimiter">)</span><span class="delimiter">)</span>
 
 <span class="delimiter">}</span>
 
@@ -223,66 +224,69 @@
  * Wrapper class for the MongoClient object.
  *
  */</span>
-<span class="keyword">class</span> <a title="class MongoClient extends java.lang.Object with ScalaObject" id="10254">MongoClient</a><a href="#10254" title="ScalaObject" class="delimiter">(</a><span class="keyword">val</span> <a title="com.mongodb.MongoClient" id="29804">underlying</a>: <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">)</span> <span class="delimiter">{</span>
+<span class="keyword">class</span> <a title="class MongoClient extends java.lang.Object with ScalaObject" id="10762">MongoClient</a><a href="#10762" title="ScalaObject" class="delimiter">(</a><span class="keyword">val</span> <a title="com.mongodb.MongoClient" id="31450">underlying</a>: <span title="com.mongodb.MongoClient">JavaMongoClient</span><span class="delimiter">)</span> <span class="delimiter">{</span>
 
-  <span class="keyword">def</span> <a title="(dbName: String)com.mongodb.casbah.MongoDB" id="29219">apply</a><span class="delimiter">(</span><a title="String" id="30787">dbName</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: java.lang.String)com.mongodb.DB">getDB</span><a href="Implicits.scala.html#11180" title="implicit com.mongodb.casbah.Implicits.mongoDBAsScala : (db: com.mongodb.DB)java.lang.Object{def asScala: com.mongodb.casbah.MongoDB}" class="delimiter">(</a><a href="#30787" title="String">dbName</a><span class="delimiter">)</span>.<a href="Implicits.scala.html#24350" title="=&gt; com.mongodb.casbah.MongoDB">asScala</a>
+  <span class="keyword">def</span> <a title="(dbName: String)com.mongodb.casbah.MongoDB" id="31089">apply</a><span class="delimiter">(</span><a title="String" id="32414">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="MongoDB.scala.html#10845" title="com.mongodb.casbah.MongoDB">MongoDB</a> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: java.lang.String)com.mongodb.DB">getDB</span><a href="Implicits.scala.html#23712" title="implicit com.mongodb.casbah.Implicits.mongoDBAsScala : (db: com.mongodb.DB)java.lang.Object{def asScala: com.mongodb.casbah.MongoDB}" class="delimiter">(</a><a href="#32414" title="String">dbName</a><span class="delimiter">)</span>.<a href="Implicits.scala.html#28706" title="=&gt; com.mongodb.casbah.MongoDB">asScala</a>
 
-  <span class="keyword">def</span> <a title="(dbName: String)com.mongodb.casbah.MongoDB" id="29220">getDB</a><span class="delimiter">(</span><a title="String" id="30790">dbName</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#29219" title="(dbName: String)com.mongodb.casbah.MongoDB">apply</a><span class="delimiter">(</span><a href="#30790" title="String">dbName</a><span class="delimiter">)</span>
-
-  <span class="comment">/**
-   * @throws MongoException
-   */</span>
-  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[java.lang.String]" id="29221">dbNames</a> = <a href="#29223" title="()scala.collection.mutable.Buffer[java.lang.String]">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(dbName: String)com.mongodb.casbah.MongoDB" id="31090">getDB</a><span class="delimiter">(</span><a title="String" id="32416">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="MongoDB.scala.html#10845" title="com.mongodb.casbah.MongoDB">MongoDB</a> = <a href="#31089" title="(dbName: String)com.mongodb.casbah.MongoDB">apply</a><span class="delimiter">(</span><a href="#32416" title="String">dbName</a><span class="delimiter">)</span>
 
   <span class="comment">/**
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[java.lang.String]" id="29222">databaseNames</a> = <a href="#29223" title="()scala.collection.mutable.Buffer[java.lang.String]">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="()scala.collection.mutable.Buffer[String]" id="31091">dbNames</a><span class="delimiter">(</span><span class="delimiter">)</span>: mutable.<span title="scala.collection.mutable.Buffer[String]">Buffer</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#31093" title="()scala.collection.mutable.Buffer[String]">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
 
   <span class="comment">/**
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="()scala.collection.mutable.Buffer[java.lang.String]" id="29223">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(l: java.util.List[java.lang.String])collection.JavaConverters.AsScala[scala.collection.mutable.Buffer[java.lang.String]]">getDatabaseNames</span>.<span title="=&gt; scala.collection.mutable.Buffer[java.lang.String]">asScala</span>
+  <span class="keyword">def</span> <a title="()scala.collection.mutable.Buffer[String]" id="31092">databaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span>: mutable.<span title="scala.collection.mutable.Buffer[String]">Buffer</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#31093" title="()scala.collection.mutable.Buffer[String]">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
+
+  <span class="comment">/**
+   * @throws MongoException if problem connecting
+   */</span>
+  <span class="keyword">def</span> <a title="()scala.collection.mutable.Buffer[String]" id="31093">getDatabaseNames</a><span class="delimiter">(</span><span class="delimiter">)</span>: mutable.<span title="scala.collection.mutable.Buffer[String]">Buffer</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.util.List[java.lang.String]">getDatabaseNames</span><span title="(l: java.util.List[java.lang.String])collection.JavaConverters.AsScala[scala.collection.mutable.Buffer[java.lang.String]]" class="delimiter">(</span><span class="delimiter">)</span>.<span title="=&gt; scala.collection.mutable.Buffer[java.lang.String]">asScala</span> <span class="comment">/* calls the db */</span>
 
   <span class="comment">/**
    * Drops the database if it exists.
    *
    * @param dbName (String) the name of the database to drop
-   * @throws MongoException
+   * @throws MongoException if problem connecting
    */</span>
-  <span class="keyword">def</span> <a title="(dbName: String)Unit" id="29224">dropDatabase</a><span class="delimiter">(</span><a title="String" id="30826">dbName</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: java.lang.String)Unit">dropDatabase</span><span class="delimiter">(</span><a href="#30826" title="String">dbName</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(dbName: String)Unit" id="31094">dropDatabase</a><span class="delimiter">(</span><a title="String" id="32438">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: java.lang.String)Unit">dropDatabase</span><span class="delimiter">(</span><a href="#32438" title="String">dbName</a><span class="delimiter">)</span>
 
-  <span class="keyword">def</span> <a title="=&gt; java.lang.String" id="29225">version</a> = <a href="#29226" title="()java.lang.String">getVersion</a><span class="delimiter">(</span><span class="delimiter">)</span>
-  <span class="keyword">def</span> <a title="()java.lang.String" id="29226">getVersion</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">getVersion</span>
+  <span class="keyword">def</span> <a title="=&gt; String" id="31095">version</a>: <span title="String">String</span> = <a href="#31096" title="=&gt; String">getVersion</a>
 
-  <span class="keyword">def</span> <a title="=&gt; java.lang.String" id="29227">debugString</a> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">debugString</span>
+  <span class="keyword">def</span> <a title="=&gt; String" id="31096">getVersion</a>: <span title="String">String</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">getVersion</span>
 
-  <span class="keyword">def</span> <a title="=&gt; java.lang.String" id="29228">connectPoint</a> = <a href="#29229" title="()java.lang.String">getConnectPoint</a><span class="delimiter">(</span><span class="delimiter">)</span>
-  <span class="keyword">def</span> <a title="()java.lang.String" id="29229">getConnectPoint</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">getConnectPoint</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;Not a part of public API and will be dropped in 2.8+ versions&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; String" id="31097">debugString</a>: <span title="String">String</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">debugString</span>
+
+  <span class="keyword">def</span> <a title="=&gt; String" id="31098">connectPoint</a>: <span title="String">String</span> = <a href="#31099" title="=&gt; String">getConnectPoint</a>
+
+  <span class="keyword">def</span> <a title="=&gt; String" id="31099">getConnectPoint</a>: <span title="String">String</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.lang.String">getConnectPoint</span>
 
   <span class="comment">/**
    * Gets the address of this database.
    *
    * @return (ServerAddress) The address of the DB
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.ServerAddress" id="29230">address</a> = <a href="#29231" title="()com.mongodb.ServerAddress">getAddress</a><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ServerAddress" id="31100">address</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#31101" title="=&gt; com.mongodb.casbah.Imports.ServerAddress">getAddress</a>
 
   <span class="comment">/**
    * Gets the address of this database.
    *
    * @return (ServerAddress) The address of the DB
    */</span>
-  <span class="keyword">def</span> <a title="()com.mongodb.ServerAddress" id="29231">getAddress</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.ServerAddress">getAddress</span><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ServerAddress" id="31101">getAddress</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.ServerAddress">getAddress</span>
 
-  <span class="keyword">def</span> <a title="=&gt; java.util.List[com.mongodb.ServerAddress]" id="29232">allAddress</a> = <a href="#29233" title="()java.util.List[com.mongodb.ServerAddress]">getAllAddress</a><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.ServerAddress]" id="31102">allAddress</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.ServerAddress]">Buffer</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span> = <a href="#31103" title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.ServerAddress]">getAllAddress</a>
 
-  <span class="keyword">def</span> <a title="()java.util.List[com.mongodb.ServerAddress]" id="29233">getAllAddress</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.util.List[com.mongodb.ServerAddress]">getAllAddress</span><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.ServerAddress]" id="31103">getAllAddress</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.ServerAddress]">Buffer</span><span class="delimiter">[</span>ServerAddress<span class="delimiter">]</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(l: java.util.List[com.mongodb.ServerAddress])collection.JavaConverters.AsScala[scala.collection.mutable.Buffer[com.mongodb.ServerAddress]]">getAllAddress</span>.<span title="=&gt; scala.collection.mutable.Buffer[com.mongodb.ServerAddress]">asScala</span>
 
   <span class="comment">/**
    * Closes all open connections.
    * NOTE: This connection can't be reused after closing.
    */</span>
-  <span class="keyword">def</span> <a title="()Unit" id="29234">close</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Unit">close</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// use parens because this side-effects</span>
+  <span class="keyword">def</span> <a title="()Unit" id="31104">close</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Unit">close</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// use parens because this side-effects</span>
 
   <span class="comment">/**
    * Manipulate Network Options
@@ -290,7 +294,7 @@
    * @see com.mongodb.Mongo
    * @see com.mongodb.Bytes
    */</span>
-  <span class="keyword">def</span> <a title="(option: Int)Unit" id="29235">addOption</a><span class="delimiter">(</span><a title="Int" id="30854">option</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: Int)Unit">addOption</span><span class="delimiter">(</span><a href="#30854" title="Int">option</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(option: Int)Unit" id="31105">addOption</a><span class="delimiter">(</span><a title="Int" id="32484">option</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: Int)Unit">addOption</span><span class="delimiter">(</span><a href="#32484" title="Int">option</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Manipulate Network Options
@@ -298,7 +302,7 @@
    * @see com.mongodb.Mongo
    * @see com.mongodb.Bytes
    */</span>
-  <span class="keyword">def</span> <a title="()Unit" id="29236">resetOptions</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Unit">resetOptions</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// use parens because this side-effects</span>
+  <span class="keyword">def</span> <a title="()Unit" id="31106">resetOptions</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Unit">resetOptions</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// use parens because this side-effects</span>
 
   <span class="comment">/**
    * Manipulate Network Options
@@ -306,7 +310,7 @@
    * @see com.mongodb.Mongo
    * @see com.mognodb.Bytes
    */</span>
-  <span class="keyword">def</span> <a title="()Int" id="29237">getOptions</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Int">getOptions</span>
+  <span class="keyword">def</span> <a title="=&gt; Int" id="31107">getOptions</a>: <span title="Int">Int</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()Int">getOptions</span>
 
   <span class="comment">/**
    * Manipulate Network Options
@@ -314,88 +318,84 @@
    * @see com.mongodb.Mongo
    * @see com.mognodb.Bytes
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; Int" id="29238">options</a> = <a href="#29237" title="()Int">getOptions</a>
+  <span class="keyword">def</span> <a title="=&gt; Int" id="31108">options</a>: <span title="Int">Int</span> = <a href="#31107" title="=&gt; Int">getOptions</a>
 
   <span class="comment">/**
    *
    * Set the write concern for this database.
    * Will be used for writes to any collection in this database.
-   * See the documentation for {@link WriteConcern} for more info.
+   * See the documentation for [[com.mongodb.WriteConcern]] for more info.
    *
    * @param concern (WriteConcern) The write concern to use
    * @see WriteConcern
    */</span>
-  <span class="keyword">def</span> <a title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit" id="29239">setWriteConcern</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="30864">concern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: com.mongodb.WriteConcern)Unit">setWriteConcern</span><span class="delimiter">(</span><a href="#30864" title="com.mongodb.casbah.Imports.WriteConcern">concern</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit" id="31109">setWriteConcern</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="32491">concern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: com.mongodb.WriteConcern)Unit">setWriteConcern</span><span class="delimiter">(</span><a href="#32491" title="com.mongodb.casbah.Imports.WriteConcern">concern</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    *
    * Set the write concern for this database.
    * Will be used for writes to any collection in this database.
-   * See the documentation for {@link WriteConcern} for more info.
+   * See the documentation for [[com.mongodb.WriteConcern]] for more info.
    *
    * @param concern (WriteConcern) The write concern to use
    * @see WriteConcern
    * @see http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
    */</span>
-  <span class="keyword">def</span> <a title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit" id="29240">writeConcern_=</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="30867">concern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span> = <a href="#29239" title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit">setWriteConcern</a><span class="delimiter">(</span><a href="#30867" title="com.mongodb.casbah.Imports.WriteConcern">concern</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit" id="31110">writeConcern_=</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="32493">concern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31109" title="(concern: com.mongodb.casbah.Imports.WriteConcern)Unit">setWriteConcern</a><span class="delimiter">(</span><a href="#32493" title="com.mongodb.casbah.Imports.WriteConcern">concern</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    *
    * get the write concern for this database,
    * which is used for writes to any collection in this database.
-   * See the documentation for {@link WriteConcern} for more info.
+   * See the documentation for [[com.mongodb.WriteConcern]] for more info.
    *
    * @see WriteConcern
    * @see http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.WriteConcern" id="29241">getWriteConcern</a> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.WriteConcern">getWriteConcern</span><span class="delimiter">(</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.WriteConcern" id="31111">getWriteConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.WriteConcern">getWriteConcern</span>
 
   <span class="comment">/**
    *
    * get the write concern for this database,
    * which is used for writes to any collection in this database.
-   * See the documentation for {@link WriteConcern} for more info.
+   * See the documentation for [[com.mongodb.WriteConcern]] for more info.
    *
    * @see WriteConcern
    * @see http://www.thebuzzmedia.com/mongodb-single-server-data-durability-guide/
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.WriteConcern" id="29242">writeConcern</a> = <a href="#29241" title="=&gt; com.mongodb.WriteConcern">getWriteConcern</a>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.WriteConcern" id="31112">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span> = <a href="#31111" title="=&gt; com.mongodb.casbah.Imports.WriteConcern">getWriteConcern</a>
 
   <span class="comment">/**
    * Sets the read preference for this database. Will be used as default for
    * reads from any collection in this database. See the
-   * documentation for {@link ReadPreference} for more information.
+   * documentation for [[com.mongodb.ReadPreference]] for more information.
    *
-   * @param preference Read Preference to use
+   * @param pref Read Preference to use
    */</span>
-  <span class="keyword">def</span> <a title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit" id="29243">readPreference_=</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ReadPreference" id="30876">pref</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span> = <a href="#29244" title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit">setReadPreference</a><span class="delimiter">(</span><a href="#30876" title="com.mongodb.casbah.Imports.ReadPreference">pref</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit" id="31113">readPreference_=</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ReadPreference" id="32499">pref</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31114" title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit">setReadPreference</a><span class="delimiter">(</span><a href="#32499" title="com.mongodb.casbah.Imports.ReadPreference">pref</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Sets the read preference for this database. Will be used as default for
    * reads from any collection in this database. See the
-   * documentation for {@link ReadPreference} for more information.
+   * documentation for [[com.mongodb.ReadPreference]] for more information.
    *
-   * @param preference Read Preference to use
+   * @param pref Read Preference to use
    */</span>
-  <span class="keyword">def</span> <a title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit" id="29244">setReadPreference</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ReadPreference" id="30879">pref</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: com.mongodb.ReadPreference)Unit">setReadPreference</span><span class="delimiter">(</span><a href="#30879" title="com.mongodb.casbah.Imports.ReadPreference">pref</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(pref: com.mongodb.casbah.Imports.ReadPreference)Unit" id="31114">setReadPreference</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.ReadPreference" id="32501">pref</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: com.mongodb.ReadPreference)Unit">setReadPreference</span><span class="delimiter">(</span><a href="#32501" title="com.mongodb.casbah.Imports.ReadPreference">pref</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Gets the read preference for this database. Will be used as default for
    * reads from any collection in this database. See the
-   * documentation for {@link ReadPreference} for more information.
-   *
-   * @param preference Read Preference to use
+   * documentation for [[com.mongodb.ReadPreference]] for more information.
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.ReadPreference" id="29245">readPreference</a> = <a href="#29246" title="=&gt; com.mongodb.ReadPreference">getReadPreference</a>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ReadPreference" id="31115">readPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span> = <a href="#31116" title="=&gt; com.mongodb.casbah.Imports.ReadPreference">getReadPreference</a>
 
   <span class="comment">/**
    * Gets the read preference for this database. Will be used as default for
    * reads from any collection in this database. See the
-   * documentation for {@link ReadPreference} for more information.
-   *
-   * @param preference Read Preference to use
+   * documentation for [[com.mongodb.ReadPreference]] for more information.
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.ReadPreference" id="29246">getReadPreference</a> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.ReadPreference">getReadPreference</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ReadPreference" id="31116">getReadPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()com.mongodb.ReadPreference">getReadPreference</span>
 
   <span class="comment">/**
    * Gets the list of credentials that this client authenticates all connections with
@@ -403,7 +403,7 @@
    * @return the list of credentials
    * @since 2.6.0
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; java.util.List[com.mongodb.MongoCredential]" id="29247">credentialsList</a> = <a href="#29248" title="=&gt; java.util.List[com.mongodb.MongoCredential]">getCredentialsList</a>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.MongoCredential]" id="31117">credentialsList</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.MongoCredential]">Buffer</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span> = <a href="#31118" title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.MongoCredential]">getCredentialsList</a>
 
   <span class="comment">/**
    * Gets the list of credentials that this client authenticates all connections with
@@ -411,8 +411,9 @@
    * @return the list of credentials
    * @since 2.6.0
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; java.util.List[com.mongodb.MongoCredential]" id="29248">getCredentialsList</a> = <a href="#29804" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()java.util.List[com.mongodb.MongoCredential]">getCredentialsList</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.MongoCredential]" id="31118">getCredentialsList</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.casbah.Imports.MongoCredential]">Buffer</span><span class="delimiter">[</span>MongoCredential<span class="delimiter">]</span> = <a href="#31450" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(l: java.util.List[com.mongodb.MongoCredential])collection.JavaConverters.AsScala[scala.collection.mutable.Buffer[com.mongodb.MongoCredential]]">getCredentialsList</span>.<span title="=&gt; scala.collection.mutable.Buffer[com.mongodb.MongoCredential]">asScala</span>
 <span class="delimiter">}</span>
+
         </pre>
     </body>
 </html>
