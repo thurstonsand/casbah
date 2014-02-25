@@ -2,24 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah</title>
+          <title>casbah - com.mongodb.casbah</title>
+          <meta name="description" content="casbah - com.mongodb.casbah" />
+          <meta name="keywords" content="casbah com.mongodb.casbah" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../lib/template.css" />
-      <script type="text/javascript" src="../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'com.mongodb.casbah.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../lib/package_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../package.html">mongodb</a></p>
+        <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.mongodb">mongodb</a></p>
         <h1>casbah</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +39,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,21 +56,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.AggregationCursor" data-isabs="false">
-      <a id="AggregationCursor:AggregationCursor"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="AggregationCursor.html"><span class="name">AggregationCursor</span></a><span class="params">(<span name="underlying">underlying: Cursor</span>)</span><span class="result"> extends Iterator[DBObject] with Product with Serializable</span>
-      </span>
-      </h4>
-      <p class="comment cmt">A wrapper for the new com.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.AggregationOutput" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.AggregationOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AggregationOutputextendsProductwithSerializable"></a>
       <a id="AggregationOutput:AggregationOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,12 +67,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="AggregationOutput.html"><span class="name">AggregationOutput</span></a><span class="params">(<span name="underlying">underlying: AggregationOutput</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="AggregationOutput.html"><span class="name">AggregationOutput</span></a><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.AggregationOutput">mongodb.AggregationOutput</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Wrapper object for AggregationOutput
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.BaseImports" data-isabs="true">
+    </li><li name="com.mongodb.casbah.BaseImports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseImportsextendsAnyRef"></a>
       <a id="BaseImports:BaseImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -81,11 +81,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="BaseImports.html"><span class="name">BaseImports</span></a><span class="result"> extends AnyRef</span>
+        <a href="BaseImports.html"><span class="name">BaseImports</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.BulkWriteOperation" data-isabs="false">
+    </li><li name="com.mongodb.casbah.BulkWriteOperation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BulkWriteOperationextendsProductwithSerializable"></a>
       <a id="BulkWriteOperation:BulkWriteOperation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -93,11 +94,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="BulkWriteOperation.html"><span class="name">BulkWriteOperation</span></a><span class="params">(<span name="underlying">underlying: BulkWriteOperation</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="BulkWriteOperation.html"><span class="name">BulkWriteOperation</span></a><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteOperation">mongodb.BulkWriteOperation</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">A builder for a bulk write operation.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.BulkWriteResult" data-isabs="false">
+    </li><li name="com.mongodb.casbah.BulkWriteResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BulkWriteResultextendsProductwithSerializable"></a>
       <a id="BulkWriteResult:BulkWriteResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -105,11 +107,25 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="BulkWriteResult.html"><span class="name">BulkWriteResult</span></a><span class="params">(<span name="underlying">underlying: BulkWriteResult</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="BulkWriteResult.html"><span class="name">BulkWriteResult</span></a><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteResult">mongodb.BulkWriteResult</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.CursorExplanation" data-isabs="false">
+    </li><li name="com.mongodb.casbah.Cursor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CursorextendsIterator[com.mongodb.casbah.Imports.DBObject]withProductwithSerializable"></a>
+      <a id="Cursor:Cursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Cursor.html"><span class="name">Cursor</span></a><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.Cursor">mongodb.Cursor</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">casbah.Imports.DBObject</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A wrapper for the new com.</p>
+    </li><li name="com.mongodb.casbah.CursorExplanation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CursorExplanationextendscom.mongodb.casbah.Imports.MongoDBObject"></a>
       <a id="CursorExplanation:CursorExplanation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -117,11 +133,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="CursorExplanation.html"><span class="name">CursorExplanation</span></a><span class="result"> extends MongoDBObject</span>
+        <a href="CursorExplanation.html"><span class="name">CursorExplanation</span></a><span class="result"> extends <a href="Imports$.html#MongoDBObject=com.mongodb.casbah.commons.MongoDBObject" class="extmbr" name="com.mongodb.casbah.Imports.MongoDBObject">casbah.Imports.MongoDBObject</a></span>
       </span>
       </h4>
       <p class="comment cmt"></p>
-    </li><li visbl="pub" name="com.mongodb.casbah.Implicits" data-isabs="true">
+    </li><li name="com.mongodb.casbah.Implicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImplicitsextendsAnyRef"></a>
       <a id="Implicits:Implicits"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -129,12 +146,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Implicits.html"><span class="name">Implicits</span></a><span class="result"> extends AnyRef</span>
+        <a href="Implicits.html"><span class="name">Implicits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt"><code>Implicits</code> object to expose implicit conversions to implementing classes
-which facilitate more Scala-like functionality in Mongo.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.Imports" data-isabs="true">
+which facilitate more Scala-like functionality in Mongo.</code></p>
+    </li><li name="com.mongodb.casbah.Imports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImportsextendsBaseImportswithTypeImportswithImplicits"></a>
       <a id="Imports:Imports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -142,11 +160,12 @@ which facilitate more Scala-like functionality in Mongo.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Imports.html"><span class="name">Imports</span></a><span class="result"> extends BaseImports with TypeImports with Implicits</span>
+        <a href="Imports.html"><span class="name">Imports</span></a><span class="result"> extends <a href="BaseImports.html" class="extype" name="com.mongodb.casbah.BaseImports">BaseImports</a> with <a href="TypeImports.html" class="extype" name="com.mongodb.casbah.TypeImports">TypeImports</a> with <a href="Implicits.html" class="extype" name="com.mongodb.casbah.Implicits">Implicits</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoClient" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoClient" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoClientextendsAnyRef"></a>
       <a id="MongoClient:MongoClient"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -154,11 +173,12 @@ which facilitate more Scala-like functionality in Mongo.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoClient.html"><span class="name">MongoClient</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoClient.html"><span class="name">MongoClient</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Wrapper class for the MongoClient object.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoClientURI" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoClientURI" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoClientURIextendsAnyRef"></a>
       <a id="MongoClientURI:MongoClientURI"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -166,11 +186,12 @@ which facilitate more Scala-like functionality in Mongo.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoClientURI.html"><span class="name">MongoClientURI</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoClientURI.html"><span class="name">MongoClientURI</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Create a new MongoURI with a URI String e.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCollection" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoCollectionextendsMongoCollectionBasewithIterable[com.mongodb.casbah.commons.TypeImports.DBObject]"></a>
       <a id="MongoCollection:MongoCollection"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -178,12 +199,13 @@ which facilitate more Scala-like functionality in Mongo.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoCollection.html"><span class="name">MongoCollection</span></a><span class="result"> extends MongoCollectionBase with Iterable[DBObject]</span>
+        <a href="MongoCollection.html"><span class="name">MongoCollection</span></a><span class="result"> extends <a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a> with <span class="extype" name="scala.Iterable">Iterable</span>[<a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">casbah.commons.TypeImports.DBObject</a>]</span>
       </span>
       </h4>
       <p class="comment cmt">Concrete collection implementation expecting standard DBObject operation
 This is the version of MongoCollectionBase you should expect to use in most cases.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCollectionBase" data-isabs="true">
+    </li><li name="com.mongodb.casbah.MongoCollectionBase" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoCollectionBaseextendsLogging"></a>
       <a id="MongoCollectionBase:MongoCollectionBase"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -191,13 +213,14 @@ This is the version of MongoCollectionBase you should expect to use in most case
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MongoCollectionBase.html"><span class="name">MongoCollectionBase</span></a><span class="result"> extends Logging</span>
+        <a href="MongoCollectionBase.html"><span class="name">MongoCollectionBase</span></a><span class="result"> extends <a href="commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       <p class="comment cmt">Scala wrapper for Mongo DBCollections,
 including ones which return custom DBObject subclasses
 via setObjectClass and the like.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCursor" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoCursor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoCursorextendsMongoCursorBasewithIterator[com.mongodb.casbah.Imports.DBObject]"></a>
       <a id="MongoCursor:MongoCursor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -205,12 +228,13 @@ via setObjectClass and the like.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoCursor.html"><span class="name">MongoCursor</span></a><span class="result"> extends MongoCursorBase with Iterator[DBObject]</span>
+        <a href="MongoCursor.html"><span class="name">MongoCursor</span></a><span class="result"> extends <a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a> with <span class="extype" name="scala.Iterator">Iterator</span>[<a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">casbah.Imports.DBObject</a>]</span>
       </span>
       </h4>
       <p class="comment cmt">Concrete cursor implementation expecting standard DBObject operation
 This is the version of MongoCursorBase you should expect to use in most cases.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCursorBase" data-isabs="true">
+    </li><li name="com.mongodb.casbah.MongoCursorBase" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoCursorBaseextendsLogging"></a>
       <a id="MongoCursorBase:MongoCursorBase"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -218,12 +242,13 @@ This is the version of MongoCursorBase you should expect to use in most cases.</
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MongoCursorBase.html"><span class="name">MongoCursorBase</span></a><span class="result"> extends Logging</span>
+        <a href="MongoCursorBase.html"><span class="name">MongoCursorBase</span></a><span class="result"> extends <a href="commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       <p class="comment cmt">Scala wrapper for Mongo DBCursors,
 including ones which return custom DBObject subclasses.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoDB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBextendsAnyRef"></a>
       <a id="MongoDB:MongoDB"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -231,35 +256,38 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDB.html"><span class="name">MongoDB</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoDB.html"><span class="name">MongoDB</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Wrapper for the Mongo <code>DB</code> object providing scala-friendly functionality.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoGenericTypedCollection" data-isabs="false">
-      <a id="MongoGenericTypedCollection:MongoGenericTypedCollection[A]"></a>
+      <p class="comment cmt">Wrapper for the Mongo <code>DB</code> object providing scala-friendly functionality.</code></p>
+    </li><li name="com.mongodb.casbah.MongoGenericTypedCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoGenericTypedCollection[A&lt;:com.mongodb.casbah.commons.TypeImports.DBObject]extendsMongoTypedCollection"></a>
+      <a id="MongoGenericTypedCollection[A&lt;:casbah.commons.TypeImports.DBObject]:MongoGenericTypedCollection[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoGenericTypedCollection.html"><span class="name">MongoGenericTypedCollection</span></a><span class="tparams">[<span name="A">A &lt;: DBObject</span>]</span><span class="result"> extends MongoTypedCollection</span>
+        <a href="MongoGenericTypedCollection.html"><span class="name">MongoGenericTypedCollection</span></a><span class="tparams">[<span name="A">A &lt;: <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">casbah.commons.TypeImports.DBObject</a></span>]</span><span class="result"> extends <a href="MongoTypedCollection.html" class="extype" name="com.mongodb.casbah.MongoTypedCollection">MongoTypedCollection</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoGenericTypedCursor" data-isabs="false">
-      <a id="MongoGenericTypedCursor:MongoGenericTypedCursor[A]"></a>
+    </li><li name="com.mongodb.casbah.MongoGenericTypedCursor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoGenericTypedCursor[A&lt;:com.mongodb.casbah.Imports.DBObject]extendsMongoCursorBase"></a>
+      <a id="MongoGenericTypedCursor[A&lt;:casbah.Imports.DBObject]:MongoGenericTypedCursor[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoGenericTypedCursor.html"><span class="name">MongoGenericTypedCursor</span></a><span class="tparams">[<span name="A">A &lt;: DBObject</span>]</span><span class="result"> extends MongoCursorBase</span>
+        <a href="MongoGenericTypedCursor.html"><span class="name">MongoGenericTypedCursor</span></a><span class="tparams">[<span name="A">A &lt;: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">casbah.Imports.DBObject</a></span>]</span><span class="result"> extends <a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></span>
       </span>
       </h4>
       <p class="comment cmt">Concrete cursor implementation for typed Cursor operations via Collection.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoTypedCollection" data-isabs="true">
+    </li><li name="com.mongodb.casbah.MongoTypedCollection" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoTypedCollectionextendsMongoCollectionBase"></a>
       <a id="MongoTypedCollection:MongoTypedCollection"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -267,11 +295,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MongoTypedCollection.html"><span class="name">MongoTypedCollection</span></a><span class="result"> extends MongoCollectionBase</span>
+        <a href="MongoTypedCollection.html"><span class="name">MongoTypedCollection</span></a><span class="result"> extends <a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></span>
       </span>
       </h4>
       <p class="comment cmt">Concrete collection implementation for typed Cursor operations via Collection.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoURI" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoURI" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoURIextendsAnyRef"></a>
       <a id="MongoURI:MongoURI"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -279,11 +308,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoURI.html"><span class="name">MongoURI</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoURI.html"><span class="name">MongoURI</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Create a new MongoURI with a URI String e.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.ParallelScanOptions" data-isabs="false">
+    </li><li name="com.mongodb.casbah.ParallelScanOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParallelScanOptionsextendsProductwithSerializable"></a>
       <a id="ParallelScanOptions:ParallelScanOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -291,11 +321,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="ParallelScanOptions.html"><span class="name">ParallelScanOptions</span></a><span class="params">(<span name="numCursors">numCursors: Int</span>, <span name="batchSize">batchSize: Int</span>, <span name="readPreference">readPreference: Option[ReadPreference]</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="ParallelScanOptions.html"><span class="name">ParallelScanOptions</span></a><span class="params">(<span name="numCursors">numCursors: <span class="extype" name="scala.Int">Int</span></span>, <span name="batchSize">batchSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="readPreference">readPreference: <span class="extype" name="scala.Option">Option</span>[<a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">The options to use for a parallel collection scan.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.TypeImports" data-isabs="true">
+    </li><li name="com.mongodb.casbah.TypeImports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TypeImportsextendsAnyRef"></a>
       <a id="TypeImports:TypeImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -303,11 +334,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="TypeImports.html"><span class="name">TypeImports</span></a><span class="result"> extends AnyRef</span>
+        <a href="TypeImports.html"><span class="name">TypeImports</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoConnection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoConnectionextendsAnyRef"></a>
       <a id="MongoConnection:MongoConnection"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -315,7 +347,7 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoConnection.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoConnection.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Wrapper class for the Mongo Connection object.</p>
@@ -324,9 +356,10 @@ including ones which return custom DBObject subclasses.</p>
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.AggregationOptions" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.AggregationOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AggregationOptions"></a>
       <a id="AggregationOptions:AggregationOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -334,12 +367,13 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="AggregationOptions$.html"><span class="name">AggregationOptions</span></a><span class="result"> extends AnyRef</span>
+        <a href="AggregationOptions$.html"><span class="name">AggregationOptions</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper object for <code>com.mongodb.AggregationOptions</code>
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.BaseImports" data-isabs="false">
+    </li><li name="com.mongodb.casbah.BaseImports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BaseImports"></a>
       <a id="BaseImports:BaseImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -347,11 +381,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="BaseImports$.html"><span class="name">BaseImports</span></a><span class="result"> extends BaseImports with BaseImports with BaseImports</span>
+        <a href="BaseImports$.html"><span class="name">BaseImports</span></a><span class="result"> extends <a href="BaseImports.html" class="extype" name="com.mongodb.casbah.BaseImports">BaseImports</a> with <a href="commons/BaseImports.html" class="extype" name="com.mongodb.casbah.commons.BaseImports">casbah.commons.BaseImports</a> with <a href="query/BaseImports.html" class="extype" name="com.mongodb.casbah.query.BaseImports">casbah.query.BaseImports</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.Implicits" data-isabs="false">
+    </li><li name="com.mongodb.casbah.Implicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Implicits"></a>
       <a id="Implicits:Implicits"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -359,11 +394,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends Implicits with Implicits with Implicits</span>
+        <a href="Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends <a href="Implicits.html" class="extype" name="com.mongodb.casbah.Implicits">Implicits</a> with <a href="commons/Implicits.html" class="extype" name="com.mongodb.casbah.commons.Implicits">casbah.commons.Implicits</a> with <a href="query/Implicits.html" class="extype" name="com.mongodb.casbah.query.Implicits">casbah.query.Implicits</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.Imports" data-isabs="false">
+    </li><li name="com.mongodb.casbah.Imports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Imports"></a>
       <a id="Imports:Imports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -371,11 +407,12 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Imports$.html"><span class="name">Imports</span></a><span class="result"> extends Imports with Imports with Imports with FluidQueryBarewordOps</span>
+        <a href="Imports$.html"><span class="name">Imports</span></a><span class="result"> extends <a href="Imports.html" class="extype" name="com.mongodb.casbah.Imports">Imports</a> with <a href="commons/Imports.html" class="extype" name="com.mongodb.casbah.commons.Imports">casbah.commons.Imports</a> with <a href="query/Imports.html" class="extype" name="com.mongodb.casbah.query.Imports">casbah.query.Imports</a> with <a href="query/dsl/FluidQueryBarewordOps.html" class="extype" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps">FluidQueryBarewordOps</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoClient" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoClient" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoClient"></a>
       <a id="MongoClient:MongoClient"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -383,12 +420,13 @@ including ones which return custom DBObject subclasses.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoClient$.html"><span class="name">MongoClient</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoClient$.html"><span class="name">MongoClient</span></a>
       </span>
       </h4>
       <p class="comment cmt">Wrapper object for MongoClient connections, providing the static methods the
 Java driver gives.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoClientOptions" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoClientOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoClientOptions"></a>
       <a id="MongoClientOptions:MongoClientOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -396,12 +434,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoClientOptions$.html"><span class="name">MongoClientOptions</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoClientOptions$.html"><span class="name">MongoClientOptions</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper class for creating MongoClientOptions instances
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoClientURI" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoClientURI" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoClientURI"></a>
       <a id="MongoClientURI:MongoClientURI"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -409,11 +448,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoClientURI$.html"><span class="name">MongoClientURI</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoClientURI$.html"><span class="name">MongoClientURI</span></a>
       </span>
       </h4>
       <p class="comment cmt"></p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCollection" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoCollection"></a>
       <a id="MongoCollection:MongoCollection"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -421,12 +461,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoCollection$.html"><span class="name">MongoCollection</span></a><span class="result"> extends Logging</span>
+        <a href="MongoCollection$.html"><span class="name">MongoCollection</span></a><span class="result"> extends <a href="commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       <p class="comment cmt">Helper object for some static methods
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCredential" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoCredential" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoCredential"></a>
       <a id="MongoCredential:MongoCredential"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -434,12 +475,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoCredential$.html"><span class="name">MongoCredential</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoCredential$.html"><span class="name">MongoCredential</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper class for creating MongoCredential instances
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoCursor" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoCursor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoCursor"></a>
       <a id="MongoCursor:MongoCursor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -447,11 +489,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoCursor$.html"><span class="name">MongoCursor</span></a><span class="result"> extends Logging</span>
+        <a href="MongoCursor$.html"><span class="name">MongoCursor</span></a><span class="result"> extends <a href="commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDB" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoDB" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDB"></a>
       <a id="MongoDB:MongoDB"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -459,11 +502,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoDB$.html"><span class="name">MongoDB</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoDB$.html"><span class="name">MongoDB</span></a>
       </span>
       </h4>
-      <p class="comment cmt">Wrapper for the Mongo <code>DB</code> object providing scala-friendly functionality.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoDBAddress" data-isabs="false">
+      <p class="comment cmt">Wrapper for the Mongo <code>DB</code> object providing scala-friendly functionality.</code></p>
+    </li><li name="com.mongodb.casbah.MongoDBAddress" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBAddress"></a>
       <a id="MongoDBAddress:MongoDBAddress"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -471,11 +515,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBAddress$.html"><span class="name">MongoDBAddress</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoDBAddress$.html"><span class="name">MongoDBAddress</span></a>
       </span>
       </h4>
       <p class="comment cmt"></p>
-    </li><li visbl="pub" name="com.mongodb.casbah.ParallelScanOptions" data-isabs="false">
+    </li><li name="com.mongodb.casbah.ParallelScanOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParallelScanOptions"></a>
       <a id="ParallelScanOptions:ParallelScanOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -483,11 +528,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ParallelScanOptions$.html"><span class="name">ParallelScanOptions</span></a><span class="result"> extends Serializable</span>
+        <a href="ParallelScanOptions$.html"><span class="name">ParallelScanOptions</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">The options to use for a parallel collection scan.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.ReadPreference" data-isabs="false">
+    </li><li name="com.mongodb.casbah.ReadPreference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadPreference"></a>
       <a id="ReadPreference:ReadPreference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -495,12 +541,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ReadPreference$.html"><span class="name">ReadPreference</span></a><span class="result"> extends AnyRef</span>
+        <a href="ReadPreference$.html"><span class="name">ReadPreference</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper class for creating ReadPreference instances
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.TypeImports" data-isabs="false">
+    </li><li name="com.mongodb.casbah.TypeImports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TypeImports"></a>
       <a id="TypeImports:TypeImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -508,11 +555,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="TypeImports$.html"><span class="name">TypeImports</span></a><span class="result"> extends TypeImports with TypeImports with TypeImports</span>
+        <a href="TypeImports$.html"><span class="name">TypeImports</span></a><span class="result"> extends <a href="TypeImports.html" class="extype" name="com.mongodb.casbah.TypeImports">TypeImports</a> with <a href="commons/TypeImports.html" class="extype" name="com.mongodb.casbah.commons.TypeImports">casbah.commons.TypeImports</a> with <a href="query/TypeImports.html" class="extype" name="com.mongodb.casbah.query.TypeImports">casbah.query.TypeImports</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.WriteConcern" data-isabs="false">
+    </li><li name="com.mongodb.casbah.WriteConcern" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WriteConcern"></a>
       <a id="WriteConcern:WriteConcern"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -520,12 +568,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="WriteConcern$.html"><span class="name">WriteConcern</span></a><span class="result"> extends AnyRef</span>
+        <a href="WriteConcern$.html"><span class="name">WriteConcern</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper class for creating WriteConcern instances
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="commons"></a>
       <a id="commons:commons"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -537,7 +586,8 @@ Java driver gives.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs" data-isabs="false">
+    </li><li name="com.mongodb.casbah.gridfs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gridfs"></a>
       <a id="gridfs:gridfs"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -549,7 +599,8 @@ Java driver gives.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="map_reduce"></a>
       <a id="map_reduce:map_reduce"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -561,7 +612,8 @@ Java driver gives.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query" data-isabs="false">
+    </li><li name="com.mongodb.casbah.query" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="query"></a>
       <a id="query:query"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -573,7 +625,8 @@ Java driver gives.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="util"></a>
       <a id="util:util"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -588,9 +641,12 @@ Java driver gives.</p>
     </li></ol>
             </div>
 
-        <div class="values members" id="values">
+        
+
+        <div id="values" class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.MongoConnection" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.MongoConnection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoConnection"></a>
       <a id="MongoConnection:MongoConnection"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -598,11 +654,12 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoConnection$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoConnection$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient">MongoConnection</span></a>
       </span>
       </h4>
       <p class="comment cmt">Wrapper object for Mongo Connections, providing the static methods the Java driver gives.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoOptions" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoOptions"></a>
       <a id="MongoOptions:MongoOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -610,12 +667,13 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoOptions$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientOptions">MongoOptions</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoOptions$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientOptions">MongoOptions</span></a>
       </span>
       </h4>
       <p class="comment cmt">Helper class for creating MongoOptions instances
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.MongoURI" data-isabs="false">
+    </li><li name="com.mongodb.casbah.MongoURI" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoURI"></a>
       <a id="MongoURI:MongoURI"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -623,7 +681,7 @@ Java driver gives.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoURI$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientURI">MongoURI</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoURI$.html"><span class="name deprecated" title="Deprecated: (Since version 2.7) Please use MongoClient and MongoClientURI">MongoURI</span></a>
       </span>
       </h4>
       <p class="comment cmt"></p>
@@ -633,6 +691,14 @@ Java driver gives.</p>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>
@@ -640,7 +706,6 @@ Java driver gives.</p>
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
     </body>
       </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>4. Whats new in Casbah &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
+    <title>5. Whats new in Casbah &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
 <link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.0-RC0 documentation" href="index.html" />
-<link rel="next" title="5. Upgrade" href="upgrade.html" />
-<link rel="prev" title="3. Changelog" href="changelog.html" />
+<link rel="next" title="6. Upgrade" href="upgrade.html" />
+<link rel="prev" title="4. Changelog" href="changelog.html" />
 <!-- Put the following javascript before the closing </head> tag. -->
 <script>
   (function() {
@@ -75,9 +75,9 @@
             <div id="cse-results"><gcse:searchresults></gcse:searchresults></div>
             
   <div class="section" id="whats-new-in-casbah">
-<h1>4. Whats new in Casbah<a class="headerlink" href="#whats-new-in-casbah" title="Permalink to this headline">¶</a></h1>
+<h1>5. Whats new in Casbah<a class="headerlink" href="#whats-new-in-casbah" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="casbah-2-7-and-mongo-db-2-6-features">
-<h2>4.1. Casbah 2.7 and Mongo DB 2.6 Features<a class="headerlink" href="#casbah-2-7-and-mongo-db-2-6-features" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. Casbah 2.7 and Mongo DB 2.6 Features<a class="headerlink" href="#casbah-2-7-and-mongo-db-2-6-features" title="Permalink to this headline">¶</a></h2>
 <p>MongoDB 2.6 introduces some new powerful features that are reflected in the 2.7.0 driver release. These include:</p>
 <ul class="simple">
 <li>Aggregation cursors</li>
@@ -101,7 +101,7 @@ of nested MongoDBObjects.</li>
 <p>Let&#8217;s look at the main things in 2.6 features one by one.</p>
 </div>
 <div class="section" id="aggregation-cursors">
-<h2>4.2. Aggregation cursors<a class="headerlink" href="#aggregation-cursors" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. Aggregation cursors<a class="headerlink" href="#aggregation-cursors" title="Permalink to this headline">¶</a></h2>
 <p>MongoDB 2.6 adds the ability to return a cursor from the aggregation framework.
 To do that simply use <tt class="docutils literal"><span class="pre">AggregationOptions</span></tt> with the aggregation command:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;aggregate&quot;</span><span class="o">)</span>
@@ -132,7 +132,7 @@ To do that simply use <tt class="docutils literal"><span class="pre">Aggregation
 documentation.</p>
 </div>
 <div class="section" id="maxtime">
-<h2>4.3. maxTime<a class="headerlink" href="#maxtime" title="Permalink to this headline">¶</a></h2>
+<h2>5.3. maxTime<a class="headerlink" href="#maxtime" title="Permalink to this headline">¶</a></h2>
 <p>One feature that has requested often is the ability to timeout individual queries. In MongoDB 2.6 it&#8217;s finally arrived
 and is known as <a class="reference external" href="http://docs.mongodb.org/master/reference/method/cursor.maxTimeMS/">maxTimeMS</a>. In Casbah support for
 <tt class="docutils literal"><span class="pre">maxTimeMS</span></tt> is via an argument or via the query api but is called <tt class="docutils literal"><span class="pre">maxTime</span></tt> and takes a
@@ -148,7 +148,7 @@ and is known as <a class="reference external" href="http://docs.mongodb.org/mast
 <p>In the examples above the <strong>maxTimeMS</strong> is set to one second and the query will be aborted after the full second is up.</p>
 </div>
 <div class="section" id="ordered-unordered-bulk-operations">
-<h2>4.4. Ordered/Unordered bulk operations<a class="headerlink" href="#ordered-unordered-bulk-operations" title="Permalink to this headline">¶</a></h2>
+<h2>5.4. Ordered/Unordered bulk operations<a class="headerlink" href="#ordered-unordered-bulk-operations" title="Permalink to this headline">¶</a></h2>
 <p>Under the covers MongoDB is moving away from the combination of a write operation + get last error (GLE) and towards a
 write commands api. These new commands allow for the execution of bulk insert/update/remove operations. The bulk api&#8217;s
 are abstractions on top of this that server to make it easy to build bulk operations. Bulk operations come in two main
@@ -186,7 +186,7 @@ Unordered bulk operations do not guarantee order of execution.</li>
 there might be slight edge cases where it cannot correctly report the right numbers.</p>
 </div>
 <div class="section" id="parallelscan">
-<h2>4.5. parallelScan<a class="headerlink" href="#parallelscan" title="Permalink to this headline">¶</a></h2>
+<h2>5.5. parallelScan<a class="headerlink" href="#parallelscan" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>parallelCollectionScan</strong> command is a special command targeted at reading out an entire collection using
 multiple cursors.  Casbah adds support by adding the <tt class="docutils literal"><span class="pre">MongoCollection.parallelScan(options)</span></tt> method:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;parallelScan&quot;</span><span class="o">)</span>
@@ -206,7 +206,7 @@ multiple cursors.  Casbah adds support by adding the <tt class="docutils literal
 <p>This optimizes the IO throughput from a collection.</p>
 </div>
 <div class="section" id="integrated-text-search-in-the-query-language">
-<h2>4.6. Integrated text search in the query language<a class="headerlink" href="#integrated-text-search-in-the-query-language" title="Permalink to this headline">¶</a></h2>
+<h2>5.6. Integrated text search in the query language<a class="headerlink" href="#integrated-text-search-in-the-query-language" title="Permalink to this headline">¶</a></h2>
 <p>Text indexes are now integrated into the main query language and enabled by default:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;textSearch&quot;</span><span class="o">)</span>
 <span class="n">collection</span><span class="o">.</span><span class="n">drop</span><span class="o">()</span>
@@ -232,8 +232,8 @@ multiple cursors.  Casbah adds support by adding the <tt class="docutils literal
 
 <div id="btnv">
 <ul id="btnvl">
-<li id="btnvpr"><a href="changelog.html" title="Previous Section: 3. Changelog">&lt; &nbsp; 3. Changelog</a></li>
-<li id="btnvnx"><a href="upgrade.html" title="Next Section: 5. Upgrade">5. Upgrade &nbsp;&gt;</a></li>
+<li id="btnvpr"><a href="changelog.html" title="Previous Section: 4. Changelog">&lt; &nbsp; 4. Changelog</a></li>
+<li id="btnvnx"><a href="upgrade.html" title="Next Section: 6. Upgrade">6. Upgrade &nbsp;&gt;</a></li>
 </ul>
 </div>
 </div>
@@ -249,11 +249,12 @@ multiple cursors.  Casbah adds support by adding the <tt class="docutils literal
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">1. Tutorial: Using Casbah</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide/index.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">3. Changelog</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">4. Whats new in Casbah</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="examples.html">3. Casbah Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">4. Changelog</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. Whats new in Casbah</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade.html">5. Upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade.html">6. Upgrade</a></li>
 </ul>
 <h3 style="padding-bottom: 1em;"><a href="http://mongodb.github.io/casbah/api/#com.mongodb.casbah.package">API Documentation</a></h3>
 

@@ -2,24 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.map_reduce</title>
+          <title>map_reduce - com.mongodb.casbah.map_reduce</title>
+          <meta name="description" content="map reduce - com.mongodb.casbah.map reduce" />
+          <meta name="keywords" content="map reduce com.mongodb.casbah.map reduce" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.mongodb.casbah.map_reduce.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../package.html">casbah</a></p>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah">casbah</a></p>
         <h1>map_reduce</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +39,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,9 +56,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceCollectionBasedResult" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.map_reduce.MapReduceCollectionBasedResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceCollectionBasedResultextendsMapReduceResult"></a>
       <a id="MapReduceCollectionBasedResult:MapReduceCollectionBasedResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -56,11 +67,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceCollectionBasedResult.html"><span class="name">MapReduceCollectionBasedResult</span></a><span class="result"> extends MapReduceResult</span>
+        <a href="MapReduceCollectionBasedResult.html"><span class="name">MapReduceCollectionBasedResult</span></a><span class="result"> extends <a href="MapReduceResult.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceResult">MapReduceResult</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceCommand" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceCommandextendsProductwithSerializable"></a>
       <a id="MapReduceCommand:MapReduceCommand"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,11 +80,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceCommand.html"><span class="name">MapReduceCommand</span></a><span class="params">(<span name="input">input: String</span>, <span name="map">map: JSFunction</span>, <span name="reduce">reduce: JSFunction</span>, <span name="output">output: MapReduceOutputTarget</span>, <span name="query">query: Option[DBObject]</span>, <span name="sort">sort: Option[DBObject]</span>, <span name="limit">limit: Option[Int]</span>, <span name="finalizeFunction">finalizeFunction: Option[JSFunction]</span>, <span name="jsScope">jsScope: Option[DBObject]</span>, <span name="verbose">verbose: Boolean</span>, <span name="maxTime">maxTime: Option[Duration]</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="MapReduceCommand.html"><span class="name">MapReduceCommand</span></a><span class="params">(<span name="input">input: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="map">map: <a href="../Imports$.html#JSFunction=String" class="extmbr" name="com.mongodb.casbah.Imports.JSFunction">Imports.JSFunction</a> = <span class="symbol">&quot;&quot;</span></span>, <span name="reduce">reduce: <a href="../Imports$.html#JSFunction=String" class="extmbr" name="com.mongodb.casbah.Imports.JSFunction">Imports.JSFunction</a> = <span class="symbol">&quot;&quot;</span></span>, <span name="output">output: <a href="MapReduceOutputTarget.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget">MapReduceOutputTarget</a> = <span class="symbol">MapReduceInlineOutput</span></span>, <span name="query">query: <span class="extype" name="scala.Option">Option</span>[<a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a>] = <span class="symbol">scala.None</span></span>, <span name="sort">sort: <span class="extype" name="scala.Option">Option</span>[<a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a>] = <span class="symbol">scala.None</span></span>, <span name="limit">limit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="finalizeFunction">finalizeFunction: <span class="extype" name="scala.Option">Option</span>[<a href="../Imports$.html#JSFunction=String" class="extmbr" name="com.mongodb.casbah.Imports.JSFunction">Imports.JSFunction</a>] = <span class="symbol">scala.None</span></span>, <span name="jsScope">jsScope: <span class="extype" name="scala.Option">Option</span>[<a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a>] = <span class="symbol">scala.None</span></span>, <span name="verbose">verbose: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="maxTime">maxTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.concurrent.duration.Duration">Duration</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Case class for invoking MongoDB mapReduces.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceError" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceErrorextendsMapReduceResult"></a>
       <a id="MapReduceError:MapReduceError"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -80,11 +93,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceError.html"><span class="name">MapReduceError</span></a><span class="result"> extends MapReduceResult</span>
+        <a href="MapReduceError.html"><span class="name">MapReduceError</span></a><span class="result"> extends <a href="MapReduceResult.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceResult">MapReduceResult</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceException" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceExceptionextendscasbah.Imports.MongoException"></a>
       <a id="MapReduceException:MapReduceException"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -92,11 +106,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceException.html"><span class="name">MapReduceException</span></a><span class="result"> extends MongoException</span>
+        <a href="MapReduceException.html"><span class="name">MapReduceException</span></a><span class="result"> extends <a href="../Imports$.html#MongoException=com.mongodb.MongoException" class="extmbr" name="com.mongodb.casbah.Imports.MongoException">Imports.MongoException</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceInlineResult" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceInlineResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceInlineResultextendsMapReduceCollectionBasedResult"></a>
       <a id="MapReduceInlineResult:MapReduceInlineResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,11 +119,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceInlineResult.html"><span class="name">MapReduceInlineResult</span></a><span class="result"> extends MapReduceCollectionBasedResult</span>
+        <a href="MapReduceInlineResult.html"><span class="name">MapReduceInlineResult</span></a><span class="result"> extends <a href="MapReduceCollectionBasedResult.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceCollectionBasedResult">MapReduceCollectionBasedResult</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceMergeOutput" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceMergeOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceMergeOutputextendsMapReduceOutputTargetwithProductwithSerializable"></a>
       <a id="MapReduceMergeOutput:MapReduceMergeOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -116,11 +132,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceMergeOutput.html"><span class="name">MapReduceMergeOutput</span></a><span class="params">(<span name="collection">collection: String</span>)</span><span class="result"> extends MapReduceOutputTarget with Product with Serializable</span>
+        <a href="MapReduceMergeOutput.html"><span class="name">MapReduceMergeOutput</span></a><span class="params">(<span name="collection">collection: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MapReduceOutputTarget.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget">MapReduceOutputTarget</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget" data-isabs="true">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MapReduceOutputTargetextendsAnyRef"></a>
       <a id="MapReduceOutputTarget:MapReduceOutputTarget"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -128,11 +145,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceOutputTarget.html"><span class="name">MapReduceOutputTarget</span></a><span class="result"> extends AnyRef</span>
+        <a href="MapReduceOutputTarget.html"><span class="name">MapReduceOutputTarget</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceReduceOutput" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceReduceOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceReduceOutputextendsMapReduceOutputTargetwithProductwithSerializable"></a>
       <a id="MapReduceReduceOutput:MapReduceReduceOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -140,11 +158,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceReduceOutput.html"><span class="name">MapReduceReduceOutput</span></a><span class="params">(<span name="collection">collection: String</span>)</span><span class="result"> extends MapReduceOutputTarget with Product with Serializable</span>
+        <a href="MapReduceReduceOutput.html"><span class="name">MapReduceReduceOutput</span></a><span class="params">(<span name="collection">collection: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MapReduceOutputTarget.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget">MapReduceOutputTarget</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceResult" data-isabs="true">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceResult" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MapReduceResultextendsIterator[com.mongodb.casbah.Imports.DBObject]withLogging"></a>
       <a id="MapReduceResult:MapReduceResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -152,11 +171,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceResult.html"><span class="name">MapReduceResult</span></a><span class="result"> extends Iterator[DBObject] with Logging</span>
+        <a href="MapReduceResult.html"><span class="name">MapReduceResult</span></a><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a>] with <a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       <p class="comment cmt">Wrapper for MongoDB MapReduceResults, implementing iterator to allow direct iterator over the result set.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceStandardOutput" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceStandardOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceStandardOutputextendsMapReduceOutputTargetwithProductwithSerializable"></a>
       <a id="MapReduceStandardOutput:MapReduceStandardOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -164,7 +184,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceStandardOutput.html"><span class="name">MapReduceStandardOutput</span></a><span class="params">(<span name="collection">collection: String</span>)</span><span class="result"> extends MapReduceOutputTarget with Product with Serializable</span>
+        <a href="MapReduceStandardOutput.html"><span class="name">MapReduceStandardOutput</span></a><span class="params">(<span name="collection">collection: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MapReduceOutputTarget.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget">MapReduceOutputTarget</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -173,9 +193,10 @@
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceInlineOutput" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.map_reduce.MapReduceInlineOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceInlineOutput"></a>
       <a id="MapReduceInlineOutput:MapReduceInlineOutput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -183,11 +204,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceInlineOutput$.html"><span class="name">MapReduceInlineOutput</span></a><span class="result"> extends MapReduceOutputTarget with Product with Serializable</span>
+        <a href="MapReduceInlineOutput$.html"><span class="name">MapReduceInlineOutput</span></a><span class="result"> extends <a href="MapReduceOutputTarget.html" class="extype" name="com.mongodb.casbah.map_reduce.MapReduceOutputTarget">MapReduceOutputTarget</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.map_reduce.MapReduceResult" data-isabs="false">
+    </li><li name="com.mongodb.casbah.map_reduce.MapReduceResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapReduceResult"></a>
       <a id="MapReduceResult:MapReduceResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -195,7 +217,7 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MapReduceResult$.html"><span class="name">MapReduceResult</span></a><span class="result"> extends Logging</span>
+        <a href="MapReduceResult$.html"><span class="name">MapReduceResult</span></a><span class="result"> extends <a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       
@@ -203,10 +225,20 @@
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>
@@ -214,7 +246,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

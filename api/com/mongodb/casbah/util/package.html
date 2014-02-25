@@ -2,24 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.util</title>
+          <title>util - com.mongodb.casbah.util</title>
+          <meta name="description" content="util - com.mongodb.casbah.util" />
+          <meta name="keywords" content="util com.mongodb.casbah.util" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.mongodb.casbah.util.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../package.html">casbah</a></p>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah">casbah</a></p>
         <h1>util</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +39,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,9 +56,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.util.MongoDeleteOperation" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.util.MongoDeleteOperation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDeleteOperationextendsMongoOpLogEntrywithProductwithSerializable"></a>
       <a id="MongoDeleteOperation:MongoDeleteOperation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -56,11 +67,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDeleteOperation.html"><span class="name">MongoDeleteOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoDeleteOperation.html"><span class="name">MongoDeleteOperation</span></a><span class="params">(<span name="timestamp">timestamp: <span class="extype" name="org.bson.types.BSONTimestamp">BSONTimestamp</span></span>, <span name="opID">opID: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="namespace">namespace: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="document">document: <a href="../Imports$.html#MongoDBObject=com.mongodb.casbah.commons.MongoDBObject" class="extmbr" name="com.mongodb.casbah.Imports.MongoDBObject">Imports.MongoDBObject</a></span>)</span><span class="result"> extends <a href="MongoOpLogEntry.html" class="extype" name="com.mongodb.casbah.util.MongoOpLogEntry">MongoOpLogEntry</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoInsertOperation" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.MongoInsertOperation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoInsertOperationextendsMongoOpLogEntrywithProductwithSerializable"></a>
       <a id="MongoInsertOperation:MongoInsertOperation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,11 +80,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoInsertOperation.html"><span class="name">MongoInsertOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoInsertOperation.html"><span class="name">MongoInsertOperation</span></a><span class="params">(<span name="timestamp">timestamp: <span class="extype" name="org.bson.types.BSONTimestamp">BSONTimestamp</span></span>, <span name="opID">opID: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="namespace">namespace: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="document">document: <a href="../Imports$.html#MongoDBObject=com.mongodb.casbah.commons.MongoDBObject" class="extmbr" name="com.mongodb.casbah.Imports.MongoDBObject">Imports.MongoDBObject</a></span>)</span><span class="result"> extends <a href="MongoOpLogEntry.html" class="extype" name="com.mongodb.casbah.util.MongoOpLogEntry">MongoOpLogEntry</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoOpLog" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.MongoOpLog" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoOpLogextendsIterator[com.mongodb.casbah.util.MongoOpLogEntry]withLogging"></a>
       <a id="MongoOpLog:MongoOpLog"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -80,11 +93,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoOpLog.html"><span class="name">MongoOpLog</span></a><span class="result"> extends Iterator[MongoOpLogEntry] with Logging</span>
+        <a href="MongoOpLog.html"><span class="name">MongoOpLog</span></a><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<a href="MongoOpLogEntry.html" class="extype" name="com.mongodb.casbah.util.MongoOpLogEntry">MongoOpLogEntry</a>] with <a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       <p class="comment cmt">For a more detailed understanding of how the MongoDB Oplog works, see Kristina Chodorow's blogpost:</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoOpLogEntry" data-isabs="true">
+    </li><li name="com.mongodb.casbah.util.MongoOpLogEntry" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoOpLogEntryextendsAnyRef"></a>
       <a id="MongoOpLogEntry:MongoOpLogEntry"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -92,11 +106,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MongoOpLogEntry.html"><span class="name">MongoOpLogEntry</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoOpLogEntry.html"><span class="name">MongoOpLogEntry</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoOpType" data-isabs="true">
+    </li><li name="com.mongodb.casbah.util.MongoOpType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoOpTypeextendsAnyRef"></a>
       <a id="MongoOpType:MongoOpType"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,11 +119,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MongoOpType.html"><span class="name">MongoOpType</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoOpType.html"><span class="name">MongoOpType</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoUpdateOperation" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.MongoUpdateOperation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoUpdateOperationextendsMongoOpLogEntrywithProductwithSerializable"></a>
       <a id="MongoUpdateOperation:MongoUpdateOperation"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -116,7 +132,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoUpdateOperation.html"><span class="name">MongoUpdateOperation</span></a><span class="params">(<span name="timestamp">timestamp: BSONTimestamp</span>, <span name="opID">opID: Option[Long]</span>, <span name="namespace">namespace: String</span>, <span name="document">document: MongoDBObject</span>, <span name="documentID">documentID: MongoDBObject</span>)</span><span class="result"> extends MongoOpLogEntry with Product with Serializable</span>
+        <a href="MongoUpdateOperation.html"><span class="name">MongoUpdateOperation</span></a><span class="params">(<span name="timestamp">timestamp: <span class="extype" name="org.bson.types.BSONTimestamp">BSONTimestamp</span></span>, <span name="opID">opID: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="namespace">namespace: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="document">document: <a href="../Imports$.html#MongoDBObject=com.mongodb.casbah.commons.MongoDBObject" class="extmbr" name="com.mongodb.casbah.Imports.MongoDBObject">Imports.MongoDBObject</a></span>, <span name="documentID">documentID: <a href="../Imports$.html#MongoDBObject=com.mongodb.casbah.commons.MongoDBObject" class="extmbr" name="com.mongodb.casbah.Imports.MongoDBObject">Imports.MongoDBObject</a></span>)</span><span class="result"> extends <a href="MongoOpLogEntry.html" class="extype" name="com.mongodb.casbah.util.MongoOpLogEntry">MongoOpLogEntry</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -125,9 +141,10 @@
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.util.DeleteOp" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.util.DeleteOp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeleteOp"></a>
       <a id="DeleteOp:DeleteOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -135,11 +152,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="DeleteOp$.html"><span class="name">DeleteOp</span></a><span class="result"> extends MongoOpType with Product with Serializable</span>
+        <a href="DeleteOp$.html"><span class="name">DeleteOp</span></a><span class="result"> extends <a href="MongoOpType.html" class="extype" name="com.mongodb.casbah.util.MongoOpType">MongoOpType</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.InsertOp" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.InsertOp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InsertOp"></a>
       <a id="InsertOp:InsertOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -147,11 +165,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="InsertOp$.html"><span class="name">InsertOp</span></a><span class="result"> extends MongoOpType with Product with Serializable</span>
+        <a href="InsertOp$.html"><span class="name">InsertOp</span></a><span class="result"> extends <a href="MongoOpType.html" class="extype" name="com.mongodb.casbah.util.MongoOpType">MongoOpType</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.MongoOpLogEntry" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.MongoOpLogEntry" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoOpLogEntry"></a>
       <a id="MongoOpLogEntry:MongoOpLogEntry"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -159,11 +178,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoOpLogEntry$.html"><span class="name">MongoOpLogEntry</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoOpLogEntry$.html"><span class="name">MongoOpLogEntry</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.util.UpdateOp" data-isabs="false">
+    </li><li name="com.mongodb.casbah.util.UpdateOp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UpdateOp"></a>
       <a id="UpdateOp:UpdateOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -171,7 +191,7 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="UpdateOp$.html"><span class="name">UpdateOp</span></a><span class="result"> extends MongoOpType with Product with Serializable</span>
+        <a href="UpdateOp$.html"><span class="name">UpdateOp</span></a><span class="result"> extends <a href="MongoOpType.html" class="extype" name="com.mongodb.casbah.util.MongoOpType">MongoOpType</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -179,10 +199,20 @@
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>
@@ -190,7 +220,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

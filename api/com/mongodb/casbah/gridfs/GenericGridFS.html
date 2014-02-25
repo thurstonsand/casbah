@@ -2,54 +2,76 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.gridfs.GenericGridFS</title>
+          <title>GenericGridFS - com.mongodb.casbah.gridfs.GenericGridFS</title>
+          <meta name="description" content="GenericGridFS - com.mongodb.casbah.gridfs.GenericGridFS" />
+          <meta name="keywords" content="GenericGridFS com.mongodb.casbah.gridfs.GenericGridFS" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.mongodb.casbah.gridfs.GenericGridFS';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="type">
+        <body class="type">
       <div id="definition">
         <img src="../../../../lib/class_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../package.html">casbah</a>.<a name="com.mongodb.casbah.gridfs" class="extype" href="package.html">gridfs</a></p>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah">casbah</a>.<a href="package.html" class="extype" name="com.mongodb.casbah.gridfs">gridfs</a></p>
         <h1>GenericGridFS</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">GenericGridFS</span><span class="result"> extends <a name="com.mongodb.casbah.commons.Logging" class="extype" href="../commons/Logging.html">Logging</a></span>
+        <span class="name">GenericGridFS</span><span class="result"> extends <a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Source</dt><dd><a target="_blank" href="http://mongodb.github.com/casbah/api.sxr/casbah-gridfs/GenericGridFS.scala.html">GenericGridFS.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-gridfs/GenericGridFS.scala.html" target="_blank">GenericGridFS.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a name="com.mongodb.casbah.commons.Logging" class="extype" href="../commons/Logging.html">Logging</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a name="com.mongodb.casbah.gridfs.GridFS" class="extype" href="GridFS.html">GridFS</a>, <a name="com.mongodb.casbah.gridfs.JodaGridFS" class="extype" href="JodaGridFS.html">JodaGridFS</a></div>
+          <div class="subClasses hiddenContent"><a href="GridFS.html" class="extype" name="com.mongodb.casbah.gridfs.GridFS">GridFS</a>, <a href="JodaGridFS.html" class="extype" name="com.mongodb.casbah.gridfs.JodaGridFS">JodaGridFS</a></div>
         </div></div>
-    
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         <div id="order">
               <span class="filtertype">Ordering</span>
-              <ol><li class="alpha in"><span>Alphabetic</span></li><li class="inherit out"><span>By inheritance</span></li></ol>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
             </div>
         <div id="ancestors">
-              <span class="filtertype">Inherited</span>
-              <ol><li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="com.mongodb.casbah.gridfs.GenericGridFS" class="in"><span>GenericGridFS</span></li><li name="com.mongodb.casbah.commons.Logging" class="in"><span>Logging</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
-            </div>
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.mongodb.casbah.gridfs.GenericGridFS"><span>GenericGridFS</span></li><li class="in" name="com.mongodb.casbah.commons.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
             <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
@@ -58,10 +80,11 @@
 
       <div id="template">
         <div id="allMembers">
-        <div class="members" id="constructors">
+        <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li visbl="prt" name="com.mongodb.casbah.gridfs.GenericGridFS#this" data-isabs="false">
-      <a id="this:GenericGridFS"></a>
+              <ol><li name="com.mongodb.casbah.gridfs.GenericGridFS#&lt;init&gt;" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;():com.mongodb.casbah.gridfs.GenericGridFS"></a>
+      <a id="&lt;init&gt;:GenericGridFS"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
@@ -71,32 +94,34 @@
         <span class="name">GenericGridFS</span><span class="params">()</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="com.mongodb.casbah.gridfs" class="extype" href="package.html">gridfs</a>] </dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="com.mongodb.casbah.gridfs">com.mongodb.casbah.gridfs</a>] </dd></dl></div>
     </li></ol>
             </div>
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#underlying" data-isabs="true">
-      <a id="underlying:GridFS"></a>
+              <ol><li name="com.mongodb.casbah.gridfs.GenericGridFS#underlying" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="underlying:com.mongodb.gridfs.GridFS"></a>
+      <a id="underlying:gridfs.GridFS"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">underlying</span><span class="result">: <span name="com.mongodb.gridfs.GridFS" class="extype">GridFS</span></span>
+        <span class="name">underlying</span><span class="result">: <span class="extype" name="com.mongodb.gridfs.GridFS">gridfs.GridFS</span></span>
       </span>
       </h4>
       
     </li></ol>
             </div>
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Concrete Value Members</h3>
-              <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,11 +129,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $bang$eq">!=</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#!=" data-isabs="false">
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -116,11 +142,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $bang$eq">!=</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef###" data-isabs="false">
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
       <a id="##():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -128,11 +155,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $hash$hash">##</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#==" data-isabs="false">
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
       <a id="==(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -140,11 +168,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $eq$eq">==</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#==" data-isabs="false">
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -152,11 +181,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $eq$eq">==</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -164,11 +194,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: T0</span>
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#bucketName" data-isabs="false">
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#bucketName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="bucketName:String"></a>
       <a id="bucketName:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -176,11 +207,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bucketName</span><span class="result">: String</span>
+        <span class="name">bucketName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
       
-    </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -188,26 +220,31 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: AnyRef</span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">()</span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#db" data-isabs="false">
-      <a id="db:MongoDB"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#db" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="db:com.mongodb.casbah.Imports.MongoDB"></a>
+      <a id="db:Imports.MongoDB"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">db</span><span class="result">: MongoDB</span>
+        <span class="name">db</span><span class="result">: <a href="../Imports$.html#MongoDB=com.mongodb.casbah.MongoDB" class="extmbr" name="com.mongodb.casbah.Imports.MongoDB">Imports.MongoDB</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -215,11 +252,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#equals" data-isabs="false">
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -227,38 +265,41 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#files" data-isabs="false">
-      <a id="files[A](A)((A) ⇒ DBObject):MongoCursor"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#files" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="files[A](query:A)(implicitevidence$2:A=&gt;com.mongodb.casbah.Imports.DBObject):com.mongodb.casbah.Imports.MongoCursor"></a>
+      <a id="files[A](A)((A)⇒Imports.DBObject):Imports.MongoCursor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">files</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: MongoCursor</span>
+        <span class="name">files</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.files.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.files.A">A</span>) ⇒ <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>)</span><span class="result">: <a href="../Imports$.html#MongoCursor=com.mongodb.casbah.MongoCursor" class="extmbr" name="com.mongodb.casbah.Imports.MongoCursor">Imports.MongoCursor</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#files" data-isabs="false">
-      <a id="files:MongoCursor"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#files" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="files:com.mongodb.casbah.Imports.MongoCursor"></a>
+      <a id="files:Imports.MongoCursor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">files</span><span class="result">: MongoCursor</span>
+        <span class="name">files</span><span class="result">: <a href="../Imports$.html#MongoCursor=com.mongodb.casbah.MongoCursor" class="extmbr" name="com.mongodb.casbah.Imports.MongoCursor">Imports.MongoCursor</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a cursor for this filestore
 of all of the files.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a cursor for this filestore
 of all of the files...
 </p></div></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#filesCollection" data-isabs="false">
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#filesCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="filesCollection:com.mongodb.casbah.MongoGenericTypedCollection[com.mongodb.casbah.gridfs.GridFSDBFileSafeJoda]"></a>
       <a id="filesCollection:MongoGenericTypedCollection[GridFSDBFileSafeJoda]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -266,11 +307,12 @@ of all of the files...
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">filesCollection</span><span class="result">: <a name="com.mongodb.casbah.MongoGenericTypedCollection" class="extype" href="../MongoGenericTypedCollection.html">MongoGenericTypedCollection</a>[<a name="com.mongodb.casbah.gridfs.GridFSDBFileSafeJoda" class="extype" href="GridFSDBFileSafeJoda.html">GridFSDBFileSafeJoda</a>]</span>
+        <span class="name">filesCollection</span><span class="result">: <a href="../MongoGenericTypedCollection.html" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>[<a href="GridFSDBFileSafeJoda.html" class="extype" name="com.mongodb.casbah.gridfs.GridFSDBFileSafeJoda">GridFSDBFileSafeJoda</a>]</span>
       </span>
       </h4>
       
-    </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -278,62 +320,70 @@ of all of the files...
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">()</span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#find" data-isabs="false">
-      <a id="find(String):Buffer[GridFSDBFile]"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#find" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="find(filename:String):scala.collection.mutable.Buffer[com.mongodb.gridfs.GridFSDBFile]"></a>
+      <a id="find(String):Buffer[gridfs.GridFSDBFile]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">find</span><span class="params">(<span name="filename">filename: String</span>)</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="com.mongodb.gridfs.GridFSDBFile" class="extype">GridFSDBFile</span>]</span>
+        <span class="name">find</span><span class="params">(<span name="filename">filename: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.gridfs.GridFSDBFile">gridfs.GridFSDBFile</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Find by query</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#find" data-isabs="false">
-      <a id="find(ObjectId):GridFSDBFile"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#find" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="find(id:com.mongodb.casbah.Imports.ObjectId):com.mongodb.gridfs.GridFSDBFile"></a>
+      <a id="find(Imports.ObjectId):gridfs.GridFSDBFile"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">find</span><span class="params">(<span name="id">id: ObjectId</span>)</span><span class="result">: <span name="com.mongodb.gridfs.GridFSDBFile" class="extype">GridFSDBFile</span></span>
+        <span class="name">find</span><span class="params">(<span name="id">id: <a href="../Imports$.html#ObjectId=org.bson.types.ObjectId" class="extmbr" name="com.mongodb.casbah.Imports.ObjectId">Imports.ObjectId</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.gridfs.GridFSDBFile">gridfs.GridFSDBFile</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Find by query - returns a single item</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#find" data-isabs="false">
-      <a id="find[A](A)((A) ⇒ DBObject):Buffer[GridFSDBFile]"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#find" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="find[A](query:A)(implicitevidence$1:A=&gt;com.mongodb.casbah.Imports.DBObject):scala.collection.mutable.Buffer[com.mongodb.gridfs.GridFSDBFile]"></a>
+      <a id="find[A](A)((A)⇒Imports.DBObject):Buffer[gridfs.GridFSDBFile]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">find</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: <span name="scala.collection.mutable.Buffer" class="extype">Buffer</span>[<span name="com.mongodb.gridfs.GridFSDBFile" class="extype">GridFSDBFile</span>]</span>
+        <span class="name">find</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.find.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.find.A">A</span>) ⇒ <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.gridfs.GridFSDBFile">gridfs.GridFSDBFile</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Find by query</p>
-    </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
-      <a id="getClass():java.lang.Class[_]"></a>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: java.lang.Class[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -341,11 +391,12 @@ of all of the files...
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -353,26 +404,28 @@ of all of the files...
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="prt" name="com.mongodb.casbah.gridfs.GenericGridFS#loan" data-isabs="false">
-      <a id="loan[T&lt;:GenericGridFSFile](T)((T) ⇒ Option[AnyRef]):Option[AnyRef]"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#loan" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loan[T&lt;:com.mongodb.casbah.gridfs.GenericGridFSFile](file:T)(op:T=&gt;Option[AnyRef]):Option[AnyRef]"></a>
+      <a id="loan[T&lt;:GenericGridFSFile](T)((T)⇒Option[AnyRef]):Option[AnyRef]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">loan</span><span class="tparams">[<span name="T">T &lt;: <a name="com.mongodb.casbah.gridfs.GenericGridFSFile" class="extype" href="GenericGridFSFile.html">GenericGridFSFile</a></span>]</span><span class="params">(<span name="file">file: T</span>)</span><span class="params">(<span name="op">op: (T) ⇒ <span name="scala.Option" class="extype">Option</span>[AnyRef]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[AnyRef]</span>
+        <span class="name">loan</span><span class="tparams">[<span name="T">T &lt;: <a href="GenericGridFSFile.html" class="extype" name="com.mongodb.casbah.gridfs.GenericGridFSFile">GenericGridFSFile</a></span>]</span><span class="params">(<span name="file">file: <span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.loan.T">T</span></span>)</span><span class="params">(<span name="op">op: (<span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.loan.T">T</span>) ⇒ <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">loan</p><div class="fullcomment"><div class="comment cmt"><p>loan</p><p>Basic implementation of the Loan pattern -
 the idea is to pass a Unit returning function
 and a Mongo file handle, and work on it within
-a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="com.mongodb.casbah.gridfs" class="extype" href="package.html">gridfs</a>] </dd></dl></div>
-    </li><li visbl="prt" name="com.mongodb.casbah.commons.Logging#log" data-isabs="false">
+a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="com.mongodb.casbah.gridfs">com.mongodb.casbah.gridfs</a>] </dd></dl></div>
+    </li><li name="com.mongodb.casbah.commons.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log:com.mongodb.casbah.commons.Logger"></a>
       <a id="log:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -380,11 +433,12 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">var</span>
       </span>
       <span class="symbol">
-        <span class="name">log</span><span class="result">: <a name="com.mongodb.casbah.commons.Logger" class="extype" href="../commons/Logger.html">Logger</a></span>
+        <span class="name">log</span><span class="result">: <a href="../commons/Logger.html" class="extype" name="com.mongodb.casbah.commons.Logger">Logger</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="com.mongodb.casbah" class="extype" href="../package.html">casbah</a>] </dd><dt>Definition Classes</dt><dd><a name="com.mongodb.casbah.commons.Logging" class="extype" href="../commons/Logging.html">Logging</a></dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../package.html" class="extype" name="com.mongodb.casbah">com.mongodb.casbah</a>] </dd><dt>Definition Classes</dt><dd><a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -392,11 +446,12 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -404,11 +459,12 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#notifyAll" data-isabs="false">
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
       <a id="notifyAll():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -416,11 +472,12 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#remove" data-isabs="false">
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#remove" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="remove(filename:String):Unit"></a>
       <a id="remove(String):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -428,47 +485,51 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">remove</span><span class="params">(<span name="filename">filename: String</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">remove</span><span class="params">(<span name="filename">filename: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#remove" data-isabs="false">
-      <a id="remove(ObjectId):Unit"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#remove" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="remove(id:com.mongodb.casbah.Imports.ObjectId):Unit"></a>
+      <a id="remove(Imports.ObjectId):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">remove</span><span class="params">(<span name="id">id: ObjectId</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">remove</span><span class="params">(<span name="id">id: <a href="../Imports$.html#ObjectId=org.bson.types.ObjectId" class="extmbr" name="com.mongodb.casbah.Imports.ObjectId">Imports.ObjectId</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.gridfs.GenericGridFS#remove" data-isabs="false">
-      <a id="remove[A](A)((A) ⇒ DBObject):Unit"></a>
+    </li><li name="com.mongodb.casbah.gridfs.GenericGridFS#remove" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="remove[A](query:A)(implicitevidence$3:A=&gt;com.mongodb.casbah.Imports.DBObject):Unit"></a>
+      <a id="remove[A](A)((A)⇒Imports.DBObject):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">remove</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (A) ⇒ DBObject</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">remove</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.remove.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.gridfs.GenericGridFS.remove.A">A</span>) ⇒ <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
-      <a id="synchronized[T0](⇒ T0):T0"></a>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ T0</span>)</span><span class="result">: T0</span>
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#toString" data-isabs="false">
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
       <a id="toString():String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -476,11 +537,12 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -488,14 +550,18 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">()</span>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
       <a id="wait(Long,Int):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -503,14 +569,18 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span name="scala.Long" class="extype">Long</span></span>, <span name="arg1">arg1: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">()</span>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
       <a id="wait(Long):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -518,26 +588,39 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">()</span>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
               
         </dd></dl></div>
     </li></ol>
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
-        <div name="com.mongodb.casbah.commons.Logging" class="parent">
-              <h3>Inherited from <a name="com.mongodb.casbah.commons.Logging" class="extype" href="../commons/Logging.html">Logging</a></h3>
-            </div><div name="scala.AnyRef" class="parent">
-              <h3>Inherited from AnyRef</h3>
-            </div><div name="scala.Any" class="parent">
-              <h3>Inherited from <span name="scala.Any" class="extype">Any</span></h3>
+        <div class="parent" name="com.mongodb.casbah.commons.Logging">
+              <h3>Inherited from <a href="../commons/Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
             </div>
         </div>
 
@@ -546,7 +629,6 @@ a code block.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>prot
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

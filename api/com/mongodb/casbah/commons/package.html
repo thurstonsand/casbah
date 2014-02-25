@@ -2,24 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.commons</title>
+          <title>commons - com.mongodb.casbah.commons</title>
+          <meta name="description" content="commons - com.mongodb.casbah.commons" />
+          <meta name="keywords" content="commons com.mongodb.casbah.commons" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.mongodb.casbah.commons.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../package.html">casbah</a></p>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah">casbah</a></p>
         <h1>commons</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +39,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,9 +56,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.commons.BaseImports" data-isabs="true">
+              <ol><li name="com.mongodb.casbah.commons.BaseImports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseImportsextendsAnyRef"></a>
       <a id="BaseImports:BaseImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -56,11 +67,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="BaseImports.html"><span class="name">BaseImports</span></a><span class="result"> extends AnyRef</span>
+        <a href="BaseImports.html"><span class="name">BaseImports</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Implicits" data-isabs="true">
+    </li><li name="com.mongodb.casbah.commons.Implicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImplicitsextendsAnyRef"></a>
       <a id="Implicits:Implicits"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,11 +80,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Implicits.html"><span class="name">Implicits</span></a><span class="result"> extends AnyRef</span>
+        <a href="Implicits.html"><span class="name">Implicits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Imports" data-isabs="true">
+    </li><li name="com.mongodb.casbah.commons.Imports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImportsextendsBaseImportswithTypeImportswithImplicits"></a>
       <a id="Imports:Imports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -80,11 +93,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Imports.html"><span class="name">Imports</span></a><span class="result"> extends BaseImports with TypeImports with Implicits</span>
+        <a href="Imports.html"><span class="name">Imports</span></a><span class="result"> extends <a href="BaseImports.html" class="extype" name="com.mongodb.casbah.commons.BaseImports">BaseImports</a> with <a href="TypeImports.html" class="extype" name="com.mongodb.casbah.commons.TypeImports">TypeImports</a> with <a href="Implicits.html" class="extype" name="com.mongodb.casbah.commons.Implicits">Implicits</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Logger" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.Logger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LoggerextendsAnyRef"></a>
       <a id="Logger:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -92,11 +106,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Logger.html"><span class="name">Logger</span></a><span class="result"> extends AnyRef</span>
+        <a href="Logger.html"><span class="name">Logger</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Scala SLF4J wrapper</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Logging" data-isabs="true">
+    </li><li name="com.mongodb.casbah.commons.Logging" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LoggingextendsAnyRef"></a>
       <a id="Logging:Logging"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -104,11 +119,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Logging.html"><span class="name">Logging</span></a><span class="result"> extends AnyRef</span>
+        <a href="Logging.html"><span class="name">Logging</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Base trait for all classes that wants to be able use the logging infrastructure.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBList" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBListextendsSeq[Any]withCastable"></a>
       <a id="MongoDBList:MongoDBList"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -116,11 +132,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBList.html"><span class="name">MongoDBList</span></a><span class="result"> extends Seq[Any] with Castable</span>
+        <a href="MongoDBList.html"><span class="name">MongoDBList</span></a><span class="result"> extends <span class="extype" name="scala.collection.mutable.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>] with <span class="extype" name="com.mongodb.casbah.commons.Castable">Castable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBListBuilder" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBListBuilder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBListBuilderextendsBuilder[Any,Seq[Any]]"></a>
       <a id="MongoDBListBuilder:MongoDBListBuilder"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -128,11 +145,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBListBuilder.html"><span class="name">MongoDBListBuilder</span></a><span class="result"> extends Builder[Any, Seq[Any]]</span>
+        <a href="MongoDBListBuilder.html"><span class="name">MongoDBListBuilder</span></a><span class="result"> extends <span class="extype" name="scala.collection.mutable.Builder">Builder</span>[<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]]</span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBObject" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBObjectextendsMap[String,AnyRef]withMapLike[String,AnyRef,com.mongodb.casbah.commons.MongoDBObject]withLoggingwithCastable"></a>
       <a id="MongoDBObject:MongoDBObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -140,11 +158,12 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBObject.html"><span class="name">MongoDBObject</span></a><span class="result"> extends Map[String, AnyRef] with MapLike[String, AnyRef, MongoDBObject] with Logging with Castable</span>
+        <a href="MongoDBObject.html"><span class="name">MongoDBObject</span></a><span class="result"> extends <span class="extype" name="scala.collection.mutable.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>] with <span class="extype" name="scala.collection.mutable.MapLike">MapLike</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <a href="MongoDBObject.html" class="extype" name="com.mongodb.casbah.commons.MongoDBObject">MongoDBObject</a>] with <a href="Logging.html" class="extype" name="com.mongodb.casbah.commons.Logging">Logging</a> with <span class="extype" name="com.mongodb.casbah.commons.Castable">Castable</span></span>
       </span>
       </h4>
       <p class="comment cmt">MapLike scala interface for Mongo DBObjects - proxies an existing DBObject.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBObjectBuilder" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBObjectBuilder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBObjectBuilderextendsBuilder[(String,Any),com.mongodb.casbah.commons.Imports.DBObject]"></a>
       <a id="MongoDBObjectBuilder:MongoDBObjectBuilder"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -152,24 +171,26 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBObjectBuilder.html"><span class="name">MongoDBObjectBuilder</span></a><span class="result"> extends Builder[(String, Any), DBObject]</span>
+        <a href="MongoDBObjectBuilder.html"><span class="name">MongoDBObjectBuilder</span></a><span class="result"> extends <span class="extype" name="scala.collection.mutable.Builder">Builder</span>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>), <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.Imports.DBObject">commons.Imports.DBObject</a>]</span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.NotNothing" data-isabs="true">
-      <a id="NotNothing:NotNothing[A]"></a>
+    </li><li name="com.mongodb.casbah.commons.NotNothing" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotNothing[A]extendsAnyRef"></a>
+      <a id="NotNothing[A]:NotNothing[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">sealed </span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="NotNothing.html"><span class="name">NotNothing</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends AnyRef</span>
+        <a href="NotNothing.html"><span class="name">NotNothing</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Nice trick from Miles Sabin using ambiguity in implicit resolution to disallow Nothing
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.TypeImports" data-isabs="true">
+    </li><li name="com.mongodb.casbah.commons.TypeImports" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TypeImportsextendsAnyRef"></a>
       <a id="TypeImports:TypeImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -177,19 +198,20 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="TypeImports.html"><span class="name">TypeImports</span></a><span class="result"> extends AnyRef</span>
+        <a href="TypeImports.html"><span class="name">TypeImports</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.ValidBSONType" data-isabs="true">
-      <a id="ValidBSONType:ValidBSONType[T]"></a>
+    </li><li name="com.mongodb.casbah.commons.ValidBSONType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ValidBSONType[T]extendsAnyRef"></a>
+      <a id="ValidBSONType[T]:ValidBSONType[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="ValidBSONType.html"><span class="name">ValidBSONType</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends AnyRef</span>
+        <a href="ValidBSONType.html"><span class="name">ValidBSONType</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
@@ -198,9 +220,10 @@
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.commons.BaseImports" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.commons.BaseImports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BaseImports"></a>
       <a id="BaseImports:BaseImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -208,11 +231,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="BaseImports$.html"><span class="name">BaseImports</span></a><span class="result"> extends BaseImports</span>
+        <a href="BaseImports$.html"><span class="name">BaseImports</span></a><span class="result"> extends <a href="BaseImports.html" class="extype" name="com.mongodb.casbah.commons.BaseImports">BaseImports</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.EnsureConversionHelpersRegistration" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.EnsureConversionHelpersRegistration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EnsureConversionHelpersRegistration"></a>
       <a id="EnsureConversionHelpersRegistration:EnsureConversionHelpersRegistration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -220,11 +244,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="EnsureConversionHelpersRegistration$.html"><span class="name">EnsureConversionHelpersRegistration</span></a><span class="result"> extends AnyRef</span>
+        <a href="EnsureConversionHelpersRegistration$.html"><span class="name">EnsureConversionHelpersRegistration</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Implicits" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.Implicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Implicits"></a>
       <a id="Implicits:Implicits"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -232,11 +257,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends Implicits</span>
+        <a href="Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends <a href="Implicits.html" class="extype" name="com.mongodb.casbah.commons.Implicits">Implicits</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Imports" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.Imports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Imports"></a>
       <a id="Imports:Imports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -244,11 +270,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Imports$.html"><span class="name">Imports</span></a><span class="result"> extends Imports</span>
+        <a href="Imports$.html"><span class="name">Imports</span></a><span class="result"> extends <a href="Imports.html" class="extype" name="com.mongodb.casbah.commons.Imports">Imports</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.Logger" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.Logger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Logger"></a>
       <a id="Logger:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -256,11 +283,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Logger$.html"><span class="name">Logger</span></a><span class="result"> extends AnyRef</span>
+        <a href="Logger$.html"><span class="name">Logger</span></a>
       </span>
       </h4>
       <p class="comment cmt">Logger factory</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBList" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBList"></a>
       <a id="MongoDBList:MongoDBList"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -268,11 +296,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBList$.html"><span class="name">MongoDBList</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoDBList$.html"><span class="name">MongoDBList</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.MongoDBObject" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.MongoDBObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoDBObject"></a>
       <a id="MongoDBObject:MongoDBObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -280,11 +309,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="MongoDBObject$.html"><span class="name">MongoDBObject</span></a><span class="result"> extends AnyRef</span>
+        <a href="MongoDBObject$.html"><span class="name">MongoDBObject</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.NotNothing" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.NotNothing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotNothing"></a>
       <a id="NotNothing:NotNothing"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -292,11 +322,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="NotNothing$.html"><span class="name">NotNothing</span></a><span class="result"> extends AnyRef</span>
+        <a href="NotNothing$.html"><span class="name">NotNothing</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.TypeImports" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.TypeImports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TypeImports"></a>
       <a id="TypeImports:TypeImports"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -304,11 +335,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="TypeImports$.html"><span class="name">TypeImports</span></a><span class="result"> extends TypeImports</span>
+        <a href="TypeImports$.html"><span class="name">TypeImports</span></a><span class="result"> extends <a href="TypeImports.html" class="extype" name="com.mongodb.casbah.commons.TypeImports">TypeImports</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.ValidBSONType" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.ValidBSONType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ValidBSONType"></a>
       <a id="ValidBSONType:ValidBSONType"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -316,11 +348,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ValidBSONType$.html"><span class="name">ValidBSONType</span></a><span class="result"> extends AnyRef</span>
+        <a href="ValidBSONType$.html"><span class="name">ValidBSONType</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.commons.conversions" data-isabs="false">
+    </li><li name="com.mongodb.casbah.commons.conversions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="conversions"></a>
       <a id="conversions:conversions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -336,10 +369,20 @@
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>
@@ -347,7 +390,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

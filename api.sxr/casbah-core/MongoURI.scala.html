@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
@@ -11,7 +11,7 @@
     <body>
         <pre>
 <span class="comment">/**
- * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ * Copyright (c) 2010 MongoDB, Inc. &lt;http://mongodb.com&gt;
  * Copyright (c) 2009, 2010 Novus Partners, Inc. &lt;http://novus.com&gt;
  *
  * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -34,9 +34,9 @@
 
 <span class="keyword">package</span> com.mongodb.casbah
 
-<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#com.mongodb.casbah.Imports" title="com.mongodb.casbah.Imports.type">Imports</a>._
 
-<span class="keyword">import</span> scala.collection.<span title="object scala.collection.JavaConverters">JavaConverters</span>._
+<span class="keyword">import</span> scala.collection.<span title="scala.collection.JavaConverters.type">JavaConverters</span>._
 
 <span class="comment">/**
  *
@@ -45,7 +45,7 @@
  *
  */</span>
 @deprecated<span class="delimiter">(</span><span class="string">&quot;Please use MongoClient and MongoClientURI&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
-<span class="keyword">object</span> <a title="object com.mongodb.casbah.MongoURI" id="10866">MongoURI</a> <span title="ScalaObject" class="delimiter">{</span>
+<span class="keyword">object</span> <a title="com.mongodb.casbah.MongoURI.type" id="com.mongodb.casbah.MongoURI">MongoURI</a> <a href="#com.mongodb.casbah.MongoURI" title="com.mongodb.casbah.MongoURI.type" class="delimiter">{</a>
 
   <span class="comment">/**
    * Create a new MongoURI with a URI String e.g.:
@@ -58,7 +58,7 @@
    *
    * @param  uri (String)
    */</span>
-  <span class="keyword">def</span> <a title="(uri: String)com.mongodb.casbah.MongoURI" id="41721">apply</a><span class="delimiter">(</span><a title="String" id="41724">uri</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="#10868" title="com.mongodb.casbah.MongoURI">MongoURI</a> = <span title="com.mongodb.casbah.MongoURI" class="keyword">new</span> <a href="#10868" title="com.mongodb.casbah.MongoURI">MongoURI</a><span class="delimiter">(</span><span title="com.mongodb.MongoURI" class="keyword">new</span> com.mongodb.<span title="com.mongodb.MongoURI">MongoURI</span><span class="delimiter">(</span><a href="#41724" title="String">uri</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(uri: String)com.mongodb.casbah.MongoURI" id="com.mongodb.casbah.MongoURI.apply">apply</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah.MongoURI.apply.uri">uri</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="#com.mongodb.casbah;MongoURI" title="com.mongodb.casbah.MongoURI">MongoURI</a> = <span title="com.mongodb.casbah.MongoURI" class="keyword">new</span> <a href="#com.mongodb.casbah;MongoURI" title="com.mongodb.casbah.MongoURI">MongoURI</a><span class="delimiter">(</span><span title="com.mongodb.MongoURI" class="keyword">new</span> com.mongodb.<span title="com.mongodb.MongoURI">MongoURI</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoURI.apply.uri" title="String">uri</a><span class="delimiter">)</span><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
 <span class="comment">/**
@@ -72,48 +72,48 @@
  *
  * @since 2.0
  */</span>
-<span class="keyword">class</span> <a title="class MongoURI extends java.lang.Object with ScalaObject" id="10868">MongoURI</a><a href="#10868" title="ScalaObject" class="delimiter">(</a><span class="keyword">val</span> <a title="com.mongodb.MongoURI" id="41722">underlying</a>: com.mongodb.<span title="com.mongodb.MongoURI">MongoURI</span><span class="delimiter">)</span> <span class="delimiter">{</span>
-  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="30910">username</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: java.lang.String)Option[java.lang.String]">Option</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()java.lang.String">getUsername</span><span class="delimiter">)</span>
+<span title="AnyRef" class="keyword">class</span> <a title="class MongoURI extends AnyRef" id="com.mongodb.casbah;MongoURI">MongoURI</a><a href="#com.mongodb.casbah;MongoURI" title="com.mongodb.casbah.MongoURI" class="delimiter">(</a><span class="keyword">val</span> <a title="com.mongodb.MongoURI" id="com.mongodb.casbah;MongoURI.underlying">underlying</a>: com.mongodb.<span title="com.mongodb.MongoURI">MongoURI</span><span class="delimiter">)</span> <span class="delimiter">{</span>
+  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="com.mongodb.casbah;MongoURI.username">username</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: String)Option[String]">Option</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()String">getUsername</span><span class="delimiter">)</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Option[Array[Char]]" id="30911">password</a>: <span title="Option[Array[Char]]">Option</span><span class="delimiter">[</span>Array<span class="delimiter">[</span>Char<span class="delimiter">]</span><span class="delimiter">]</span> = <span title="(x: Array[Char])Option[Array[Char]]">Option</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()Array[Char]">getPassword</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; Option[Array[Char]]" id="com.mongodb.casbah;MongoURI.password">password</a>: <span title="Option[Array[Char]]">Option</span><span class="delimiter">[</span>Array<span class="delimiter">[</span>Char<span class="delimiter">]</span><span class="delimiter">]</span> = <span title="(x: Array[Char])Option[Array[Char]]">Option</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()Array[Char]">getPassword</span><span class="delimiter">)</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Seq[String]" id="30912">hosts</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="(l: java.util.List[java.lang.String])collection.JavaConverters.AsScala[scala.collection.mutable.Buffer[java.lang.String]]">getHosts</span>.<span title="=&gt; scala.collection.mutable.Buffer[java.lang.String]">asScala</span>
+  <span class="keyword">def</span> <a title="=&gt; Seq[String]" id="com.mongodb.casbah;MongoURI.hosts">hosts</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="(l: java.util.List[String])scala.collection.convert.Decorators.AsScala[scala.collection.mutable.Buffer[String]]">getHosts</span>.<span title="=&gt; scala.collection.mutable.Buffer[String]">asScala</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="30913">database</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: java.lang.String)Option[java.lang.String]">Option</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()java.lang.String">getDatabase</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="com.mongodb.casbah;MongoURI.database">database</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: String)Option[String]">Option</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()String">getDatabase</span><span class="delimiter">)</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="30914">collection</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: java.lang.String)Option[java.lang.String]">Option</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()java.lang.String">getCollection</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; Option[String]" id="com.mongodb.casbah;MongoURI.collection">collection</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <span title="(x: String)Option[String]">Option</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()String">getCollection</span><span class="delimiter">)</span>
 
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.MongoOptions" id="30915">options</a>: <span title="com.mongodb.casbah.Imports.MongoOptions">MongoOptions</span> = <a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()com.mongodb.MongoOptions">getOptions</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.MongoOptions" id="com.mongodb.casbah;MongoURI.options">options</a>: <span title="com.mongodb.casbah.Imports.MongoOptions">MongoOptions</span> = <a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()com.mongodb.MongoOptions">getOptions</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoConnection]" id="30916">connect</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoConnection]">Either</span><span class="delimiter">[</span>Throwable, MongoConnection<span class="delimiter">]</span> = <span class="keyword">try</span> <span class="delimiter">{</span>
-    <span title="(b: com.mongodb.casbah.MongoConnection)Right[Nothing,com.mongodb.casbah.MongoConnection]">Right</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<a href="Implicits.scala.html#23711" title="implicit com.mongodb.casbah.Implicits.mongoConnAsScala : (conn: com.mongodb.Mongo)java.lang.Object{def asScala: com.mongodb.casbah.MongoConnection}">connect</a>.<a href="Implicits.scala.html#28885" title="=&gt; com.mongodb.casbah.MongoConnection">asScala</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoConnection]" id="com.mongodb.casbah;MongoURI.connect">connect</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoConnection]">Either</span><span class="delimiter">[</span>Throwable, MongoConnection<span class="delimiter">]</span> = <span class="keyword">try</span> <span class="delimiter">{</span>
+    <span title="(b: com.mongodb.casbah.MongoConnection)scala.util.Right[Nothing,com.mongodb.casbah.MongoConnection]">Right</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoConnAsScala" title="implicit com.mongodb.casbah.Implicits.mongoConnAsScala : (conn: com.mongodb.Mongo)AnyRef{def asScala: com.mongodb.casbah.MongoConnection}">connect</a>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoConnAsScala;<refinement>.asScala" title="=&gt; com.mongodb.casbah.MongoConnection">asScala</a><span class="delimiter">)</span>
   <span class="delimiter">}</span> <span class="keyword">catch</span> <span class="delimiter">{</span>
-    <span class="keyword">case</span> <a title="Left[java.lang.Throwable,Nothing]" id="41987">t</a>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: java.lang.Throwable)Left[java.lang.Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#41987" title="java.lang.Throwable">t</a><span class="delimiter">)</span>
+    <span class="keyword">case</span> <a title="Throwable" id="com.mongodb.casbah;MongoURI.connect.t">t</a>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: Throwable)scala.util.Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.connect.t" title="Throwable">t</a><span class="delimiter">)</span>
   <span class="delimiter">}</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoDB]" id="30917">connectDB</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoDB]">Either</span><span class="delimiter">[</span>Throwable, MongoDB<span class="delimiter">]</span> = <span class="delimiter">{</span>
+  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoDB]" id="com.mongodb.casbah;MongoURI.connectDB">connectDB</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoDB]">Either</span><span class="delimiter">[</span>Throwable, MongoDB<span class="delimiter">]</span> = <span class="delimiter">{</span>
     <span class="keyword">try</span> <span class="delimiter">{</span>
-      <span title="(requirement: Boolean, message: =&gt; Any)Unit">require</span><span class="delimiter">(</span><a href="#30913" title="=&gt; Option[String]">database</a>.<span title="=&gt; Boolean">isDefined</span>, <span title="java.lang.String(&quot;Cannot connect to Database as none is defined.&quot;)" class="string">&quot;Cannot connect to Database as none is defined.&quot;</span><span class="delimiter">)</span>
-      <span title="(b: com.mongodb.casbah.MongoDB)Right[Nothing,com.mongodb.casbah.MongoDB]">Right</span><span class="delimiter">(</span><a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<a href="Implicits.scala.html#23712" title="implicit com.mongodb.casbah.Implicits.mongoDBAsScala : (db: com.mongodb.DB)java.lang.Object{def asScala: com.mongodb.casbah.MongoDB}">connectDB</a>.<a href="Implicits.scala.html#28706" title="=&gt; com.mongodb.casbah.MongoDB">asScala</a><span class="delimiter">)</span>
+      <span title="(requirement: Boolean, message: =&gt; Any)Unit">require</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.database" title="=&gt; Option[String]">database</a>.<span title="=&gt; Boolean">isDefined</span>, <span title="String(&quot;Cannot connect to Database as none is defined.&quot;)" class="string">&quot;Cannot connect to Database as none is defined.&quot;</span><span class="delimiter">)</span>
+      <span title="(b: com.mongodb.casbah.MongoDB)scala.util.Right[Nothing,com.mongodb.casbah.MongoDB]">Right</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoDBAsScala" title="implicit com.mongodb.casbah.Implicits.mongoDBAsScala : (db: com.mongodb.DB)AnyRef{def asScala: com.mongodb.casbah.MongoDB}">connectDB</a>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoDBAsScala;<refinement>.asScala" title="=&gt; com.mongodb.casbah.MongoDB">asScala</a><span class="delimiter">)</span>
     <span class="delimiter">}</span> <span class="keyword">catch</span> <span class="delimiter">{</span>
-      <span class="keyword">case</span> <a title="Left[java.lang.Throwable,Nothing]" id="42038">t</a>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: java.lang.Throwable)Left[java.lang.Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#42038" title="java.lang.Throwable">t</a><span class="delimiter">)</span>
+      <span class="keyword">case</span> <a title="Throwable" id="com.mongodb.casbah;MongoURI.connectDB.t">t</a>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: Throwable)scala.util.Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.connectDB.t" title="Throwable">t</a><span class="delimiter">)</span>
     <span class="delimiter">}</span>
   <span class="delimiter">}</span>
 
-  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoCollection]" id="30918">connectCollection</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoCollection]">Either</span><span class="delimiter">[</span>Throwable, MongoCollection<span class="delimiter">]</span> = <span class="delimiter">{</span>
+  <span class="keyword">def</span> <a title="=&gt; Either[Throwable,com.mongodb.casbah.MongoCollection]" id="com.mongodb.casbah;MongoURI.connectCollection">connectCollection</a>: <span title="Either[Throwable,com.mongodb.casbah.MongoCollection]">Either</span><span class="delimiter">[</span>Throwable, MongoCollection<span class="delimiter">]</span> = <span class="delimiter">{</span>
     <span class="keyword">try</span> <span class="delimiter">{</span>
-      <span title="(requirement: Boolean, message: =&gt; Any)Unit">require</span><span class="delimiter">(</span><a href="#30914" title="=&gt; Option[String]">collection</a>.<span title="=&gt; Boolean">isDefined</span>, <span title="java.lang.String(&quot;Cannot connect to Collection as none is defined.&quot;)" class="string">&quot;Cannot connect to Collection as none is defined.&quot;</span><span class="delimiter">)</span>
-      <a href="#30917" title="=&gt; Either[Throwable,com.mongodb.casbah.MongoDB]">connectDB</a> <span title="Either[Throwable,com.mongodb.casbah.MongoCollection]" class="keyword">match</span> <span class="delimiter">{</span>
-        <span class="keyword">case</span> <span title="Right[Nothing,com.mongodb.casbah.MongoCollection]">Right</span><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB" id="42048">db</a><span class="delimiter">)</span> =&gt;
-          <span title="(b: com.mongodb.casbah.MongoCollection)Right[Nothing,com.mongodb.casbah.MongoCollection]">Right</span><span class="delimiter">(</span><a href="MongoDB.scala.html#28512" title="(collection: String)com.mongodb.casbah.MongoCollection">db</a><span class="delimiter">(</span><a href="#30914" title="=&gt; Option[String]">collection</a>.<span title="=&gt; String">get</span><span class="delimiter">)</span><span class="delimiter">)</span>
-        <span class="keyword">case</span> <span title="Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><a title="Throwable" id="42054">t</a><span class="delimiter">)</span> =&gt; <span title="(a: Throwable)Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#42054" title="Throwable">t</a><span class="delimiter">)</span>
+      <span title="(requirement: Boolean, message: =&gt; Any)Unit">require</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.collection" title="=&gt; Option[String]">collection</a>.<span title="=&gt; Boolean">isDefined</span>, <span title="String(&quot;Cannot connect to Collection as none is defined.&quot;)" class="string">&quot;Cannot connect to Collection as none is defined.&quot;</span><span class="delimiter">)</span>
+      <a href="#com.mongodb.casbah;MongoURI.connectDB" title="=&gt; Either[Throwable,com.mongodb.casbah.MongoDB]">connectDB</a> <span title="Either[Throwable,com.mongodb.casbah.MongoCollection]" class="keyword">match</span> <span class="delimiter">{</span>
+        <span class="keyword">case</span> Right<span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB" id="com.mongodb.casbah;MongoURI.connectCollection.db">db</a><span class="delimiter">)</span> =&gt;
+          <span title="(b: com.mongodb.casbah.MongoCollection)scala.util.Right[Nothing,com.mongodb.casbah.MongoCollection]">Right</span><span class="delimiter">(</span><a href="MongoDB.scala.html#com.mongodb.casbah;MongoDB.apply" title="(collection: String)com.mongodb.casbah.MongoCollection">db</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoURI.collection" title="=&gt; Option[String]">collection</a>.<span title="=&gt; String">get</span><span class="delimiter">)</span><span class="delimiter">)</span>
+        <span class="keyword">case</span> Left<span class="delimiter">(</span><span title="Throwable">t</span><span class="delimiter">)</span> =&gt; <span title="(a: Throwable)scala.util.Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><span title="Throwable">t</span><span class="delimiter">)</span>
       <span class="delimiter">}</span>
     <span class="delimiter">}</span> <span class="keyword">catch</span> <span class="delimiter">{</span>
-      <span class="keyword">case</span> <a title="Left[java.lang.Throwable,Nothing]" id="42059">t</a>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: java.lang.Throwable)Left[java.lang.Throwable,Nothing]">Left</span><span class="delimiter">(</span><a href="#42059" title="java.lang.Throwable">t</a><span class="delimiter">)</span>
+      <span class="keyword">case</span> <span title="Throwable">t</span>: <span title="Throwable">Throwable</span> =&gt; <span title="(a: Throwable)scala.util.Left[Throwable,Nothing]">Left</span><span class="delimiter">(</span><span title="Throwable">t</span><span class="delimiter">)</span>
     <span class="delimiter">}</span>
   <span class="delimiter">}</span>
 
-  <span class="keyword">override</span> <span class="keyword">def</span> <a title="()String" id="30919">toString</a>: <span title="String">String</span> = <a href="#41722" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()java.lang.String">toString</span>
+  <span class="keyword">override</span> <span class="keyword">def</span> <a title="()String" id="com.mongodb.casbah;MongoURI.toString">toString</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;MongoURI.underlying" title="=&gt; com.mongodb.MongoURI">underlying</a>.<span title="()String">toString</span>
 <span class="delimiter">}</span>
 
         </pre>

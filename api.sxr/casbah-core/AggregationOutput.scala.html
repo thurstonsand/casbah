@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
@@ -11,7 +11,7 @@
     <body>
         <pre>
 <span class="comment">/**
- * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ * Copyright (c) 2010 MongoDB, Inc. &lt;http://mongodb.com&gt;
  *
  * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,10 @@
  */</span>
 <span class="keyword">package</span> com.mongodb.casbah
 
-<span class="keyword">import</span> scala.collection.<span title="object scala.collection.JavaConverters">JavaConverters</span>._
+<span class="keyword">import</span> scala.collection.<span title="scala.collection.JavaConverters.type">JavaConverters</span>._
 <span class="keyword">import</span> scala.collection.mutable
 
-<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#com.mongodb.casbah.Imports" title="com.mongodb.casbah.Imports.type">Imports</a>._
 <span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>AggregationOutput =&gt; JavaAggregationOutput<span class="delimiter">}</span>
 
 
@@ -44,54 +44,54 @@
  *
  * @since 2.5
  */</span>
-case <span class="keyword">class</span> <a title="class AggregationOutput extends java.lang.Object with ScalaObject with Product with Serializable" id="30354">AggregationOutput</a><a href="#30354" title="ScalaObject" class="delimiter">(</a><a title="com.mongodb.AggregationOutput" id="30351">underlying</a>: <span title="com.mongodb.AggregationOutput">JavaAggregationOutput</span><span class="delimiter">)</span> <span class="delimiter">{</span>
+<span class="keyword">case class</span> <a title="class AggregationOutput extends AnyRef with Product with Serializable" id="com.mongodb.casbah.AggregationOutput.readResolve">AggregationOutput</a><a href="#com.mongodb.casbah.AggregationOutput.readResolve" title="Product" class="delimiter">(</a><a title="com.mongodb.AggregationOutput" id="com.mongodb.casbah;AggregationOutput.underlying">underlying</a>: <span title="com.mongodb.AggregationOutput">JavaAggregationOutput</span><span class="delimiter">)</span> <span class="delimiter">{</span>
 
   <span class="comment">/**
    * returns an iterator to the results of the aggregation
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; Iterable[com.mongodb.casbah.Imports.DBObject]" id="23970">results</a>: <span title="Iterable[com.mongodb.casbah.Imports.DBObject]">Iterable</span><span class="delimiter">[</span>DBObject<span class="delimiter">]</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(i: java.lang.Iterable[com.mongodb.DBObject])collection.JavaConverters.AsScala[Iterable[com.mongodb.DBObject]]">results</span>.<span title="=&gt; Iterable[com.mongodb.DBObject]">asScala</span>
+  <span class="keyword">def</span> <a title="=&gt; Iterable[com.mongodb.casbah.Imports.DBObject]" id="com.mongodb.casbah;AggregationOutput.results">results</a>: <span title="Iterable[com.mongodb.casbah.Imports.DBObject]">Iterable</span><span class="delimiter">[</span>DBObject<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(i: Iterable[com.mongodb.DBObject])scala.collection.convert.Decorators.AsScala[Iterable[com.mongodb.DBObject]]">results</span>.<span title="=&gt; Iterable[com.mongodb.DBObject]">asScala</span>
 
   <span class="comment">/**
    * returns the command result of the aggregation
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Map[String,AnyRef]" id="23971">getCommandResult</a>: mutable.<span title="scala.collection.mutable.Map[String,AnyRef]">Map</span><span class="delimiter">[</span>String, AnyRef<span class="delimiter">]</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(m: java.util.Map[java.lang.String,java.lang.Object])collection.JavaConverters.AsScala[scala.collection.mutable.Map[java.lang.String,java.lang.Object]]">getCommandResult</span>.<span title="=&gt; scala.collection.mutable.Map[java.lang.String,java.lang.Object]">asScala</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Map[String,AnyRef]" id="com.mongodb.casbah;AggregationOutput.getCommandResult">getCommandResult</a>: mutable.<span title="scala.collection.mutable.Map[String,AnyRef]">Map</span><span class="delimiter">[</span>String, AnyRef<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(m: java.util.Map[String,Object])scala.collection.convert.Decorators.AsScala[scala.collection.mutable.Map[String,Object]]">getCommandResult</span>.<span title="=&gt; scala.collection.mutable.Map[String,Object]">asScala</span>
 
   <span class="comment">/**
    * returns the command result of the aggregation
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Map[String,AnyRef]" id="23972">commandResult</a>: mutable.<span title="scala.collection.mutable.Map[String,AnyRef]">Map</span><span class="delimiter">[</span>String, AnyRef<span class="delimiter">]</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(m: java.util.Map[java.lang.String,java.lang.Object])collection.JavaConverters.AsScala[scala.collection.mutable.Map[java.lang.String,java.lang.Object]]">getCommandResult</span>.<span title="=&gt; scala.collection.mutable.Map[java.lang.String,java.lang.Object]">asScala</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Map[String,AnyRef]" id="com.mongodb.casbah;AggregationOutput.commandResult">commandResult</a>: mutable.<span title="scala.collection.mutable.Map[String,AnyRef]">Map</span><span class="delimiter">[</span>String, AnyRef<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="(m: java.util.Map[String,Object])scala.collection.convert.Decorators.AsScala[scala.collection.mutable.Map[String,Object]]">getCommandResult</span>.<span title="=&gt; scala.collection.mutable.Map[String,Object]">asScala</span>
 
   <span class="comment">/**
    * returns the original aggregation command
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.DBObject" id="23973">getCommand</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.DBObject">getCommand</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;AggregationOutput.getCommand">getCommand</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.DBObject">getCommand</span>
 
   <span class="comment">/**
    * returns the original aggregation command
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.DBObject" id="23974">command</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.DBObject">getCommand</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;AggregationOutput.command">command</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.DBObject">getCommand</span>
 
   <span class="comment">/**
    * returns the address of the server used to execute the aggregation
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ServerAddress" id="23975">getServerUsed</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.ServerAddress">getServerUsed</span>
+  <span class="keyword">def</span> <a title="=&gt; com.mongodb.casbah.Imports.ServerAddress" id="com.mongodb.casbah;AggregationOutput.getServerUsed">getServerUsed</a>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.ServerAddress">getServerUsed</span>
 
   <span class="comment">/**
    * returns the address of the server used to execute the aggregation
    * @return
    */</span>
-  <span class="keyword">def</span> <a title="()com.mongodb.casbah.Imports.ServerAddress" id="23976">serverUsed</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.ServerAddress">getServerUsed</span>
+  <span class="keyword">def</span> <a title="()com.mongodb.casbah.Imports.ServerAddress" id="com.mongodb.casbah;AggregationOutput.serverUsed">serverUsed</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.ServerAddress">ServerAddress</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()com.mongodb.ServerAddress">getServerUsed</span>
 
   <span class="comment">/**
    * string representation of the aggregation command
    */</span>
-  <span class="keyword">override</span> <span class="keyword">def</span> <a title="()String" id="23977">toString</a>: <span title="String">String</span> = <a href="#30351" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()java.lang.String">toString</span>
+  <span class="keyword">override</span> <span class="keyword">def</span> <a title="()String" id="com.mongodb.casbah;AggregationOutput.toString">toString</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;AggregationOutput.underlying" title="=&gt; com.mongodb.AggregationOutput">underlying</a>.<span title="()String">toString</span>
 
 <span class="delimiter">}</span>
 

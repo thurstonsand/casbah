@@ -2,24 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>com.mongodb.casbah.query.dsl</title>
+          <title>dsl - com.mongodb.casbah.query.dsl</title>
+          <meta name="description" content="dsl - com.mongodb.casbah.query.dsl" />
+          <meta name="keywords" content="dsl com.mongodb.casbah.query.dsl" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'com.mongodb.casbah.query.dsl.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../../../lib/package_big.png" />
-        <p id="owner"><a name="com" class="extype" href="../../../../package.html">com</a>.<a name="com.mongodb" class="extype" href="../../../package.html">mongodb</a>.<a name="com.mongodb.casbah" class="extype" href="../../package.html">casbah</a>.<a name="com.mongodb.casbah.query" class="extype" href="../package.html">query</a></p>
+        <p id="owner"><a href="../../../../package.html" class="extype" name="com">com</a>.<a href="../../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../../package.html" class="extype" name="com.mongodb.casbah">casbah</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah.query">query</a></p>
         <h1>dsl</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +39,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,9 +56,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.query.dsl.AddToSetOp" data-isabs="true">
+              <ol><li name="com.mongodb.casbah.query.dsl.AddToSetOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AddToSetOpextendsBarewordQueryOperator"></a>
       <a id="AddToSetOp:AddToSetOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -56,11 +67,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="AddToSetOp.html"><span class="name">AddToSetOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="AddToSetOp.html"><span class="name">AddToSetOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.AllOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.AllOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AllOpextendsQueryOperator"></a>
       <a id="AllOp:AllOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,11 +80,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="AllOp.html"><span class="name">AllOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="AllOp.html"><span class="name">AllOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $all (Match ALL In Array) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.AndOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.AndOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AndOpextendsAnyRef"></a>
       <a id="AndOp:AndOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -80,11 +93,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="AndOp.html"><span class="name">AndOp</span></a><span class="result"> extends AnyRef</span>
+        <a href="AndOp.html"><span class="name">AndOp</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $and method as a bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ArrayOps" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.ArrayOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ArrayOpsextendsPushOpwithPushAllOpwithAddToSetOpwithPopOpwithPullOpwithPullAllOp"></a>
       <a id="ArrayOps:ArrayOps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -92,23 +106,25 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ArrayOps.html"><span class="name">ArrayOps</span></a><span class="result"> extends PushOp with PushAllOp with AddToSetOp with PopOp with PullOp with PullAllOp</span>
+        <a href="ArrayOps.html"><span class="name">ArrayOps</span></a><span class="result"> extends <a href="PushOp.html" class="extype" name="com.mongodb.casbah.query.dsl.PushOp">PushOp</a> with <a href="PushAllOp.html" class="extype" name="com.mongodb.casbah.query.dsl.PushAllOp">PushAllOp</a> with <a href="AddToSetOp.html" class="extype" name="com.mongodb.casbah.query.dsl.AddToSetOp">AddToSetOp</a> with <a href="PopOp.html" class="extype" name="com.mongodb.casbah.query.dsl.PopOp">PopOp</a> with <a href="PullOp.html" class="extype" name="com.mongodb.casbah.query.dsl.PullOp">PullOp</a> with <a href="PullAllOp.html" class="extype" name="com.mongodb.casbah.query.dsl.PullAllOp">PullAllOp</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.BSONType" data-isabs="true">
-      <a id="BSONType:BSONType[A]"></a>
+    </li><li name="com.mongodb.casbah.query.dsl.BSONType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BSONType[A]extendsAnyRef"></a>
+      <a id="BSONType[A]:BSONType[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">sealed abstract </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="BSONType.html"><span class="name">BSONType</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends AnyRef</span>
+        <a href="BSONType.html"><span class="name">BSONType</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.BarewordQueryOperator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BarewordQueryOperatorextendsAnyRef"></a>
       <a id="BarewordQueryOperator:BarewordQueryOperator"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -116,11 +132,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="BarewordQueryOperator.html"><span class="name">BarewordQueryOperator</span></a><span class="result"> extends AnyRef</span>
+        <a href="BarewordQueryOperator.html"><span class="name">BarewordQueryOperator</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Base Operator class for Bareword Operators.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.BitOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.BitOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BitOpextendsBarewordQueryOperator"></a>
       <a id="BitOp:BitOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -128,11 +145,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="BitOp.html"><span class="name">BitOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="BitOp.html"><span class="name">BitOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $bit (bit) update method as a bareword Operator</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.DeprecatedGeoWithinOps" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.DeprecatedGeoWithinOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeprecatedGeoWithinOpsextendsQueryOperator"></a>
       <a id="DeprecatedGeoWithinOps:DeprecatedGeoWithinOps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -140,11 +158,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="DeprecatedGeoWithinOps.html"><span class="name">DeprecatedGeoWithinOps</span></a><span class="result"> extends QueryOperator</span>
+        <a href="DeprecatedGeoWithinOps.html"><span class="name">DeprecatedGeoWithinOps</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $within geospatial search method on appropriate callers</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ElemMatchOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.ElemMatchOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ElemMatchOpextendsQueryOperator"></a>
       <a id="ElemMatchOp:ElemMatchOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -152,11 +171,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ElemMatchOp.html"><span class="name">ElemMatchOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="ElemMatchOp.html"><span class="name">ElemMatchOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $elemMatch method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.EqualsOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.EqualsOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="EqualsOpextendsQueryOperator"></a>
       <a id="EqualsOp:EqualsOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -164,11 +184,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="EqualsOp.html"><span class="name">EqualsOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="EqualsOp.html"><span class="name">EqualsOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide an equals method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ExistsOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.ExistsOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ExistsOpextendsQueryOperator"></a>
       <a id="ExistsOp:ExistsOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -176,11 +197,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ExistsOp.html"><span class="name">ExistsOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="ExistsOp.html"><span class="name">ExistsOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $exists (Exists) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FluidQueryBarewordOpsextendsSetOpwithSetOnInsertOpwithUnsetOpwithIncOpwithOrOpwithAndOpwithRenameOpwithArrayOpswithNorOpwithBitOpwithWhereOpwithSearchOp"></a>
       <a id="FluidQueryBarewordOps:FluidQueryBarewordOps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -188,11 +210,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="FluidQueryBarewordOps.html"><span class="name">FluidQueryBarewordOps</span></a><span class="result"> extends SetOp with SetOnInsertOp with UnsetOp with IncOp with OrOp with AndOp with RenameOp with ArrayOps with NorOp with BitOp with WhereOp with SearchOp</span>
+        <a href="FluidQueryBarewordOps.html"><span class="name">FluidQueryBarewordOps</span></a><span class="result"> extends <a href="SetOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SetOp">SetOp</a> with <a href="SetOnInsertOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SetOnInsertOp">SetOnInsertOp</a> with <a href="UnsetOp.html" class="extype" name="com.mongodb.casbah.query.dsl.UnsetOp">UnsetOp</a> with <a href="IncOp.html" class="extype" name="com.mongodb.casbah.query.dsl.IncOp">IncOp</a> with <a href="OrOp.html" class="extype" name="com.mongodb.casbah.query.dsl.OrOp">OrOp</a> with <a href="AndOp.html" class="extype" name="com.mongodb.casbah.query.dsl.AndOp">AndOp</a> with <a href="RenameOp.html" class="extype" name="com.mongodb.casbah.query.dsl.RenameOp">RenameOp</a> with <a href="ArrayOps.html" class="extype" name="com.mongodb.casbah.query.dsl.ArrayOps">ArrayOps</a> with <a href="NorOp.html" class="extype" name="com.mongodb.casbah.query.dsl.NorOp">NorOp</a> with <a href="BitOp.html" class="extype" name="com.mongodb.casbah.query.dsl.BitOp">BitOp</a> with <a href="WhereOp.html" class="extype" name="com.mongodb.casbah.query.dsl.WhereOp">WhereOp</a> with <a href="SearchOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SearchOp">SearchOp</a></span>
       </span>
       </h4>
       <p class="comment cmt">Aggregation object for Bareword Operators.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.FluidQueryOperators" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.FluidQueryOperators" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FluidQueryOperatorsextendsEqualsOpwithNotEqualsOpwithLessThanOpwithLessThanEqualOpwithGreaterThanOpwithGreaterThanEqualOpwithInOpwithNotInOpwithModuloOpwithSizeOpwithExistsOpwithAllOpwithNotOpwithSliceOpwithTypeOpwithRegexOpwithElemMatchOpwithGeospatialOpswithMetaProjectionOp"></a>
       <a id="FluidQueryOperators:FluidQueryOperators"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -200,24 +223,26 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="FluidQueryOperators.html"><span class="name">FluidQueryOperators</span></a><span class="result"> extends EqualsOp with NotEqualsOp with LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with InOp with NotInOp with ModuloOp with SizeOp with ExistsOp with AllOp with NotOp with SliceOp with TypeOp with RegexOp with ElemMatchOp with GeospatialOps with MetaProjectionOp</span>
+        <a href="FluidQueryOperators.html"><span class="name">FluidQueryOperators</span></a><span class="result"> extends <a href="EqualsOp.html" class="extype" name="com.mongodb.casbah.query.dsl.EqualsOp">EqualsOp</a> with <a href="NotEqualsOp.html" class="extype" name="com.mongodb.casbah.query.dsl.NotEqualsOp">NotEqualsOp</a> with <a href="LessThanOp.html" class="extype" name="com.mongodb.casbah.query.dsl.LessThanOp">LessThanOp</a> with <a href="LessThanEqualOp.html" class="extype" name="com.mongodb.casbah.query.dsl.LessThanEqualOp">LessThanEqualOp</a> with <a href="GreaterThanOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GreaterThanOp">GreaterThanOp</a> with <a href="GreaterThanEqualOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GreaterThanEqualOp">GreaterThanEqualOp</a> with <a href="InOp.html" class="extype" name="com.mongodb.casbah.query.dsl.InOp">InOp</a> with <a href="NotInOp.html" class="extype" name="com.mongodb.casbah.query.dsl.NotInOp">NotInOp</a> with <a href="ModuloOp.html" class="extype" name="com.mongodb.casbah.query.dsl.ModuloOp">ModuloOp</a> with <a href="SizeOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SizeOp">SizeOp</a> with <a href="ExistsOp.html" class="extype" name="com.mongodb.casbah.query.dsl.ExistsOp">ExistsOp</a> with <a href="AllOp.html" class="extype" name="com.mongodb.casbah.query.dsl.AllOp">AllOp</a> with <a href="NotOp.html" class="extype" name="com.mongodb.casbah.query.dsl.NotOp">NotOp</a> with <a href="SliceOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SliceOp">SliceOp</a> with <a href="TypeOp.html" class="extype" name="com.mongodb.casbah.query.dsl.TypeOp">TypeOp</a> with <a href="RegexOp.html" class="extype" name="com.mongodb.casbah.query.dsl.RegexOp">RegexOp</a> with <a href="ElemMatchOp.html" class="extype" name="com.mongodb.casbah.query.dsl.ElemMatchOp">ElemMatchOp</a> with <a href="GeospatialOps.html" class="extype" name="com.mongodb.casbah.query.dsl.GeospatialOps">GeospatialOps</a> with <a href="MetaProjectionOp.html" class="extype" name="com.mongodb.casbah.query.dsl.MetaProjectionOp">MetaProjectionOp</a></span>
       </span>
       </h4>
       <p class="comment cmt">Mixed trait which provides all possible
 operators.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeoCoords" data-isabs="false">
-      <a id="GeoCoords:GeoCoords[A, B]"></a>
+    </li><li name="com.mongodb.casbah.query.dsl.GeoCoords" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GeoCoords[A,B]extendsProductwithSerializable"></a>
+      <a id="GeoCoords[A,B]:GeoCoords[A,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="GeoCoords.html"><span class="name">GeoCoords</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="lat">lat: A</span>, <span name="lon">lon: B</span>, <span name="evidence$13">evidence$13: ValidNumericType[A]</span>, <span name="evidence$14">evidence$14: Manifest[A]</span>, <span name="evidence$15">evidence$15: ValidNumericType[B]</span>, <span name="evidence$16">evidence$16: Manifest[B]</span>)</span><span class="result"> extends Product with Serializable</span>
+        <a href="GeoCoords.html"><span class="name">GeoCoords</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="lat">lat: <span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.A">A</span></span>, <span name="lon">lon: <span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$13">evidence$13: <a href="../Imports$.html#ValidNumericType[T]=com.mongodb.casbah.query.ValidNumericType[T]" class="extmbr" name="com.mongodb.casbah.query.Imports.ValidNumericType">Imports.ValidNumericType</a>[<span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.A">A</span>]</span>, <span name="evidence$14">evidence$14: <span class="extype" name="scala.Predef.Manifest">Manifest</span>[<span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.A">A</span>]</span>, <span name="evidence$15">evidence$15: <a href="../Imports$.html#ValidNumericType[T]=com.mongodb.casbah.query.ValidNumericType[T]" class="extmbr" name="com.mongodb.casbah.query.Imports.ValidNumericType">Imports.ValidNumericType</a>[<span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.B">B</span>]</span>, <span name="evidence$16">evidence$16: <span class="extype" name="scala.Predef.Manifest">Manifest</span>[<span class="extype" name="com.mongodb.casbah.query.dsl.GeoCoords.B">B</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeoIntersectsOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GeoIntersectsOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeoIntersectsOpextendsQueryOperator"></a>
       <a id="GeoIntersectsOp:GeoIntersectsOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -225,12 +250,13 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GeoIntersectsOp.html"><span class="name">GeoIntersectsOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GeoIntersectsOp.html"><span class="name">GeoIntersectsOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $intersects geospatial search method on appropriate callers
 </p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeoNearOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GeoNearOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeoNearOpextendsQueryOperator"></a>
       <a id="GeoNearOp:GeoNearOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -238,11 +264,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GeoNearOp.html"><span class="name">GeoNearOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GeoNearOp.html"><span class="name">GeoNearOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $near geospatial search method on appropriate callers</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeoNearSphereOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GeoNearSphereOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeoNearSphereOpextendsQueryOperator"></a>
       <a id="GeoNearSphereOp:GeoNearSphereOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -250,11 +277,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GeoNearSphereOp.html"><span class="name">GeoNearSphereOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GeoNearSphereOp.html"><span class="name">GeoNearSphereOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $nearSphere geospatial search method on appropriate callers</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeoWithinOps" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GeoWithinOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeoWithinOpsextendsQueryOperator"></a>
       <a id="GeoWithinOps:GeoWithinOps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -262,11 +290,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GeoWithinOps.html"><span class="name">GeoWithinOps</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GeoWithinOps.html"><span class="name">GeoWithinOps</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the nested $geoWithin geospatial search method on appropriate callers</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GeospatialOps" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GeospatialOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeospatialOpsextendsGeoNearOpwithGeoNearSphereOpwithGeoWithinOpswithGeoIntersectsOpwithDeprecatedGeoWithinOps"></a>
       <a id="GeospatialOps:GeospatialOps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -274,11 +303,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GeospatialOps.html"><span class="name">GeospatialOps</span></a><span class="result"> extends GeoNearOp with GeoNearSphereOp with GeoWithinOps with GeoIntersectsOp with DeprecatedGeoWithinOps</span>
+        <a href="GeospatialOps.html"><span class="name">GeospatialOps</span></a><span class="result"> extends <a href="GeoNearOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GeoNearOp">GeoNearOp</a> with <a href="GeoNearSphereOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GeoNearSphereOp">GeoNearSphereOp</a> with <a href="GeoWithinOps.html" class="extype" name="com.mongodb.casbah.query.dsl.GeoWithinOps">GeoWithinOps</a> with <a href="GeoIntersectsOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GeoIntersectsOp">GeoIntersectsOp</a> with <a href="DeprecatedGeoWithinOps.html" class="extype" name="com.mongodb.casbah.query.dsl.DeprecatedGeoWithinOps">DeprecatedGeoWithinOps</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GreaterThanEqualOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GreaterThanEqualOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GreaterThanEqualOpextendsQueryOperator"></a>
       <a id="GreaterThanEqualOp:GreaterThanEqualOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -286,11 +316,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GreaterThanEqualOp.html"><span class="name">GreaterThanEqualOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GreaterThanEqualOp.html"><span class="name">GreaterThanEqualOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $gte (Greater Than Or Equal To) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.GreaterThanOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.GreaterThanOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GreaterThanOpextendsQueryOperator"></a>
       <a id="GreaterThanOp:GreaterThanOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -298,11 +329,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GreaterThanOp.html"><span class="name">GreaterThanOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="GreaterThanOp.html"><span class="name">GreaterThanOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $gt (Greater Than) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.InOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.InOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InOpextendsQueryOperator"></a>
       <a id="InOp:InOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -310,11 +342,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="InOp.html"><span class="name">InOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="InOp.html"><span class="name">InOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $in (In Array) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.IncOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.IncOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IncOpextendsBarewordQueryOperator"></a>
       <a id="IncOp:IncOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -322,11 +355,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="IncOp.html"><span class="name">IncOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="IncOp.html"><span class="name">IncOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $inc (inc) method as a bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.LessThanEqualOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.LessThanEqualOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LessThanEqualOpextendsQueryOperator"></a>
       <a id="LessThanEqualOp:LessThanEqualOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -334,11 +368,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="LessThanEqualOp.html"><span class="name">LessThanEqualOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="LessThanEqualOp.html"><span class="name">LessThanEqualOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $lte (Less Than Or Equal To) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.LessThanOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.LessThanOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LessThanOpextendsQueryOperator"></a>
       <a id="LessThanOp:LessThanOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -346,11 +381,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="LessThanOp.html"><span class="name">LessThanOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="LessThanOp.html"><span class="name">LessThanOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $lt (Less Than) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.MetaProjectionOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.MetaProjectionOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MetaProjectionOpextendsQueryOperator"></a>
       <a id="MetaProjectionOp:MetaProjectionOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -358,11 +394,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="MetaProjectionOp.html"><span class="name">MetaProjectionOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="MetaProjectionOp.html"><span class="name">MetaProjectionOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait providing a projection / sort helper for use with text search</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ModuloOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.ModuloOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ModuloOpextendsQueryOperator"></a>
       <a id="ModuloOp:ModuloOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -370,11 +407,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ModuloOp.html"><span class="name">ModuloOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="ModuloOp.html"><span class="name">ModuloOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $mod (Modulo) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.NestedBarewordListOperator" data-isabs="false">
+    </li><li name="com.mongodb.casbah.query.dsl.NestedBarewordListOperator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NestedBarewordListOperatorextendsAnyRef"></a>
       <a id="NestedBarewordListOperator:NestedBarewordListOperator"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -382,11 +420,12 @@ operators.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="NestedBarewordListOperator.html"><span class="name">NestedBarewordListOperator</span></a><span class="result"> extends AnyRef</span>
+        <a href="NestedBarewordListOperator.html"><span class="name">NestedBarewordListOperator</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.NorOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.NorOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NorOpextendsAnyRef"></a>
       <a id="NorOp:NorOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -394,11 +433,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="NorOp.html"><span class="name">NorOp</span></a><span class="result"> extends AnyRef</span>
+        <a href="NorOp.html"><span class="name">NorOp</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $nor (nor) method as a bareword operator</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.NotEqualsOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.NotEqualsOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotEqualsOpextendsQueryOperator"></a>
       <a id="NotEqualsOp:NotEqualsOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -406,11 +446,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="NotEqualsOp.html"><span class="name">NotEqualsOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="NotEqualsOp.html"><span class="name">NotEqualsOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $ne (Not Equal To) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.NotInOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.NotInOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotInOpextendsQueryOperator"></a>
       <a id="NotInOp:NotInOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -418,11 +459,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="NotInOp.html"><span class="name">NotInOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="NotInOp.html"><span class="name">NotInOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $nin (NOT In Array) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.NotOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.NotOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NotOpextendsQueryOperator"></a>
       <a id="NotOp:NotOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -430,11 +472,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="NotOp.html"><span class="name">NotOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="NotOp.html"><span class="name">NotOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $not (Not) negation method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.OrOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.OrOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OrOpextendsAnyRef"></a>
       <a id="OrOp:OrOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -442,11 +485,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="OrOp.html"><span class="name">OrOp</span></a><span class="result"> extends AnyRef</span>
+        <a href="OrOp.html"><span class="name">OrOp</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $or method as a bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.PopOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.PopOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PopOpextendsBarewordQueryOperator"></a>
       <a id="PopOp:PopOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -454,11 +498,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PopOp.html"><span class="name">PopOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="PopOp.html"><span class="name">PopOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.PullAllOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.PullAllOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PullAllOpextendsBarewordQueryOperator"></a>
       <a id="PullAllOp:PullAllOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -466,11 +511,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PullAllOp.html"><span class="name">PullAllOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="PullAllOp.html"><span class="name">PullAllOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.PullOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.PullOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PullOpextendsBarewordQueryOperator"></a>
       <a id="PullOp:PullOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -478,11 +524,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PullOp.html"><span class="name">PullOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="PullOp.html"><span class="name">PullOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.PushAllOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.PushAllOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PushAllOpextendsBarewordQueryOperator"></a>
       <a id="PushAllOp:PushAllOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -490,11 +537,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PushAllOp.html"><span class="name">PushAllOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="PushAllOp.html"><span class="name">PushAllOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.PushOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.PushOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PushOpextendsBarewordQueryOperator"></a>
       <a id="PushOp:PushOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -502,11 +550,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PushOp.html"><span class="name">PushOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="PushOp.html"><span class="name">PushOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.QueryExpressionObject" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.QueryExpressionObject" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryExpressionObjectextendsAnyRef"></a>
       <a id="QueryExpressionObject:QueryExpressionObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -514,11 +563,12 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="QueryExpressionObject.html"><span class="name">QueryExpressionObject</span></a><span class="result"> extends AnyRef</span>
+        <a href="QueryExpressionObject.html"><span class="name">QueryExpressionObject</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.QueryOperator" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.QueryOperator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryOperatorextendsChainedOperator"></a>
       <a id="QueryOperator:QueryOperator"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -526,13 +576,14 @@ operators.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="QueryOperator.html"><span class="name">QueryOperator</span></a><span class="result"> extends ChainedOperator</span>
+        <a href="QueryOperator.html"><span class="name">QueryOperator</span></a><span class="result"> extends <a href="../ChainedOperator.html" class="extype" name="com.mongodb.casbah.query.ChainedOperator">ChainedOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Base trait for QueryOperators, children
 are required to define a value for field, which is a String
 and refers to the left-hand of the Query (e.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.RegexOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.RegexOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RegexOpextendsQueryOperator"></a>
       <a id="RegexOp:RegexOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -540,11 +591,12 @@ and refers to the left-hand of the Query (e.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="RegexOp.html"><span class="name">RegexOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="RegexOp.html"><span class="name">RegexOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">$regex operator to query by type.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.RenameOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.RenameOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RenameOpextendsBarewordQueryOperator"></a>
       <a id="RenameOp:RenameOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -552,11 +604,12 @@ and refers to the left-hand of the Query (e.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="RenameOp.html"><span class="name">RenameOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="RenameOp.html"><span class="name">RenameOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $rename (Rename field) as a bareword operator</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SearchOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.SearchOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SearchOpextendsBarewordQueryOperator"></a>
       <a id="SearchOp:SearchOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -564,11 +617,12 @@ and refers to the left-hand of the Query (e.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SearchOp.html"><span class="name">SearchOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="SearchOp.html"><span class="name">SearchOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $text search method on appropriate callers</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SetOnInsertOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.SetOnInsertOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SetOnInsertOpextendsBarewordQueryOperator"></a>
       <a id="SetOnInsertOp:SetOnInsertOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -576,12 +630,13 @@ and refers to the left-hand of the Query (e.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SetOnInsertOp.html"><span class="name">SetOnInsertOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="SetOnInsertOp.html"><span class="name">SetOnInsertOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $setOnInsert (SetOnInsert) SetOnInsert method as a
 bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SetOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.SetOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SetOpextendsBarewordQueryOperator"></a>
       <a id="SetOp:SetOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -589,11 +644,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SetOp.html"><span class="name">SetOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="SetOp.html"><span class="name">SetOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $set (Set) Set method as a bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SizeOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.SizeOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SizeOpextendsQueryOperator"></a>
       <a id="SizeOp:SizeOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -601,11 +657,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SizeOp.html"><span class="name">SizeOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="SizeOp.html"><span class="name">SizeOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $size (Size) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.SliceOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.SliceOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SliceOpextendsQueryOperator"></a>
       <a id="SliceOp:SliceOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -613,11 +670,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SliceOp.html"><span class="name">SliceOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="SliceOp.html"><span class="name">SliceOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $slice (Slice of Array) method on appropriate callers.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.TypeOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.TypeOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TypeOpextendsQueryOperator"></a>
       <a id="TypeOp:TypeOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -625,11 +683,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="TypeOp.html"><span class="name">TypeOp</span></a><span class="result"> extends QueryOperator</span>
+        <a href="TypeOp.html"><span class="name">TypeOp</span></a><span class="result"> extends <a href="QueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.QueryOperator">QueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">$type operator to query by type.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.UnsetOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.UnsetOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UnsetOpextendsBarewordQueryOperator"></a>
       <a id="UnsetOp:UnsetOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -637,11 +696,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="UnsetOp.html"><span class="name">UnsetOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="UnsetOp.html"><span class="name">UnsetOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $unset (UnSet) UnSet method as a bareword operator.</p>
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.ValueTestFluidQueryOperators" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.ValueTestFluidQueryOperators" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ValueTestFluidQueryOperatorsextendsLessThanOpwithLessThanEqualOpwithGreaterThanOpwithGreaterThanEqualOpwithModuloOpwithSizeOpwithAllOpwithNotEqualsOpwithTypeOpwithRegexOp"></a>
       <a id="ValueTestFluidQueryOperators:ValueTestFluidQueryOperators"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -649,11 +709,12 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ValueTestFluidQueryOperators.html"><span class="name">ValueTestFluidQueryOperators</span></a><span class="result"> extends LessThanOp with LessThanEqualOp with GreaterThanOp with GreaterThanEqualOp with ModuloOp with SizeOp with AllOp with NotEqualsOp with TypeOp with RegexOp</span>
+        <a href="ValueTestFluidQueryOperators.html"><span class="name">ValueTestFluidQueryOperators</span></a><span class="result"> extends <a href="LessThanOp.html" class="extype" name="com.mongodb.casbah.query.dsl.LessThanOp">LessThanOp</a> with <a href="LessThanEqualOp.html" class="extype" name="com.mongodb.casbah.query.dsl.LessThanEqualOp">LessThanEqualOp</a> with <a href="GreaterThanOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GreaterThanOp">GreaterThanOp</a> with <a href="GreaterThanEqualOp.html" class="extype" name="com.mongodb.casbah.query.dsl.GreaterThanEqualOp">GreaterThanEqualOp</a> with <a href="ModuloOp.html" class="extype" name="com.mongodb.casbah.query.dsl.ModuloOp">ModuloOp</a> with <a href="SizeOp.html" class="extype" name="com.mongodb.casbah.query.dsl.SizeOp">SizeOp</a> with <a href="AllOp.html" class="extype" name="com.mongodb.casbah.query.dsl.AllOp">AllOp</a> with <a href="NotEqualsOp.html" class="extype" name="com.mongodb.casbah.query.dsl.NotEqualsOp">NotEqualsOp</a> with <a href="TypeOp.html" class="extype" name="com.mongodb.casbah.query.dsl.TypeOp">TypeOp</a> with <a href="RegexOp.html" class="extype" name="com.mongodb.casbah.query.dsl.RegexOp">RegexOp</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.WhereOp" data-isabs="true">
+    </li><li name="com.mongodb.casbah.query.dsl.WhereOp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WhereOpextendsBarewordQueryOperator"></a>
       <a id="WhereOp:WhereOp"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -661,7 +722,7 @@ bareword operator.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="WhereOp.html"><span class="name">WhereOp</span></a><span class="result"> extends BarewordQueryOperator</span>
+        <a href="WhereOp.html"><span class="name">WhereOp</span></a><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait to provide the $where (Where) method on appropriate callers.</p>
@@ -670,9 +731,10 @@ bareword operator.</p>
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="com.mongodb.casbah.query.dsl.BSONType" data-isabs="false">
+              <ol><li name="com.mongodb.casbah.query.dsl.BSONType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BSONType"></a>
       <a id="BSONType:BSONType"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -680,11 +742,12 @@ bareword operator.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="BSONType$.html"><span class="name">BSONType</span></a><span class="result"> extends AnyRef</span>
+        <a href="BSONType$.html"><span class="name">BSONType</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="com.mongodb.casbah.query.dsl.QueryExpressionObject" data-isabs="false">
+    </li><li name="com.mongodb.casbah.query.dsl.QueryExpressionObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryExpressionObject"></a>
       <a id="QueryExpressionObject:QueryExpressionObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -692,7 +755,7 @@ bareword operator.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="QueryExpressionObject$.html"><span class="name">QueryExpressionObject</span></a><span class="result"> extends AnyRef</span>
+        <a href="QueryExpressionObject$.html"><span class="name">QueryExpressionObject</span></a>
       </span>
       </h4>
       
@@ -700,10 +763,20 @@ bareword operator.</p>
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>
@@ -711,7 +784,6 @@ bareword operator.</p>
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-
-
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../../lib/template.js"></script>
     </body>
       </html>

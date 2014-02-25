@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
@@ -11,7 +11,7 @@
     <body>
         <pre>
 <span class="comment">/**
- * Copyright (c) 2010 10gen, Inc. &lt;http://10gen.com&gt;
+ * Copyright (c) 2010 MongoDB, Inc. &lt;http://mongodb.com&gt;
  *
  * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
  * you may not use this file except in compliance with the License.
@@ -35,14 +35,14 @@
 
 <span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>BulkWriteOperation =&gt; JBulkWriteOperation, BulkWriteRequestBuilder<span class="delimiter">}</span>
 
-<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#10744" title="object com.mongodb.casbah.Imports">Imports</a>._
+<span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#com.mongodb.casbah.Imports" title="com.mongodb.casbah.Imports.type">Imports</a>._
 
 <span class="comment">/**
  * A builder for a bulk write operation.
  *
  * @since 2.7
  */</span>
-case <span class="keyword">class</span> <a title="class BulkWriteOperation extends java.lang.Object with ScalaObject with Product with Serializable" id="30588">BulkWriteOperation</a><a href="#30588" title="ScalaObject" class="delimiter">(</a><a title="com.mongodb.BulkWriteOperation" id="30585">underlying</a>: <span title="com.mongodb.BulkWriteOperation">JBulkWriteOperation</span><span class="delimiter">)</span> <span class="delimiter">{</span>
+<span class="keyword">case class</span> <a title="class BulkWriteOperation extends AnyRef with Product with Serializable" id="com.mongodb.casbah.BulkWriteOperation.readResolve">BulkWriteOperation</a><a href="#com.mongodb.casbah.BulkWriteOperation.readResolve" title="Product" class="delimiter">(</a><a title="com.mongodb.BulkWriteOperation" id="com.mongodb.casbah;BulkWriteOperation.underlying">underlying</a>: <span title="com.mongodb.BulkWriteOperation">JBulkWriteOperation</span><span class="delimiter">)</span> <span class="delimiter">{</span>
 
   <span class="comment">/**
    * Returns true if this is building an ordered bulk write request.
@@ -52,14 +52,14 @@ case <span class="keyword">class</span> <a title="class BulkWriteOperation exten
    * @see MongoCollection#initializeOrderedBulkOperation()
    * @see MongoCollection#initializeUnorderedBulkOperation()
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; Boolean" id="30362">isOrdered</a>: <span title="Boolean">Boolean</span> = <a href="#30585" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="()Boolean">isOrdered</span>
+  <span class="keyword">def</span> <a title="=&gt; Boolean" id="com.mongodb.casbah;BulkWriteOperation.isOrdered">isOrdered</a>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah;BulkWriteOperation.underlying" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="()Boolean">isOrdered</span>
 
   <span class="comment">/**
    * Add an insert request to the bulk operation
    *
    * @param document the document to insert
    */</span>
-  <span class="keyword">def</span> <a title="(document: com.mongodb.casbah.Imports.DBObject)Unit" id="30363">insert</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="30386">document</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#30585" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.DBObject)Unit">insert</span><span class="delimiter">(</span><a href="#30386" title="com.mongodb.casbah.Imports.DBObject">document</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(document: com.mongodb.casbah.Imports.DBObject)Unit" id="com.mongodb.casbah;BulkWriteOperation.insert">insert</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;BulkWriteOperation.insert.document">document</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;BulkWriteOperation.underlying" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.DBObject)Unit">insert</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteOperation.insert.document" title="com.mongodb.casbah.Imports.DBObject">document</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Start building a write request to add to the bulk write operation.
@@ -67,7 +67,7 @@ case <span class="keyword">class</span> <a title="class BulkWriteOperation exten
    * @param query the query for an update, replace or remove request
    * @return a builder for a single write request
    */</span>
-  <span class="keyword">def</span> <a title="(query: com.mongodb.casbah.Imports.DBObject)com.mongodb.BulkWriteRequestBuilder" id="30364">find</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="30395">query</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="com.mongodb.BulkWriteRequestBuilder">BulkWriteRequestBuilder</span> = <a href="#30585" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.DBObject)com.mongodb.BulkWriteRequestBuilder">find</span><span class="delimiter">(</span><a href="#30395" title="com.mongodb.casbah.Imports.DBObject">query</a><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(query: com.mongodb.casbah.Imports.DBObject)com.mongodb.BulkWriteRequestBuilder" id="com.mongodb.casbah;BulkWriteOperation.find">find</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;BulkWriteOperation.find.query">query</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="com.mongodb.BulkWriteRequestBuilder">BulkWriteRequestBuilder</span> = <a href="#com.mongodb.casbah;BulkWriteOperation.underlying" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.DBObject)com.mongodb.BulkWriteRequestBuilder">find</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteOperation.find.query" title="com.mongodb.casbah.Imports.DBObject">query</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Execute the bulk write operation.
@@ -76,7 +76,7 @@ case <span class="keyword">class</span> <a title="class BulkWriteOperation exten
    * @throws com.mongodb.BulkWriteException if there was an error with the bulk write
    * @throws com.mongodb.MongoException if there was a mongodb error
    */</span>
-  <span class="keyword">def</span> <a title="()com.mongodb.casbah.BulkWriteResult" id="30365">execute</a><span class="delimiter">(</span><span class="delimiter">)</span>: <a href="BulkWriteResult.scala.html#10733" title="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a> = <a href="BulkWriteResult.scala.html#30436" title="(underlying: com.mongodb.BulkWriteResult)com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a><span class="delimiter">(</span><a href="#30585" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="()com.mongodb.BulkWriteResult">execute</span><span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="()com.mongodb.casbah.BulkWriteResult" id="com.mongodb.casbah;BulkWriteOperation.execute(b5ead9cf4a)">execute</a><span class="delimiter">(</span><span class="delimiter">)</span>: <a href="BulkWriteResult.scala.html#com.mongodb.casbah;BulkWriteResult" title="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a> = <a href="BulkWriteResult.scala.html#com.mongodb.casbah;BulkWriteResult" title="(underlying: com.mongodb.BulkWriteResult)com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteOperation.underlying" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="()com.mongodb.BulkWriteResult">execute</span><span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Execute the bulk write operation with the given write concern.
@@ -87,7 +87,7 @@ case <span class="keyword">class</span> <a title="class BulkWriteOperation exten
    * @throws com.mongodb.BulkWriteException if there was an error with the bulk write
    * @throws com.mongodb.MongoException if there was a mongodb error
    */</span>
-  <span class="keyword">def</span> <a title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.casbah.BulkWriteResult" id="30366">execute</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="30534">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <a href="BulkWriteResult.scala.html#10733" title="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a> = <a href="BulkWriteResult.scala.html#30436" title="(underlying: com.mongodb.BulkWriteResult)com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a><span class="delimiter">(</span><a href="#30585" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.BulkWriteResult">execute</span><span class="delimiter">(</span><a href="#30534" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.casbah.BulkWriteResult" id="com.mongodb.casbah;BulkWriteOperation.execute(30ab9dc951)">execute</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah;BulkWriteOperation.execute(30ab9dc951).writeConcern">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <a href="BulkWriteResult.scala.html#com.mongodb.casbah;BulkWriteResult" title="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a> = <a href="BulkWriteResult.scala.html#com.mongodb.casbah;BulkWriteResult" title="(underlying: com.mongodb.BulkWriteResult)com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteOperation.underlying" title="=&gt; com.mongodb.BulkWriteOperation">underlying</a>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.BulkWriteResult">execute</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteOperation.execute(30ab9dc951).writeConcern" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
         </pre>
