@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>BulkWriteResult - com.mongodb.casbah.BulkWriteResult</title>
-          <meta name="description" content="BulkWriteResult - com.mongodb.casbah.BulkWriteResult" />
-          <meta name="keywords" content="BulkWriteResult com.mongodb.casbah.BulkWriteResult" />
+          <title>BulkWriteException - com.mongodb.casbah.BulkWriteException</title>
+          <meta name="description" content="BulkWriteException - com.mongodb.casbah.BulkWriteException" />
+          <meta name="keywords" content="BulkWriteException com.mongodb.casbah.BulkWriteException" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'com.mongodb.casbah.BulkWriteResult';
+            var hash = 'com.mongodb.casbah.BulkWriteException';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,7 +26,7 @@
       <div id="definition">
         <img src="../../../lib/class_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="package.html" class="extype" name="com.mongodb.casbah">casbah</a></p>
-        <h1>BulkWriteResult</h1>
+        <h1>BulkWriteException</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,13 +35,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">BulkWriteResult</span><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteResult">mongodb.BulkWriteResult</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">BulkWriteException</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteException">mongodb.BulkWriteException</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-core/BulkWriteResult.scala.html" target="_blank">BulkWriteResult.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-core/BulkWriteException.scala.html" target="_blank">BulkWriteException.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="java.lang.Exception">Exception</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -59,7 +59,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.mongodb.casbah.BulkWriteResult"><span>BulkWriteResult</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.mongodb.casbah.BulkWriteException"><span>BulkWriteException</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="java.lang.Exception"><span>Exception</span></li><li class="in" name="java.lang.Throwable"><span>Throwable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -79,16 +79,16 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.mongodb.casbah.BulkWriteResult#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(underlying:com.mongodb.BulkWriteResult):com.mongodb.casbah.BulkWriteResult"></a>
-      <a id="&lt;init&gt;:BulkWriteResult"></a>
+              <ol><li name="com.mongodb.casbah.BulkWriteException#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(message:String,cause:Throwable,underlying:com.mongodb.BulkWriteException):com.mongodb.casbah.BulkWriteException"></a>
+      <a id="&lt;init&gt;:BulkWriteException"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">BulkWriteResult</span><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteResult">mongodb.BulkWriteResult</span></span>)</span>
+        <span class="name">BulkWriteException</span><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="underlying">underlying: <span class="extype" name="com.mongodb.BulkWriteException">mongodb.BulkWriteException</span></span>)</span>
       </span>
       </h4>
       
@@ -166,6 +166,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="java.lang.Throwable#addSuppressed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addSuppressed(x$1:Throwable):Unit"></a>
+      <a id="addSuppressed(Throwable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addSuppressed</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -179,6 +192,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#cause" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cause:Throwable"></a>
+      <a id="cause:Throwable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cause</span><span class="result">: <span class="extype" name="scala.Throwable">Throwable</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -211,7 +237,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.mongodb.casbah.BulkWriteException#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(obj:Any):Boolean"></a>
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
@@ -223,7 +249,20 @@
         <span class="name">equals</span><span class="params">(<span name="obj">obj: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a> → Equals → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mongodb.casbah.BulkWriteException">BulkWriteException</a> → Equals → AnyRef → Any</dd></dl></div>
+    </li><li name="java.lang.Throwable#fillInStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fillInStackTrace():Throwable"></a>
+      <a id="fillInStackTrace():Throwable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fillInStackTrace</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Throwable">Throwable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -243,6 +282,19 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="java.lang.Throwable#getCause" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getCause():Throwable"></a>
+      <a id="getCause():Throwable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getCause</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Throwable">Throwable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -256,102 +308,123 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#getInsertedCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getInsertedCount:Int"></a>
-      <a id="getInsertedCount:Int"></a>
+    </li><li name="java.lang.Throwable#getLocalizedMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLocalizedMessage():String"></a>
+      <a id="getLocalizedMessage():String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getInsertedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">getLocalizedMessage</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="java.lang.Throwable#getMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getMessage():String"></a>
+      <a id="getMessage():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMessage</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#getServerAddress" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getServerAddress:com.mongodb.ServerAddress"></a>
+      <a id="getServerAddress:ServerAddress"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getServerAddress</span><span class="result">: <span class="extype" name="com.mongodb.ServerAddress">ServerAddress</span></span>
       </span>
       </h4>
       
-    </li><li name="com.mongodb.casbah.BulkWriteResult#getMatchedCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getMatchedCount:Int"></a>
-      <a id="getMatchedCount:Int"></a>
+    </li><li name="java.lang.Throwable#getStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getStackTrace():Array[StackTraceElement]"></a>
+      <a id="getStackTrace():Array[StackTraceElement]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getMatchedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">getStackTrace</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.StackTraceElement">StackTraceElement</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="java.lang.Throwable#getSuppressed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getSuppressed():Array[Throwable]"></a>
+      <a id="getSuppressed():Array[Throwable]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getSuppressed</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#getWriteConcernError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getWriteConcernError:com.mongodb.WriteConcernError"></a>
+      <a id="getWriteConcernError:WriteConcernError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getWriteConcernError</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcernError">WriteConcernError</span></span>
       </span>
       </h4>
       
-    </li><li name="com.mongodb.casbah.BulkWriteResult#getModifiedCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getModifiedCount:scala.util.Try[Int]"></a>
-      <a id="getModifiedCount:Try[Int]"></a>
+    </li><li name="com.mongodb.casbah.BulkWriteException#getWriteErrors" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getWriteErrors:scala.collection.mutable.Buffer[com.mongodb.BulkWriteError]"></a>
+      <a id="getWriteErrors:Buffer[BulkWriteError]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getModifiedCount</span><span class="result">: <span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">getWriteErrors</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.BulkWriteError">BulkWriteError</span>]</span>
       </span>
       </h4>
       
-    </li><li name="com.mongodb.casbah.BulkWriteResult#getRemovedCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getRemovedCount:Int"></a>
-      <a id="getRemovedCount:Int"></a>
+    </li><li name="com.mongodb.casbah.BulkWriteException#getWriteResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getWriteResult:com.mongodb.casbah.BulkWriteResult"></a>
+      <a id="getWriteResult:BulkWriteResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getRemovedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">getWriteResult</span><span class="result">: <a href="BulkWriteResult.html" class="extype" name="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a></span>
       </span>
       </h4>
       
-    </li><li name="com.mongodb.casbah.BulkWriteResult#getUpserts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getUpserts:scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]"></a>
-      <a id="getUpserts:Buffer[BulkWriteUpsert]"></a>
+    </li><li name="java.lang.Throwable#initCause" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initCause(x$1:Throwable):Throwable"></a>
+      <a id="initCause(Throwable):Throwable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getUpserts</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.BulkWriteUpsert">BulkWriteUpsert</span>]</span>
+        <span class="name">initCause</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="java.lang.Throwable">Throwable</span></span>
       </span>
       </h4>
-      
-    </li><li name="com.mongodb.casbah.BulkWriteResult#insertedCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="insertedCount:Int"></a>
-      <a id="insertedCount:Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">insertedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns the number of documents inserted by the write operation.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the number of documents inserted by the write operation.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of documents inserted by the write operation
-</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnacknowledgedWriteException<p>if the write was unacknowledged.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>WriteConcern#Unacknowledged
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#isAcknowledged" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="isAcknowledged:Boolean"></a>
-      <a id="isAcknowledged:Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isAcknowledged</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns true if the write was acknowledged.</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if the write was acknowledged.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the write was acknowledged</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>WriteConcern#Unacknowledged
-</p></span></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -365,44 +438,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#matchedCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="matchedCount:Int"></a>
-      <a id="matchedCount:Int"></a>
+    </li><li name="com.mongodb.casbah.BulkWriteException#message" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="message:String"></a>
+      <a id="message:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">matchedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">message</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Returns the number of documents matched by updates or replacements in the write operation.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the number of documents matched by updates or replacements in the write operation.  This will include documents that
-matched the query but where the modification didn't result in any actual change to the document; for example,
-if you set the value of some field, and the field already has that value, that will still count as an update.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of documents matched by updates in the write operation
-</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnacknowledgedWriteException<p>if the write was unacknowledged.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>WriteConcern#Unacknowledged
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#modifiedCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="modifiedCount:scala.util.Try[Int]"></a>
-      <a id="modifiedCount:Try[Int]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">modifiedCount</span><span class="result">: <span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns the number of documents modified by updates or replacements in the write operation.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the number of documents modified by updates or replacements in the write operation.  This will only count
-documents that were actually changed; for example, if you set the value of some field, and the field already has
-that value, that will not count as a modification.</p><p>If the server is not able to provide a count of modified documents (which can happen if the server is not at
-least version 2.6), then this method will return a <span class="extype" name="Failure(UnsupportedOperationException)">Failure(UnsupportedOperationException)</span>
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the <span class="extype" name="Success(number)">Success(number)</span> of documents modified by the write operation or
-        <span class="extype" name="Failure(UnacknowledgedWriteException)">Failure(UnacknowledgedWriteException)</span> or  <span class="extype" name="Failure(UnsupportedOperationException)">Failure(UnsupportedOperationException)</span> if no modified
-        count is available</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>WriteConcern#UNACKNOWLEDGED
-</p></span></dd></dl></div>
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -442,22 +490,73 @@ least version 2.6), then this method will return a <span class="extype" name="Fa
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#removedCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="removedCount:Int"></a>
-      <a id="removedCount:Int"></a>
+    </li><li name="java.lang.Throwable#printStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="printStackTrace(x$1:java.io.PrintWriter):Unit"></a>
+      <a id="printStackTrace(PrintWriter):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">removedCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">printStackTrace</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.io.PrintWriter">PrintWriter</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Returns the number of documents removed by the write operation.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the number of documents removed by the write operation.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of documents removed by the write operation
-</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnacknowledgedWriteException<p>if the write was unacknowledged.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>WriteConcern#Unacknowledged
-</p></span></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="java.lang.Throwable#printStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="printStackTrace(x$1:java.io.PrintStream):Unit"></a>
+      <a id="printStackTrace(PrintStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">printStackTrace</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="java.lang.Throwable#printStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="printStackTrace():Unit"></a>
+      <a id="printStackTrace():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">printStackTrace</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#serverAddress" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="serverAddress:com.mongodb.ServerAddress"></a>
+      <a id="serverAddress:ServerAddress"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">serverAddress</span><span class="result">: <span class="extype" name="com.mongodb.ServerAddress">ServerAddress</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The address of the server which performed the bulk write operation.</p><div class="fullcomment"><div class="comment cmt"><p>The address of the server which performed the bulk write operation.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the address
+</p></dd></dl></div>
+    </li><li name="java.lang.Throwable#setStackTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setStackTrace(x$1:Array[StackTraceElement]):Unit"></a>
+      <a id="setStackTrace(Array[StackTraceElement]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setStackTrace</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.StackTraceElement">StackTraceElement</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -471,35 +570,32 @@ least version 2.6), then this method will return a <span class="extype" name="Fa
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mongodb.casbah.BulkWriteResult#underlying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="underlying:com.mongodb.BulkWriteResult"></a>
-      <a id="underlying:mongodb.BulkWriteResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">underlying</span><span class="result">: <span class="extype" name="com.mongodb.BulkWriteResult">mongodb.BulkWriteResult</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.BulkWriteResult#upserts" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="upserts:scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]"></a>
-      <a id="upserts:Buffer[BulkWriteUpsert]"></a>
+    </li><li name="java.lang.Throwable#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">upserts</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.BulkWriteUpsert">BulkWriteUpsert</span>]</span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Gets a list of upserted items, or the empty list if there were none.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a list of upserted items, or the empty list if there were none.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list of upserted items, or the empty list if there were none.
-</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">UnacknowledgedWriteException<p>if the write was unacknowledged.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>WriteConcern#Unacknowledged
-</p></span></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable → AnyRef → Any</dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#underlying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="underlying:com.mongodb.BulkWriteException"></a>
+      <a id="underlying:mongodb.BulkWriteException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">underlying</span><span class="result">: <span class="extype" name="com.mongodb.BulkWriteException">mongodb.BulkWriteException</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -557,6 +653,51 @@ least version 2.6), then this method will return a <span class="extype" name="Fa
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#writeConcernError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="writeConcernError:com.mongodb.WriteConcernError"></a>
+      <a id="writeConcernError:WriteConcernError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">writeConcernError</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcernError">WriteConcernError</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The write concern error, which may be null (in which case the list of errors will not be empty).</p><div class="fullcomment"><div class="comment cmt"><p>The write concern error, which may be null (in which case the list of errors will not be empty).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the write concern error
+</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#writeErrors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="writeErrors:scala.collection.mutable.Buffer[com.mongodb.BulkWriteError]"></a>
+      <a id="writeErrors:Buffer[BulkWriteError]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">writeErrors</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="com.mongodb.BulkWriteError">BulkWriteError</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The list of errors, which will not be null, but may be empty (if the write concern error is not null).</p><div class="fullcomment"><div class="comment cmt"><p>The list of errors, which will not be null, but may be empty (if the write concern error is not null).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of errors
+</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.BulkWriteException#writeResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="writeResult:com.mongodb.casbah.BulkWriteResult"></a>
+      <a id="writeResult:BulkWriteResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">writeResult</span><span class="result">: <a href="BulkWriteResult.html" class="extype" name="com.mongodb.casbah.BulkWriteResult">BulkWriteResult</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The result of all successfully processed write operations.</p><div class="fullcomment"><div class="comment cmt"><p>The result of all successfully processed write operations.  This will never be null.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the bulk write result
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -568,12 +709,16 @@ least version 2.6), then this method will return a <span class="extype" name="Fa
         <div id="inheritedMembers">
         <div class="parent" name="scala.Serializable">
               <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
             </div><div class="parent" name="scala.Product">
               <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="java.lang.Exception">
+              <h3>Inherited from <span class="extype" name="java.lang.Exception">Exception</span></h3>
+            </div><div class="parent" name="java.lang.Throwable">
+              <h3>Inherited from <span class="extype" name="java.lang.Throwable">Throwable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

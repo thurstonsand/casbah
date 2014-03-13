@@ -46,12 +46,12 @@
   <span class="comment">/**
    * Helper to build the parallel scan options.
    *
-   * @param numCursors The number of cursors to return, must be greater than 0
+   * @param numCursors The number of cursors to return, must be greater than 0 and less than 10001
    * @param batchSize The cursor batch size, must be greater than 0
    * @param readPreference A read preference.
    */</span>
-  <span class="keyword">def</span> <a title="(numCursors: Int, batchSize: Int, readPreference: com.mongodb.casbah.Imports.ReadPreference)Unit" id="com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4)">apply</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).numCursors">numCursors</a>: <span title="Int">Int</span>, <a title="Int" id="com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).batchSize">batchSize</a>: <span title="Int">Int</span>, <a title="com.mongodb.casbah.Imports.ReadPreference" id="com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).readPreference">readPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span> <span class="delimiter">{</span>
-    <a href="#com.mongodb.casbah;ParallelScanOptions.equals" title="(numCursors: Int, batchSize: Int, readPreference: Option[com.mongodb.casbah.Imports.ReadPreference])com.mongodb.casbah.ParallelScanOptions">ParallelScanOptions</a><span title="Unit" class="delimiter">(</span><a href="#com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).numCursors" title="Int">numCursors</a>, <a href="#com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).batchSize" title="Int">batchSize</a>, <span title="(x: com.mongodb.casbah.Imports.ReadPreference)Some[com.mongodb.casbah.Imports.ReadPreference]">Some</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ParallelScanOptions.apply(c6428d45d4).readPreference" title="com.mongodb.casbah.Imports.ReadPreference">readPreference</a><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(numCursors: Int, batchSize: Int, readPreference: com.mongodb.casbah.Imports.ReadPreference)com.mongodb.casbah.ParallelScanOptions" id="com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c)">apply</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).numCursors">numCursors</a>: <span title="Int">Int</span>, <a title="Int" id="com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).batchSize">batchSize</a>: <span title="Int">Int</span>, <a title="com.mongodb.casbah.Imports.ReadPreference" id="com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).readPreference">readPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span>: <a href="#com.mongodb.casbah;ParallelScanOptions.equals" title="com.mongodb.casbah.ParallelScanOptions">ParallelScanOptions</a> = <span class="delimiter">{</span>
+    <a href="#com.mongodb.casbah;ParallelScanOptions.equals" title="(numCursors: Int, batchSize: Int, readPreference: Option[com.mongodb.casbah.Imports.ReadPreference])com.mongodb.casbah.ParallelScanOptions">ParallelScanOptions</a><span class="delimiter">(</span><a href="#com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).numCursors" title="Int">numCursors</a>, <a href="#com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).batchSize" title="Int">batchSize</a>, <span title="(x: com.mongodb.casbah.Imports.ReadPreference)Some[com.mongodb.casbah.Imports.ReadPreference]">Some</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ParallelScanOptions.apply(aa9103ad2c).readPreference" title="com.mongodb.casbah.Imports.ReadPreference">readPreference</a><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="delimiter">}</span>
 <span class="delimiter">}</span>
 
@@ -59,7 +59,7 @@
  * The options to use for a parallel collection scan.
  *
  * @param numCursors The number of cursors to return, must be greater than 0
- * @param batchSize The cursor batch size, must be greater than 0
+ * @param batchSize The cursor batch size, must be greater than 0 and less than 10001
  * @param readPreference The optional read preference.
  * @since 2.7
  * @see com.monogdb.ParallelScanOptions

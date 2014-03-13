@@ -68,9 +68,7 @@
    * Exceptions are raised for network issues and server errors;
    * Write operations wait for the server to flush data to disk
    *
-   * Deprecated use `JournalSafe` instead.
    */</span>
-  @deprecated<span class="delimiter">(</span><span class="string">&quot;Deprecated. Forces an fsync of all server data and returns acknowledgement only after completion&quot;</span>, <span class="string">&quot;2.7.0&quot;</span><span class="delimiter">)</span>
   <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.FsyncSafe">FsyncSafe</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="com.mongodb.WriteConcern.type">JWriteConcern</span>.<span title="com.mongodb.WriteConcern">FSYNC_SAFE</span>
   <span class="comment">/**
    * Exceptions are raised for network issues, and server errors;
@@ -108,10 +106,8 @@
    * Exceptions are raised for network issues, and server errors; the write operation waits for the server to flush
    * the data to disk.
    *
-   * Deprecated use `JournalSafe` instead.
    * @since 2.7
    */</span>
-  @deprecated<span class="delimiter">(</span><span class="string">&quot;Deprecated. Forces an fsync of all server data and returns acknowledgement only after completion&quot;</span>, <span class="string">&quot;2.7.0&quot;</span><span class="delimiter">)</span>
   <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.Fsynced">Fsynced</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="com.mongodb.WriteConcern.type">JWriteConcern</span>.<span title="com.mongodb.WriteConcern">FSYNCED</span>
   <span class="comment">/**
    * Exceptions are raised for network issues, and server errors; the write operation waits for the server to
@@ -136,14 +132,14 @@
    * &lt;li&gt;&lt;code&gt;w&gt;1&lt;/code&gt; Checks servers (w) for errors as well as network socket errors raised&lt;/li&gt;
    * &lt;/ul&gt;
    * &lt;/p&gt;
-   * @param w (Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior. Defaults to &lt;code&gt;0&lt;/code&gt;
+   * @param w (Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior.
+   *          Defaults to &lt;code&gt;0&lt;/code&gt;
    * @param wTimeout (Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)
    * @param fsync (Boolean) Indicates whether write operations should require a sync to disk.
-   *              Deprecated; do not use.  Forces an fsync of all server data and returns acknowledgement only after
-   *              completion. Use the `j` option instead&quot;.
-   *              When using a Journal this is the same as using `j=true`.
-   *              Will msync() only if mongod is *not* running with a journal.
-   *              Cannot be used with `j`.
+   *              If true and the server is running without journaling, blocks until the server has synced all data
+   *              files to disk. If the server is running with journaling, this acts the same as the `j` option,
+   *              blocking until write operations have been committed to the journal.
+   *              Cannot be used in combination with `j`.
    *              Defaults to False
    * @param j whether writes should wait for a journaling group commit. Cannot be used with `fsync`.
    * @param continueInsertOnError if an error occurs during a bulk insert should the inserts continue anyway
@@ -162,11 +158,10 @@
    * @param w (Int) Specifies the getLastErrorMode to apply to the write
    * @param wTimeout (Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)
    * @param fsync (Boolean) Indicates whether write operations should require a sync to disk.
-   *              Deprecated: do not use.  Forces an fsync of all server data and returns acknowledgement only after
-   *              completion. Use the `j` option instead&quot;.
-   *              When using a Journal this is the same as using `j=true`.
-   *              Will msync() only if mongod is *not* running with a journal.
-   *              Cannot be used with `j`.
+   *              If true and the server is running without journaling, blocks until the server has synced all data
+   *              files to disk. If the server is running with journaling, this acts the same as the `j` option,
+   *              blocking until write operations have been committed to the journal.
+   *              Cannot be used in combination with `j`.
    *              Defaults to False
    * @param j whether writes should wait for a journaling group commit. Cannot be used with `fsync`.
    * @param continueInsertOnError if an error occurs during a bulk insert should the inserts continue anyway

@@ -40,7 +40,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The options to use for a parallel collection scan.
-</p></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>The optional read preference.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-core/ParallelScanOptions.scala.html" target="_blank">ParallelScanOptions.scala</a></dd><dt>Since</dt><dd><p>2.7</p></dd><dt>See also</dt><dd><span class="cmt"><p>com.monogdb.ParallelScanOptions
+</p></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0 and less than 10001</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>The optional read preference.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-core/ParallelScanOptions.scala.html" target="_blank">ParallelScanOptions.scala</a></dd><dt>Since</dt><dd><p>2.7</p></dd><dt>See also</dt><dd><span class="cmt"><p>com.monogdb.ParallelScanOptions
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -93,7 +93,7 @@
         <span class="name">ParallelScanOptions</span><span class="params">(<span name="numCursors">numCursors: <span class="extype" name="scala.Int">Int</span></span>, <span name="batchSize">batchSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="readPreference">readPreference: <span class="extype" name="scala.Option">Option</span>[<a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a>] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>The optional read preference.</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0 and less than 10001</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>The optional read preference.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -193,7 +193,7 @@
         <span class="name">batchSize</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">The cursor batch size, must be greater than 0</p>
+      <p class="shortcomment cmt">The cursor batch size, must be greater than 0 and less than 10001</p>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>

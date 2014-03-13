@@ -37,6 +37,7 @@
 <span class="keyword">import</span> scala.collection.<span title="scala.collection.JavaConverters.type">JavaConverters</span>._
 
 <span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>BulkWriteResult =&gt; JBulkWriteResult, BulkWriteUpsert<span class="delimiter">}</span>
+<span class="keyword">import</span> scala.util.<span class="delimiter">{</span>Try, Success, Failure<span class="delimiter">}</span>
 
 
 <span class="keyword">case class</span> <a title="class BulkWriteResult extends AnyRef with Product with Serializable" id="com.mongodb.casbah.BulkWriteResult.readResolve">BulkWriteResult</a><a href="#com.mongodb.casbah.BulkWriteResult.readResolve" title="Product" class="delimiter">(</a><a title="com.mongodb.BulkWriteResult" id="com.mongodb.casbah;BulkWriteResult.underlying">underlying</a>: <span title="com.mongodb.BulkWriteResult">JBulkWriteResult</span><span class="delimiter">)</span> <span class="delimiter">{</span>
@@ -81,16 +82,19 @@
   <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;BulkWriteResult.removedCount">removedCount</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;BulkWriteResult.underlying" title="=&gt; com.mongodb.BulkWriteResult">underlying</a>.<span title="()Int">getRemovedCount</span>
 
   <span class="comment">/**
-   * Returns the number of documents modified by the write operation.  This only applies to updates or replacements,
-   * and will only count documents that were actually changed; for example, if you set the value of some field ,
-   * and the field already has that value, that will not count as a modification.
+   * Returns the number of documents modified by updates or replacements in the write operation.  This will only count
+   * documents that were actually changed; for example, if you set the value of some field, and the field already has
+   * that value, that will not count as a modification.
    *
-   * @return the number of documents modified by the write operation
+   * If the server is not able to provide a count of modified documents (which can happen if the server is not at
+   * least version 2.6), then this method will return a [[Failure(UnsupportedOperationException)]]
    *
-   * @throws UnacknowledgedWriteException if the write was unacknowledged.
-   * @see WriteConcern#Unacknowledged
+   * @return the [[Success(number)]] of documents modified by the write operation or
+   *         [[Failure(UnacknowledgedWriteException)]] or  [[Failure(UnsupportedOperationException)]] if no modified
+   *         count is available
+   * @see WriteConcern#UNACKNOWLEDGED
    */</span>
-  <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;BulkWriteResult.modifiedCount">modifiedCount</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;BulkWriteResult.underlying" title="=&gt; com.mongodb.BulkWriteResult">underlying</a>.<span title="()Int">getModifiedCount</span>
+  <span class="keyword">def</span> <a title="=&gt; scala.util.Try[Int]" id="com.mongodb.casbah;BulkWriteResult.modifiedCount">modifiedCount</a>: <span title="scala.util.Try[Int]">Try</span><span class="delimiter">[</span>Int<span class="delimiter">]</span> = <span title="(r: =&gt; Int)scala.util.Try[Int]">Try</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteResult.underlying" title="=&gt; com.mongodb.BulkWriteResult">underlying</a>.<span title="()Int">getModifiedCount</span><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Gets a list of upserted items, or the empty list if there were none.
@@ -103,7 +107,7 @@
   <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]" id="com.mongodb.casbah;BulkWriteResult.upserts">upserts</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]">Buffer</span><span class="delimiter">[</span>BulkWriteUpsert<span class="delimiter">]</span> =  <a href="#com.mongodb.casbah;BulkWriteResult.underlying" title="=&gt; com.mongodb.BulkWriteResult">underlying</a>.<span title="(l: java.util.List[com.mongodb.BulkWriteUpsert])scala.collection.convert.Decorators.AsScala[scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]]">getUpserts</span>.<span title="=&gt; scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]">asScala</span>
 
   <span class="comment">/* Java api mirrors */</span>
-  <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;BulkWriteResult.getModifiedCount">getModifiedCount</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;BulkWriteResult.modifiedCount" title="=&gt; Int">modifiedCount</a>
+  <span class="keyword">def</span> <a title="=&gt; scala.util.Try[Int]" id="com.mongodb.casbah;BulkWriteResult.getModifiedCount">getModifiedCount</a>: <span title="scala.util.Try[Int]">Try</span><span class="delimiter">[</span>Int<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;BulkWriteResult.modifiedCount" title="=&gt; scala.util.Try[Int]">modifiedCount</a>
 
   <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;BulkWriteResult.getInsertedCount">getInsertedCount</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;BulkWriteResult.insertedCount" title="=&gt; Int">insertedCount</a>
 
@@ -113,6 +117,7 @@
 
   <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]" id="com.mongodb.casbah;BulkWriteResult.getUpserts">getUpserts</a>: mutable.<span title="scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]">Buffer</span><span class="delimiter">[</span>BulkWriteUpsert<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;BulkWriteResult.upserts" title="=&gt; scala.collection.mutable.Buffer[com.mongodb.BulkWriteUpsert]">upserts</a>
 
+  <span class="keyword">override</span> <span class="keyword">def</span> <a title="(obj: Any)Boolean" id="com.mongodb.casbah;BulkWriteResult.equals">equals</a><span class="delimiter">(</span><a title="Any" id="com.mongodb.casbah;BulkWriteResult.equals.obj">obj</a>: <span title="Any">Any</span><span class="delimiter">)</span> = <a href="#com.mongodb.casbah;BulkWriteResult.underlying" title="=&gt; com.mongodb.BulkWriteResult">underlying</a>.<span title="(x$1: Any)Boolean">equals</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;BulkWriteResult.equals.obj" title="Any">obj</a><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
         </pre>

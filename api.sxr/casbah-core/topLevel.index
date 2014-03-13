@@ -2,6 +2,7 @@ com.mongodb.casbah : OpLog.scala
 com.mongodb.casbah.AggregationOptions : AggregationOptions.scala
 com.mongodb.casbah.AggregationOutput : AggregationOutput.scala
 com.mongodb.casbah.BaseImports : Implicits.scala
+com.mongodb.casbah.BulkWriteException : BulkWriteException.scala
 com.mongodb.casbah.BulkWriteOperation : BulkWriteOperation.scala
 com.mongodb.casbah.BulkWriteResult : BulkWriteResult.scala
 com.mongodb.casbah.Cursor : MongoCursor.scala

@@ -153,19 +153,19 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.mongodb.casbah.ParallelScanOptions#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(numCursors:Int,batchSize:Int,readPreference:com.mongodb.casbah.Imports.ReadPreference):Unit"></a>
-      <a id="apply(Int,Int,Imports.ReadPreference):Unit"></a>
+      <a id="apply(numCursors:Int,batchSize:Int,readPreference:com.mongodb.casbah.Imports.ReadPreference):com.mongodb.casbah.ParallelScanOptions"></a>
+      <a id="apply(Int,Int,Imports.ReadPreference):ParallelScanOptions"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="numCursors">numCursors: <span class="extype" name="scala.Int">Int</span></span>, <span name="batchSize">batchSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="readPreference">readPreference: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">apply</span><span class="params">(<span name="numCursors">numCursors: <span class="extype" name="scala.Int">Int</span></span>, <span name="batchSize">batchSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="readPreference">readPreference: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <a href="ParallelScanOptions.html" class="extype" name="com.mongodb.casbah.ParallelScanOptions">ParallelScanOptions</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Helper to build the parallel scan options.</p><div class="fullcomment"><div class="comment cmt"><p>Helper to build the parallel scan options.
-</p></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>A read preference.
+</p></div><dl class="paramcmts block"><dt class="param">numCursors</dt><dd class="cmt"><p>The number of cursors to return, must be greater than 0 and less than 10001</p></dd><dt class="param">batchSize</dt><dd class="cmt"><p>The cursor batch size, must be greater than 0</p></dd><dt class="param">readPreference</dt><dd class="cmt"><p>A read preference.
 </p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
