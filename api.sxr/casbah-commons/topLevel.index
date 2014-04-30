@@ -1,5 +1,5 @@
 com.mongodb.casbah : Helpers.scala
-com.mongodb.casbah.commons : ScalaConversions.scala
+com.mongodb.casbah.commons : beans.scala
 com.mongodb.casbah.commons.BaseImports : Implicits.scala
 com.mongodb.casbah.commons.Castable : Castable.scala
 com.mongodb.casbah.commons.EnsureConversionHelpersRegistration : Implicits.scala
@@ -14,6 +14,8 @@ com.mongodb.casbah.commons.MongoDBObjectBuilder : MongoDBObject.scala
 com.mongodb.casbah.commons.NotNothing : Implicits.scala
 com.mongodb.casbah.commons.TypeImports : Implicits.scala
 com.mongodb.casbah.commons.ValidBSONType : Implicits.scala
+com.mongodb.casbah.commons.beans : beans.scala
+com.mongodb.casbah.commons.beans.package : beans.scala
 com.mongodb.casbah.commons.conversions : ScalaConversions.scala
 com.mongodb.casbah.commons.conversions.MongoConversionHelper : Helpers.scala
 com.mongodb.casbah.commons.conversions.scala : ScalaConversions.scala
