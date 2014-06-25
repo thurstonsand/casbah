@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>5. Whats new in Casbah &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.2 documentation</title>
+    <title>5. Whats new in Casbah &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.7.3-SNAPSHOT documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2.7.2',
+        VERSION:     '2.7.3-SNAPSHOT',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.2 documentation" href="index.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.7.3-SNAPSHOT documentation" href="index.html" />
 <link rel="next" title="6. Upgrade" href="upgrade.html" />
 <link rel="prev" title="4. Changelog" href="changelog.html" />
 <!-- Put the following javascript before the closing </head> tag. -->
@@ -149,14 +149,24 @@ and is known as <a class="reference external" href="http://docs.mongodb.org/mast
 </div>
 <div class="section" id="ordered-unordered-bulk-operations">
 <h2>5.4. Ordered/Unordered bulk operations<a class="headerlink" href="#ordered-unordered-bulk-operations" title="Permalink to this headline">¶</a></h2>
-<p>Under the covers MongoDB is moving away from the combination of a write operation + get last error (GLE) and towards a
-write commands api. These new commands allow for the execution of bulk insert/update/remove operations. The bulk api&#8217;s
-are abstractions on top of this that server to make it easy to build bulk operations. Bulk operations come in two main
-flavors.</p>
-<ol class="arabic simple">
-<li>Ordered bulk operations. These operations execute all the operation in order and error out on the first write error.</li>
-<li>Unordered bulk operations. These operations execute all the operations in parallel and aggregates up all the errors.
-Unordered bulk operations do not guarantee order of execution.</li>
+<p>Under the covers MongoDB is moving away from the combination of a write
+operation followed by get last error (GLE) and towards a write commands API. These new
+commands allow for the execution of bulk insert/update/remove operations.
+There are two types of bulk operations:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Ordered bulk operations.</dt>
+<dd><p class="first last">Executes all the operation in order and error out on the first write error.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Unordered bulk operations.</dt>
+<dd><p class="first last">These operations execute all the operations in parallel and aggregates up
+all the errors. Unordered bulk operations do not guarantee order of execution.</p>
+</dd>
+</dl>
+</li>
 </ol>
 <p>Let&#8217;s look at two simple examples using ordered and unordered operations:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;bulkOperation&quot;</span><span class="o">)</span>
@@ -182,13 +192,14 @@ Unordered bulk operations do not guarantee order of execution.</li>
 <span class="k">val</span> <span class="n">result2</span> <span class="k">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">execute</span><span class="o">()</span>
 </pre></div>
 </div>
-<p>For older servers than 2.6 the API will down convert the operations. However it&#8217;s not possible to down convert 100% so
-there might be slight edge cases where it cannot correctly report the right numbers.</p>
+<p>For older servers than 2.6 the API will down convert the operations.
+However it&#8217;s not possible to down convert 100% so there might be slight edge
+cases where it cannot correctly report the right numbers.</p>
 </div>
 <div class="section" id="parallelscan">
 <h2>5.5. parallelScan<a class="headerlink" href="#parallelscan" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>parallelCollectionScan</strong> command is a special command targeted at reading out an entire collection using
-multiple cursors.  Casbah adds support by adding the <tt class="docutils literal"><span class="pre">MongoCollection.parallelScan(options)</span></tt> method:</p>
+<p>The <strong>parallelCollectionScan</strong> command is a special command targeted at reading out an entire collection using multiple cursors.</p>
+<p>Casbah adds support by adding the <tt class="docutils literal"><span class="pre">MongoCollection.parallelScan(options)</span></tt> method:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">collection</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">()(</span><span class="s">&quot;test&quot;</span><span class="o">)(</span><span class="s">&quot;parallelScan&quot;</span><span class="o">)</span>
 <span class="n">collection</span><span class="o">.</span><span class="n">drop</span><span class="o">()</span>
 
@@ -203,7 +214,7 @@ multiple cursors.  Casbah adds support by adding the <tt class="docutils literal
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>This optimizes the IO throughput from a collection.</p>
+<p>This can be used to optimize the IO throughput from a collection.</p>
 </div>
 <div class="section" id="integrated-text-search-in-the-query-language">
 <h2>5.6. Integrated text search in the query language<a class="headerlink" href="#integrated-text-search-in-the-query-language" title="Permalink to this headline">¶</a></h2>
