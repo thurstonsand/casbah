@@ -55,15 +55,16 @@
   <span class="comment">/**
    * Instantiate a new MongoClientOptions instance
    *
-   *
-   * @param autoConnectRetry Whether system autoretries on connection errors, default false
+   * @param autoConnectRetry Whether system autoretries on connection errors, default false - deprecated There is no replacement for this
+   *                         method.  Use the connectTimeout property to control connection timeout.
    * @param connectionsPerHost # of connections allowed per host (pool size, per host) default 100
    * @param connectTimeout Connection timeout in milliseconds default 10,000
    * @param cursorFinalizerEnabled Sets whether there is a finalize method created that cleans up instances of DBCursor default true
    * @param dbDecoderFactory override the default decoder factory
    * @param dbEncoderFactory override the default encoder factory
    * @param description the description of the MongoClient
-   * @param maxAutoConnectRetryTime Sets the maximum auto connect retry time default 0
+   * @param maxAutoConnectRetryTime Sets the maximum auto connect retry time default 0 - deprecated There is no replacement for this
+   *                                method.  Use the connectTimeout property to control connection timeout.
    * @param maxWaitTime the maximum time that a thread will block waiting for a connection, default 1000 * 60 * 2
    * @param readPreference the read preference to use for queries, map-reduce, aggregation, and count
    * @param socketFactory the socket factory for creating sockets to the mongo server
@@ -71,11 +72,23 @@
    * @param socketTimeout socket timeout in milliseconds passed to Socket.setSoTimeout, default 0
    * @param threadsAllowedToBlockForConnectionMultiplier the multiplier for number of threads allowed to block waiting for a connection, default 5
    * @param writeConcern the write concern to use
+   * @param acceptableLatencyDifference the acceptable latency difference, in milliseconds
+   * @param alwaysUseMBeans true if driver should always use MBeans, regardless of VM version
+   * @param heartbeatConnectTimeout the heartbeat connect timeout, in milliseconds
+   * @param heartbeatFrequency the heartbeat frequency, in milliseconds
+   * @param heartbeatSocketTimeout the heartbeat socket timeout, in milliseconds
+   * @param heartbeatThreadCount the heartbeat thread count - deprecated will soon no longer be configurable
+   * @param maxConnectionIdleTime the maximum idle time, in milliseconds
+   * @param maxConnectionLifeTime  the maximum life time, in milliseconds
+   * @param minConnectionsPerHost maximum number of connections
+   * @param heartbeatConnectRetryFrequency the heartbeat connect retry frequency, in milliseconds
+   * @param requiredReplicaSetName the required replica set name for the replica set.
+   *
    * @throws MongoException()
    * @see ServerAddress
    * @see MongoDBAddress
    */</span>
-  <span class="keyword">def</span> <a title="(autoConnectRetry: Boolean, connectionsPerHost: Int, connectTimeout: Int, cursorFinalizerEnabled: Boolean, dbDecoderFactory: com.mongodb.DBDecoderFactory, dbEncoderFactory: com.mongodb.DBEncoderFactory, description: String, maxAutoConnectRetryTime: Long, maxWaitTime: Int, readPreference: com.mongodb.casbah.Imports.ReadPreference, socketFactory: javax.net.SocketFactory, socketKeepAlive: Boolean, socketTimeout: Int, threadsAllowedToBlockForConnectionMultiplier: Int, writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.MongoClientOptions" id="com.mongodb.casbah.MongoClientOptions.apply">apply</a><span class="delimiter">(</span>
+  <span class="keyword">def</span> <a title="(autoConnectRetry: Boolean, connectionsPerHost: Int, connectTimeout: Int, cursorFinalizerEnabled: Boolean, dbDecoderFactory: com.mongodb.DBDecoderFactory, dbEncoderFactory: com.mongodb.DBEncoderFactory, description: String, maxAutoConnectRetryTime: Long, maxWaitTime: Int, readPreference: com.mongodb.casbah.Imports.ReadPreference, socketFactory: javax.net.SocketFactory, socketKeepAlive: Boolean, socketTimeout: Int, threadsAllowedToBlockForConnectionMultiplier: Int, writeConcern: com.mongodb.casbah.Imports.WriteConcern, acceptableLatencyDifference: Int, alwaysUseMBeans: Boolean, heartbeatConnectTimeout: Int, heartbeatFrequency: Int, heartbeatSocketTimeout: Int, heartbeatThreadCount: Int, maxConnectionIdleTime: Int, maxConnectionLifeTime: Int, minConnectionsPerHost: Int, heartbeatConnectRetryFrequency: Int, requiredReplicaSetName: String)com.mongodb.MongoClientOptions" id="com.mongodb.casbah.MongoClientOptions.apply">apply</a><span class="delimiter">(</span>
              <a title="Boolean" id="com.mongodb.casbah.MongoClientOptions.apply$default$1">autoConnectRetry</a>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Boolean">isAutoConnectRetry</span>,
              <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$2">connectionsPerHost</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getConnectionsPerHost</span>,
              <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$3">connectTimeout</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getConnectTimeout</span>,
@@ -90,7 +103,19 @@
              <a title="Boolean" id="com.mongodb.casbah.MongoClientOptions.apply$default$12">socketKeepAlive</a>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Boolean">isSocketKeepAlive</span>,
              <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$13">socketTimeout</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getSocketTimeout</span>,
              <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$14">threadsAllowedToBlockForConnectionMultiplier</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getThreadsAllowedToBlockForConnectionMultiplier</span>,
-             <a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah.MongoClientOptions.apply$default$15">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()com.mongodb.WriteConcern">getWriteConcern</span>
+             <a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah.MongoClientOptions.apply$default$15">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()com.mongodb.WriteConcern">getWriteConcern</span>,
+
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$16">acceptableLatencyDifference</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getAcceptableLatencyDifference</span>,
+             <a title="Boolean" id="com.mongodb.casbah.MongoClientOptions.apply$default$17">alwaysUseMBeans</a>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Boolean">isAlwaysUseMBeans</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$18">heartbeatConnectTimeout</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getHeartbeatConnectTimeout</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$19">heartbeatFrequency</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getHeartbeatFrequency</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$20">heartbeatSocketTimeout</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getHeartbeatSocketTimeout</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$21">heartbeatThreadCount</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getHeartbeatThreadCount</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$22">maxConnectionIdleTime</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getMaxConnectionIdleTime</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$23">maxConnectionLifeTime</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getMaxConnectionLifeTime</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$24">minConnectionsPerHost</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getMinConnectionsPerHost</span>,
+             <a title="Int" id="com.mongodb.casbah.MongoClientOptions.apply$default$25">heartbeatConnectRetryFrequency</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()Int">getHeartbeatConnectRetryFrequency</span>,
+             <a title="String" id="com.mongodb.casbah.MongoClientOptions.apply$default$26">requiredReplicaSetName</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah.MongoClientOptions.Defaults" title="=&gt; com.mongodb.MongoClientOptions">Defaults</a>.<span title="()String">getRequiredReplicaSetName</span>
              <span class="delimiter">)</span>: <span title="com.mongodb.MongoClientOptions">JavaMongoClientOptions</span> = <span class="delimiter">{</span>
     <span class="keyword">val</span> <a title="com.mongodb.MongoClientOptions.Builder" id="com.mongodb.casbah.MongoClientOptions.apply.builder">builder</a> = <span title="com.mongodb.MongoClientOptions.Builder" class="keyword">new</span> <span title="com.mongodb.MongoClientOptions.type">JavaMongoClientOptions</span>.<span title="com.mongodb.MongoClientOptions.Builder">Builder</span><span class="delimiter">(</span><span class="delimiter">)</span>
     <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Boolean)com.mongodb.MongoClientOptions.Builder">autoConnectRetry</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$1" title="Boolean">autoConnectRetry</a><span class="delimiter">)</span>
@@ -108,11 +133,23 @@
     <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">socketTimeout</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$13" title="Int">socketTimeout</a><span class="delimiter">)</span>
     <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">threadsAllowedToBlockForConnectionMultiplier</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$14" title="Int">threadsAllowedToBlockForConnectionMultiplier</a><span class="delimiter">)</span>
     <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.MongoClientOptions.Builder">writeConcern</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$15" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">acceptableLatencyDifference</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$16" title="Int">acceptableLatencyDifference</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Boolean)com.mongodb.MongoClientOptions.Builder">alwaysUseMBeans</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$17" title="Boolean">alwaysUseMBeans</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">heartbeatConnectTimeout</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$18" title="Int">heartbeatConnectTimeout</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">heartbeatFrequency</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$19" title="Int">heartbeatFrequency</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">heartbeatSocketTimeout</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$20" title="Int">heartbeatSocketTimeout</a><span class="delimiter">)</span>
+    <span title="Any" class="keyword">if</span> <span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$21" title="Int">heartbeatThreadCount</a> <span title="(x: Int)Boolean">&gt;</span> <span title="Int(1)" class="int">1</span> <span class="delimiter">)</span> <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">heartbeatThreadCount</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$21" title="Int">heartbeatThreadCount</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">maxConnectionIdleTime</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$22" title="Int">maxConnectionIdleTime</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">maxConnectionLifeTime</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$23" title="Int">maxConnectionLifeTime</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">minConnectionsPerHost</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$24" title="Int">minConnectionsPerHost</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: Int)com.mongodb.MongoClientOptions.Builder">heartbeatConnectRetryFrequency</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$25" title="Int">heartbeatConnectRetryFrequency</a><span class="delimiter">)</span>
+    <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="(x$1: String)com.mongodb.MongoClientOptions.Builder">requiredReplicaSetName</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.MongoClientOptions.apply$default$26" title="String">requiredReplicaSetName</a><span class="delimiter">)</span>
     <a href="#com.mongodb.casbah.MongoClientOptions.apply.builder" title="com.mongodb.MongoClientOptions.Builder">builder</a>.<span title="()com.mongodb.MongoClientOptions">build</span><span class="delimiter">(</span><span class="delimiter">)</span>
   <span class="delimiter">}</span>
+
+
   <span class="comment">// scalastyle:on parameter.number</span>
 <span class="delimiter">}</span>
-
 
 
         </pre>
