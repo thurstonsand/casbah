@@ -75,16 +75,20 @@
    */</span>
   <span class="keyword">def</span> <a title="(collection: String)com.mongodb.casbah.MongoCollection" id="com.mongodb.casbah;MongoDB.apply">apply</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoDB.apply.collection">collection</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="MongoCollection.scala.html#com.mongodb.casbah;MongoCollection" title="com.mongodb.casbah.MongoCollection">MongoCollection</a> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: String)com.mongodb.DBCollection">getCollection</span><a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoCollAsScala" title="implicit com.mongodb.casbah.Implicits.mongoCollAsScala : (coll: com.mongodb.DBCollection)AnyRef{def asScala: com.mongodb.casbah.MongoCollection; def asScalaTyped[A &lt;: com.mongodb.DBObject](implicit m: scala.reflect.Manifest[A]): com.mongodb.casbah.MongoGenericTypedCollection[A]}" class="delimiter">(</a><a href="#com.mongodb.casbah;MongoDB.apply.collection" title="String">collection</a><span class="delimiter">)</span>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoCollAsScala;<refinement>.asScala" title="=&gt; com.mongodb.casbah.MongoCollection">asScala</a>
 
-  <span class="comment">// TODO - write tests and make so!</span>
-  <span class="comment">// /**</span>
-  <span class="comment">//  * Creates a Mongo instance based on a (single) mongodb node (default port).</span>
-  <span class="comment">//  *</span>
-  <span class="comment">//  * @param collection a string for the collection name</span>
-  <span class="comment">//  * @param  c (Class[A])</span>
-  <span class="comment">//  * @return MongoTypedCollection[A]</span>
-  <span class="comment">//  */</span>
-  <span class="comment">// def apply(collection: String, objectClass: Class[DBObject]) = underlying.getCollection(collection).asScala.setObjectClass(objectClass)</span>
-
+  <span class="comment">/**
+   * Adds or updates a user for this database
+   *
+   * @param username the user name
+   * @param passwd   the password
+   * @return the result of executing this operation
+   * @throws MongoException
+   * @mongodb.driver.manual administration/security-access-control/  Access Control
+   * @mongodb.driver.manual reference/command/createUser createUser
+   * @mongodb.driver.manual reference/command/updateUser updateUser
+   * @deprecated Use [[command]] to call either the createUser or updateUser command
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(username: String, passwd: String)com.mongodb.casbah.Imports.WriteResult" id="com.mongodb.casbah;MongoDB.addUser">addUser</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoDB.addUser.username">username</a>: <span title="String">String</span>, <a title="String" id="com.mongodb.casbah;MongoDB.addUser.passwd">passwd</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.Imports.WriteResult">WriteResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: String, x$2: Array[Char])com.mongodb.WriteResult">addUser</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.addUser.username" title="String">username</a>, <a href="#com.mongodb.casbah;MongoDB.addUser.passwd" title="implicit scala.Predef.augmentString : (x: String)scala.collection.immutable.StringOps">passwd</a>.<span title="(implicit evidence$1: scala.reflect.ClassTag[Char])Array[Char]">toArray</span><span class="delimiter">)</span>
 
   <span class="comment">/**
@@ -95,6 +99,7 @@
    * @return true if authenticated, false otherwise
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Please use MongoClient to create a client, which will authenticate all connections to server.&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(username: String, passwd: String)Boolean" id="com.mongodb.casbah;MongoDB.authenticate">authenticate</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoDB.authenticate.username">username</a>: <span title="String">String</span>, <a title="String" id="com.mongodb.casbah;MongoDB.authenticate.passwd">passwd</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: String, x$2: Array[Char])Boolean">authenticate</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.authenticate.username" title="String">username</a>, <a href="#com.mongodb.casbah;MongoDB.authenticate.passwd" title="implicit scala.Predef.augmentString : (x: String)scala.collection.immutable.StringOps">passwd</a>.<span title="(implicit evidence$1: scala.reflect.ClassTag[Char])Array[Char]">toArray</span><span class="delimiter">)</span>
 
   <span class="comment">/** Execute a database command directly.
@@ -103,22 +108,38 @@
     */</span>
   <span class="keyword">def</span> <a title="(cmd: com.mongodb.casbah.Imports.DBObject)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.command(5ce805f14e)">command</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;MongoDB.command(5ce805f14e).cmd">cmd</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: com.mongodb.DBObject)com.mongodb.CommandResult">command</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.command(5ce805f14e).cmd" title="com.mongodb.casbah.Imports.DBObject">cmd</a><span class="delimiter">)</span>
 
-  <span class="comment">/** Execute a database command directly.
-    * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
-    * @return the result of the command from the database
-    */</span>
+  <span class="comment">/**
+   * Execute a database command directly.
+   * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
+   * @return the result of the command from the database
+   */</span>
   <span class="keyword">def</span> <a title="(cmd: String)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.command(603c861c64)">command</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoDB.command(603c861c64).cmd">cmd</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: String)com.mongodb.CommandResult">command</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.command(603c861c64).cmd" title="String">cmd</a><span class="delimiter">)</span>
 
-  <span class="comment">/** Execute a database command directly.
+  <span class="comment">/**
+   * Execute a database command directly.
+   * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
+   * @return the result of the command from the database
+   */</span>
+  <span class="keyword">def</span> <a title="(cmd: com.mongodb.casbah.Imports.DBObject, readPreference: com.mongodb.casbah.Imports.ReadPreference)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.command(7b58ce98df)">command</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;MongoDB.command(7b58ce98df).cmd">cmd</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span>, <a title="com.mongodb.casbah.Imports.ReadPreference" id="com.mongodb.casbah;MongoDB.command(7b58ce98df).readPreference">readPreference</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: com.mongodb.DBObject, x$2: com.mongodb.ReadPreference)com.mongodb.CommandResult">command</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.command(7b58ce98df).cmd" title="com.mongodb.casbah.Imports.DBObject">cmd</a>, <a href="#com.mongodb.casbah;MongoDB.command(7b58ce98df).readPreference" title="com.mongodb.casbah.Imports.ReadPreference">readPreference</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * Execute a database command directly.
     * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
     * @return the result of the command from the database
+    * @deprecated Use command with a readPreference instead.
     */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(cmd: com.mongodb.casbah.Imports.DBObject, options: Int)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.command(c371332eb2)">command</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;MongoDB.command(c371332eb2).cmd">cmd</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span>, <a title="Int" id="com.mongodb.casbah;MongoDB.command(c371332eb2).options">options</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: com.mongodb.DBObject, x$2: Int)com.mongodb.CommandResult">command</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.command(c371332eb2).cmd" title="com.mongodb.casbah.Imports.DBObject">cmd</a>, <a href="#com.mongodb.casbah;MongoDB.command(c371332eb2).options" title="Int">options</a><span class="delimiter">)</span>
 
-  <span class="comment">/** Execute a database command directly.
-    * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
-    * @return the result of the command from the database
-    */</span>
+  <span class="comment">/**
+   * Execute a database command directly.
+   * @see &lt;a href=&quot;http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands&quot;&gt;List of Commands&lt;/a&gt;
+   * @return the result of the command from the database
+   * @deprecated Use command with a readPreference instead.
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(cmd: com.mongodb.casbah.Imports.DBObject, options: Int, pref: com.mongodb.casbah.Imports.ReadPreference)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.command(d9522476cd)">command</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.DBObject" id="com.mongodb.casbah;MongoDB.command(d9522476cd).cmd">cmd</a>: <span title="com.mongodb.casbah.Imports.DBObject">DBObject</span>, <a title="Int" id="com.mongodb.casbah;MongoDB.command(d9522476cd).options">options</a>: <span title="Int">Int</span>, <a title="com.mongodb.casbah.Imports.ReadPreference" id="com.mongodb.casbah;MongoDB.command(d9522476cd).pref">pref</a>: <span title="com.mongodb.casbah.Imports.ReadPreference">ReadPreference</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: com.mongodb.DBObject, x$2: Int, x$3: com.mongodb.ReadPreference)com.mongodb.CommandResult">command</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.command(d9522476cd).cmd" title="com.mongodb.casbah.Imports.DBObject">cmd</a>, <a href="#com.mongodb.casbah;MongoDB.command(d9522476cd).options" title="Int">options</a>, <a href="#com.mongodb.casbah;MongoDB.command(d9522476cd).pref" title="com.mongodb.casbah.Imports.ReadPreference">pref</a><span class="delimiter">)</span>
 
   <span class="comment">/** Creates a collection with a given name and options.
@@ -146,7 +167,10 @@
 
   <span class="comment">/**
    * For testing purposes only - this method forces an error to help test error handling
+   * @deprecated there is no replacement for this method
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.forceError">forceError</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">forceError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="comment">/** Gets a collection with a given name.
@@ -186,20 +210,34 @@
    * of the previous operation. See com.mongodb.Mongo.requestStart for more information.
    *
    * @return DBObject with error and status information
+   * @deprecated The getlasterror command will not be supported in future versions of MongoDB.
+   *            Use acknowledged writes instead.
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.getLastError(ff3d2ad692)">getLastError</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.lastError(ff3d2ad692)">lastError</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.getLastError(ff3d2ad692)" title="()com.mongodb.CommandResult">getLastError</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.getLastError(fcfc55703d)">getLastError</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah;MongoDB.getLastError(fcfc55703d).writeConcern">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> =
     <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.getLastError(fcfc55703d).writeConcern" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.lastError(fcfc55703d)">lastError</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah;MongoDB.lastError(fcfc55703d).writeConcern">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> =
     <a href="#com.mongodb.casbah;MongoDB.getLastError(fcfc55703d)" title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)com.mongodb.CommandResult">getLastError</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.lastError(fcfc55703d).writeConcern" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(w: Int, wTimeout: Int, fsync: Boolean)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.getLastError(f2234901cc)">getLastError</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah;MongoDB.getLastError(f2234901cc).w">w</a>: <span title="Int">Int</span>, <a title="Int" id="com.mongodb.casbah;MongoDB.getLastError(f2234901cc).wTimeout">wTimeout</a>: <span title="Int">Int</span>, <a title="Boolean" id="com.mongodb.casbah;MongoDB.getLastError(f2234901cc).fsync">fsync</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> =
     <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: Int, x$2: Int, x$3: Boolean)com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.getLastError(f2234901cc).w" title="Int">w</a>, <a href="#com.mongodb.casbah;MongoDB.getLastError(f2234901cc).wTimeout" title="Int">wTimeout</a>, <a href="#com.mongodb.casbah;MongoDB.getLastError(f2234901cc).fsync" title="Boolean">fsync</a><span class="delimiter">)</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(w: Int, wTimeout: Int, fsync: Boolean)com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.lastError(f2234901cc)">lastError</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah;MongoDB.lastError(f2234901cc).w">w</a>: <span title="Int">Int</span>, <a title="Int" id="com.mongodb.casbah;MongoDB.lastError(f2234901cc).wTimeout">wTimeout</a>: <span title="Int">Int</span>, <a title="Boolean" id="com.mongodb.casbah;MongoDB.lastError(f2234901cc).fsync">fsync</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> =
     <a href="#com.mongodb.casbah;MongoDB.getLastError(f2234901cc)" title="(w: Int, wTimeout: Int, fsync: Boolean)com.mongodb.CommandResult">getLastError</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.lastError(f2234901cc).w" title="Int">w</a>, <a href="#com.mongodb.casbah;MongoDB.lastError(f2234901cc).wTimeout" title="Int">wTimeout</a>, <a href="#com.mongodb.casbah;MongoDB.lastError(f2234901cc).fsync" title="Boolean">fsync</a><span class="delimiter">)</span>
 
@@ -225,7 +263,8 @@
    * @deprecated The `getPreviousError()` and `resetError()` commands are deprecated and may be removed in future versions of MongoDB
    * @return DBObject with error and status information
    */</span>
-  @deprecated<span class="delimiter">(</span><span class="string">&quot;may be removed in future versions of MongoDB&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.getPreviousError">getPreviousError</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()com.mongodb.CommandResult">getPreviousError</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
 
   <span class="comment">/**
@@ -234,7 +273,8 @@
    *
    * @deprecated The `getPreviousError()` and `resetError()` commands are deprecated and may be removed in future versions of MongoDB
    */</span>
-  @deprecated<span class="delimiter">(</span><span class="string">&quot;may be removed in future versions of MongoDB&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.resetError">resetError</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">resetError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="keyword">def</span> <a title="(name: String)com.mongodb.casbah.MongoDB" id="com.mongodb.casbah;MongoDB.getSisterDB">getSisterDB</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoDB.getSisterDB.name">name</a>: <span title="String">String</span><span class="delimiter">)</span>: <a href="#com.mongodb.casbah;MongoDB" title="com.mongodb.casbah.MongoDB">MongoDB</a> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: String)com.mongodb.DB">getSisterDB</span><a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoDBAsScala" title="implicit com.mongodb.casbah.Implicits.mongoDBAsScala : (db: com.mongodb.DB)AnyRef{def asScala: com.mongodb.casbah.MongoDB}" class="delimiter">(</a><a href="#com.mongodb.casbah;MongoDB.getSisterDB.name" title="String">name</a><span class="delimiter">)</span>.<a href="Implicits.scala.html#com.mongodb.casbah;Implicits.mongoDBAsScala;<refinement>.asScala" title="=&gt; com.mongodb.casbah.MongoDB">asScala</a>
@@ -245,16 +285,60 @@
    * @return true if authenticated, false otherwise
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Use MongoClient to create an authenticated connection.&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; Boolean" id="com.mongodb.casbah;MongoDB.isAuthenticated">isAuthenticated</a>: <span title="Boolean">Boolean</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Boolean">isAuthenticated</span>
 
   <span class="keyword">def</span> <a title="()com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.stats">stats</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.getStats" title="()com.mongodb.CommandResult">getStats</a><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="keyword">def</span> <a title="()com.mongodb.CommandResult" id="com.mongodb.casbah;MongoDB.getStats">getStats</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.CommandResult">CommandResult</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()com.mongodb.CommandResult">getStats</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">/* calls the db */</span>
 
+  <span class="comment">/**
+   * Ends the current 'consistent request'.
+   *
+   * @deprecated  The main use case for this method is to ensure that applications can read their own unacknowledged
+   *            writes, but this is no longer so prevalent since the driver started defaulting to acknowledged writes.
+   *
+   *            The other main use case is to ensure that related read operations are all routed to the same server
+   *            when using a non-primary read preference.  But this is dangerous because mongos does not provide this
+   *            guarantee.  For these reasons, this method is now deprecated and will be removed in the next major
+   *            release.
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.requestDone">requestDone</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">requestDone</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
+  <span class="comment">/**
+   *  Ensure that a connection is assigned to the current &quot;consistent request&quot; (from primary pool, if connected to a
+   *  replica set).
+   *
+   * @deprecated  The main use case for this method is to ensure that applications can read their own unacknowledged
+   *            writes, but this is no longer so prevalent since the driver started defaulting to acknowledged writes.
+   *
+   *            The other main use case is to ensure that related read operations are all routed to the same server
+   *            when using a non-primary read preference.  But this is dangerous because mongos does not provide this
+   *            guarantee.  For these reasons, this method is now deprecated and will be removed in the next major
+   *            release.
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.requestEnsureConnection">requestEnsureConnection</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">requestEnsureConnection</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
+  <span class="comment">/**
+   * Starts a new 'consistent request'.
+   *
+   * Following this call and until [[requestDone()]] is called, all db operations will use the same underlying
+   * connection.
+   *
+   * @deprecated  The main use case for this method is to ensure that applications can read their own unacknowledged
+   *            writes, but this is no longer so prevalent since the driver started defaulting to acknowledged writes.
+   *
+   *            The other main use case is to ensure that related read operations are all routed to the same server
+   *            when using a non-primary read preference.  But this is dangerous because mongos does not provide this
+   *            guarantee.  For these reasons, this method is now deprecated and will be removed in the next major
+   *            release.
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.requestStart">requestStart</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">requestStart</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="comment">/** Makes this database read-only
@@ -262,6 +346,7 @@
     * @param b if the database should be read-only
     */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Avoid making database read-only via this method. Use a read-only user with MongoClient instead.&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(b: Boolean)Unit" id="com.mongodb.casbah;MongoDB.setReadOnly">setReadOnly</a><span class="delimiter">(</span><a title="Boolean" id="com.mongodb.casbah;MongoDB.setReadOnly.b">b</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="(x$1: Boolean)Unit">setReadOnly</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.setReadOnly.b" title="implicit scala.Predef.boolean2Boolean : (x: Boolean)Boolean">b</a><span class="delimiter">)</span>
 
   <span class="comment">/** Makes this database read-only
@@ -269,12 +354,14 @@
     * @param b if the database should be read-only
     */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Avoid making database read-only via this method. Use a read-only user with MongoClient instead.&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(b: Boolean)Unit" id="com.mongodb.casbah;MongoDB.readOnly_=">readOnly_=</a><span class="delimiter">(</span><a title="Boolean" id="com.mongodb.casbah;MongoDB.readOnly_=.b">b</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.setReadOnly" title="(b: Boolean)Unit">setReadOnly</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.readOnly_=.b" title="Boolean">b</a><span class="delimiter">)</span>
 
   <span class="comment">/**
    * Sets queries to be OK to run on slave nodes.
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Replaced with ReadPreference.SECONDARY.&quot;</span>, <span class="string">&quot;2.3.0&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()Unit" id="com.mongodb.casbah;MongoDB.slaveOk">slaveOk</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.underlying" title="=&gt; com.mongodb.DB">underlying</a>.<span title="()Unit">slaveOk</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// use parens because this side-effects</span>
 
   <span class="comment">/**
@@ -391,7 +478,11 @@
    * it will be inherited.
    *
    * @throws MongoException if error
+   * @deprecated Use the appropriate [[WriteConcern]] and allow the write operation to throw an exception on failure.
+   *            For successful writes, use the helper methods to retrieve specific values from the write response.
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(op: com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult)Unit" id="com.mongodb.casbah;MongoDB.request(669ee7b5f5)">request</a><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult" id="com.mongodb.casbah;MongoDB.request(669ee7b5f5).op">op</a>: MongoDB =&gt; WriteResult<span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoDB.request(669ee7b5f5).op" title="(v1: com.mongodb.casbah.MongoDB)com.mongodb.casbah.Imports.WriteResult">op</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB" title="com.mongodb.casbah.MongoDB" class="keyword">this</a><span class="delimiter">)</span>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.writeConcern" title="=&gt; com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span>.<span title="()Unit">throwOnError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="comment">/**
@@ -409,7 +500,11 @@
    * return type of any mongo write operation like insert/save/update/remove
    *
    * @throws MongoException if error
+   * @deprecated Use the appropriate [[WriteConcern]] and allow the write operation to throw an exception on failure.
+   *            For successful writes, use the helper methods to retrieve specific values from the write response.
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(w: Int, wTimeout: Int, fsync: Boolean)(op: com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult)Unit" id="com.mongodb.casbah;MongoDB.request(e1e7716132)">request</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah;MongoDB.request(e1e7716132).w">w</a>: <span title="Int">Int</span>, <a title="Int" id="com.mongodb.casbah;MongoDB.request$default$2">wTimeout</a>: <span title="Int">Int</span> = <span title="Int(0)" class="int">0</span>, <a title="Boolean" id="com.mongodb.casbah;MongoDB.request$default$3">fsync</a>: <span title="Boolean">Boolean</span> = <span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult" id="com.mongodb.casbah;MongoDB.request(e1e7716132).op">op</a>: MongoDB =&gt; WriteResult<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
     <a href="#com.mongodb.casbah;MongoDB.request(e1e7716132).op" title="(v1: com.mongodb.casbah.MongoDB)com.mongodb.casbah.Imports.WriteResult">op</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB" title="com.mongodb.casbah.MongoDB" class="keyword">this</a><span class="delimiter">)</span>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><a href="WriteConcern.scala.html#com.mongodb.casbah.WriteConcern.apply" title="(w: Int, wTimeout: Int, fsync: Boolean, j: Boolean, continueInsertOnError: Boolean)com.mongodb.WriteConcern">WriteConcern</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.request(e1e7716132).w" title="Int">w</a>, <a href="#com.mongodb.casbah;MongoDB.request$default$2" title="Int">wTimeout</a>, <a href="#com.mongodb.casbah;MongoDB.request$default$3" title="Boolean">fsync</a><span class="delimiter">)</span><span class="delimiter">)</span>.<span title="()Unit">throwOnError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
@@ -425,13 +520,26 @@
    * This is for write ops only - you cannot return data from it.
    *
    * Your function must return WriteResult, which is the
-   * return type of any mongo write operation like insert/save/upd§ate/remove
+   * return type of any mongo write operation like insert/save/update/remove
    *
    * @throws MongoException if error
+   * @deprecated Use the appropriate [[WriteConcern]] and allow the write operation to throw an exception on failure.
+   *            For successful writes, use the helper methods to retrieve specific values from the write response.
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(writeConcern: com.mongodb.casbah.Imports.WriteConcern)(op: com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult)Unit" id="com.mongodb.casbah;MongoDB.request(26a05d86b5)">request</a><span class="delimiter">(</span><a title="com.mongodb.casbah.Imports.WriteConcern" id="com.mongodb.casbah;MongoDB.request(26a05d86b5).writeConcern">writeConcern</a>: <span title="com.mongodb.casbah.Imports.WriteConcern">WriteConcern</span><span class="delimiter">)</span><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult" id="com.mongodb.casbah;MongoDB.request(26a05d86b5).op">op</a>: MongoDB =&gt; WriteResult<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
     <a href="#com.mongodb.casbah;MongoDB.request(26a05d86b5).op" title="(v1: com.mongodb.casbah.MongoDB)com.mongodb.casbah.Imports.WriteResult">op</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB" title="com.mongodb.casbah.MongoDB" class="keyword">this</a><span class="delimiter">)</span>.<span title="(x$1: com.mongodb.WriteConcern)com.mongodb.CommandResult">getLastError</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB.request(26a05d86b5).writeConcern" title="com.mongodb.casbah.Imports.WriteConcern">writeConcern</a><span class="delimiter">)</span>.<span title="()Unit">throwOnError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
+  <span class="comment">/**
+   * Checked write block
+   *
+   * @throws MongoException if error
+   * @deprecated Use the appropriate [[WriteConcern]] and allow the write operation to throw an exception on failure.
+   *            For successful writes, use the helper methods to retrieve specific values from the write response.
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(op: com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult)Unit" id="com.mongodb.casbah;MongoDB.checkedWrite">checkedWrite</a><span class="delimiter">(</span><a title="com.mongodb.casbah.MongoDB =&gt; com.mongodb.casbah.Imports.WriteResult" id="com.mongodb.casbah;MongoDB.checkedWrite.op">op</a>: MongoDB =&gt; WriteResult<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
     <a href="#com.mongodb.casbah;MongoDB.checkedWrite.op" title="(v1: com.mongodb.casbah.MongoDB)com.mongodb.casbah.Imports.WriteResult">op</a><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoDB" title="com.mongodb.casbah.MongoDB" class="keyword">this</a><span class="delimiter">)</span>.<span title="()com.mongodb.CommandResult">getLastError</span>.<span title="()Unit">throwOnError</span><span class="delimiter">(</span><span class="delimiter">)</span>
 

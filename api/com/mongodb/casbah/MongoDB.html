@@ -184,19 +184,6 @@
 </p><div class="fullcomment"><div class="comment cmt"><p>Manipulate Network Options
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>com.mongodb.Bytes
 </p></span><span class="cmt"><p>com.mongodb.Mongo</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#addUser" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="addUser(username:String,passwd:String):com.mongodb.casbah.Imports.WriteResult"></a>
-      <a id="addUser(String,String):Imports.WriteResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">addUser</span><span class="params">(<span name="username">username: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="passwd">passwd: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>
-      </span>
-      </h4>
-      
     </li><li name="com.mongodb.casbah.MongoDB#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(collection:String):com.mongodb.casbah.MongoCollection"></a>
       <a id="apply(String):MongoCollection"></a>
@@ -230,19 +217,6 @@ instead of getCollection
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#checkedWrite" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="checkedWrite(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
-      <a id="checkedWrite((MongoDB)⇒Imports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">checkedWrite</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -291,29 +265,15 @@ instead of getCollection
       <p class="shortcomment cmt">Returns a set of the names of collections in this database.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a set of the names of collections in this database.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the names of collections in this database
 </p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#command" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="command(cmd:com.mongodb.casbah.Imports.DBObject,options:Int,pref:com.mongodb.casbah.Imports.ReadPreference):com.mongodb.CommandResult"></a>
-      <a id="command(Imports.DBObject,Int,Imports.ReadPreference):CommandResult"></a>
+      <a id="command(cmd:com.mongodb.casbah.Imports.DBObject,readPreference:com.mongodb.casbah.Imports.ReadPreference):com.mongodb.CommandResult"></a>
+      <a id="command(Imports.DBObject,Imports.ReadPreference):CommandResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">command</span><span class="params">(<span name="cmd">cmd: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>, <span name="options">options: <span class="extype" name="scala.Int">Int</span></span>, <span name="pref">pref: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Execute a database command directly.</p><div class="fullcomment"><div class="comment cmt"><p>Execute a database command directly.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of the command from the database
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands">List of Commands</a></p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#command" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="command(cmd:com.mongodb.casbah.Imports.DBObject,options:Int):com.mongodb.CommandResult"></a>
-      <a id="command(Imports.DBObject,Int):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">command</span><span class="params">(<span name="cmd">cmd: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>, <span name="options">options: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+        <span class="name">command</span><span class="params">(<span name="cmd">cmd: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>, <span name="readPreference">readPreference: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Execute a database command directly.</p><div class="fullcomment"><div class="comment cmt"><p>Execute a database command directly.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of the command from the database
@@ -452,20 +412,6 @@ Possible options:
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#forceError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="forceError():Unit"></a>
-      <a id="forceError():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">forceError</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">For testing purposes only - this method forces an error to help test error handling
-</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -521,51 +467,6 @@ If the collection does not exist, a new collection is created.</p></div><dl clas
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a set of the names of collections in this database.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a set of the names of collections in this database.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the names of collections in this database
-</p></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getLastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
-      <a id="getLastError(Int,Int,Boolean):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getLastError(writeConcern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
-      <a id="getLastError(Imports.WriteConcern):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getLastError():com.mongodb.CommandResult"></a>
-      <a id="getLastError():CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the the error (if there is one) from the previous operation.  The result of
-this command will look like</p><p><pre>
-{ "err" :  errorMessage  , "ok" : 1.0 }
-</pre></p><p>The value for errorMessage will be null if no error occurred, or a description otherwise.</p><p>Care must be taken to ensure that calls to getLastError go to the same connection as that
-of the previous operation. See com.mongodb.Mongo.requestStart for more information.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information
 </p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#getName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="getName:String"></a>
@@ -682,45 +583,6 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="lastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
-      <a id="lastError(Int,Int,Boolean):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="lastError(writeConcern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
-      <a id="lastError(Imports.WriteConcern):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="lastError():com.mongodb.CommandResult"></a>
-      <a id="lastError():CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      
     </li><li name="com.mongodb.casbah.MongoDB#mapReduce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="mapReduce(cmd:com.mongodb.casbah.map_reduce.MapReduceCommand):com.mongodb.casbah.map_reduce.MapReduceResult"></a>
       <a id="mapReduce(map_reduce.MapReduceCommand):MapReduceResult"></a>
@@ -833,100 +695,6 @@ documentation for <span class="extype" name="com.mongodb.ReadPreference">com.mon
       </span>
       <span class="symbol">
         <span title="gt4s: readPreference_$eq" class="name">readPreference_=</span><span class="params">(<span name="pref">pref: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(writeConcern:com.mongodb.casbah.Imports.WriteConcern)(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
-      <a id="request(Imports.WriteConcern)((MongoDB)⇒Imports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/upd§ate/remove
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(w:Int,wTimeout:Int,fsync:Boolean)(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
-      <a id="request(Int,Int,Boolean)((MongoDB)⇒Imports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
-      <a id="request((MongoDB)⇒Imports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove</p><p>If you have set a connection or DB level WriteConcern,
-it will be inherited.
-</p></div><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoDB#requestDone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="requestDone():Unit"></a>
-      <a id="requestDone():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">requestDone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#requestEnsureConnection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="requestEnsureConnection():Unit"></a>
-      <a id="requestEnsureConnection():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">requestEnsureConnection</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.MongoDB#requestStart" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="requestStart():Unit"></a>
-      <a id="requestStart():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">requestStart</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       
@@ -1131,7 +899,27 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
 
         <div id="values" class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="com.mongodb.casbah.MongoDB#authenticate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="com.mongodb.casbah.MongoDB#addUser" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addUser(username:String,passwd:String):com.mongodb.casbah.Imports.WriteResult"></a>
+      <a id="addUser(String,String):Imports.WriteResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">addUser</span><span class="params">(<span name="username">username: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="passwd">passwd: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Adds or updates a user for this database
+</p><div class="fullcomment"><div class="comment cmt"><p>Adds or updates a user for this database
+</p></div><dl class="paramcmts block"><dt class="param">username</dt><dd class="cmt"><p>the user name</p></dd><dt class="param">passwd</dt><dd class="cmt"><p>the password</p></dd><dt>returns</dt><dd class="cmt"><p>the result of executing this operation</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException</span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#authenticate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="authenticate(username:String,passwd:String):Boolean"></a>
       <a id="authenticate(String,String):Boolean"></a>
       <h4 class="signature">
@@ -1149,7 +937,142 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Please use MongoClient to create a client, which will authenticate all connections to server.</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#checkedWrite" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkedWrite(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
+      <a id="checkedWrite((MongoDB)⇒Imports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">checkedWrite</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Checked write block
+</p><div class="fullcomment"><div class="comment cmt"><p>Checked write block
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error</p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#command" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="command(cmd:com.mongodb.casbah.Imports.DBObject,options:Int,pref:com.mongodb.casbah.Imports.ReadPreference):com.mongodb.CommandResult"></a>
+      <a id="command(Imports.DBObject,Int,Imports.ReadPreference):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">command</span><span class="params">(<span name="cmd">cmd: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>, <span name="options">options: <span class="extype" name="scala.Int">Int</span></span>, <span name="pref">pref: <a href="Imports$.html#ReadPreference=com.mongodb.ReadPreference" class="extmbr" name="com.mongodb.casbah.Imports.ReadPreference">Imports.ReadPreference</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Execute a database command directly.</p><div class="fullcomment"><div class="comment cmt"><p>Execute a database command directly.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of the command from the database</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands">List of Commands</a></p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#command" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="command(cmd:com.mongodb.casbah.Imports.DBObject,options:Int):com.mongodb.CommandResult"></a>
+      <a id="command(Imports.DBObject,Int):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">command</span><span class="params">(<span name="cmd">cmd: <a href="Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.Imports.DBObject">Imports.DBObject</a></span>, <span name="options">options: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Execute a database command directly.</p><div class="fullcomment"><div class="comment cmt"><p>Execute a database command directly.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of the command from the database</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://mongodb.onconfluence.com/display/DOCS/List+of+Database+Commands">List of Commands</a></p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#forceError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forceError():Unit"></a>
+      <a id="forceError():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">forceError</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">For testing purposes only - this method forces an error to help test error handling</p><div class="fullcomment"><div class="comment cmt"><p>For testing purposes only - this method forces an error to help test error handling</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
+      <a id="getLastError(Int,Int,Boolean):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError(writeConcern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
+      <a id="getLastError(Imports.WriteConcern):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError():com.mongodb.CommandResult"></a>
+      <a id="getLastError():CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the the error (if there is one) from the previous operation.  The result of
+this command will look like</p><p><pre>
+{ "err" :  errorMessage  , "ok" : 1.0 }
+</pre></p><p>The value for errorMessage will be null if no error occurred, or a description otherwise.</p><p>Care must be taken to ensure that calls to getLastError go to the same connection as that
+of the previous operation. See com.mongodb.Mongo.requestStart for more information.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#getPreviousError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getPreviousError():com.mongodb.CommandResult"></a>
       <a id="getPreviousError():CommandResult"></a>
@@ -1159,7 +1082,7 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 2.7) may be removed in future versions of MongoDB">getPreviousError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) This will be removed in a future release">getPreviousError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns the last error that occurred since start of database or a call to <code>resetError()</code></code></p><div class="fullcomment"><div class="comment cmt"><p>Returns the last error that occurred since start of database or a call to <code>resetError()</code></p><p>The return object will look like</p><p><pre>
@@ -1171,7 +1094,9 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> may be removed in future versions of MongoDB</p></dd></dl></div>
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#isAuthenticated" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isAuthenticated:Boolean"></a>
       <a id="isAuthenticated:Boolean"></a>
@@ -1190,7 +1115,63 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Use MongoClient to create an authenticated connection.</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
+      <a id="lastError(Int,Int,Boolean):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError(writeConcern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
+      <a id="lastError(Imports.WriteConcern):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError():com.mongodb.CommandResult"></a>
+      <a id="lastError():CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#readOnly_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="readOnly_=(b:Boolean):Unit"></a>
       <a id="readOnly_=(Boolean):Unit"></a>
@@ -1209,7 +1190,136 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Avoid making database read-only via this method. Use a read-only user with MongoClient instead.</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(writeConcern:com.mongodb.casbah.Imports.WriteConcern)(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
+      <a id="request(Imports.WriteConcern)((MongoDB)⇒Imports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error</p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(w:Int,wTimeout:Int,fsync:Boolean)(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
+      <a id="request(Int,Int,Boolean)((MongoDB)⇒Imports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error</p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(op:com.mongodb.casbah.MongoDB=&gt;com.mongodb.casbah.Imports.WriteResult):Unit"></a>
+      <a id="request((MongoDB)⇒Imports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoDB">MongoDB</a>) ⇒ <a href="Imports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.Imports.WriteResult">Imports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove</p><p>If you have set a connection or DB level WriteConcern,
+it will be inherited.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if error</p></span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#requestDone" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestDone():Unit"></a>
+      <a id="requestDone():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">requestDone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Ends the current 'consistent request'.</p><div class="fullcomment"><div class="comment cmt"><p>Ends the current 'consistent request'.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#requestEnsureConnection" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestEnsureConnection():Unit"></a>
+      <a id="requestEnsureConnection():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">requestEnsureConnection</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"> Ensure that a connection is assigned to the current &quot;consistent request&quot; (from primary pool, if connected to a
+ replica set).</p><div class="fullcomment"><div class="comment cmt"><p> Ensure that a connection is assigned to the current &quot;consistent request&quot; (from primary pool, if connected to a
+ replica set).
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoDB#requestStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestStart():Unit"></a>
+      <a id="requestStart():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">requestStart</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Starts a new 'consistent request'.</p><div class="fullcomment"><div class="comment cmt"><p>Starts a new 'consistent request'.</p><p>Following this call and until <span class="extype" name="requestDone()">requestDone()</span> is called, all db operations will use the same underlying
+connection.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#resetError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="resetError():Unit"></a>
       <a id="resetError():Unit"></a>
@@ -1219,7 +1329,7 @@ of the previous operation. See com.mongodb.Mongo.requestStart for more informati
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 2.7) may be removed in future versions of MongoDB">resetError</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.7) This will be removed in a future release">resetError</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Resets the error memory for this database.</p><div class="fullcomment"><div class="comment cmt"><p>Resets the error memory for this database.  Used to clear all errors such that getPreviousError()
@@ -1227,7 +1337,9 @@ will return no error.
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> may be removed in future versions of MongoDB</p></dd></dl></div>
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#setReadOnly" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="setReadOnly(b:Boolean):Unit"></a>
       <a id="setReadOnly(Boolean):Unit"></a>
@@ -1246,6 +1358,8 @@ will return no error.
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Avoid making database read-only via this method. Use a read-only user with MongoClient instead.</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoDB#slaveOk" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="slaveOk():Unit"></a>
@@ -1262,6 +1376,8 @@ will return no error.
       <p class="shortcomment cmt">Sets queries to be OK to run on slave nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Sets queries to be OK to run on slave nodes.
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with ReadPreference.SECONDARY.</p></dd></dl></div>
     </li></ol>

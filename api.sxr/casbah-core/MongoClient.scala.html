@@ -33,6 +33,8 @@
 
 <span class="keyword">package</span> com.mongodb.casbah
 
+<span class="keyword">import</span> java.net.UnknownHostException
+
 <span class="keyword">import</span> com.mongodb.casbah.<a href="Implicits.scala.html#com.mongodb.casbah.Imports" title="com.mongodb.casbah.Imports.type">Imports</a>._
 
 <span class="keyword">import</span> scala.collection.<span title="scala.collection.JavaConverters.type">JavaConverters</span>._
@@ -253,8 +255,10 @@
    */</span>
   <span class="keyword">def</span> <a title="(dbName: String)Unit" id="com.mongodb.casbah;MongoClient.dropDatabase">dropDatabase</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoClient.dropDatabase.dbName">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoClient.underlying" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="(x$1: String)Unit">dropDatabase</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoClient.dropDatabase.dbName" title="String">dbName</a><span class="delimiter">)</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This method will be dropped after 2.8&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; String" id="com.mongodb.casbah;MongoClient.version">version</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;MongoClient.getVersion" title="=&gt; String">getVersion</a>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This method will be dropped after 2.8&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; String" id="com.mongodb.casbah;MongoClient.getVersion">getVersion</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;MongoClient.underlying" title="=&gt; com.mongodb.MongoClient">underlying</a>.<span title="()String">getVersion</span>
 
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Not a part of public API and will be dropped in 2.8+ versions&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>

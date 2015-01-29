@@ -212,8 +212,10 @@
    */</span>
   <span class="keyword">def</span> <a title="(dbName: String)Unit" id="com.mongodb.casbah;MongoConnection.dropDatabase">dropDatabase</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah;MongoConnection.dropDatabase.dbName">dbName</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#com.mongodb.casbah;MongoConnection.underlying" title="=&gt; com.mongodb.Mongo">underlying</a>.<span title="(x$1: String)Unit">dropDatabase</span><span class="delimiter">(</span><a href="#com.mongodb.casbah;MongoConnection.dropDatabase.dbName" title="String">dbName</a><span class="delimiter">)</span>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This method will be dropped after 2.8&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; String" id="com.mongodb.casbah;MongoConnection.version">version</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;MongoConnection.getVersion" title="=&gt; String">getVersion</a>
 
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This method will be dropped after 2.8&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; String" id="com.mongodb.casbah;MongoConnection.getVersion">getVersion</a>: <span title="String">String</span> = <a href="#com.mongodb.casbah;MongoConnection.underlying" title="=&gt; com.mongodb.Mongo">underlying</a>.<span title="()String">getVersion</span>
 
   @deprecated<span class="delimiter">(</span><span class="string">&quot;This method is NOT a part of public API and will be dropped in 2.8&quot;</span>, <span class="string">&quot;2.7&quot;</span><span class="delimiter">)</span>

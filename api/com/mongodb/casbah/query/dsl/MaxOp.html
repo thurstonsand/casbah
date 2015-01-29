@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>AddToSetOp - com.mongodb.casbah.query.dsl.AddToSetOp</title>
-          <meta name="description" content="AddToSetOp - com.mongodb.casbah.query.dsl.AddToSetOp" />
-          <meta name="keywords" content="AddToSetOp com.mongodb.casbah.query.dsl.AddToSetOp" />
+          <title>MaxOp - com.mongodb.casbah.query.dsl.MaxOp</title>
+          <meta name="description" content="MaxOp - com.mongodb.casbah.query.dsl.MaxOp" />
+          <meta name="keywords" content="MaxOp com.mongodb.casbah.query.dsl.MaxOp" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'com.mongodb.casbah.query.dsl.AddToSetOp';
+            var hash = 'com.mongodb.casbah.query.dsl.MaxOp';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,7 +26,7 @@
       <div id="definition">
         <img src="../../../../../lib/trait_big.png" />
         <p id="owner"><a href="../../../../package.html" class="extype" name="com">com</a>.<a href="../../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../../package.html" class="extype" name="com.mongodb.casbah">casbah</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah.query">query</a>.<a href="package.html" class="extype" name="com.mongodb.casbah.query.dsl">dsl</a></p>
-        <h1>AddToSetOp</h1>
+        <h1>MaxOp</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,16 +35,19 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">AddToSetOp</span><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
+        <span class="name">MaxOp</span><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait to provide the $max (max) method as a bareword operator..</p><pre>$max (<span class="lit">"foo"</span> -&gt; <span class="num">10</span>)</pre><p>Targets an RValue of (String, ValidNumericType)* to be converted to a DBObject</p><p>Due to a quirk in the way I implemented type detection this fails if you mix ValidNumericType types.
+E.g. floats work, but not mixing floats and ints. This can be easily circumvented
+if you want 'ints' with floats by making your ints floats with .0:</p><pre>$max (<span class="lit">"foo"</span> -&gt; <span class="num">5.0</span>, <span class="lit">"bar"</span> -&gt; <span class="num">1.6</span>)</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd><dt>Since</dt><dd><p>2.8</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://docs.mongodb.org/manual/reference/operator/update/max/
+</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="ArrayOps.html" class="extype" name="com.mongodb.casbah.query.dsl.ArrayOps">ArrayOps</a>, <a href="FluidQueryBarewordOps.html" class="extype" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps">FluidQueryBarewordOps</a>, <a href="../Imports$.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../Imports.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../../Imports$.html" class="extype" name="com.mongodb.casbah.Imports">Imports</a></div>
+          <div class="subClasses hiddenContent"><a href="FluidQueryBarewordOps.html" class="extype" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps">FluidQueryBarewordOps</a>, <a href="../Imports$.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../Imports.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../../Imports$.html" class="extype" name="com.mongodb.casbah.Imports">Imports</a></div>
         </div></div>
         
 
@@ -62,7 +65,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.mongodb.casbah.query.dsl.AddToSetOp"><span>AddToSetOp</span></li><li class="in" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator"><span>BarewordQueryOperator</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.mongodb.casbah.query.dsl.MaxOp"><span>MaxOp</span></li><li class="in" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator"><span>BarewordQueryOperator</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -127,42 +130,16 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.query.dsl.AddToSetOp#$addToSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="$addToSet(field:String):AnyRef{def$each[A](target:A*)(implicitevidence$7:com.mongodb.casbah.query.Imports.AsQueryParam[A]):com.mongodb.casbah.query.Imports.DBObject}"></a>
-      <a id="$addToSet(String):AnyRef{def$each[A](target:A*)(implicitevidence$7:com.mongodb.casbah.query.Imports.AsQueryParam[A]):com.mongodb.casbah.query.Imports.DBObject}"></a>
+    </li><li name="com.mongodb.casbah.query.dsl.MaxOp#$max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="$max[T](args:(String,T)*)(implicitevidence$3:com.mongodb.casbah.query.Imports.ValidNumericType[T]):com.mongodb.casbah.query.Imports.DBObject"></a>
+      <a id="$max[T]((String,T)*)(Imports.ValidNumericType[T]):Imports.DBObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">$addToSet</span><span class="params">(<span name="field">field: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span> { def $each[A](target: A*)(implicit evidence$7: com.mongodb.casbah.query.Imports.AsQueryParam[A]): com.mongodb.casbah.query.Imports.DBObject }</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.query.dsl.AddToSetOp#$addToSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="$addToSet[A](fields:(String,A)*):com.mongodb.casbah.query.Imports.DBObject"></a>
-      <a id="$addToSet[A]((String,A)*):Imports.DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">$addToSet</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="fields">fields: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="com.mongodb.casbah.query.dsl.AddToSetOp.$addToSet.A">A</span>)*</span>)</span><span class="result">: <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>
-      </span>
-      </h4>
-      
-    </li><li name="com.mongodb.casbah.query.dsl.AddToSetOp#$addToSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="$addToSet[T](arg:T)(implicitevidence$6:T=&gt;com.mongodb.casbah.query.Imports.DBObject):com.mongodb.casbah.query.Imports.DBObject"></a>
-      <a id="$addToSet[T](T)((T)⇒Imports.DBObject):Imports.DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">$addToSet</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="arg">arg: <span class="extype" name="com.mongodb.casbah.query.dsl.AddToSetOp.$addToSet.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.query.dsl.AddToSetOp.$addToSet.T">T</span>) ⇒ <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>)</span><span class="result">: <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>
+        <span class="name">$max</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="args">args: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="com.mongodb.casbah.query.dsl.MaxOp.$max.T">T</span>)*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="../Imports$.html#ValidNumericType[T]=com.mongodb.casbah.query.ValidNumericType[T]" class="extmbr" name="com.mongodb.casbah.query.Imports.ValidNumericType">Imports.ValidNumericType</a>[<span class="extype" name="com.mongodb.casbah.query.dsl.MaxOp.$max.T">T</span>]</span>)</span><span class="result">: <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>
       </span>
       </h4>
       

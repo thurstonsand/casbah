@@ -28,7 +28,8 @@
  */</span>
 <span class="keyword">package</span> com.mongodb.casbah
 
-<span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>DBObject, ReadPreference =&gt; JReadPreference, TaggableReadPreference<span class="delimiter">}</span>
+<span class="keyword">import</span> scala.collection.<span title="scala.collection.JavaConverters.type">JavaConverters</span>._
+<span class="keyword">import</span> com.mongodb.<span class="delimiter">{</span>ReadPreference =&gt; JReadPreference, TagSet, DBObject, TaggableReadPreference<span class="delimiter">}</span>
 
 <span class="comment">/**
  * Helper class for creating ReadPreference instances
@@ -66,29 +67,72 @@
   <span class="keyword">def</span> <a title="=&gt; com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.primaryPreferred(a51ffe0262)">primaryPreferred</a>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="()com.mongodb.ReadPreference">primaryPreferred</span><span class="delimiter">(</span><span class="delimiter">)</span>
 
   <span class="comment">/**
-   * @return ReadPreference which reads primary if available, otherwise a secondary respective of tags.
+   *
+   * @return ReadPreference with reads primary if available
    */</span>
+  <span class="keyword">def</span> <a title="(tagSet: com.mongodb.TagSet)com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.primaryPreferred(5951a1dea4)">primaryPreferred</a><span class="delimiter">(</span><a title="com.mongodb.TagSet" id="com.mongodb.casbah.ReadPreference.primaryPreferred(5951a1dea4).tagSet">tagSet</a>: <span title="com.mongodb.TagSet">TagSet</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.TagSet)com.mongodb.TaggableReadPreference">primaryPreferred</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.primaryPreferred(5951a1dea4).tagSet" title="com.mongodb.TagSet">tagSet</a><span class="delimiter">)</span>
+  <span class="comment">/**
+   *
+   * @return ReadPreference with reads primary if available
+   */</span>
+  <span class="keyword">def</span> <a title="(tagSetList: List[com.mongodb.TagSet])com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.primaryPreferred(f8c3ee0187)">primaryPreferred</a><span class="delimiter">(</span><a title="List[com.mongodb.TagSet]" id="com.mongodb.casbah.ReadPreference.primaryPreferred(f8c3ee0187).tagSetList">tagSetList</a>: <span title="List[com.mongodb.TagSet]">List</span><span class="delimiter">[</span>TagSet<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: java.util.List[com.mongodb.TagSet])com.mongodb.TaggableReadPreference">primaryPreferred</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.primaryPreferred(f8c3ee0187).tagSetList" title="(b: Seq[com.mongodb.TagSet])scala.collection.convert.Decorators.AsJava[java.util.List[com.mongodb.TagSet]]">tagSetList</a>.<span title="=&gt; java.util.List[com.mongodb.TagSet]">asJava</span><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * @return ReadPreference which returns secondary respective of tags
+   */</span>
+  <span class="keyword">def</span> <a title="(tagSet: com.mongodb.TagSet)com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.secondary(5951a1dea4)">secondary</a><span class="delimiter">(</span><a title="com.mongodb.TagSet" id="com.mongodb.casbah.ReadPreference.secondary(5951a1dea4).tagSet">tagSet</a>: <span title="com.mongodb.TagSet">TagSet</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.TagSet)com.mongodb.TaggableReadPreference">secondary</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.secondary(5951a1dea4).tagSet" title="com.mongodb.TagSet">tagSet</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * @return ReadPreference which returns secondary respective of tags
+   */</span>
+  <span class="keyword">def</span> <a title="(tagSetList: List[com.mongodb.TagSet])com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.secondary(f8c3ee0187)">secondary</a><span class="delimiter">(</span><a title="List[com.mongodb.TagSet]" id="com.mongodb.casbah.ReadPreference.secondary(f8c3ee0187).tagSetList">tagSetList</a>: <span title="List[com.mongodb.TagSet]">List</span><span class="delimiter">[</span>TagSet<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: java.util.List[com.mongodb.TagSet])com.mongodb.TaggableReadPreference">secondary</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.secondary(f8c3ee0187).tagSetList" title="(b: Seq[com.mongodb.TagSet])scala.collection.convert.Decorators.AsJava[java.util.List[com.mongodb.TagSet]]">tagSetList</a>.<span title="=&gt; java.util.List[com.mongodb.TagSet]">asJava</span><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * @return ReadPreference which reads nearest node respective of tags
+   */</span>
+  <span class="keyword">def</span> <a title="(tagSet: com.mongodb.TagSet)com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.nearest(5951a1dea4)">nearest</a><span class="delimiter">(</span><a title="com.mongodb.TagSet" id="com.mongodb.casbah.ReadPreference.nearest(5951a1dea4).tagSet">tagSet</a>: <span title="com.mongodb.TagSet">TagSet</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.TagSet)com.mongodb.TaggableReadPreference">nearest</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.nearest(5951a1dea4).tagSet" title="com.mongodb.TagSet">tagSet</a><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * @return ReadPreference which reads nearest node respective of tags
+   */</span>
+  <span class="keyword">def</span> <a title="(tagSetList: List[com.mongodb.TagSet])com.mongodb.ReadPreference" id="com.mongodb.casbah.ReadPreference.nearest(f8c3ee0187)">nearest</a><span class="delimiter">(</span><a title="List[com.mongodb.TagSet]" id="com.mongodb.casbah.ReadPreference.nearest(f8c3ee0187).tagSetList">tagSetList</a>: <span title="List[com.mongodb.TagSet]">List</span><span class="delimiter">[</span>TagSet<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="com.mongodb.ReadPreference">JReadPreference</span> = <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: java.util.List[com.mongodb.TagSet])com.mongodb.TaggableReadPreference">nearest</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.nearest(f8c3ee0187).tagSetList" title="(b: Seq[com.mongodb.TagSet])scala.collection.convert.Decorators.AsJava[java.util.List[com.mongodb.TagSet]]">tagSetList</a>.<span title="=&gt; java.util.List[com.mongodb.TagSet]">asJava</span><span class="delimiter">)</span>
+
+  <span class="comment">/**
+   * @return ReadPreference which reads primary if available, otherwise a secondary respective of tags.
+   * @deprecated Use a TagSets
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.primaryPreferred(fe47f0ccfe)">primaryPreferred</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.primaryPreferred(fe47f0ccfe).firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.primaryPreferred(fe47f0ccfe).remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
      <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">primaryPreferred</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.primaryPreferred(fe47f0ccfe).firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.primaryPreferred(fe47f0ccfe).remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
 
   <span class="comment">/**
    * @return ReadPreference which returns secondary respective of tags
+   * @deprecated Use a TagSets
    */</span>
-  <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.secondary">secondary</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.secondary.firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.secondary.remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
-     <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">secondary</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.secondary.firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.secondary.remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.secondary(fe47f0ccfe)">secondary</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.secondary(fe47f0ccfe).firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.secondary(fe47f0ccfe).remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
+    <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">secondary</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.secondary(fe47f0ccfe).firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.secondary(fe47f0ccfe).remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
 
   <span class="comment">/**
    * @return ReadPreference which reads secondary if available respective of tags,
    *         otherwise from primary irrespective of tags
+   * @deprecated Use a TagSets
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.secondaryPreferred">secondaryPreferred</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.secondaryPreferred.firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.secondaryPreferred.remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
      <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">secondaryPreferred</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.secondaryPreferred.firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.secondaryPreferred.remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
 
   <span class="comment">/**
    * @return ReadPreference which reads nearest node respective of tags
+   * @deprecated Use a TagSets
    */</span>
-  <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.nearest">nearest</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.nearest.firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.nearest.remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
-     <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">nearest</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.nearest.firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.nearest.remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">def</span> <a title="(firstTagSet: com.mongodb.DBObject, remainingTagSets: com.mongodb.DBObject*)com.mongodb.TaggableReadPreference" id="com.mongodb.casbah.ReadPreference.nearest(fe47f0ccfe)">nearest</a><span class="delimiter">(</span><a title="com.mongodb.DBObject" id="com.mongodb.casbah.ReadPreference.nearest(fe47f0ccfe).firstTagSet">firstTagSet</a>: <span title="com.mongodb.DBObject">DBObject</span>, <a title="com.mongodb.DBObject*" id="com.mongodb.casbah.ReadPreference.nearest(fe47f0ccfe).remainingTagSets">remainingTagSets</a>: <span title="com.mongodb.DBObject*">DBObject</span>*<span class="delimiter">)</span>: <span title="com.mongodb.TaggableReadPreference">TaggableReadPreference</span> =
+     <span title="com.mongodb.ReadPreference.type">JReadPreference</span>.<span title="(x$1: com.mongodb.DBObject, x$2: &lt;repeated...&gt;[com.mongodb.DBObject])com.mongodb.TaggableReadPreference">nearest</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.ReadPreference.nearest(fe47f0ccfe).firstTagSet" title="com.mongodb.DBObject">firstTagSet</a>, <a href="#com.mongodb.casbah.ReadPreference.nearest(fe47f0ccfe).remainingTagSets" title="com.mongodb.DBObject*">remainingTagSets</a>: _*<span class="delimiter">)</span>
 
 <span class="delimiter">}</span>
 

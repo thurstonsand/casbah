@@ -41,6 +41,7 @@ com.mongodb.casbah.query.dsl.InOp : CoreOperators.scala
 com.mongodb.casbah.query.dsl.IncOp : BarewordOperators.scala
 com.mongodb.casbah.query.dsl.LessThanEqualOp : CoreOperators.scala
 com.mongodb.casbah.query.dsl.LessThanOp : CoreOperators.scala
+com.mongodb.casbah.query.dsl.MaxOp : BarewordOperators.scala
 com.mongodb.casbah.query.dsl.MetaProjectionOp : CoreOperators.scala
 com.mongodb.casbah.query.dsl.ModuloOp : CoreOperators.scala
 com.mongodb.casbah.query.dsl.NestedBarewordListOperator : BarewordOperators.scala

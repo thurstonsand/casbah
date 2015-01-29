@@ -418,7 +418,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 2.7) This method is NOT a part of public API and will be dropped in 2.8">generateIndexName</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollection.generateIndexName.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollection.generateIndexName.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">generateIndexName</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollection.generateIndexName.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollection.generateIndexName.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">generateIndexName</p><div class="fullcomment"><div class="comment cmt"><p>generateIndexName</p><p>Generate an index name from the set of fields it is over
@@ -426,7 +426,9 @@
 </p></dd><dt class="param">keys</dt><dd class="cmt"><p>(A) The names of the fields used in this index</p></dd><dt>returns</dt><dd class="cmt"><p>a String containing the new name, represented from the index' fields</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
               
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> This method is NOT a part of public API and will be dropped in 2.8</p></dd></dl></div>
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li></ol>
             </div>
         </div>

@@ -315,26 +315,6 @@ waits on a server for the write operation
       <p class="shortcomment cmt">Write operations that use this write concern will return as soon as the message is written to the socket.</p><div class="fullcomment"><div class="comment cmt"><p>Write operations that use this write concern will return as soon as the message is written to the socket.
 Exceptions are raised for network issues, but not server errors.</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.7
 </p></dd></dl></div>
-    </li><li name="com.mongodb.casbah.WriteConcern#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(w:Int,wTimeout:Int,fsync:Boolean,j:Boolean,continueInsertOnError:Boolean):com.mongodb.WriteConcern"></a>
-      <a id="apply(Int,Int,Boolean,Boolean,Boolean):mongodb.WriteConcern"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcern">mongodb.WriteConcern</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w represents # of servers:</p><ul><li><code>w=-1</code> None, no checking is done</li><li><code>w=0</code> None, network socket errors raised</li><li><code>w=1</code> Checks server for errors as well as network socket errors raised</li><li><code>w>1</code> Checks servers (w) for errors as well as network socket errors raised</li></ul></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior.
-         Defaults to <code>0</code></p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk.
-             If true and the server is running without journaling, blocks until the server has synced all data
-             files to disk. If the server is running with journaling, this acts the same as the <code>j</code> option,
-             blocking until write operations have been committed to the journal.
-             Cannot be used in combination with <code>j</code>.
-             Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit. Cannot be used with <code>fsync</code>.</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway
-</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -589,25 +569,6 @@ JOURNAL_SAFE, REPLICAS_SAFE. (matching is done case insensitively)</p><p>NOTE: T
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.mongodb.casbah.WriteConcern#withRule" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withRule(w:String,wTimeout:Int,fsync:Boolean,j:Boolean,continueInsertOnError:Boolean):com.mongodb.WriteConcern"></a>
-      <a id="withRule(String,Int,Boolean,Boolean,Boolean):mongodb.WriteConcern"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withRule</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcern">mongodb.WriteConcern</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w is a String representing a valid getLastErrorMode rule (or &quot;majority&quot;)</p></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the getLastErrorMode to apply to the write</p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk.
-             If true and the server is running without journaling, blocks until the server has synced all data
-             files to disk. If the server is running with journaling, this acts the same as the <code>j</code> option,
-             blocking until write operations have been committed to the journal.
-             Cannot be used in combination with <code>j</code>.
-             Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit. Cannot be used with <code>fsync</code>.</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway
-</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -649,6 +610,53 @@ JOURNAL_SAFE, REPLICAS_SAFE. (matching is done case insensitively)</p><p>NOTE: T
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7.0)</i> This write concern will no longer supported</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.WriteConcern#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(w:Int,wTimeout:Int,fsync:Boolean,j:Boolean,continueInsertOnError:Boolean):com.mongodb.WriteConcern"></a>
+      <a id="apply(Int,Int,Boolean,Boolean,Boolean):mongodb.WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">apply</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcern">mongodb.WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w represents # of servers:</p><ul><li><code>w=-1</code> None, no checking is done</li><li><code>w=0</code> None, network socket errors raised</li><li><code>w=1</code> Checks server for errors as well as network socket errors raised</li><li><code>w>1</code> Checks servers (w) for errors as well as network socket errors raised</li></ul></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the number of servers to wait for on the write operation, and exception raising behavior.
+         Defaults to <code>0</code></p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk.
+             If true and the server is running without journaling, blocks until the server has synced all data
+             files to disk. If the server is running with journaling, this acts the same as the <code>j</code> option,
+             blocking until write operations have been committed to the journal.
+             Cannot be used in combination with <code>j</code>.
+             Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit. Cannot be used with <code>fsync</code>.</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.WriteConcern#withRule" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withRule(w:String,wTimeout:Int,fsync:Boolean,j:Boolean,continueInsertOnError:Boolean):com.mongodb.WriteConcern"></a>
+      <a id="withRule(String,Int,Boolean,Boolean,Boolean):mongodb.WriteConcern"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">withRule</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="j">j: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="continueInsertOnError">continueInsertOnError: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.WriteConcern">mongodb.WriteConcern</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Create a new WriteConcern object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new WriteConcern object.</p><p> w is a String representing a valid getLastErrorMode rule (or &quot;majority&quot;)</p></div><dl class="paramcmts block"><dt class="param">w</dt><dd class="cmt"><p>(Int) Specifies the getLastErrorMode to apply to the write</p></dd><dt class="param">wTimeout</dt><dd class="cmt"><p>(Int) Specifies the number MS to wait for the server operations to write.  Defaults to 0 (no timeout)</p></dd><dt class="param">fsync</dt><dd class="cmt"><p>(Boolean) Indicates whether write operations should require a sync to disk.
+             If true and the server is running without journaling, blocks until the server has synced all data
+             files to disk. If the server is running with journaling, this acts the same as the <code>j</code> option,
+             blocking until write operations have been committed to the journal.
+             Cannot be used in combination with <code>j</code>.
+             Defaults to False</p></dd><dt class="param">j</dt><dd class="cmt"><p>whether writes should wait for a journaling group commit. Cannot be used with <code>fsync</code>.</p></dd><dt class="param">continueInsertOnError</dt><dd class="cmt"><p>if an error occurs during a bulk insert should the inserts continue anyway</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li></ol>
             </div>
         </div>

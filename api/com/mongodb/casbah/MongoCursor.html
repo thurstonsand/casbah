@@ -1377,19 +1377,6 @@ It will only return what can fit into a <em>single 4MB response</em>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCursorBase#numGetMores" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="numGetMores:Int"></a>
-      <a id="numGetMores:Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">numGetMores</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCursorBase#numSeen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="numSeen:Int"></a>
       <a id="numSeen:Int"></a>
@@ -1726,19 +1713,6 @@ you must use count()
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int indicating the number of elements returned by the query after skip/limit</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.mongodb.casbah.MongoCursor">MongoCursor</a> → TraversableOnce → GenTraversableOnce</dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException<p>if errors
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p>count()
 </p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCursorBase#sizes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="sizes:scala.collection.mutable.Buffer[Integer]"></a>
-      <a id="sizes:Buffer[Integer]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">sizes</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCursorBase#skip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="skip(n:Int):MongoCursorBase.this.type"></a>
       <a id="skip(Int):MongoCursor.this.type"></a>
@@ -2208,6 +2182,46 @@ it may or may not be returned, even with snapshot mode).</p><p><b>NOTE:</b> Shor
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> use fold instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCursorBase#numGetMores" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="numGetMores:Int"></a>
+      <a id="numGetMores:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">numGetMores</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets the number of times, so far, that the cursor retrieved a batch from the database
+</p><div class="fullcomment"><div class="comment cmt"><p>Gets the number of times, so far, that the cursor retrieved a batch from the database
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The number of times OP_GET_MORE has been called</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCursorBase#sizes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sizes:scala.collection.mutable.Buffer[Integer]"></a>
+      <a id="sizes:Buffer[Integer]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">sizes</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets a list containing the number of items received in each batch
+</p><div class="fullcomment"><div class="comment cmt"><p>Gets a list containing the number of items received in each batch
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list containing the number of items received in each batch</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCursorBase#slaveOk" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="slaveOk():com.mongodb.DBCursor"></a>
       <a id="slaveOk():DBCursor"></a>
@@ -2223,6 +2237,8 @@ it may or may not be returned, even with snapshot mode).</p><p><b>NOTE:</b> Shor
       <p class="shortcomment cmt">slaveOk</p><div class="fullcomment"><div class="comment cmt"><p>slaveOk</p><p>Makes this query OK to run on a non-master node.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCursorBase.html" class="extype" name="com.mongodb.casbah.MongoCursorBase">MongoCursorBase</a></dd><dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with <code>ReadPreference.SECONDARY</code></p></dd></dl></div>
     </li></ol>

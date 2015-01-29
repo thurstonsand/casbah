@@ -299,8 +299,17 @@
    * Makes this query OK to run on a non-master node.
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;Replaced with `ReadPreference.SECONDARY`&quot;</span>, <span class="string">&quot;2.3.0&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="()com.mongodb.DBCursor" id="com.mongodb.casbah;MongoCursorBase.slaveOk">slaveOk</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="com.mongodb.DBCursor">DBCursor</span> = <a href="#com.mongodb.casbah;MongoCursorBase.underlying" title="=&gt; com.mongodb.DBCursor">underlying</a>.<span title="()com.mongodb.DBCursor">slaveOk</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="comment">// parens for side-effect</span>
 
+  <span class="comment">/**
+   * Gets the number of times, so far, that the cursor retrieved a batch from the database
+   *
+   * @return The number of times OP_GET_MORE has been called
+   * @deprecated there is no replacement for this method
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;MongoCursorBase.numGetMores">numGetMores</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;MongoCursorBase.underlying" title="=&gt; com.mongodb.DBCursor">underlying</a>.<span title="()Int">numGetMores</span>
 
   <span class="comment">/**
@@ -313,6 +322,14 @@
    */</span>
   <span class="keyword">def</span> <a title="=&gt; Int" id="com.mongodb.casbah;MongoCursorBase.numSeen">numSeen</a>: <span title="Int">Int</span> = <a href="#com.mongodb.casbah;MongoCursorBase.underlying" title="=&gt; com.mongodb.DBCursor">underlying</a>.<span title="()Int">numSeen</span>
 
+  <span class="comment">/**
+   * Gets a list containing the number of items received in each batch
+   *
+   * @return a list containing the number of items received in each batch
+   * @deprecated there is no replacement for this method
+   */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="=&gt; scala.collection.mutable.Buffer[Integer]" id="com.mongodb.casbah;MongoCursorBase.sizes">sizes</a>: mutable.<span title="scala.collection.mutable.Buffer[Integer]">Buffer</span><span class="delimiter">[</span>Integer<span class="delimiter">]</span> = <a href="#com.mongodb.casbah;MongoCursorBase.underlying" title="=&gt; com.mongodb.DBCursor">underlying</a>.<span title="(l: java.util.List[Integer])scala.collection.convert.Decorators.AsScala[scala.collection.mutable.Buffer[Integer]]">getSizes</span>.<span title="=&gt; scala.collection.mutable.Buffer[Integer]">asScala</span>
 
   <span class="comment">/**

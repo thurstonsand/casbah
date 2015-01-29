@@ -49,7 +49,8 @@
    *             then catch and ignore any exceptions of type MongoSocketException.
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;This write concern will no longer supported&quot;</span>, <span class="string">&quot;2.7.0&quot;</span><span class="delimiter">)</span>
-  <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.None">None</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="com.mongodb.WriteConcern.type">JWriteConcern</span>.<span title="com.mongodb.WriteConcern">NONE</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+  <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.None">None</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="(x$1: Int)com.mongodb.WriteConcern" class="keyword">new</span> <span title="com.mongodb.WriteConcern">JWriteConcern</span><span class="delimiter">(</span>-<span title="Int(-1)" class="int">1</span><span class="delimiter">)</span>
   <span class="comment">/**
    * Exceptions are raised for network issues but not server errors.
    */</span>
@@ -89,7 +90,7 @@
    * @since 2.7
    */</span>
   @deprecated<span class="delimiter">(</span><span class="string">&quot;This write concern will no longer supported&quot;</span>, <span class="string">&quot;2.7.0&quot;</span><span class="delimiter">)</span>
-  <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.ErrorsIgnored">ErrorsIgnored</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="com.mongodb.WriteConcern.type">JWriteConcern</span>.<span title="com.mongodb.WriteConcern">ERRORS_IGNORED</span>
+  <span class="keyword">val</span> <a title="com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.ErrorsIgnored">ErrorsIgnored</a>: <span title="com.mongodb.WriteConcern">JWriteConcern</span> = <span title="(x$1: Int)com.mongodb.WriteConcern" class="keyword">new</span> <span title="com.mongodb.WriteConcern">JWriteConcern</span><span class="delimiter">(</span>-<span title="Int(-1)" class="int">1</span><span class="delimiter">)</span>
   <span class="comment">/**
    * Write operations that use this write concern will wait for acknowledgement from the primary server before returning.
    * Exceptions are raised for network issues, and server errors.
@@ -143,7 +144,11 @@
    *              Defaults to False
    * @param j whether writes should wait for a journaling group commit. Cannot be used with `fsync`.
    * @param continueInsertOnError if an error occurs during a bulk insert should the inserts continue anyway
+   * @deprecated the preferred way to specify continueOnError is to use write methods that explicitly specify the value
+   *            of this property
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(w: Int, wTimeout: Int, fsync: Boolean, j: Boolean, continueInsertOnError: Boolean)com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.apply">apply</a><span class="delimiter">(</span><a title="Int" id="com.mongodb.casbah.WriteConcern.apply.w">w</a>: <span title="Int">Int</span>,
             <a title="Int" id="com.mongodb.casbah.WriteConcern.apply$default$2">wTimeout</a>: <span title="Int">Int</span> = <span title="Int(0)" class="int">0</span>,
             <a title="Boolean" id="com.mongodb.casbah.WriteConcern.apply$default$3">fsync</a>: <span title="Boolean">Boolean</span> = <span title="Boolean(false)" class="keyword">false</span>,
@@ -165,7 +170,11 @@
    *              Defaults to False
    * @param j whether writes should wait for a journaling group commit. Cannot be used with `fsync`.
    * @param continueInsertOnError if an error occurs during a bulk insert should the inserts continue anyway
+   * @deprecated the preferred way to specify continueOnError is to use write methods that explicitly specify the value
+   *            of this property
    */</span>
+  @deprecated<span class="delimiter">(</span><span class="string">&quot;This will be removed in a future release&quot;</span>, <span class="string">&quot;2.8&quot;</span><span class="delimiter">)</span>
+  @SuppressWarnings<span class="delimiter">(</span>Array<span class="delimiter">(</span><span class="string">&quot;deprecation&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
   <span class="keyword">def</span> <a title="(w: String, wTimeout: Int, fsync: Boolean, j: Boolean, continueInsertOnError: Boolean)com.mongodb.WriteConcern" id="com.mongodb.casbah.WriteConcern.withRule">withRule</a><span class="delimiter">(</span><a title="String" id="com.mongodb.casbah.WriteConcern.withRule.w">w</a>: <span title="String">String</span>,
                <a title="Int" id="com.mongodb.casbah.WriteConcern.withRule$default$2">wTimeout</a>: <span title="Int">Int</span> = <span title="Int(0)" class="int">0</span>,
                <a title="Boolean" id="com.mongodb.casbah.WriteConcern.withRule$default$3">fsync</a>: <span title="Boolean">Boolean</span> = <span title="Boolean(false)" class="keyword">false</span>,

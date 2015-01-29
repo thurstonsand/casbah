@@ -337,15 +337,29 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.mongodb.casbah.ReadPreference#nearest" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="nearest(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
-      <a id="nearest(DBObject,DBObject*):TaggableReadPreference"></a>
+      <a id="nearest(tagSetList:List[com.mongodb.TagSet]):com.mongodb.ReadPreference"></a>
+      <a id="nearest(List[TagSet]):mongodb.ReadPreference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">nearest</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+        <span class="name">nearest</span><span class="params">(<span name="tagSetList">tagSetList: <span class="extype" name="scala.List">List</span>[<span class="extype" name="com.mongodb.TagSet">TagSet</span>]</span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads nearest node respective of tags
+</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.ReadPreference#nearest" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nearest(tagSet:com.mongodb.TagSet):com.mongodb.ReadPreference"></a>
+      <a id="nearest(TagSet):mongodb.ReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nearest</span><span class="params">(<span name="tagSet">tagSet: <span class="extype" name="com.mongodb.TagSet">TagSet</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads nearest node respective of tags
@@ -377,18 +391,32 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.mongodb.casbah.ReadPreference#primaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="primaryPreferred(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
-      <a id="primaryPreferred(DBObject,DBObject*):TaggableReadPreference"></a>
+      <a id="primaryPreferred(tagSetList:List[com.mongodb.TagSet]):com.mongodb.ReadPreference"></a>
+      <a id="primaryPreferred(List[TagSet]):mongodb.ReadPreference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">primaryPreferred</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+        <span class="name">primaryPreferred</span><span class="params">(<span name="tagSetList">tagSetList: <span class="extype" name="scala.List">List</span>[<span class="extype" name="com.mongodb.TagSet">TagSet</span>]</span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads primary if available, otherwise a secondary respective of tags.
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference with reads primary if available
+</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.ReadPreference#primaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="primaryPreferred(tagSet:com.mongodb.TagSet):com.mongodb.ReadPreference"></a>
+      <a id="primaryPreferred(TagSet):mongodb.ReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">primaryPreferred</span><span class="params">(<span name="tagSet">tagSet: <span class="extype" name="com.mongodb.TagSet">TagSet</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference with reads primary if available
 </p></dd></dl></div>
     </li><li name="com.mongodb.casbah.ReadPreference#primaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="primaryPreferred:com.mongodb.ReadPreference"></a>
@@ -405,33 +433,32 @@
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference with reads primary if available
 </p></dd></dl></div>
     </li><li name="com.mongodb.casbah.ReadPreference#secondary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="secondary(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
-      <a id="secondary(DBObject,DBObject*):TaggableReadPreference"></a>
+      <a id="secondary(tagSetList:List[com.mongodb.TagSet]):com.mongodb.ReadPreference"></a>
+      <a id="secondary(List[TagSet]):mongodb.ReadPreference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">secondary</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+        <span class="name">secondary</span><span class="params">(<span name="tagSetList">tagSetList: <span class="extype" name="scala.List">List</span>[<span class="extype" name="com.mongodb.TagSet">TagSet</span>]</span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which returns secondary respective of tags
 </p></dd></dl></div>
-    </li><li name="com.mongodb.casbah.ReadPreference#secondaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="secondaryPreferred(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
-      <a id="secondaryPreferred(DBObject,DBObject*):TaggableReadPreference"></a>
+    </li><li name="com.mongodb.casbah.ReadPreference#secondary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="secondary(tagSet:com.mongodb.TagSet):com.mongodb.ReadPreference"></a>
+      <a id="secondary(TagSet):mongodb.ReadPreference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">secondaryPreferred</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+        <span class="name">secondary</span><span class="params">(<span name="tagSet">tagSet: <span class="extype" name="com.mongodb.TagSet">TagSet</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.ReadPreference">mongodb.ReadPreference</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads secondary if available respective of tags,
-        otherwise from primary irrespective of tags
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which returns secondary respective of tags
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -521,7 +548,83 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="com.mongodb.casbah.ReadPreference#nearest" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nearest(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
+      <a id="nearest(DBObject,DBObject*):TaggableReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">nearest</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads nearest node respective of tags</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.ReadPreference#primaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="primaryPreferred(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
+      <a id="primaryPreferred(DBObject,DBObject*):TaggableReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">primaryPreferred</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads primary if available, otherwise a secondary respective of tags.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.ReadPreference#secondary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="secondary(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
+      <a id="secondary(DBObject,DBObject*):TaggableReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">secondary</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which returns secondary respective of tags</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.ReadPreference#secondaryPreferred" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="secondaryPreferred(firstTagSet:com.mongodb.DBObject,remainingTagSets:com.mongodb.DBObject*):com.mongodb.TaggableReadPreference"></a>
+      <a id="secondaryPreferred(DBObject,DBObject*):TaggableReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">secondaryPreferred</span><span class="params">(<span name="firstTagSet">firstTagSet: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="remainingTagSets">remainingTagSets: <span class="extype" name="com.mongodb.DBObject">DBObject</span>*</span>)</span><span class="result">: <span class="extype" name="com.mongodb.TaggableReadPreference">TaggableReadPreference</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>ReadPreference which reads secondary if available respective of tags,
+        otherwise from primary irrespective of tags</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

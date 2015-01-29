@@ -357,34 +357,6 @@ Java collection.  Good with calls that return a new collection.
 </p><div class="fullcomment"><div class="comment cmt"><p>performs an aggregation operation
 </p></div><dl class="paramcmts block"><dt class="param">pipeline</dt><dd class="cmt"><p>the aggregation pipeline
 </p></dd><dt>returns</dt><dd class="cmt"><p>The aggregation operation's result set</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply[A](jo:A,ensureID:Boolean)(implicitevidence$2:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):AnyRef"></a>
-      <a id="apply[A](A,Boolean)((A)⇒commons.TypeImports.DBObject):AnyRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="jo">jo: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span></span>, <span name="ensureID">ensureID: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Adds the &quot;private&quot; fields _id to an object.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the &quot;private&quot; fields _id to an object.</p></div><dl class="paramcmts block"><dt class="param">jo</dt><dd class="cmt"><p>object to which to add fields</p></dd><dt class="param">ensureID</dt><dd class="cmt"><p>whether to add an <code>_id</code> field or not</p></dd><dt>returns</dt><dd class="cmt"><p>the modified object <code>o</code>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply[A](o:A)(implicitevidence$1:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):AnyRef"></a>
-      <a id="apply[A](A)((A)⇒commons.TypeImports.DBObject):AnyRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Adds the &quot;private&quot; fields _id to an object.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the &quot;private&quot; fields _id to an object.</p></div><dl class="paramcmts block"><dt class="param">o</dt><dd class="cmt"><p><code>DBObject</code> to which to add fields</p></dd><dt>returns</dt><dd class="cmt"><p>the modified parameter object
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -623,80 +595,6 @@ DBCollection users = mongo.getCollection( "wiki.users" );
       <p class="shortcomment cmt">Drops all indices from this collection
 </p><div class="fullcomment"><div class="comment cmt"><p>Drops all indices from this collection
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensureIndex(fieldName:String):Unit"></a>
-      <a id="ensureIndex(String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">ensureIndex</span><span class="params">(<span name="fieldName">fieldName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
-ensureIndex is optimized and is inexpensive if the index already exists.
-This creates an ascending index on a particular field.</p></div><dl class="paramcmts block"><dt class="param">fieldName</dt><dd class="cmt"><p>an identifier for the index
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensureIndex[A](keys:A,name:String,unique:Boolean)(implicitevidence$12:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
-      <a id="ensureIndex[A](A,String,Boolean)((A)⇒commons.TypeImports.DBObject):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="unique">unique: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Ensures an optionally unique index on this collection.</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an optionally unique index on this collection.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">name</dt><dd class="cmt"><p>an identifier for the index</p></dd><dt class="param">unique</dt><dd class="cmt"><p>if the index should be unique
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensureIndex[A](keys:A,name:String)(implicitevidence$11:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
-      <a id="ensureIndex[A](A,String)((A)⇒commons.TypeImports.DBObject):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
-ensureIndex is optimized and is inexpensive if the index already exists.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">name</dt><dd class="cmt"><p>an identifier for the index
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensureIndex[A,B](keys:A,options:B)(implicitevidence$9:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject,implicitevidence$10:B=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
-      <a id="ensureIndex[A,B](A,B)((A)⇒commons.TypeImports.DBObject,(B)⇒commons.TypeImports.DBObject):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">ensureIndex</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="options">options: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>, <span name="arg1">arg1: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.B">B</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
-ensureIndex is optimized and is inexpensive if the index already exists.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">options</dt><dd class="cmt"><p>options for the index (name, unique, etc)
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ensureIndex[A](keys:A)(implicitevidence$8:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
-      <a id="ensureIndex[A](A)((A)⇒commons.TypeImports.DBObject):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Creates an index on a set of fields, if one does not already exist.</p><div class="fullcomment"><div class="comment cmt"><p>Creates an index on a set of fields, if one does not already exist.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>an object with a key set of the fields desired for the index
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -1071,51 +969,6 @@ that match the specified query
 in the list is the &quot;info document&quot; from MongoDB
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>list of index documents
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getLastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
-      <a id="getLastError(Int,Int,Boolean):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getLastError(concern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
-      <a id="getLastError(Imports.WriteConcern):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">(<span name="concern">concern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getLastError():com.mongodb.CommandResult"></a>
-      <a id="getLastError():CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getLastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the the error (if there is one) from the previous operation.  The result of
-this command will look like</p><p><pre>
-{ "err" :  errorMessage  , "ok" : 1.0 }
-</pre></p><p>The value for errorMessage will be null if no error occurred, or a description otherwise.</p><p>Care must be taken to ensure that calls to getLastError go to the same connection as that
-of the previous operation. See com.mongodb.Mongo.requestStart for more information.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCollectionBase#getName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getName:String"></a>
       <a id="getName:String"></a>
@@ -1386,45 +1239,6 @@ you can get the _id that was added from doc after the insert
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="lastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
-      <a id="lastError(Int,Int,Boolean):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="lastError(concern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
-      <a id="lastError(Imports.WriteConcern):CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">(<span name="concern">concern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="lastError():com.mongodb.CommandResult"></a>
-      <a id="lastError():CommandResult"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
     </li><li name="com.mongodb.casbah.commons.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="log:com.mongodb.casbah.commons.Logger"></a>
       <a id="log:Logger"></a>
@@ -1674,74 +1488,6 @@ still point at a now nonexistant collection with the old name
 ... You must capture the return value for the new instance.
 </p></div><dl class="paramcmts block"><dt class="param">newName</dt><dd class="cmt"><p>new collection name (not a full namespace)</p></dd><dt>returns</dt><dd class="cmt"><p>the new collection
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(writeConcern:com.mongodb.casbah.Imports.WriteConcern)(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
-      <a id="request(Imports.WriteConcern)((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()<p>
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(w:Int,wTimeout:Int,fsync:Boolean)(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
-      <a id="request(Int,Int,Boolean)((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()<p>
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="request(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
-      <a id="request((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">request</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
-If  you run multiple ops you'll only get the final
-error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
-return type of any mongo write operation like insert/save/update/remove</p><p>If you have set a connection or DB level WriteConcern,
-it will be inherited.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()<p>
-</p></span></dd></dl></div>
-    </li><li name="com.mongodb.casbah.MongoCollectionBase#resetIndexCache" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resetIndexCache():Unit"></a>
-      <a id="resetIndexCache():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">resetIndexCache</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Clears all indices that have not yet been applied to this collection.</p><div class="fullcomment"><div class="comment cmt"><p>Clears all indices that have not yet been applied to this collection.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCollectionBase#resetOptions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="resetOptions():Unit"></a>
       <a id="resetOptions():Unit"></a>
@@ -2039,6 +1785,136 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Use aggregate(List(DBObject) instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply[A](jo:A,ensureID:Boolean)(implicitevidence$2:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):AnyRef"></a>
+      <a id="apply[A](A,Boolean)((A)⇒commons.TypeImports.DBObject):AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="jo">jo: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span></span>, <span name="ensureID">ensureID: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Adds the &quot;private&quot; fields _id to an object.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the &quot;private&quot; fields _id to an object.</p></div><dl class="paramcmts block"><dt class="param">jo</dt><dd class="cmt"><p>object to which to add fields</p></dd><dt class="param">ensureID</dt><dd class="cmt"><p>whether to add an <code>_id</code> field or not</p></dd><dt>returns</dt><dd class="cmt"><p>the modified object <code>o</code></p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply[A](o:A)(implicitevidence$1:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):AnyRef"></a>
+      <a id="apply[A](A)((A)⇒commons.TypeImports.DBObject):AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.apply.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Adds the &quot;private&quot; fields _id to an object.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the &quot;private&quot; fields _id to an object.</p></div><dl class="paramcmts block"><dt class="param">o</dt><dd class="cmt"><p><code>DBObject</code> to which to add fields</p></dd><dt>returns</dt><dd class="cmt"><p>the modified parameter object</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensureIndex(fieldName:String):Unit"></a>
+      <a id="ensureIndex(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) Use createIndex instead">ensureIndex</span><span class="params">(<span name="fieldName">fieldName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
+ensureIndex is optimized and is inexpensive if the index already exists.
+This creates an ascending index on a particular field.</p></div><dl class="paramcmts block"><dt class="param">fieldName</dt><dd class="cmt"><p>an identifier for the index</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> Use createIndex instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensureIndex[A](keys:A,name:String,unique:Boolean)(implicitevidence$12:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
+      <a id="ensureIndex[A](A,String,Boolean)((A)⇒commons.TypeImports.DBObject):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) Use createIndex instead">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="unique">unique: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Ensures an optionally unique index on this collection.</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an optionally unique index on this collection.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">name</dt><dd class="cmt"><p>an identifier for the index</p></dd><dt class="param">unique</dt><dd class="cmt"><p>if the index should be unique</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> Use createIndex instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensureIndex[A](keys:A,name:String)(implicitevidence$11:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
+      <a id="ensureIndex[A](A,String)((A)⇒commons.TypeImports.DBObject):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) Use createIndex instead">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
+ensureIndex is optimized and is inexpensive if the index already exists.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">name</dt><dd class="cmt"><p>an identifier for the index</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> Use createIndex instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensureIndex[A,B](keys:A,options:B)(implicitevidence$9:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject,implicitevidence$10:B=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
+      <a id="ensureIndex[A,B](A,B)((A)⇒commons.TypeImports.DBObject,(B)⇒commons.TypeImports.DBObject):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) Use createIndex instead">ensureIndex</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>, <span name="options">options: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.B">B</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>, <span name="arg1">arg1: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.B">B</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Ensures an index on this collection (that is, the index will be created if it does not exist).</p><div class="fullcomment"><div class="comment cmt"><p>Ensures an index on this collection (that is, the index will be created if it does not exist).
+ensureIndex is optimized and is inexpensive if the index already exists.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>fields to use for index</p></dd><dt class="param">options</dt><dd class="cmt"><p>options for the index (name, unique, etc)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> Use createIndex instead</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#ensureIndex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensureIndex[A](keys:A)(implicitevidence$8:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):Unit"></a>
+      <a id="ensureIndex[A](A)((A)⇒commons.TypeImports.DBObject):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) Use createIndex instead">ensureIndex</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="keys">keys: <span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="com.mongodb.casbah.MongoCollectionBase.ensureIndex.A">A</span>) ⇒ <a href="commons/TypeImports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.commons.TypeImports.DBObject">commons.TypeImports.DBObject</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates an index on a set of fields, if one does not already exist.</p><div class="fullcomment"><div class="comment cmt"><p>Creates an index on a set of fields, if one does not already exist.</p></div><dl class="paramcmts block"><dt class="param">keys</dt><dd class="cmt"><p>an object with a key set of the fields desired for the index</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> Use createIndex instead</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCollectionBase#find" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="find[A,B](ref:A,fields:B,numToSkip:Int,batchSize:Int)(implicitevidence$16:A=&gt;com.mongodb.casbah.commons.TypeImports.DBObject,implicitevidence$17:B=&gt;com.mongodb.casbah.commons.TypeImports.DBObject):MongoCollectionBase.this.CursorType"></a>
       <a id="find[A,B](A,B,Int,Int)((A)⇒commons.TypeImports.DBObject,(B)⇒commons.TypeImports.DBObject):CursorType"></a>
@@ -2058,6 +1934,205 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.7)</i> Use <code>find().skip().batchSize()</code>.</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
+      <a id="getLastError(Int,Int,Boolean):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError(concern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
+      <a id="getLastError(Imports.WriteConcern):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">(<span name="concern">concern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#getLastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getLastError():com.mongodb.CommandResult"></a>
+      <a id="getLastError():CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">getLastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets the the error (if there is one) from the previous operation.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the the error (if there is one) from the previous operation.  The result of
+this command will look like</p><p><pre>
+{ "err" :  errorMessage  , "ok" : 1.0 }
+</pre></p><p>The value for errorMessage will be null if no error occurred, or a description otherwise.</p><p>Care must be taken to ensure that calls to getLastError go to the same connection as that
+of the previous operation. See com.mongodb.Mongo.requestStart for more information.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>DBObject with error and status information</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError(w:Int,wTimeout:Int,fsync:Boolean):com.mongodb.CommandResult"></a>
+      <a id="lastError(Int,Int,Boolean):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError(concern:com.mongodb.casbah.Imports.WriteConcern):com.mongodb.CommandResult"></a>
+      <a id="lastError(Imports.WriteConcern):CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">(<span name="concern">concern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#lastError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastError():com.mongodb.CommandResult"></a>
+      <a id="lastError():CommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">lastError</span><span class="params">()</span><span class="result">: <span class="extype" name="com.mongodb.CommandResult">CommandResult</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(writeConcern:com.mongodb.casbah.Imports.WriteConcern)(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
+      <a id="request(Imports.WriteConcern)((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="writeConcern">writeConcern: <a href="Imports$.html#WriteConcern=com.mongodb.WriteConcern" class="extmbr" name="com.mongodb.casbah.Imports.WriteConcern">Imports.WriteConcern</a></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()</span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(w:Int,wTimeout:Int,fsync:Boolean)(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
+      <a id="request(Int,Int,Boolean)((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="w">w: <span class="extype" name="scala.Int">Int</span></span>, <span name="wTimeout">wTimeout: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()</span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#request" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="request(op:MongoCollectionBase.this.type=&gt;com.mongodb.casbah.TypeImports.WriteResult):Unit"></a>
+      <a id="request((MongoGenericTypedCollection.this.type)⇒TypeImports.WriteResult):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">request</span><span class="params">(<span name="op">op: (<a href="" class="extype" name="com.mongodb.casbah.MongoGenericTypedCollection">MongoGenericTypedCollection</a>.this.type) ⇒ <a href="TypeImports$.html#WriteResult=com.mongodb.WriteResult" class="extmbr" name="com.mongodb.casbah.TypeImports.WriteResult">TypeImports.WriteResult</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">write concern aware write op block.</p><div class="fullcomment"><div class="comment cmt"><p>write concern aware write op block.</p><p>Checks getLastError after the last write.
+If  you run multiple ops you'll only get the final
+error.</p><p>Your op function gets a copy of this MongoDB instance.</p><p>This is for write ops only - you cannot return data from it.</p><p>Your function must return WriteResult, which is the
+return type of any mongo write operation like insert/save/update/remove</p><p>If you have set a connection or DB level WriteConcern,
+it will be inherited.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd><dt>Exceptions thrown</dt><dd><span class="cmt">MongoException()</span></dd></dl></div>
+    </li><li name="com.mongodb.casbah.MongoCollectionBase#resetIndexCache" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resetIndexCache():Unit"></a>
+      <a id="resetIndexCache():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.8) This will be removed in a future release">resetIndexCache</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Clears all indices that have not yet been applied to this collection.</p><div class="fullcomment"><div class="comment cmt"><p>Clears all indices that have not yet been applied to this collection.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.8)</i> This will be removed in a future release</p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCollectionBase#slaveOk" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="slaveOk():Unit"></a>
       <a id="slaveOk():Unit"></a>
@@ -2073,6 +2148,8 @@ See the documentation for <span class="extype" name="com.mongodb.WriteConcern">c
       <p class="shortcomment cmt">Sets queries to be OK to run on slave nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Sets queries to be OK to run on slave nodes.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MongoCollectionBase.html" class="extype" name="com.mongodb.casbah.MongoCollectionBase">MongoCollectionBase</a></dd><dt>Annotations</dt><dd>
                 <span class="name">@deprecated</span>
+              
+                <span class="name">@SuppressWarnings</span><span class="args">()</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.3.0)</i> Replaced with <code>ReadPreference.SECONDARY</code></p></dd></dl></div>
     </li><li name="com.mongodb.casbah.MongoCollectionBase#updateMulti" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
