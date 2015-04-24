@@ -36,7 +36,7 @@
 <span class="keyword">package</span> query
 
 <span class="keyword">import</span> com.mongodb.casbah.commons.<span title="com.mongodb.casbah.commons.Imports.type">Imports</span>._
-<span class="keyword">import</span> com.mongodb.casbah.query.dsl.<span class="delimiter">{</span>GeoCoords, ValueTestFluidQueryOperators, FluidQueryOperators<span class="delimiter">}</span>
+<span class="keyword">import</span> com.mongodb.casbah.query.dsl.<span class="delimiter">{</span>FluidQueryOperators, GeoCoords, ValueTestFluidQueryOperators<span class="delimiter">}</span>
 
 <span class="comment">// scalastyle:off number.of.types</span>
 
@@ -215,7 +215,7 @@
   <span class="delimiter">}</span>
 
   <span class="keyword">implicit</span> <span class="keyword">val</span> <a title="com.mongodb.casbah.query.AsQueryParam[String]" id="com.mongodb.casbah.query.AsQueryParam.string">string</a> = <a href="#com.mongodb.casbah.query.AsQueryParam.as" title="[A](f: A =&gt; Any)com.mongodb.casbah.query.AsQueryParam[A]">as</a><span title="(f: String =&gt; Any)com.mongodb.casbah.query.AsQueryParam[String]" class="delimiter">[</span><span title="String">String</span><span class="delimiter">]</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.AsQueryParam.string.$anonfun.x" title="(x: String)String">identity</a><span class="delimiter">)</span>
-
+  <span class="keyword">implicit</span> <span class="keyword">val</span> <a title="com.mongodb.casbah.query.AsQueryParam[None.type]" id="com.mongodb.casbah.query.AsQueryParam.none">none</a> = <a href="#com.mongodb.casbah.query.AsQueryParam.as" title="[A](f: A =&gt; Any)com.mongodb.casbah.query.AsQueryParam[A]">as</a><span title="(f: None.type =&gt; Any)com.mongodb.casbah.query.AsQueryParam[None.type]" class="delimiter">[</span>None.<span class="keyword">type</span><span class="delimiter">]</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.AsQueryParam.none.$anonfun.x" title="(x: None.type)None.type">identity</a><span class="delimiter">)</span>
   <span class="keyword">implicit</span> <span class="keyword">def</span> <a title="[A &lt;: com.mongodb.casbah.commons.Imports.DBObject]=&gt; com.mongodb.casbah.query.AsQueryParam[A]" id="com.mongodb.casbah.query.AsQueryParam.dbObject">dbObject</a><span class="delimiter">[</span><a title=" &lt;: com.mongodb.casbah.commons.Imports.DBObject" id="com.mongodb.casbah.query.AsQueryParam.dbObject;A">A</a> &lt;: DBObject<span class="delimiter">]</span> = <a href="#com.mongodb.casbah.query.AsQueryParam.as" title="[A](f: A =&gt; Any)com.mongodb.casbah.query.AsQueryParam[A]">as</a><span title="(f: A =&gt; Any)com.mongodb.casbah.query.AsQueryParam[A]" class="delimiter">[</span><a href="#com.mongodb.casbah.query.AsQueryParam.dbObject;A" title="A">A</a><span class="delimiter">]</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.AsQueryParam.dbObject.$anonfun.x" title="(x: A)A">identity</a><span class="delimiter">)</span>
 
   <span class="keyword">implicit</span> <span class="keyword">val</span> <a title="com.mongodb.casbah.query.AsQueryParam[com.mongodb.casbah.commons.Imports.DBRef]" id="com.mongodb.casbah.query.AsQueryParam.dbRef">dbRef</a> = <a href="#com.mongodb.casbah.query.AsQueryParam.as" title="[A](f: A =&gt; Any)com.mongodb.casbah.query.AsQueryParam[A]">as</a><span title="(f: com.mongodb.casbah.commons.Imports.DBRef =&gt; Any)com.mongodb.casbah.query.AsQueryParam[com.mongodb.casbah.commons.Imports.DBRef]" class="delimiter">[</span><span title="com.mongodb.casbah.commons.Imports.DBRef">DBRef</span><span class="delimiter">]</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.AsQueryParam.dbRef.$anonfun.x" title="(x: com.mongodb.casbah.commons.Imports.DBRef)com.mongodb.casbah.commons.Imports.DBRef">identity</a><span class="delimiter">)</span>
@@ -280,7 +280,7 @@
 
 <span title="AnyRef" class="keyword">trait</span> <a title="trait ValidNumericTypeHolder extends AnyRef" id="com.mongodb.casbah.query;ValidNumericTypeHolder">ValidNumericTypeHolder</a> <span title="Unit" class="delimiter">{</span>
 
-  <span class="keyword">import</span> com.mongodb.casbah.query.<a href="#com.mongodb.casbah.query.ValidTypes" title="com.mongodb.casbah.query.ValidTypes.type">ValidTypes</a>.<span class="delimiter">{</span>IntOk, ShortOk, ByteOk, LongOk, FloatOk, DoubleOk<span class="delimiter">}</span>
+  <span class="keyword">import</span> com.mongodb.casbah.query.<a href="#com.mongodb.casbah.query.ValidTypes" title="com.mongodb.casbah.query.ValidTypes.type">ValidTypes</a>.<span class="delimiter">{</span>ByteOk, DoubleOk, FloatOk, IntOk, LongOk, ShortOk<span class="delimiter">}</span>
 
   <span class="keyword">implicit</span> <span class="keyword">object</span> <a title="ValidNumericTypeHolder.this.IntOk.type" id="com.mongodb.casbah.query;ValidNumericTypeHolder.IntOk.readResolve">IntOk</a> <a href="#com.mongodb.casbah.query;ValidNumericTypeHolder.IntOk.readResolve" title="ValidNumericTypeHolder.this.IntOk.type" class="keyword">extends</a> <a href="#com.mongodb.casbah.query.ValidTypes;IntOk" title="com.mongodb.casbah.query.ValidTypes.IntOk">IntOk</a>
 
@@ -298,8 +298,6 @@
 
 
 <span title="AnyRef" class="keyword">trait</span> <a title="trait ValidDateOrNumericTypeHolder extends AnyRef" id="com.mongodb.casbah.query;ValidDateOrNumericTypeHolder">ValidDateOrNumericTypeHolder</a> <span title="Unit" class="delimiter">{</span>
-
-  <span class="keyword">import</span> com.mongodb.casbah.query.<a href="#com.mongodb.casbah.query.ValidTypes" title="com.mongodb.casbah.query.ValidTypes.type">ValidTypes</a>.<span class="delimiter">{</span>JDKDateOk, IntOk, ShortOk, ByteOk, LongOk, FloatOk, DoubleOk<span class="delimiter">}</span>
 
   <span class="keyword">implicit</span> <span class="keyword">object</span> <a title="ValidDateOrNumericTypeHolder.this.JDKDateDoNOk.type" id="com.mongodb.casbah.query;ValidDateOrNumericTypeHolder.JDKDateDoNOk">JDKDateDoNOk</a> <a href="#com.mongodb.casbah.query;ValidDateOrNumericTypeHolder.JDKDateDoNOk" title="ValidDateOrNumericTypeHolder.this.JDKDateDoNOk.type" class="keyword">extends</a> <a href="#com.mongodb.casbah.query;ValidDateOrNumericType" title="com.mongodb.casbah.query.ValidDateOrNumericType[java.util.Date]">ValidDateOrNumericType</a><span class="delimiter">[</span>java.util.Date<span class="delimiter">]</span>
 
