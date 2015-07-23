@@ -90,7 +90,7 @@
  * @since 1.0
  * @see com.mongodb.casbah.Implicits
  */</span>
-<span title="AnyRef" class="keyword">trait</span> <a title="trait FluidQueryBarewordOps extends AnyRef with com.mongodb.casbah.query.dsl.SetOp with com.mongodb.casbah.query.dsl.SetOnInsertOp with com.mongodb.casbah.query.dsl.UnsetOp with com.mongodb.casbah.query.dsl.IncOp with com.mongodb.casbah.query.dsl.MaxOp with com.mongodb.casbah.query.dsl.OrOp with com.mongodb.casbah.query.dsl.AndOp with com.mongodb.casbah.query.dsl.RenameOp with com.mongodb.casbah.query.dsl.ArrayOps with com.mongodb.casbah.query.dsl.NorOp with com.mongodb.casbah.query.dsl.BitOp with com.mongodb.casbah.query.dsl.WhereOp with com.mongodb.casbah.query.dsl.SearchOp" id="com.mongodb.casbah.query.dsl;FluidQueryBarewordOps">FluidQueryBarewordOps</a> <span class="keyword">extends</span> <a href="#com.mongodb.casbah.query.dsl;SetOp" title="com.mongodb.casbah.query.dsl.SetOp">SetOp</a>
+<span title="AnyRef" class="keyword">trait</span> <a title="trait FluidQueryBarewordOps extends AnyRef with com.mongodb.casbah.query.dsl.SetOp with com.mongodb.casbah.query.dsl.SetOnInsertOp with com.mongodb.casbah.query.dsl.UnsetOp with com.mongodb.casbah.query.dsl.IncOp with com.mongodb.casbah.query.dsl.MaxOp with com.mongodb.casbah.query.dsl.OrOp with com.mongodb.casbah.query.dsl.AndOp with com.mongodb.casbah.query.dsl.RenameOp with com.mongodb.casbah.query.dsl.ArrayOps with com.mongodb.casbah.query.dsl.NorOp with com.mongodb.casbah.query.dsl.BitOp with com.mongodb.casbah.query.dsl.WhereOp with com.mongodb.casbah.query.dsl.SearchOp with com.mongodb.casbah.query.dsl.CurrentDateOp" id="com.mongodb.casbah.query.dsl;FluidQueryBarewordOps">FluidQueryBarewordOps</a> <span class="keyword">extends</span> <a href="#com.mongodb.casbah.query.dsl;SetOp" title="com.mongodb.casbah.query.dsl.SetOp">SetOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;SetOnInsertOp" title="com.mongodb.casbah.query.dsl.SetOnInsertOp">SetOnInsertOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;UnsetOp" title="com.mongodb.casbah.query.dsl.UnsetOp">UnsetOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;IncOp" title="com.mongodb.casbah.query.dsl.IncOp">IncOp</a>
@@ -103,6 +103,7 @@
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;BitOp" title="com.mongodb.casbah.query.dsl.BitOp">BitOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;WhereOp" title="com.mongodb.casbah.query.dsl.WhereOp">WhereOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;SearchOp" title="com.mongodb.casbah.query.dsl.SearchOp">SearchOp</a>
+<span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;CurrentDateOp" title="com.mongodb.casbah.query.dsl.CurrentDateOp">CurrentDateOp</a>
 
 <span class="keyword">trait</span> <a title="trait ArrayOps extends AnyRef with com.mongodb.casbah.query.dsl.PushOp with com.mongodb.casbah.query.dsl.PushAllOp with com.mongodb.casbah.query.dsl.AddToSetOp with com.mongodb.casbah.query.dsl.PopOp with com.mongodb.casbah.query.dsl.PullOp with com.mongodb.casbah.query.dsl.PullAllOp" id="com.mongodb.casbah.query.dsl;ArrayOps">ArrayOps</a> <span class="keyword">extends</span> <a href="#com.mongodb.casbah.query.dsl;PushOp" title="com.mongodb.casbah.query.dsl.PushOp">PushOp</a>
 <span class="keyword">with</span> <a href="#com.mongodb.casbah.query.dsl;PushAllOp" title="com.mongodb.casbah.query.dsl.PushAllOp">PushAllOp</a>
@@ -192,7 +193,7 @@
   <span class="keyword">def</span> <a title="[T](args: (String, T)*)(implicit evidence$3: com.mongodb.casbah.query.Imports.ValidNumericType[T])com.mongodb.casbah.query.Imports.DBObject" id="com.mongodb.casbah.query.dsl;MaxOp.$max">$max</a><span class="delimiter">[</span><a title="" id="com.mongodb.casbah.query.dsl;MaxOp.$max;T">T</a>: ValidNumericType<span class="delimiter">]</span><span class="delimiter">(</span><a title="(String, T)*" id="com.mongodb.casbah.query.dsl;MaxOp.$max.args">args</a>: <span title="(String, T)*" class="delimiter">(</span>String, T<span class="delimiter">)</span>*<span class="delimiter">)</span>: <span title="com.mongodb.casbah.query.Imports.DBObject">DBObject</span> = <a href="#com.mongodb.casbah.query.dsl;BarewordQueryOperator.apply" title="[A](oper: String)(fields: Seq[(String, A)])com.mongodb.casbah.query.Imports.DBObject">apply</a><span title="(oper: String)(fields: Seq[(String, T)])com.mongodb.casbah.query.Imports.DBObject" class="delimiter">[</span><a href="#com.mongodb.casbah.query.dsl;MaxOp.$max;T" title="T">T</a><span class="delimiter">]</span><span class="delimiter">(</span><span title="String(&quot;$max&quot;)" class="string">&quot;$max&quot;</span><span class="delimiter">)</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.dsl;MaxOp.$max.args" title="(String, T)*">args</a><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$push (push) method as a bareword operator.
  *
  * Targets an RValue of (String, Any)* to be converted to a DBObject
@@ -226,7 +227,7 @@
   <span class="comment">// scalastyle:on public.methods.have.type</span>
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$pushAll (pushAll) method as a bareword operator..
  *
  * Targets an RValue of (String, Array[Any])* to be converted to a DBObject
@@ -241,7 +242,7 @@
     <a href="#com.mongodb.casbah.query.dsl;BarewordQueryOperator.apply" title="(oper: String)(fields: Seq[(String, Any)])com.mongodb.casbah.query.Imports.DBObject">apply</a><span class="delimiter">(</span><span title="String(&quot;$pushAll&quot;)" class="string">&quot;$pushAll&quot;</span><span class="delimiter">)</span><span class="delimiter">(</span><span title="(elems: (String, Any)*)Seq[(String, Any)]">Seq</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.dsl;PushAllOp.$pushAll.args" title="(String, A)*">args</a>.<span title="(f: ((String, A)) =&gt; (String, Any))(implicit bf: scala.collection.generic.CanBuildFrom[Seq[(String, A)],(String, Any),Seq[(String, Any)]])Seq[(String, Any)]">map</span><span title="scala.collection.generic.CanBuildFrom[scala.collection.Seq.Coll,(String, Any),Seq[(String, Any)]]" class="delimiter">(</span><a title="(String, A)" id="com.mongodb.casbah.query.dsl;PushAllOp.$pushAll.$anonfun.z">z</a> =&gt; <a href="#com.mongodb.casbah.query.dsl;PushAllOp.$pushAll.$anonfun.z" title="(String, A)">z</a>.<span title="(x: String)ArrowAssoc[String]">_1</span> <span title="(y: Any)(String, Any)">-&gt;</span> <a href="Implicits.scala.html#com.mongodb.casbah.query.AsQueryParam.apply" title="[A](implicit a: com.mongodb.casbah.query.AsQueryParam[A])com.mongodb.casbah.query.AsQueryParam[A]">AsQueryParam</a><a href="#com.mongodb.casbah.query.dsl;PushAllOp.$pushAll.evidence$5" title="(implicit a: com.mongodb.casbah.query.AsQueryParam[A])com.mongodb.casbah.query.AsQueryParam[A]" class="delimiter">[</a><a href="#com.mongodb.casbah.query.dsl;PushAllOp.$pushAll;A" title="A">A</a><span class="delimiter">]</span>.<a href="Implicits.scala.html#com.mongodb.casbah.query;AsQueryParam.asQueryParam" title="(a: A)Any">asQueryParam</a><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.dsl;PushAllOp.$pushAll.$anonfun.z" title="(String, A)">z</a>.<span title="=&gt; A">_2</span><span class="delimiter">)</span><span class="delimiter">)</span>: _*<span class="delimiter">)</span><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$addToSet (addToSet) method as a bareword operator..
  *
  * Targets an RValue of (String, Any)* to be converted to a DBObject
@@ -282,7 +283,7 @@
 
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$pop (pop) method as a bareword operator..
  *
  * If Field exists but is not an array an error will occurr.
@@ -293,7 +294,7 @@
   <span class="keyword">def</span> <a title="[T](args: (String, T)*)(implicit evidence$8: com.mongodb.casbah.query.Imports.ValidNumericType[T])com.mongodb.casbah.query.Imports.DBObject" id="com.mongodb.casbah.query.dsl;PopOp.$pop">$pop</a><span class="delimiter">[</span><a title="" id="com.mongodb.casbah.query.dsl;PopOp.$pop;T">T</a>: ValidNumericType<span class="delimiter">]</span><span class="delimiter">(</span><a title="(String, T)*" id="com.mongodb.casbah.query.dsl;PopOp.$pop.args">args</a>: <span title="(String, T)*" class="delimiter">(</span>String, T<span class="delimiter">)</span>*<span class="delimiter">)</span>: <span title="com.mongodb.casbah.query.Imports.DBObject">DBObject</span> = <a href="#com.mongodb.casbah.query.dsl;BarewordQueryOperator.apply" title="[A](oper: String)(fields: Seq[(String, A)])com.mongodb.casbah.query.Imports.DBObject">apply</a><span title="(oper: String)(fields: Seq[(String, T)])com.mongodb.casbah.query.Imports.DBObject" class="delimiter">[</span><a href="#com.mongodb.casbah.query.dsl;PopOp.$pop;T" title="T">T</a><span class="delimiter">]</span><span class="delimiter">(</span><span title="String(&quot;$pop&quot;)" class="string">&quot;$pop&quot;</span><span class="delimiter">)</span><span class="delimiter">(</span><span title="(elems: (String, T)*)Seq[(String, T)]">Seq</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.dsl;PopOp.$pop.args" title="(String, T)*">args</a>: _*<span class="delimiter">)</span><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$pull (pull) method as a bareword operator..
  *
  * Targets an RValue of (String, Any)* to be converted to a DBObject
@@ -312,7 +313,7 @@
   <span class="keyword">def</span> <a title="(inner: com.mongodb.casbah.query.Imports.DBObject)com.mongodb.casbah.query.Imports.DBObject" id="com.mongodb.casbah.query.dsl;PullOp.$pull(45e802c3dd)">$pull</a><span class="delimiter">(</span><a title="com.mongodb.casbah.query.Imports.DBObject" id="com.mongodb.casbah.query.dsl;PullOp.$pull(45e802c3dd).inner">inner</a>: <span title="com.mongodb.casbah.query.Imports.DBObject">DBObject</span><span class="delimiter">)</span>: <span title="com.mongodb.casbah.query.Imports.DBObject">DBObject</span> = <a href="Implicits.scala.html#com.mongodb.casbah.query.Imports" title="(elems: (String, com.mongodb.casbah.query.Imports.DBObject)*)com.mongodb.casbah.commons.Imports.DBObject">MongoDBObject</a><span class="delimiter">(</span><span title="(x: String)ArrowAssoc[String]" class="string">&quot;$pull&quot;</span> <span title="(y: com.mongodb.casbah.query.Imports.DBObject)(String, com.mongodb.casbah.query.Imports.DBObject)">-&gt;</span> <a href="#com.mongodb.casbah.query.dsl;PullOp.$pull(45e802c3dd).inner" title="com.mongodb.casbah.query.Imports.DBObject">inner</a><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
-<span class="comment">/*
+<span class="comment">/**
  * Trait to provide the \$pullAll (pullAll) method as a bareword operator..
  *
  * Targets an RValue of (String, Array[Any])* to be converted to a DBObject
@@ -449,6 +450,28 @@
     <span class="delimiter">}</span>
   <span class="delimiter">}</span>
 
+<span class="delimiter">}</span>
+
+<span class="comment">/**
+ * Trait to provide the \$currentDate method as bareword operator
+ *
+ * {{{ \$currentDate (&quot;field&quot; -&gt; &quot;date&quot;) // to set current date to `field`}}}
+ *
+ * or
+ *
+ * {{{ \$currentDate (&quot;field&quot; -&gt; &quot;timestamp&quot;) // to set current timestamp to `field`}}}
+ *
+ * Takes sequence of tuples `(String, String)*`,
+ * where second element ''must'' be either `timestamp` or `date`
+ *
+ * WORKS ONLY IN MONGODB 2.5.3+
+ *
+ * @since 2.8.2
+ * @see http://docs.mongodb.org/manual/reference/operator/update/currentDate/
+ */</span>
+<span class="keyword">trait</span> <a title="trait CurrentDateOp extends AnyRef with com.mongodb.casbah.query.dsl.BarewordQueryOperator" id="com.mongodb.casbah.query.dsl;CurrentDateOp">CurrentDateOp</a> <span title="Unit" class="keyword">extends</span> <a href="#com.mongodb.casbah.query.dsl;BarewordQueryOperator" title="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a> <span class="delimiter">{</span>
+  <span class="keyword">def</span> <a title="(fields: (String, String)*)com.mongodb.casbah.query.Imports.DBObject" id="com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate">$currentDate</a><span class="delimiter">(</span><a title="(String, String)*" id="com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.fields">fields</a>: <span title="(String, String)*" class="delimiter">(</span>String, String<span class="delimiter">)</span>*<span class="delimiter">)</span>: <span title="com.mongodb.casbah.query.Imports.DBObject">DBObject</span> =
+    <a href="#com.mongodb.casbah.query.dsl;BarewordQueryOperator.apply" title="[A](oper: String)(fields: Seq[(String, A)])com.mongodb.casbah.query.Imports.DBObject">apply</a><span title="(oper: String)(fields: Seq[(String, Any)])com.mongodb.casbah.query.Imports.DBObject" class="delimiter">[</span><span title="Any">Any</span><span class="delimiter">]</span><span class="delimiter">(</span><span title="String(&quot;$currentDate&quot;)" class="string">&quot;$currentDate&quot;</span><span class="delimiter">)</span><span class="delimiter">(</span><a href="#com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.fields" title="(String, String)*">fields</a>.<span title="(f: ((String, String)) =&gt; (String, com.mongodb.casbah.commons.Imports.DBObject))(implicit bf: scala.collection.generic.CanBuildFrom[Seq[(String, String)],(String, com.mongodb.casbah.commons.Imports.DBObject),Seq[(String, Any)]])Seq[(String, Any)]">map</span> <a href="#com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.$anonfun.x0$1" title="(String, com.mongodb.casbah.commons.Imports.DBObject)" class="delimiter">{</a> <span class="keyword">case</span> <span class="delimiter">(</span><a title="String" id="com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.$anonfun.k">k</a>, <a title="String" id="com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.$anonfun.v">v</a><span class="delimiter">)</span> =&gt; <a href="#com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.$anonfun.k" title="(x: String)ArrowAssoc[String]">k</a> <span title="(y: com.mongodb.casbah.commons.Imports.DBObject)(String, com.mongodb.casbah.commons.Imports.DBObject)">-&gt;</span> <a href="Implicits.scala.html#com.mongodb.casbah.query.Imports" title="(elems: (String, String)*)com.mongodb.casbah.commons.Imports.DBObject">MongoDBObject</a><span class="delimiter">(</span><span title="(x: String)ArrowAssoc[String]" class="string">&quot;$type&quot;</span> <span title="(y: String)(String, String)">-&gt;</span> <a href="#com.mongodb.casbah.query.dsl;CurrentDateOp.$currentDate.$anonfun.v" title="String">v</a><span class="delimiter">)</span> <span class="delimiter">}</span><span class="delimiter">)</span>
 <span class="delimiter">}</span>
 
         </pre>

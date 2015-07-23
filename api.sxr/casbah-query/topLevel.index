@@ -23,6 +23,7 @@ com.mongodb.casbah.query.dsl.ArrayOps : BarewordOperators.scala
 com.mongodb.casbah.query.dsl.BSONType : CoreOperators.scala
 com.mongodb.casbah.query.dsl.BarewordQueryOperator : BarewordOperators.scala
 com.mongodb.casbah.query.dsl.BitOp : BarewordOperators.scala
+com.mongodb.casbah.query.dsl.CurrentDateOp : BarewordOperators.scala
 com.mongodb.casbah.query.dsl.DeprecatedGeoWithinOps : CoreOperators.scala
 com.mongodb.casbah.query.dsl.ElemMatchOp : CoreOperators.scala
 com.mongodb.casbah.query.dsl.EqualsOp : CoreOperators.scala

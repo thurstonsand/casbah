@@ -39,7 +39,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait to provide the $addToSet (addToSet) method as a bareword operator..</p><p>Targets an RValue of (String, Any)* to be converted to a DBObject</p><p>Can also combined with the $each operator for adding many values:</p><pre>scala&gt; $addToSet (<span class="lit">"foo"</span>) $each (<span class="num">5</span>, <span class="num">10</span>, <span class="num">15</span>, <span class="lit">"20"</span>))
+res1: com.mongodb.casbah.commons.Imports.DBObject = { <span class="lit">"$addToSet"</span> : { <span class="lit">"foo"</span> : { <span class="lit">"$each"</span> : [ <span class="num">5</span> , <span class="num">10</span> , <span class="num">15</span> , <span class="lit">"20"</span>]</pre><p>}}}
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Updating#Updating-%24addToSet
+</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">

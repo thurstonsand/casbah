@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>2.5. Connecting to MongoDB &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.8.1 documentation</title>
+    <title>2.5. Connecting to MongoDB &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.8.2 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.8.1',
+        VERSION:     '2.8.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.8.1 documentation" href="../index.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.8.2 documentation" href="../index.html" />
 <link rel="up" title="2. User Guide" href="index.html" />
 <link rel="next" title="2.6. Querying" href="querying.html" />
 <link rel="prev" title="2.4. Casbah Modules" href="modules.html" />
@@ -151,7 +151,12 @@ Challenge response and GSSAPI authentication (available in the subscriber
 edition).  A commandline example of using GSSAPI authentication can be found in the <tt class="xref doc docutils literal"><span class="pre">examples</span></tt>.</p>
 <div class="section" id="mongodbcredentials">
 <h3>2.5.4.1. MongoDBCredentials<a class="headerlink" href="#mongodbcredentials" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// SCRAM-SHA-1</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// Automatically detect SCRAM-SHA-1 or Challenge Response protocol</span>
+<span class="k">val</span> <span class="n">server</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ServerAddress</span><span class="o">(</span><span class="s">&quot;localhost&quot;</span><span class="o">,</span> <span class="mi">27017</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">credentials</span> <span class="k">=</span> <span class="nc">MongoCredential</span><span class="o">.</span><span class="n">createCredential</span><span class="o">(</span><span class="n">userName</span><span class="o">,</span> <span class="n">source</span><span class="o">,</span> <span class="n">password</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">mongoClient</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">(</span><span class="n">server</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">credentials</span><span class="o">))</span>
+
+<span class="c1">// SCRAM-SHA-1</span>
 <span class="k">val</span> <span class="n">server</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">ServerAddress</span><span class="o">(</span><span class="s">&quot;localhost&quot;</span><span class="o">,</span> <span class="mi">27017</span><span class="o">)</span>
 <span class="k">val</span> <span class="n">credentials</span> <span class="k">=</span> <span class="nc">MongoCredential</span><span class="o">.</span><span class="n">createScramSha1Credential</span><span class="o">(</span><span class="n">userName</span><span class="o">,</span> <span class="n">source</span><span class="o">,</span> <span class="n">password</span><span class="o">)</span>
 <span class="k">val</span> <span class="n">mongoClient</span> <span class="k">=</span> <span class="nc">MongoClient</span><span class="o">(</span><span class="n">server</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">credentials</span><span class="o">))</span>

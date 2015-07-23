@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>PushAllOp - com.mongodb.casbah.query.dsl.PushAllOp</title>
-          <meta name="description" content="PushAllOp - com.mongodb.casbah.query.dsl.PushAllOp" />
-          <meta name="keywords" content="PushAllOp com.mongodb.casbah.query.dsl.PushAllOp" />
+          <title>CurrentDateOp - com.mongodb.casbah.query.dsl.CurrentDateOp</title>
+          <meta name="description" content="CurrentDateOp - com.mongodb.casbah.query.dsl.CurrentDateOp" />
+          <meta name="keywords" content="CurrentDateOp com.mongodb.casbah.query.dsl.CurrentDateOp" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'com.mongodb.casbah.query.dsl.PushAllOp';
+            var hash = 'com.mongodb.casbah.query.dsl.CurrentDateOp';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,7 +26,7 @@
       <div id="definition">
         <img src="../../../../../lib/trait_big.png" />
         <p id="owner"><a href="../../../../package.html" class="extype" name="com">com</a>.<a href="../../../package.html" class="extype" name="com.mongodb">mongodb</a>.<a href="../../package.html" class="extype" name="com.mongodb.casbah">casbah</a>.<a href="../package.html" class="extype" name="com.mongodb.casbah.query">query</a>.<a href="package.html" class="extype" name="com.mongodb.casbah.query.dsl">dsl</a></p>
-        <h1>PushAllOp</h1>
+        <h1>CurrentDateOp</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,17 +35,19 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">PushAllOp</span><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
+        <span class="name">CurrentDateOp</span><span class="result"> extends <a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait to provide the $pushAll (pushAll) method as a bareword operator..</p><p>Targets an RValue of (String, Array[Any])* to be converted to a DBObject</p><p>RValue MUST Be an array - otherwise use push.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p>http://www.mongodb.org/display/DOCS/Updating#Updating-%24pushAll
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait to provide the $currentDate method as bareword operator</p><pre>$currentDate (<span class="lit">"field"</span> -&gt; <span class="lit">"date"</span>) <span class="cmt">// to set current date to `field`</span></pre><p>or</p><pre>$currentDate (<span class="lit">"field"</span> -&gt; <span class="lit">"timestamp"</span>) <span class="cmt">// to set current timestamp to `field`</span></pre><p>Takes sequence of tuples <code>(String, String)*</code>,
+where second element <i>must</i> be either <code>timestamp</code> or <code>date</code></p><p>WORKS ONLY IN MONGODB 2.5.3+
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="http://mongodb.github.com/casbah/api.sxr/casbah-query/BarewordOperators.scala.html" target="_blank">BarewordOperators.scala</a></dd><dt>Since</dt><dd><p>2.8.2</p></dd><dt>See also</dt><dd><span class="cmt"><p>http://docs.mongodb.org/manual/reference/operator/update/currentDate/
 </p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="BarewordQueryOperator.html" class="extype" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator">BarewordQueryOperator</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="ArrayOps.html" class="extype" name="com.mongodb.casbah.query.dsl.ArrayOps">ArrayOps</a>, <a href="FluidQueryBarewordOps.html" class="extype" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps">FluidQueryBarewordOps</a>, <a href="../Imports$.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../Imports.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../../Imports$.html" class="extype" name="com.mongodb.casbah.Imports">Imports</a></div>
+          <div class="subClasses hiddenContent"><a href="FluidQueryBarewordOps.html" class="extype" name="com.mongodb.casbah.query.dsl.FluidQueryBarewordOps">FluidQueryBarewordOps</a>, <a href="../Imports$.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../Imports.html" class="extype" name="com.mongodb.casbah.query.Imports">Imports</a>, <a href="../../Imports$.html" class="extype" name="com.mongodb.casbah.Imports">Imports</a></div>
         </div></div>
         
 
@@ -63,7 +65,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.mongodb.casbah.query.dsl.PushAllOp"><span>PushAllOp</span></li><li class="in" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator"><span>BarewordQueryOperator</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.mongodb.casbah.query.dsl.CurrentDateOp"><span>CurrentDateOp</span></li><li class="in" name="com.mongodb.casbah.query.dsl.BarewordQueryOperator"><span>BarewordQueryOperator</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -128,16 +130,16 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.mongodb.casbah.query.dsl.PushAllOp#$pushAll" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="$pushAll[A](args:(String,A)*)(implicitevidence$5:com.mongodb.casbah.query.Imports.AsQueryParam[A]):com.mongodb.casbah.query.Imports.DBObject"></a>
-      <a id="$pushAll[A]((String,A)*)(Imports.AsQueryParam[A]):Imports.DBObject"></a>
+    </li><li name="com.mongodb.casbah.query.dsl.CurrentDateOp#$currentDate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="$currentDate(fields:(String,String)*):com.mongodb.casbah.query.Imports.DBObject"></a>
+      <a id="$currentDate((String,String)*):Imports.DBObject"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">$pushAll</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="args">args: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="com.mongodb.casbah.query.dsl.PushAllOp.$pushAll.A">A</span>)*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="../Imports$.html#AsQueryParam[T]=com.mongodb.casbah.query.AsQueryParam[T]" class="extmbr" name="com.mongodb.casbah.query.Imports.AsQueryParam">Imports.AsQueryParam</a>[<span class="extype" name="com.mongodb.casbah.query.dsl.PushAllOp.$pushAll.A">A</span>]</span>)</span><span class="result">: <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>
+        <span class="name">$currentDate</span><span class="params">(<span name="fields">fields: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>)*</span>)</span><span class="result">: <a href="../Imports$.html#DBObject=com.mongodb.DBObject" class="extmbr" name="com.mongodb.casbah.query.Imports.DBObject">Imports.DBObject</a></span>
       </span>
       </h4>
       

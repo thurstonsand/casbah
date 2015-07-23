@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>2.7. Query DSL &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.8.1 documentation</title>
+    <title>2.7. Query DSL &mdash; Casbah (MongoDB + Scala Toolkit) Documentation 2.8.2 documentation</title>
 
     <link rel="shortcut icon" href="http://media.mongodb.org/favicon.ico" />
     <meta name="robots" content="index" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.8.1',
+        VERSION:     '2.8.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
       <link rel="search" type="application/opensearchdescription+xml" href="http://docs.mongodb.org/osd.xml" title="MongoDB Help"/>
-<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.8.1 documentation" href="../index.html" />
+<link rel="top" title="Casbah (MongoDB + Scala Toolkit) Documentation 2.8.2 documentation" href="../index.html" />
 <link rel="up" title="2. User Guide" href="index.html" />
 <link rel="next" title="2.8. Aggregation Framework" href="aggregation.html" />
 <link rel="prev" title="2.6. Querying" href="querying.html" />
@@ -278,15 +278,21 @@ documents:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$set</span></tt> Sets the value of a field in an existing document</p>
-<blockquote>
-<div><p>$set(&#8220;promotion&#8221; -&gt; &#8220;sale&#8221;, &#8220;qty&#8221; -&gt; 100)</p>
-</div></blockquote>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$set</span></tt> Sets the value of a field in an existing document:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nc">$set</span><span class="o">(</span><span class="s">&quot;promotion&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;sale&quot;</span><span class="o">,</span> <span class="s">&quot;qty&quot;</span> <span class="o">-&gt;</span> <span class="mi">100</span><span class="o">)</span>
+</pre></div>
+</div>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$unset</span></tt> Removes the specified field from an existing document</p>
-<blockquote>
-<div><p>$unset(&#8220;promotion&#8221;)</p>
-</div></blockquote>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$unset</span></tt> Removes the specified field from an existing document:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nc">$unset</span><span class="o">(</span><span class="s">&quot;promotion&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$currentDate</span></tt> Updates the specified fields to current server-side <em>date</em>
+or <em>timestamp</em> (the <em>only</em> allowed values):</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="nc">$currentDate</span><span class="o">(</span><span class="s">&quot;lastUpdated&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;date&quot;</span><span class="o">,</span> <span class="s">&quot;ts&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;timestamp&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </div>
