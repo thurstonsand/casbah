@@ -1101,10 +1101,10 @@ import com.mongodb.casbah.Imports._
 &lt;p&gt;If sbt can&amp;rsquo;t find casbah then you may have an older version of sbt and
 will need to add the sonatype resolvers to your ./build.sbt file:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;    // For stable releases
-    resolvers += &amp;quot;Sonatype releases&amp;quot; at &amp;quot;https://oss.sonatype.org/content/repositories/releases&amp;quot;
-    // For SNAPSHOT releases
-    resolvers += &amp;quot;Sonatype snapshots&amp;quot; at &amp;quot;https://oss.sonatype.org/content/repositories/snapshots&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;// For stable releases
+resolvers += &amp;quot;Sonatype releases&amp;quot; at &amp;quot;https://oss.sonatype.org/content/repositories/releases&amp;quot;
+// For SNAPSHOT releases
+resolvers += &amp;quot;Sonatype snapshots&amp;quot; at &amp;quot;https://oss.sonatype.org/content/repositories/snapshots&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;alternative-installation-methods&#34;&gt;Alternative installation methods&lt;/h2&gt;
