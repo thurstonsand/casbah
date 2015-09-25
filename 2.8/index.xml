@@ -110,112 +110,6 @@ An example of using the parallelScan collection method with futures to handle th
     </item>
     
     <item>
-      <title>Querying</title>
-      <link>/casbah/2.8/reference/querying/</link>
-      <pubDate>Fri, 25 Sep 2015 15:36:10 +0000</pubDate>
-      
-      <guid>/casbah/2.8/reference/querying/</guid>
-      <description>
-
-&lt;h1 id=&#34;querying&#34;&gt;Querying&lt;/h1&gt;
-
-&lt;h2 id=&#34;query-operations&#34;&gt;Query operations&lt;/h2&gt;
-
-&lt;p&gt;As Casbah wraps the Java driver, so querying against MongoDB is
-essentially the same. The following methods for finding data:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;find&lt;/code&gt; Returns a cursor&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;findOne&lt;/code&gt; Returns an Option - either Some(MongoDBObject) or None&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;findById&lt;/code&gt; Returns an Option - either Some(MongoDBObject) or None&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;findAndModify&lt;/code&gt; Finds the first document in the query, updates and returns it.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;findAndRemove&lt;/code&gt; Finds the first document in the query, removes and returns it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The following methods insert and update data:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;save&lt;/code&gt; Saves an object to the collection&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;insert&lt;/code&gt; Saves one or more documents to the collection&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;update&lt;/code&gt; Updates any matching documents operation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For more information about create, read, update and delete (CRUD)
-operations in MongoDB see the &lt;a href=&#34;http://docs.mongodb.org/manual/crud/&#34;&gt;core
-operations&lt;/a&gt; documentation.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://mongodb.github.io/casbah/api/#com.mongodb.casbah.MongoCollection&#34;&gt;collection API
-documentation&lt;/a&gt;
-has a full list of methods and their signatures for interacting with
-collections.&lt;/p&gt;
-
-&lt;h2 id=&#34;bulk-operations&#34;&gt;Bulk Operations&lt;/h2&gt;
-
-&lt;p&gt;Mongodb 2.6 introduces operations. The bulk operations builder can be
-used to construct a list of write operations to perform in bulk for a
-single collection. Bulk operations come in two main flavors.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Ordered bulk operations. These operations execute all the operation
-in order and error out on the first write error.&lt;/li&gt;
-&lt;li&gt;Unordered bulk operations. These operations execute all the
-operations in parallel and aggregates up all the errors. Unordered
-bulk operations do not guarantee order of execution.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;An example of using the bulk api:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val collection = MongoClient()(&amp;quot;test&amp;quot;)(&amp;quot;bulkOperation&amp;quot;)
-
-collection.drop()
-
-val builder = collection.initializeOrderedBulkOperation
-builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 1))
-builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 2))
-builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3))
-
-builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 1)).updateOne($set(&amp;quot;x&amp;quot; -&amp;gt; 2))
-builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 2)).removeOne()
-builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3)).replaceOne(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3, &amp;quot;x&amp;quot; -&amp;gt; 4))
-
-val result = builder.execute()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For more information see the &lt;a href=&#34;http://docs.mongodb.org/master/reference/method/Bulk/&#34;&gt;bulk
-operations&lt;/a&gt;
-documentation.&lt;/p&gt;
-
-&lt;h2 id=&#34;mongodbobject&#34;&gt;MongoDBObject&lt;/h2&gt;
-
-&lt;p&gt;MongoDB queries work by providing a document to match against. The
-simplest query object is an empty one eg: &lt;code&gt;MongoDBObject()&lt;/code&gt; which
-matches every record in the database.&lt;/p&gt;
-
-&lt;p&gt;MongoDBObject is a simple Map-like class, that wraps the Java driver
-DBObject and provides some nice Scala interfaces:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val query = MongoDBObject(&amp;quot;foo&amp;quot; -&amp;gt; &amp;quot;bar&amp;quot;) ++ (&amp;quot;baz&amp;quot; -&amp;gt; &amp;quot;qux&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;DBObjects have a builder and as such you can also build MongoDBObjects
-that way:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val builder = MongoDBObject.newBuilder
-builder += &amp;quot;foo&amp;quot; -&amp;gt; &amp;quot;bar&amp;quot;
-builder += &amp;quot;baz&amp;quot; -&amp;gt; &amp;quot;qux&amp;quot;
-val query = builder.result
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;div class=&#34;admonition note&#34;&gt;
-&lt;h5 class=&#34;admonition-title&#34;&gt;Note&lt;/h5&gt;
-&lt;p&gt;Remember to import casbah: &lt;code&gt;import com.mongodb.casbah.Imports._&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Query DSL</title>
       <link>/casbah/2.8/reference/query_dsl/</link>
       <pubDate>Fri, 25 Sep 2015 15:36:10 +0000</pubDate>
@@ -497,6 +391,112 @@ $push(&amp;quot;sizes&amp;quot;) $each (&amp;quot;S&amp;quot;, &amp;quot;M&amp;q
 
 &lt;p&gt;For the full query syntax to MongoDB see the core docs at:
 &lt;a href=&#34;http://docs.mongodb.org&#34;&gt;docs.mongodb.org&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Querying</title>
+      <link>/casbah/2.8/reference/querying/</link>
+      <pubDate>Fri, 25 Sep 2015 15:36:10 +0000</pubDate>
+      
+      <guid>/casbah/2.8/reference/querying/</guid>
+      <description>
+
+&lt;h1 id=&#34;querying&#34;&gt;Querying&lt;/h1&gt;
+
+&lt;h2 id=&#34;query-operations&#34;&gt;Query operations&lt;/h2&gt;
+
+&lt;p&gt;As Casbah wraps the Java driver, so querying against MongoDB is
+essentially the same. The following methods for finding data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;find&lt;/code&gt; Returns a cursor&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;findOne&lt;/code&gt; Returns an Option - either Some(MongoDBObject) or None&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;findById&lt;/code&gt; Returns an Option - either Some(MongoDBObject) or None&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;findAndModify&lt;/code&gt; Finds the first document in the query, updates and returns it.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;findAndRemove&lt;/code&gt; Finds the first document in the query, removes and returns it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following methods insert and update data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;save&lt;/code&gt; Saves an object to the collection&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;insert&lt;/code&gt; Saves one or more documents to the collection&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;update&lt;/code&gt; Updates any matching documents operation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information about create, read, update and delete (CRUD)
+operations in MongoDB see the &lt;a href=&#34;http://docs.mongodb.org/manual/crud/&#34;&gt;core
+operations&lt;/a&gt; documentation.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://mongodb.github.io/casbah/api/#com.mongodb.casbah.MongoCollection&#34;&gt;collection API
+documentation&lt;/a&gt;
+has a full list of methods and their signatures for interacting with
+collections.&lt;/p&gt;
+
+&lt;h2 id=&#34;bulk-operations&#34;&gt;Bulk Operations&lt;/h2&gt;
+
+&lt;p&gt;Mongodb 2.6 introduces operations. The bulk operations builder can be
+used to construct a list of write operations to perform in bulk for a
+single collection. Bulk operations come in two main flavors.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Ordered bulk operations. These operations execute all the operation
+in order and error out on the first write error.&lt;/li&gt;
+&lt;li&gt;Unordered bulk operations. These operations execute all the
+operations in parallel and aggregates up all the errors. Unordered
+bulk operations do not guarantee order of execution.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;An example of using the bulk api:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val collection = MongoClient()(&amp;quot;test&amp;quot;)(&amp;quot;bulkOperation&amp;quot;)
+
+collection.drop()
+
+val builder = collection.initializeOrderedBulkOperation
+builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 1))
+builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 2))
+builder.insert(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3))
+
+builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 1)).updateOne($set(&amp;quot;x&amp;quot; -&amp;gt; 2))
+builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 2)).removeOne()
+builder.find(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3)).replaceOne(MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; 3, &amp;quot;x&amp;quot; -&amp;gt; 4))
+
+val result = builder.execute()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For more information see the &lt;a href=&#34;http://docs.mongodb.org/master/reference/method/Bulk/&#34;&gt;bulk
+operations&lt;/a&gt;
+documentation.&lt;/p&gt;
+
+&lt;h2 id=&#34;mongodbobject&#34;&gt;MongoDBObject&lt;/h2&gt;
+
+&lt;p&gt;MongoDB queries work by providing a document to match against. The
+simplest query object is an empty one eg: &lt;code&gt;MongoDBObject()&lt;/code&gt; which
+matches every record in the database.&lt;/p&gt;
+
+&lt;p&gt;MongoDBObject is a simple Map-like class, that wraps the Java driver
+DBObject and provides some nice Scala interfaces:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val query = MongoDBObject(&amp;quot;foo&amp;quot; -&amp;gt; &amp;quot;bar&amp;quot;) ++ (&amp;quot;baz&amp;quot; -&amp;gt; &amp;quot;qux&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DBObjects have a builder and as such you can also build MongoDBObjects
+that way:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val builder = MongoDBObject.newBuilder
+builder += &amp;quot;foo&amp;quot; -&amp;gt; &amp;quot;bar&amp;quot;
+builder += &amp;quot;baz&amp;quot; -&amp;gt; &amp;quot;qux&amp;quot;
+val query = builder.result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;div class=&#34;admonition note&#34;&gt;
+&lt;h5 class=&#34;admonition-title&#34;&gt;Note&lt;/h5&gt;
+&lt;p&gt;Remember to import casbah: &lt;code&gt;import com.mongodb.casbah.Imports._&lt;/code&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
 </description>
     </item>
     
@@ -1941,139 +1941,6 @@ with some caveats - See the GridFS Section  &lt;a href=&#34;/casbah/2.8/casbah/2
     </item>
     
     <item>
-      <title>Aggregation</title>
-      <link>/casbah/2.8/reference/aggregation/</link>
-      <pubDate>Wed, 23 Sep 2015 15:36:50 +0000</pubDate>
-      
-      <guid>/casbah/2.8/reference/aggregation/</guid>
-      <description>
-
-&lt;h1 id=&#34;aggregation-framework&#34;&gt;Aggregation Framework&lt;/h1&gt;
-
-&lt;p&gt;The MongoDB aggregation framework provides a means to calculate
-aggregated values without having to use
-&lt;a href=&#34;http://docs.mongodb.org/manual/core/map-reduce/&#34;&gt;map-reduce&lt;/a&gt;. While
-map-reduce is powerful, it is often more difficult than necessary for
-many simple aggregation tasks, such as totaling or averaging field
-values.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re familiar with SQL, the aggregation framework provides similar
-functionality to &lt;code&gt;GROUP BY&lt;/code&gt; and related SQL operators as well as simple
-forms of &amp;ldquo;self joins.&amp;rdquo; Additionally, the aggregation framework provides
-projection capabilities to reshape the returned data. Using the
-projections in the aggregation framework, you can add computed fields,
-create new virtual sub-objects, and extract sub-fields into the
-top-level of results.&lt;/p&gt;
-
-&lt;h2 id=&#34;aggregation-syntax&#34;&gt;Aggregation Syntax&lt;/h2&gt;
-
-&lt;p&gt;Conceptually, documents from a collection pass through an aggregation
-pipeline, which transforms these objects as they pass through. For those
-familiar with UNIX-like shells (e.g. bash,) the concept is analogous to
-the pipe (i.e. |) used to string text filters together:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;db.people.aggregate( [&amp;lt;pipeline&amp;gt;] )
-db.runCommand( { aggregate: &amp;quot;people&amp;quot;, pipeline: [&amp;lt;pipeline&amp;gt;] } )
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;See the &lt;a href=&#34;http://docs.mongodb.org/manual/reference/aggregation/&#34;&gt;aggregation
-reference&lt;/a&gt; for
-information about aggregation operations.&lt;/p&gt;
-
-&lt;h2 id=&#34;aggregation-by-example&#34;&gt;Aggregation By Example&lt;/h2&gt;
-
-&lt;p&gt;First, consider a collection of documents named articles using the
-following format:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;import com.mongodb.casbah.Imports._
-val db = MongoClient()(&amp;quot;test&amp;quot;)
-val coll = db(&amp;quot;aggregate&amp;quot;)
-coll.drop()
-
-coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;Programming in Scala&amp;quot; ,
-                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Martin&amp;quot;,
-                      &amp;quot;pageViews&amp;quot; -&amp;gt;  50,
-                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;scala&amp;quot;, &amp;quot;functional&amp;quot;, &amp;quot;JVM&amp;quot;) ,
-                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
-
-coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;Programming Clojure&amp;quot; ,
-                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Stuart&amp;quot;,
-                      &amp;quot;pageViews&amp;quot; -&amp;gt;  35,
-                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;clojure&amp;quot;, &amp;quot;functional&amp;quot;, &amp;quot;JVM&amp;quot;) ,
-                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
-
-coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;MongoDB: The Definitive Guide&amp;quot; ,
-                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Kristina&amp;quot;,
-                      &amp;quot;pageViews&amp;quot; -&amp;gt;  90,
-                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;databases&amp;quot;, &amp;quot;nosql&amp;quot;, &amp;quot;future&amp;quot;) ,
-                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The following example aggregation operation pivots data to create a set
-of author names grouped by tags applied to an article. Call the
-aggregation framework by issuing the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val db = MongoClient()(&amp;quot;test&amp;quot;)
-val coll = db(&amp;quot;aggregate&amp;quot;)
-
-val results = coll.aggregate(
-  List(
-    MongoDBObject(&amp;quot;$project&amp;quot; -&amp;gt;
-      MongoDBObject(&amp;quot;author&amp;quot; -&amp;gt; 1, &amp;quot;tags&amp;quot; -&amp;gt; 1)
-    ),
-    MongoDBObject(&amp;quot;$unwind&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;),
-    MongoDBObject(&amp;quot;$group&amp;quot; -&amp;gt;
-      MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;,
-                    &amp;quot;authors&amp;quot; -&amp;gt; MongoDBObject(&amp;quot;$addToSet&amp;quot; -&amp;gt; &amp;quot;$author&amp;quot;)
-      )
-    )
-  )
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The results of the aggregation themselves can be accessed via &lt;code&gt;results&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;aggregation-cursor-interface-new-in-casbah-2-7&#34;&gt;Aggregation Cursor Interface - new in casbah 2.7&lt;/h3&gt;
-
-&lt;p&gt;MongoDB 2.6 adds the ability to return a cursor from the aggregation
-framework. To do that simply use AggregationOptions with the aggregation
-command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val db = MongoClient()(&amp;quot;test&amp;quot;)
-val coll = db(&amp;quot;aggregate&amp;quot;)
-
-val aggregationOptions = AggregationOptions(AggregationOptions.CURSOR)
-val results = coll.aggregate(
-  List(
-    MongoDBObject(&amp;quot;$project&amp;quot; -&amp;gt;
-      MongoDBObject(&amp;quot;author&amp;quot; -&amp;gt; 1, &amp;quot;tags&amp;quot; -&amp;gt; 1)
-    ),
-    MongoDBObject(&amp;quot;$unwind&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;),
-    MongoDBObject(&amp;quot;$group&amp;quot; -&amp;gt;
-      MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;,
-                    &amp;quot;authors&amp;quot; -&amp;gt; MongoDBObject(&amp;quot;$addToSet&amp;quot; -&amp;gt; &amp;quot;$author&amp;quot;)
-      )
-    )
-  ),
-  aggregationOptions
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then the you can iterate the results of the aggregation as a normal
-cursor:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;for (result &amp;lt;- results) println(result)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To learn more about aggregation see the &lt;a href=&#34;http://docs.mongodb.org/manual/tutorial/aggregation-examples/&#34;&gt;aggregation
-tutorial&lt;/a&gt;
-and the &lt;a href=&#34;http://docs.mongodb.org/manual/reference/aggregation/&#34;&gt;aggregation
-reference&lt;/a&gt;
-documentation.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Connecting to MongoDB</title>
       <link>/casbah/2.8/reference/connecting/</link>
       <pubDate>Wed, 23 Sep 2015 15:36:50 +0000</pubDate>
@@ -2371,6 +2238,139 @@ read happening at the same time in another thread at the same time, it
 may fail to deserialize BSON Dates as Joda DateTime - and blow up. Be
 careful &amp;mdash; generally we don&amp;rsquo;t recommend mixing Joda Time and GridFS in
 the same JVM at the moment.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aggregation</title>
+      <link>/casbah/2.8/reference/aggregation/</link>
+      <pubDate>Wed, 23 Sep 2015 15:36:50 +0000</pubDate>
+      
+      <guid>/casbah/2.8/reference/aggregation/</guid>
+      <description>
+
+&lt;h1 id=&#34;aggregation-framework&#34;&gt;Aggregation Framework&lt;/h1&gt;
+
+&lt;p&gt;The MongoDB aggregation framework provides a means to calculate
+aggregated values without having to use
+&lt;a href=&#34;http://docs.mongodb.org/manual/core/map-reduce/&#34;&gt;map-reduce&lt;/a&gt;. While
+map-reduce is powerful, it is often more difficult than necessary for
+many simple aggregation tasks, such as totaling or averaging field
+values.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re familiar with SQL, the aggregation framework provides similar
+functionality to &lt;code&gt;GROUP BY&lt;/code&gt; and related SQL operators as well as simple
+forms of &amp;ldquo;self joins.&amp;rdquo; Additionally, the aggregation framework provides
+projection capabilities to reshape the returned data. Using the
+projections in the aggregation framework, you can add computed fields,
+create new virtual sub-objects, and extract sub-fields into the
+top-level of results.&lt;/p&gt;
+
+&lt;h2 id=&#34;aggregation-syntax&#34;&gt;Aggregation Syntax&lt;/h2&gt;
+
+&lt;p&gt;Conceptually, documents from a collection pass through an aggregation
+pipeline, which transforms these objects as they pass through. For those
+familiar with UNIX-like shells (e.g. bash,) the concept is analogous to
+the pipe (i.e. |) used to string text filters together:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;db.people.aggregate( [&amp;lt;pipeline&amp;gt;] )
+db.runCommand( { aggregate: &amp;quot;people&amp;quot;, pipeline: [&amp;lt;pipeline&amp;gt;] } )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://docs.mongodb.org/manual/reference/aggregation/&#34;&gt;aggregation
+reference&lt;/a&gt; for
+information about aggregation operations.&lt;/p&gt;
+
+&lt;h2 id=&#34;aggregation-by-example&#34;&gt;Aggregation By Example&lt;/h2&gt;
+
+&lt;p&gt;First, consider a collection of documents named articles using the
+following format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;import com.mongodb.casbah.Imports._
+val db = MongoClient()(&amp;quot;test&amp;quot;)
+val coll = db(&amp;quot;aggregate&amp;quot;)
+coll.drop()
+
+coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;Programming in Scala&amp;quot; ,
+                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Martin&amp;quot;,
+                      &amp;quot;pageViews&amp;quot; -&amp;gt;  50,
+                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;scala&amp;quot;, &amp;quot;functional&amp;quot;, &amp;quot;JVM&amp;quot;) ,
+                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
+
+coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;Programming Clojure&amp;quot; ,
+                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Stuart&amp;quot;,
+                      &amp;quot;pageViews&amp;quot; -&amp;gt;  35,
+                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;clojure&amp;quot;, &amp;quot;functional&amp;quot;, &amp;quot;JVM&amp;quot;) ,
+                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
+
+coll += MongoDBObject(&amp;quot;title&amp;quot; -&amp;gt; &amp;quot;MongoDB: The Definitive Guide&amp;quot; ,
+                      &amp;quot;author&amp;quot; -&amp;gt; &amp;quot;Kristina&amp;quot;,
+                      &amp;quot;pageViews&amp;quot; -&amp;gt;  90,
+                      &amp;quot;tags&amp;quot; -&amp;gt;  (&amp;quot;databases&amp;quot;, &amp;quot;nosql&amp;quot;, &amp;quot;future&amp;quot;) ,
+                      &amp;quot;body&amp;quot; -&amp;gt;  &amp;quot;...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following example aggregation operation pivots data to create a set
+of author names grouped by tags applied to an article. Call the
+aggregation framework by issuing the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val db = MongoClient()(&amp;quot;test&amp;quot;)
+val coll = db(&amp;quot;aggregate&amp;quot;)
+
+val results = coll.aggregate(
+  List(
+    MongoDBObject(&amp;quot;$project&amp;quot; -&amp;gt;
+      MongoDBObject(&amp;quot;author&amp;quot; -&amp;gt; 1, &amp;quot;tags&amp;quot; -&amp;gt; 1)
+    ),
+    MongoDBObject(&amp;quot;$unwind&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;),
+    MongoDBObject(&amp;quot;$group&amp;quot; -&amp;gt;
+      MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;,
+                    &amp;quot;authors&amp;quot; -&amp;gt; MongoDBObject(&amp;quot;$addToSet&amp;quot; -&amp;gt; &amp;quot;$author&amp;quot;)
+      )
+    )
+  )
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The results of the aggregation themselves can be accessed via &lt;code&gt;results&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;aggregation-cursor-interface-new-in-casbah-2-7&#34;&gt;Aggregation Cursor Interface - new in casbah 2.7&lt;/h3&gt;
+
+&lt;p&gt;MongoDB 2.6 adds the ability to return a cursor from the aggregation
+framework. To do that simply use AggregationOptions with the aggregation
+command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val db = MongoClient()(&amp;quot;test&amp;quot;)
+val coll = db(&amp;quot;aggregate&amp;quot;)
+
+val aggregationOptions = AggregationOptions(AggregationOptions.CURSOR)
+val results = coll.aggregate(
+  List(
+    MongoDBObject(&amp;quot;$project&amp;quot; -&amp;gt;
+      MongoDBObject(&amp;quot;author&amp;quot; -&amp;gt; 1, &amp;quot;tags&amp;quot; -&amp;gt; 1)
+    ),
+    MongoDBObject(&amp;quot;$unwind&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;),
+    MongoDBObject(&amp;quot;$group&amp;quot; -&amp;gt;
+      MongoDBObject(&amp;quot;_id&amp;quot; -&amp;gt; &amp;quot;$tags&amp;quot;,
+                    &amp;quot;authors&amp;quot; -&amp;gt; MongoDBObject(&amp;quot;$addToSet&amp;quot; -&amp;gt; &amp;quot;$author&amp;quot;)
+      )
+    )
+  ),
+  aggregationOptions
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then the you can iterate the results of the aggregation as a normal
+cursor:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;for (result &amp;lt;- results) println(result)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To learn more about aggregation see the &lt;a href=&#34;http://docs.mongodb.org/manual/tutorial/aggregation-examples/&#34;&gt;aggregation
+tutorial&lt;/a&gt;
+and the &lt;a href=&#34;http://docs.mongodb.org/manual/reference/aggregation/&#34;&gt;aggregation
+reference&lt;/a&gt;
+documentation.&lt;/p&gt;
 </description>
     </item>
     
