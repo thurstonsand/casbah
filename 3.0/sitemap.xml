@@ -18,12 +18,12 @@
   </url>
   
   <url>
-    <loc>/casbah/3.0/reference/querying/</loc>
+    <loc>/casbah/3.0/reference/query_dsl/</loc>
     <lastmod>2015-09-25T15:36:10+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/casbah/3.0/reference/query_dsl/</loc>
+    <loc>/casbah/3.0/reference/querying/</loc>
     <lastmod>2015-09-25T15:36:10+00:00</lastmod>
   </url>
   
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>/casbah/3.0/reference/aggregation/</loc>
+    <loc>/casbah/3.0/reference/connecting/</loc>
     <lastmod>2015-09-23T15:36:50+00:00</lastmod>
   </url>
   
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>/casbah/3.0/reference/connecting/</loc>
+    <loc>/casbah/3.0/reference/aggregation/</loc>
     <lastmod>2015-09-23T15:36:50+00:00</lastmod>
   </url>
   
